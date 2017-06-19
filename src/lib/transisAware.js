@@ -52,6 +52,51 @@ Transis.Object.delayPreFlush(preFlush);
 
 // end of copied from transis
 
+
+// component will mount factory
+const ComponentWillMountFactory = function({ global, state, props }) {
+  // setting transis id
+  this._transisId = this._transisId || nextId++;
+  // setting main update function
+  this._transisQueueUpdate = this._transisQueueUpdate || (() => { queueUpdate(this); });
+
+  if (state) {
+    // core register sync method
+    this._transisSyncState = () => {
+      console.warn('transis sync update triggered')
+      var stateToUpdate = {};
+      for (let k in state) {
+        if (this.state[k] !== global[k]) {
+
+          // local state is out of date, off syncing it
+          if (this.state[k] && typeof this.state[k].off === 'function') {
+            state[k].forEach(path =>
+              this.state[k].off(path, this._transisQueueUpdate)
+            );
+          }
+
+          // global state needs to be attached, on syncing it
+          if (global[k] && typeof global[k].on === 'function') {
+            state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
+          }
+
+          stateToUpdate[k] = global[k];
+        }
+      } // end of for loop
+      if (Object.keys(stateToUpdate).length) { this.setState(stateToUpdate); }
+    }
+
+
+    for (let k in state) { // loop through states, on sync all states initially
+      if (global[k] && typeof global[k].on === 'function') { // global global
+        state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
+      }
+    }
+
+    global.on('*', this._transisSyncState)
+  }
+} // end of Component Will Mount Factory
+
 function transisAware(
   { global, state, props },
   ComposedComponent
@@ -61,60 +106,38 @@ function transisAware(
       super(props)
       // allow both component will mount to get triggered
       this.componentWillMount = () => {
-        // setting transis id
-        this._transisId = this._transisId || nextId++;
-        // setting main update function
-        this._transisQueueUpdate = this._transisQueueUpdate || (() => { queueUpdate(this); });
-
-        if (state) {
-          // core register sync method
-          this._transisSyncState = () => {
-            console.warn('transis sync update triggered')
-            var stateToUpdate = {};
-            for (let k in state) {
-              if (this.state[k] !== global[k]) {
-
-                // local state is out of date, off syncing it
-                if (this.state[k] && typeof this.state[k].off === 'function') {
-                  state[k].forEach(path =>
-                    this.state[k].off(path, this._transisQueueUpdate)
-                  );
-                }
-
-                // global state needs to be attached, on syncing it
-                if (global[k] && typeof global[k].on === 'function') {
-                  state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
-                }
-
-                stateToUpdate[k] = global[k];
-              }
-            } // end of for loop
-            if (Object.keys(stateToUpdate).length) { this.setState(stateToUpdate); }
-          }
-          for (let k in state) { // loop through states, on sync all states initially
-            if (global[k] && typeof global[k].on === 'function') { // global global
-              state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
-            }
-          }
-
-          global.on('*', this._transisSyncState)
-        }
+        return ComponentWillMountFactory.call(this, {
+          global, state, props
+        })
         // if (props) {
           // propsMixin.componentWillMount.apply(this,arguments);
         // }
       }; //  end of componentWillMount
 
-      this.componentDidMount = () => { this._isMounted = true }
+      this.componentDidMount = () => {
+        this._isMounted = true
+        logUpdate(this)
+      }
 
+      this.componentDidUpdate = () => {
+        logUpdate(this)
+      }
 
-      // this.componentWillUnmount = () => {
-      //   if (stateMixin) {
-      //     stateMixin.componentWillUnmount.apply(this,arguments);
-      //   }
-      //   if (propsMixin) {
-      //     propsMixin.componentWillUnmount.apply(this,arguments);
-      //   }
-      // };
+      this.componentWillUnmount = () => {
+        if (state) {
+          for (let k in state) {
+            if (this.state[k] && typeof this.state[k].off === 'function') {
+              state[k].forEach(path =>
+                this.state[k].off(path, this._transisQueueUpdate)
+              );
+            }
+          }
+          global.off('*', this._transisSyncState);
+        }
+        // if (propsMixin) {
+        //   propsMixin.componentWillUnmount.apply(this,arguments);
+        // }
+      };
 
       if (state) {
         // initialize State, and props

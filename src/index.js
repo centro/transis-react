@@ -5,12 +5,14 @@ import './index.css'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import Transis from 'transis'
-import transisAware from './transisAware'
+import transisAware from './lib/transisAware'
+
+const fakeString = n => Array.from(Array(n || 10).keys()).map(n =>  String.fromCharCode(Math.floor(Math.random()*26) + 97)).join('')
+
 
 // model setup
 window.globalObj = new (Transis.Object.extend(function() {
   this.prop('time')
-  this.prop('age')
   this.prop('book')
   this.prop('author')
 }))
@@ -22,6 +24,7 @@ const Book = Transis.Model.extend('Book', function() {
 
 const Author = Transis.Model.extend('Author', function() {
   this.attr('name', 'string')
+  this.attr('age', 'number')
   this.hasMany('books', 'Book', { inverse: 'author' })
 })
 // end of models
@@ -49,7 +52,7 @@ const App = transisAware(
     global: globalObj,
     state: {
       time: [],
-      book: ['name']
+      book: ['name', 'author.name']
     },
     // props: []
   },
@@ -64,21 +67,19 @@ const App = transisAware(
         <h1>React Transis</h1>
         <p> Time: {time && time.toLocaleTimeString()} </p>
         <p> Book: {book.name} </p>
-        <p> Author: {author.name} </p>
-        <button onClick={() => globalObj.author = book.author}>
-          Who is the author?
+        <p> Author: {author.name}, {author.age} </p>
+
+        <button onClick={() => book.name = fakeString(10)}>
+          Change book title
         </button>
 
-        <button onClick={
-          () => {}
-        }>
-          Change book
+        <button onClick={() => book.author.name = fakeString(10)}>
+          Change author name
         </button>
-
-        <button onClick={
-          () => {}
+        <button onClick={() =>
+          book.author.age = Math.floor(Math.random() * 100)
         }>
-          Change author
+          Change author age
         </button>
       </div>
     }
