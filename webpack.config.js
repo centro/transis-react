@@ -12,16 +12,19 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react']
+            presets: ['env', 'react', 'stage-2']
           }
         }
       },
       {
         test: /\.css$/,
-        use: {
-          loader: 'css-loader',
-          options: { modules: true }
-        }
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          }
+        ]
       },
     ]
   }
