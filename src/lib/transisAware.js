@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import Transis from 'transis'
-window.Transis = Transis
 
 // copied from transis
 let nextId = 1;
@@ -32,7 +32,7 @@ function postFlush() {
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
   components.sort(componentCmp).forEach(function(component) {
-    if (!updateLog[component._transisId] && component._isMounted) {
+    if (!updateLog[component._transisId] && ReactDOM.findDOMNode(component)) { // has mounted
       component.forceUpdate();
     }
   });

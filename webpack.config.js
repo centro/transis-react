@@ -1,8 +1,19 @@
+var path = require('path')
+
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    lib: './src/index.js'
+  },
   output: {
-    filename: './dist/bundle.js',
-    // path: path.resolve(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
+    filename: './[name]-bundle.js',
+    libraryTarget: 'var',
+    library: 'transisAware',
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    transis: 'Transis'
   },
   module: {
     rules: [
