@@ -55,11 +55,12 @@ Transis.Object.delayPreFlush(preFlush);
 
 // component will mount factory
 const ComponentWillMountFactory = function({ global, state, props }) {
-  // setting transis id
-  this._transisId = this._transisId || nextId++;
-  // setting main update function
-  this._transisQueueUpdate = this._transisQueueUpdate || (() => { queueUpdate(this); });
-
+  if (state || props) {
+      // setting transis id
+    this._transisId = this._transisId || nextId++;
+    // setting main update function
+    this._transisQueueUpdate = this._transisQueueUpdate || (() => { queueUpdate(this); });
+  }
   if (state) {
     // core register sync method
     this._transisSyncState = () => {
@@ -86,7 +87,6 @@ const ComponentWillMountFactory = function({ global, state, props }) {
       if (Object.keys(stateToUpdate).length) { this.setState(stateToUpdate); }
     }
 
-
     for (let k in state) { // loop through states, on sync all states initially
       if (global[k] && typeof global[k].on === 'function') { // global global
         state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
@@ -94,6 +94,16 @@ const ComponentWillMountFactory = function({ global, state, props }) {
     }
 
     global.on('*', this._transisSyncState)
+  }
+
+  if (props) {
+    for (let k in props) {
+      props[k].forEach(function(prop) {
+        if (this.props[k]) {
+          this.props[k].on(prop, this._transisQueueUpdate);
+        }
+      }, this);
+    }
   }
 } // end of Component Will Mount Factory
 
@@ -103,7 +113,7 @@ function transisAware(
 ) {
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     constructor(propArgs) {
-      super(props)
+      super(propArgs)
       // allow both component will mount to get triggered
       this.componentWillMount = () => {
         return ComponentWillMountFactory.call(this, {
@@ -134,9 +144,13 @@ function transisAware(
           }
           global.off('*', this._transisSyncState);
         }
-        // if (propsMixin) {
-        //   propsMixin.componentWillUnmount.apply(this,arguments);
-        // }
+        if (props) {
+          for (let k in props) {
+            props[k].forEach(function(prop) {
+              if (this.props[k]) { this.props[k].off(prop, this._transisQueueUpdate); }
+            }, this);
+          }
+        }
       };
 
       if (state) {
@@ -145,10 +159,24 @@ function transisAware(
           result[key] = global[key]
           return result
         }, {})
-        console.debug('intialized state to', this.state)
+        // console.debug('intialized state to', this.state)
       }
       if (props) {
-        // this.componentWillReceiveProps = props.componentWillReceiveProps.bind(this);
+        this.componentWillReceiveProps = (nextProps) => {
+          // console.debug('component will receive props', nextProps)
+          for (let k in props) {
+            props[k].forEach(prop => {
+              if (nextProps[k] !== this.props[k]) {
+                if (this.props[k]) {
+                  this.props[k].off(prop, this._transisQueueUpdate);
+                }
+                if (nextProps[k]) {
+                  nextProps[k].on(prop, this._transisQueueUpdate);
+                }
+              }
+            });
+          }
+        }
       }
     }
 

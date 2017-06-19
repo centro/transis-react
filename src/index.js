@@ -46,7 +46,20 @@ globalObj.book = new Book({
 // end of data setup
 
 
-// Component setup
+// Components setup
+const AuthorAge = transisAware(
+  {
+    props: {
+      author: ['age']
+    }
+  },
+  class AuthorAgeCore extends Component {
+    render() {
+      return <span>{this.props.author.age}</span>
+    }
+  }
+)
+
 const App = transisAware(
   {
     global: globalObj,
@@ -54,7 +67,6 @@ const App = transisAware(
       time: [],
       book: ['name', 'author.name']
     },
-    // props: []
   },
   class AppCore extends Component {
     render() {
@@ -67,7 +79,7 @@ const App = transisAware(
         <h1>React Transis</h1>
         <p> Time: {time && time.toLocaleTimeString()} </p>
         <p> Book: {book.name} </p>
-        <p> Author: {author.name}, {author.age} </p>
+        <p> Author: {author.name}, <AuthorAge author={author} /> </p>
 
         <button onClick={() => book.name = fakeString(10)}>
           Change book title
