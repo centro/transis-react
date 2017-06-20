@@ -3,10 +3,10 @@ var path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    // path: path.join(__dirname, 'dist'),
-    filename: './dist/transis-react.js',
+    path: path.join(__dirname, 'dist'),
+    filename: 'transis-react.js',
     libraryTarget: 'umd',
-    library: 'transisAware',
+    library: 'transis_react',
   },
   externals: {
     react: 'React',

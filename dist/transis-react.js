@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["React", "ReactDOM", "Transis"], factory);
 	else if(typeof exports === 'object')
-		exports["transisAware"] = factory(require("React"), require("ReactDOM"), require("Transis"));
+		exports["transis_react"] = factory(require("React"), require("ReactDOM"), require("Transis"));
 	else
-		root["transisAware"] = factory(root["React"], root["ReactDOM"], root["Transis"]);
+		root["transis_react"] = factory(root["React"], root["ReactDOM"], root["Transis"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
