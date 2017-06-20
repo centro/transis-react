@@ -7,7 +7,7 @@
 		exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));
 	else
 		root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,29 +73,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,15 +91,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(1);
+var _reactDom = __webpack_require__(3);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _transis = __webpack_require__(2);
+var _transis = __webpack_require__(4);
 
 var _transis2 = _interopRequireDefault(_transis);
 
@@ -285,11 +267,10 @@ function transisAware(_ref2, ComposedComponent) {
       _this2.componentWillMount = function () {
         return ComponentWillMountFactory.call(_this2, {
           global: global, state: state, props: props
-        }
+        });
         // if (props) {
         // propsMixin.componentWillMount.apply(this,arguments);
         // }
-        );
       }; //  end of componentWillMount
 
       _this2.componentDidMount = function () {
@@ -336,9 +317,8 @@ function transisAware(_ref2, ComposedComponent) {
         _this2.state = Object.keys(state).reduce(function (result, key) {
           result[key] = global[key];
           return result;
-        }, {}
+        }, {});
         // console.debug('intialized state to', this.state)
-        );
       }
       if (props) {
         _this2.componentWillReceiveProps = function (nextProps) {
@@ -379,9 +359,7 @@ function transisAware(_ref2, ComposedComponent) {
 exports.default = transisAware;
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -391,13 +369,31 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _transisAware = __webpack_require__(3);
+var _transisAware = __webpack_require__(0);
 
 var _transisAware2 = _interopRequireDefault(_transisAware);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _transisAware2.default;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 
 /***/ })
 /******/ ]);
