@@ -11,9 +11,9 @@ module.exports = {
     library: 'transisAware',
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    transis: 'Transis'
+    react: 'react',
+    'react-dom': 'react-dom',
+    transis: 'transis'
   },
   module: {
     rules: [
