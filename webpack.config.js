@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: './[name]-bundle.js',
-    libraryTarget: 'var',
+    libraryTarget: 'umd',
     library: 'transisAware',
   },
   externals: {
