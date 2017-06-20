@@ -1,5 +1,14 @@
-var transisAware =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("React"), require("ReactDOM"), require("Transis"));
+	else if(typeof define === 'function' && define.amd)
+		define(["React", "ReactDOM", "Transis"], factory);
+	else if(typeof exports === 'object')
+		exports["transisAware"] = factory(require("React"), require("ReactDOM"), require("Transis"));
+	else
+		root["transisAware"] = factory(root["React"], root["ReactDOM"], root["Transis"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -362,27 +371,32 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(0);
+var _transisAware = __webpack_require__(0);
 
-exports.default = './lib/transisAware';
+var _transisAware2 = _interopRequireDefault(_transisAware);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _transisAware2.default;
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = React;
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = ReactDOM;
+module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = Transis;
+module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 
 /***/ })
 /******/ ]);
+});

@@ -1,3 +1,3 @@
-import './lib/transisAware'
+import transisAware from './lib/transisAware'
 
-export default './lib/transisAware'
+export default transisAware

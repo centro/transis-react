@@ -2,7 +2,7 @@
   "name": "transis-react",
   "version": "1.0.2",
   "description": "",
-  "main": "dist/lib-bundle.js",
+  "main": "dist/transis-react.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -33,11 +33,12 @@
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "npm": "5.0.2",
     "style-loader": "^0.18.2"
   },
   "peerDependencies": {
-    "transis": "^0.11.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "transis": "^0.11.0"
   }
 }
