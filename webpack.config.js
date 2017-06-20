@@ -1,17 +1,20 @@
 var path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'transis-react': './src/index.js',
+    'app': './src/app.js'
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'transis-react.js',
+    filename: '[name].js',
+    library: '[name]',
     libraryTarget: 'umd',
-    library: 'transis_react',
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    transis: 'Transis'
+    // react: 'React',
+    // 'react-dom': 'ReactDOM',
+    // transis: 'Transis'
   },
   module: {
     rules: [
