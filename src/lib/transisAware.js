@@ -53,8 +53,34 @@ Transis.Object.delayPreFlush(preFlush);
 // end of copied from transis
 
 
-// component will mount factory
-const ComponentWillMountFactory = function({ global, state, props }) {
+
+// @param {TransisObject} globalVar - transis object attached to some global namespace
+// @param {Array} attrsToWatch - props on the globalVar that the component should watch for
+const bindState = (globalVar, attrsToWatch, callback) => {
+  if (globalVar && typeof globalVar.on === 'function') {
+    attrsToWatch.forEach(attrPath => 
+      globalVar.on(attrPath, callback)
+    )
+  }
+}
+
+const unbindState = (stateVar, attrsToWatch, unbindCallback) => {
+  if (stateVar && typeof stateVar.off === 'function') {
+    attrsToWatch.forEach(attrPath => 
+      stateVar.off(attrPath, callback)
+    )
+  }
+}
+
+const unbindProps = (propsVar, attrsToWatch, unbindCallback) => {
+  attrsToWatch.forEach(attrPath => 
+    propsVar && propsVar.off(attrPath, callback)
+  )
+}
+
+
+// component will mount
+const componentWillMount = function({ global, state, props }) {
   if (state || props) {
       // setting transis id
     this._transisId = this._transisId || nextId++;
@@ -68,29 +94,22 @@ const ComponentWillMountFactory = function({ global, state, props }) {
       var stateToUpdate = {};
       for (let k in state) {
         if (this.state[k] !== global[k]) {
-
           // local state is out of date, off syncing it
-          if (this.state[k] && typeof this.state[k].off === 'function') {
-            state[k].forEach(path =>
-              this.state[k].off(path, this._transisQueueUpdate)
-            );
-          }
+          unbindState(this.state[k], state[k], this._transisQueueUpdate)
 
           // global state needs to be attached, on syncing it
-          if (global[k] && typeof global[k].on === 'function') {
-            state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
-          }
+          bindState(global[k], state[k], this._transisQueueUpdate)
 
           stateToUpdate[k] = global[k];
         }
       } // end of for loop
-      if (Object.keys(stateToUpdate).length) { this.setState(stateToUpdate); }
+      if (Object.keys(stateToUpdate).length) { 
+        this.setState(stateToUpdate); 
+      }
     }
 
     for (let k in state) { // loop through states, on sync all states initially
-      if (global[k] && typeof global[k].on === 'function') { // global global
-        state[k].forEach((path) => { global[k].on(path, this._transisQueueUpdate); });
-      }
+      bindState(global[k], state[k], this._transisQueueUpdate)
     }
 
     global.on('*', this._transisSyncState)
@@ -106,7 +125,7 @@ const ComponentWillMountFactory = function({ global, state, props }) {
     }
   }
 } // end of Component Will Mount Factory
-
+// constructor
 function transisAware(
   { global, state, props },
   ComposedComponent
@@ -116,7 +135,7 @@ function transisAware(
       super(propArgs)
       // allow both component will mount to get triggered
       this.componentWillMount = () => {
-        return ComponentWillMountFactory.call(this, {
+        return componentWillMount.call(this, {
           global, state, props
         })
         // if (props) {
@@ -136,19 +155,13 @@ function transisAware(
       this.componentWillUnmount = () => {
         if (state) {
           for (let k in state) {
-            if (this.state[k] && typeof this.state[k].off === 'function') {
-              state[k].forEach(path =>
-                this.state[k].off(path, this._transisQueueUpdate)
-              );
-            }
+            unbindState(this.state[k], state[k], this._transisQueueUpdate)
           }
           global.off('*', this._transisSyncState);
         }
         if (props) {
           for (let k in props) {
-            props[k].forEach(function(prop) {
-              if (this.props[k]) { this.props[k].off(prop, this._transisQueueUpdate); }
-            }, this);
+            unbindProps(this.props[k], props[k], this._transisQueueUpdate)
           }
         }
       };

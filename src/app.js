@@ -60,7 +60,7 @@ const AuthorAge = transisAware(
 
 const App = transisAware(
   {
-    global: globalObj,
+    global: globalObj, // make this configurable by settings
     state: {
       time: [],
       book: ['name', 'author.name']
