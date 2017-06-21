@@ -24,6 +24,7 @@ function preFlush() {
 function postFlush() {
   let components = [];
 
+  console.warn('post flush triggered')
   for (let id in updateQueue) {
     components.push(updateQueue[id]);
     delete updateQueue[id];
@@ -39,11 +40,11 @@ function postFlush() {
       component.forceUpdate();
     }
   });
-
   Transis.Object.delayPreFlush(preFlush);
 }
 
 function queueUpdate(component) {
+  console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
