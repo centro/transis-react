@@ -45,6 +45,9 @@ globalObj.book = new Book({
 
 
 // Components setup
+
+transisAware.config({ defaultGlobalTransisObject: window.globalObj })
+
 const AuthorAge = transisAware(
   {
     props: {
@@ -60,7 +63,7 @@ const AuthorAge = transisAware(
 
 const App = transisAware(
   {
-    global: globalObj, // make this configurable by settings
+    // global: globalObj, // make this configurable by settings
     state: {
       time: [],
       book: ['name', 'author.name']
@@ -81,21 +84,23 @@ const App = transisAware(
 
         <button onClick={() => book.name = fakeString(10)}>
           Change book title
+          <div>state - primitive</div>
         </button>
 
         <button onClick={() => book.author.name = fakeString(10)}>
           Change author name
+          <div>state - attr</div>
         </button>
         <button onClick={() =>
           book.author.age = Math.floor(Math.random() * 100)
         }>
           Change author age
+          <div>props - attr</div>
         </button>
       </div>
     }
   }
 )
-
 
 ReactDOM.render(
   <App />,

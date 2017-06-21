@@ -11943,6 +11943,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// globalTransisObjectConfig
+var defaultGlobalTransisObject = window;
+
 // copied from transis
 var nextId = 1;
 var updateLog = {};
@@ -11999,17 +12002,18 @@ _transis2.default.Object.delayPreFlush(preFlush);
 // end of copied from transis
 
 
-// @param {TransisObject} globalVar - transis object attached to some global namespace
-// @param {Array} attrsToWatch - props on the globalVar that the component should watch for
-var bindState = function bindState(globalVar, attrsToWatch, callback) {
-  if (globalVar && typeof globalVar.on === 'function') {
+// * Refactor Effort *
+// @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
+// @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
+var bindState = function bindState(globalTransisObjectVar, attrsToWatch, callback) {
+  if (globalTransisObjectVar && typeof globalTransisObjectVar.on === 'function') {
     attrsToWatch.forEach(function (attrPath) {
-      return globalVar.on(attrPath, callback);
+      return globalTransisObjectVar.on(attrPath, callback);
     });
   }
 };
 
-var unbindState = function unbindState(stateVar, attrsToWatch, unbindCallback) {
+var unbindState = function unbindState(stateVar, attrsToWatch, callback) {
   if (stateVar && typeof stateVar.off === 'function') {
     attrsToWatch.forEach(function (attrPath) {
       return stateVar.off(attrPath, callback);
@@ -12017,9 +12021,15 @@ var unbindState = function unbindState(stateVar, attrsToWatch, unbindCallback) {
   }
 };
 
-var unbindProps = function unbindProps(propsVar, attrsToWatch, unbindCallback) {
+var unbindProps = function unbindProps(propsVar, attrsToWatch, callback) {
   attrsToWatch.forEach(function (attrPath) {
     return propsVar && propsVar.off(attrPath, callback);
+  });
+};
+
+var bindProps = function bindProps(propsVar, attrsToWatch, callback) {
+  attrsToWatch.forEach(function (attrPath) {
+    return propsVar && propsVar.on(attrPath, callback);
   });
 };
 
@@ -12027,7 +12037,7 @@ var unbindProps = function unbindProps(propsVar, attrsToWatch, unbindCallback) {
 var componentWillMount = function componentWillMount(_ref) {
   var _this = this;
 
-  var global = _ref.global,
+  var globalTransisObject = _ref.globalTransisObject,
       state = _ref.state,
       props = _ref.props;
 
@@ -12045,14 +12055,14 @@ var componentWillMount = function componentWillMount(_ref) {
       console.warn('transis sync update triggered');
       var stateToUpdate = {};
       for (var k in state) {
-        if (_this.state[k] !== global[k]) {
+        if (_this.state[k] !== globalTransisObject[k]) {
           // local state is out of date, off syncing it
           unbindState(_this.state[k], state[k], _this._transisQueueUpdate);
 
-          // global state needs to be attached, on syncing it
-          bindState(global[k], state[k], _this._transisQueueUpdate);
+          // globalTransisObject state needs to be attached, on syncing it
+          bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
 
-          stateToUpdate[k] = global[k];
+          stateToUpdate[k] = globalTransisObject[k];
         }
       } // end of for loop
       if (Object.keys(stateToUpdate).length) {
@@ -12062,32 +12072,27 @@ var componentWillMount = function componentWillMount(_ref) {
 
     for (var k in state) {
       // loop through states, on sync all states initially
-      bindState(global[k], state[k], this._transisQueueUpdate);
+      bindState(globalTransisObject[k], state[k], this._transisQueueUpdate);
     }
 
-    global.on('*', this._transisSyncState);
+    globalTransisObject.on('*', this._transisSyncState);
   }
 
   if (props) {
-    var _loop = function _loop(_k) {
-      props[_k].forEach(function (prop) {
-        if (this.props[_k]) {
-          this.props[_k].on(prop, this._transisQueueUpdate);
-        }
-      }, _this);
-    };
-
     for (var _k in props) {
-      _loop(_k);
+      bindProps(this.props[_k], props[_k], this._transisQueueUpdate);
     }
   }
 }; // end of Component Will Mount Factory
-// constructor
+// * end Refactor Effort *
+
+// main constructor
 function transisAware(_ref2, ComposedComponent) {
   var global = _ref2.global,
       state = _ref2.state,
       props = _ref2.props;
 
+  var globalTransisObject = global || defaultGlobalTransisObject;
   var higherOrderComponent = function (_React$Component) {
     _inherits(HigherOrderComponent, _React$Component);
 
@@ -12099,11 +12104,8 @@ function transisAware(_ref2, ComposedComponent) {
 
       _this2.componentWillMount = function () {
         return componentWillMount.call(_this2, {
-          global: global, state: state, props: props
+          globalTransisObject: globalTransisObject, state: state, props: props
         });
-        // if (props) {
-        // propsMixin.componentWillMount.apply(this,arguments);
-        // }
       }; //  end of componentWillMount
 
       _this2.componentDidMount = function () {
@@ -12120,7 +12122,7 @@ function transisAware(_ref2, ComposedComponent) {
           for (var k in state) {
             unbindState(_this2.state[k], state[k], _this2._transisQueueUpdate);
           }
-          global.off('*', _this2._transisSyncState);
+          globalTransisObject.off('*', _this2._transisSyncState);
         }
         if (props) {
           for (var _k2 in props) {
@@ -12132,14 +12134,14 @@ function transisAware(_ref2, ComposedComponent) {
       if (state) {
         // initialize State, and props
         _this2.state = Object.keys(state).reduce(function (result, key) {
-          result[key] = global[key];
+          result[key] = globalTransisObject[key];
           return result;
         }, {});
         // console.debug('intialized state to', this.state)
       }
       if (props) {
         _this2.componentWillReceiveProps = function (nextProps) {
-          var _loop2 = function _loop2(k) {
+          var _loop = function _loop(k) {
             props[k].forEach(function (prop) {
               if (nextProps[k] !== _this2.props[k]) {
                 if (_this2.props[k]) {
@@ -12154,7 +12156,7 @@ function transisAware(_ref2, ComposedComponent) {
 
           // console.debug('component will receive props', nextProps)
           for (var k in props) {
-            _loop2(k);
+            _loop(k);
           }
         };
       }
@@ -12172,6 +12174,12 @@ function transisAware(_ref2, ComposedComponent) {
   }(_react2.default.Component);
   return higherOrderComponent;
 }
+
+transisAware.config = function (_ref3) {
+  var newGlobalTransisObject = _ref3.defaultGlobalTransisObject;
+
+  defaultGlobalTransisObject = newGlobalTransisObject;
+};
 
 exports.default = transisAware;
 
@@ -27440,21 +27448,36 @@ var App = (0, _transisAware2.default)({
           { onClick: function onClick() {
               return book.name = fakeString(10);
             } },
-          'Change book title'
+          'Change book title',
+          _react2.default.createElement(
+            'div',
+            null,
+            'state - primitive'
+          )
         ),
         _react2.default.createElement(
           'button',
           { onClick: function onClick() {
               return book.author.name = fakeString(10);
             } },
-          'Change author name'
+          'Change author name',
+          _react2.default.createElement(
+            'div',
+            null,
+            'state - attr'
+          )
         ),
         _react2.default.createElement(
           'button',
           { onClick: function onClick() {
               return book.author.age = Math.floor(Math.random() * 100);
             } },
-          'Change author age'
+          'Change author age',
+          _react2.default.createElement(
+            'div',
+            null,
+            'props - attr'
+          )
         )
       );
     }

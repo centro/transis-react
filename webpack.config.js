@@ -12,9 +12,9 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: {
-    //    react: true,
-    //    'react-dom': true,
-    //    transis: true
+    react: true,
+    'react-dom': true,
+    transis: true
   },
   module: {
     rules: [

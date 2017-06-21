@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Transis from 'transis'
 
+// globalTransisObjectConfig
+let defaultGlobalTransisObject = window;
+
 // copied from transis
 let nextId = 1;
 let updateLog = {};
@@ -53,34 +56,39 @@ Transis.Object.delayPreFlush(preFlush);
 // end of copied from transis
 
 
-
-// @param {TransisObject} globalVar - transis object attached to some global namespace
-// @param {Array} attrsToWatch - props on the globalVar that the component should watch for
-const bindState = (globalVar, attrsToWatch, callback) => {
-  if (globalVar && typeof globalVar.on === 'function') {
-    attrsToWatch.forEach(attrPath => 
-      globalVar.on(attrPath, callback)
+// * Refactor Effort *
+// @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
+// @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
+const bindState = (globalTransisObjectVar, attrsToWatch, callback) => {
+  if (globalTransisObjectVar && typeof globalTransisObjectVar.on === 'function') {
+    attrsToWatch.forEach(attrPath =>
+      globalTransisObjectVar.on(attrPath, callback)
     )
   }
 }
 
-const unbindState = (stateVar, attrsToWatch, unbindCallback) => {
+const unbindState = (stateVar, attrsToWatch, callback) => {
   if (stateVar && typeof stateVar.off === 'function') {
-    attrsToWatch.forEach(attrPath => 
+    attrsToWatch.forEach(attrPath =>
       stateVar.off(attrPath, callback)
     )
   }
 }
 
-const unbindProps = (propsVar, attrsToWatch, unbindCallback) => {
-  attrsToWatch.forEach(attrPath => 
+const unbindProps = (propsVar, attrsToWatch, callback) => {
+  attrsToWatch.forEach(attrPath =>
     propsVar && propsVar.off(attrPath, callback)
   )
 }
 
+const bindProps = (propsVar, attrsToWatch, callback) => {
+  attrsToWatch.forEach(attrPath =>
+    propsVar && propsVar.on(attrPath, callback)
+  )
+}
 
 // component will mount
-const componentWillMount = function({ global, state, props }) {
+const componentWillMount = function({ globalTransisObject, state, props }) {
   if (state || props) {
       // setting transis id
     this._transisId = this._transisId || nextId++;
@@ -93,54 +101,50 @@ const componentWillMount = function({ global, state, props }) {
       console.warn('transis sync update triggered')
       var stateToUpdate = {};
       for (let k in state) {
-        if (this.state[k] !== global[k]) {
+        if (this.state[k] !== globalTransisObject[k]) {
           // local state is out of date, off syncing it
           unbindState(this.state[k], state[k], this._transisQueueUpdate)
 
-          // global state needs to be attached, on syncing it
-          bindState(global[k], state[k], this._transisQueueUpdate)
+          // globalTransisObject state needs to be attached, on syncing it
+          bindState(globalTransisObject[k], state[k], this._transisQueueUpdate)
 
-          stateToUpdate[k] = global[k];
+          stateToUpdate[k] = globalTransisObject[k];
         }
       } // end of for loop
-      if (Object.keys(stateToUpdate).length) { 
-        this.setState(stateToUpdate); 
+      if (Object.keys(stateToUpdate).length) {
+        this.setState(stateToUpdate);
       }
     }
 
     for (let k in state) { // loop through states, on sync all states initially
-      bindState(global[k], state[k], this._transisQueueUpdate)
+      bindState(globalTransisObject[k], state[k], this._transisQueueUpdate)
     }
 
-    global.on('*', this._transisSyncState)
+    globalTransisObject.on('*', this._transisSyncState)
   }
 
   if (props) {
     for (let k in props) {
-      props[k].forEach(function(prop) {
-        if (this.props[k]) {
-          this.props[k].on(prop, this._transisQueueUpdate);
-        }
-      }, this);
+      bindProps(this.props[k], props[k], this._transisQueueUpdate)
     }
   }
 } // end of Component Will Mount Factory
-// constructor
-function transisAware(
+// * end Refactor Effort *
+
+// main constructor
+const transisAware = (
   { global, state, props },
   ComposedComponent
-) {
+) => {
+  const globalTransisObject = global || defaultGlobalTransisObject
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     constructor(propArgs) {
       super(propArgs)
       // allow both component will mount to get triggered
       this.componentWillMount = () => {
         return componentWillMount.call(this, {
-          global, state, props
+          globalTransisObject, state, props
         })
-        // if (props) {
-          // propsMixin.componentWillMount.apply(this,arguments);
-        // }
       }; //  end of componentWillMount
 
       this.componentDidMount = () => {
@@ -157,7 +161,7 @@ function transisAware(
           for (let k in state) {
             unbindState(this.state[k], state[k], this._transisQueueUpdate)
           }
-          global.off('*', this._transisSyncState);
+          globalTransisObject.off('*', this._transisSyncState);
         }
         if (props) {
           for (let k in props) {
@@ -169,7 +173,7 @@ function transisAware(
       if (state) {
         // initialize State, and props
         this.state = Object.keys(state).reduce((result, key) => {
-          result[key] = global[key]
+          result[key] = globalTransisObject[key]
           return result
         }, {})
         // console.debug('intialized state to', this.state)
@@ -198,6 +202,10 @@ function transisAware(
     }
   };
   return higherOrderComponent;
+}
+
+transisAware.config = ({ defaultGlobalTransisObject: newGlobalTransisObject }) => {
+  defaultGlobalTransisObject = newGlobalTransisObject
 }
 
 
