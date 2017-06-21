@@ -3,7 +3,7 @@ var path = require('path')
 module.exports = {
   entry: {
     'transis-react': './src/index.js',
-    // 'app': './src/app.js' // needs to have external emptied
+    'app': './src/app.js' // needs to have external emptied
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -12,9 +12,9 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: {
-    react: true,
-    'react-dom': true,
-    transis: true
+    //    react: true,
+    //    'react-dom': true,
+    //    transis: true
   },
   module: {
     rules: [
