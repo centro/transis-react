@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Transis from 'transis'
 
 // globalTransisObjectConfig
-let defaultGlobalTransisObject = window;
+let defaultGlobalTransisObject = null;
 
 // copied from transis
 let nextId = 1;
@@ -100,6 +100,7 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
     // core register sync method
     this._transisSyncState = () => {
       console.warn('transis sync update triggered')
+
       var stateToUpdate = {};
       for (let k in state) {
         if (this.state[k] !== globalTransisObject[k]) {
@@ -112,6 +113,7 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
           stateToUpdate[k] = globalTransisObject[k];
         }
       } // end of for loop
+
       if (Object.keys(stateToUpdate).length) {
         this.setState(stateToUpdate);
       }
@@ -138,18 +140,23 @@ const transisAware = (
   ComposedComponent
 ) => {
   const globalTransisObject = global || defaultGlobalTransisObject
+  if (!globalTransisObject && state) {
+    throw new Error("Cannot compose with-state component without global transis object, state: ", state)
+  }
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     constructor(propArgs) {
       super(propArgs)
+
+      // consider move the following into instance methods
+
       // allow both component will mount to get triggered
       this.componentWillMount = () => {
         return componentWillMount.call(this, {
           globalTransisObject, state, props
         })
-      }; //  end of componentWillMount
+      }
 
       this.componentDidMount = () => {
-        this._isMounted = true
         logUpdate(this)
       }
 
@@ -172,16 +179,16 @@ const transisAware = (
       };
 
       if (state) {
-        // initialize State, and props
+        // initialize State
         this.state = Object.keys(state).reduce((result, key) => {
           result[key] = globalTransisObject[key]
           return result
         }, {})
-        // console.debug('intialized state to', this.state)
+        // console.warn('intialized state to', this.state)
       }
       if (props) {
         this.componentWillReceiveProps = (nextProps) => {
-          // console.debug('component will receive props', nextProps)
+          // console.warn('component will receive props', nextProps)
           for (let k in props) {
             props[k].forEach(prop => {
               if (nextProps[k] !== this.props[k]) {
