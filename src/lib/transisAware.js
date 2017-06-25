@@ -212,5 +212,5 @@ const transisAware = (
   return higherOrderComponent;
 }
 
-
+transisAware.Transis // for debugging
 export default transisAware
