@@ -227,10 +227,10 @@ var componentWillMount = function componentWillMount(_ref) {
       for (var k in state) {
         if (_this.state[k] !== globalTransisObject[k]) {
           // local state is out of date, off syncing it
-          unbindState(_this.state[k], state[k], _this._transisQueueUpdate
+          unbindState(_this.state[k], state[k], _this._transisQueueUpdate);
 
           // globalTransisObject state needs to be attached, on syncing it
-          );bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
+          bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
 
           stateToUpdate[k] = globalTransisObject[k];
         }
@@ -311,9 +311,8 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
         _this2.state = Object.keys(state).reduce(function (result, key) {
           result[key] = globalTransisObject[key];
           return result;
-        }, {}
+        }, {});
         // console.warn('intialized state to', this.state)
-        );
       }
       if (props) {
         _this2.componentWillReceiveProps = function (nextProps) {
