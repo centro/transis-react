@@ -212,9 +212,5 @@ const transisAware = (
   return higherOrderComponent;
 }
 
-transisAware.config = ({ defaultGlobalTransisObject: newGlobalTransisObject }) => {
-  defaultGlobalTransisObject = newGlobalTransisObject
-}
-
 
 export default transisAware

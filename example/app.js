@@ -2,7 +2,10 @@ import './app.css'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import Transis from 'transis'
-import transisAware from './lib/transisAware'
+import transisAware from '../dist/transis-react' // TODO: seems to be the only way to use the same Transis instance.
+
+// import transisAware from 'transis-react' // seems to not work
+window.Transis = Transis // for debugging purpose
 
 const fakeString = n => Array.from(Array(n || 10).keys()).map(n =>  String.fromCharCode(Math.floor(Math.random()*26) + 97)).join('')
 
@@ -28,10 +31,10 @@ const Author = Transis.Model.extend('Author', function() {
 
 globalObj.time = new Date
 // data setup
-// setInterval(() =>
-//   globalObj.time = new Date, // to string with .toLocaleTimeString()
-//   1000
-// )
+setInterval(() =>
+  globalObj.time = new Date, // to string with .toLocaleTimeString()
+  1000
+)
 
 globalObj.book = new Book({
   name: 'A catcher in the rye',
@@ -43,10 +46,6 @@ globalObj.book = new Book({
 
 // end of data setup
 
-
-// Components setup
-
-transisAware.config({ defaultGlobalTransisObject: window.globalObj })
 
 const AuthorAge = transisAware(
   {
@@ -63,7 +62,7 @@ const AuthorAge = transisAware(
 
 const App = transisAware(
   {
-    // global: globalObj, // make this configurable by settings
+    global: globalObj,
     state: {
       time: [],
       book: ['name', 'author.name']
