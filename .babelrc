@@ -1,0 +1,4 @@
+// this is for jest
+{
+  "presets": ["env", "react", "stage-2"]
+}
