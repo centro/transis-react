@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Transis from 'transis'
+import MyTransis from 'transis'
+
+// TODO: work around for this multiple instance issue
+const Transis = window.Transis || MyTransis
+
+// for debugging purpose
+window.VigilantTransis = Transis
 
 // globalTransisObjectConfig
 let defaultGlobalTransisObject = null;
@@ -212,5 +218,5 @@ const transisAware = (
   return higherOrderComponent;
 }
 
-transisAware.Transis // for debugging
+transisAware.Transis = Transis // for debugging
 export default transisAware

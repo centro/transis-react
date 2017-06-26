@@ -111,6 +111,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// TODO: work around for this multiple instance issue
+var Transis = window.Transis || _transis2.default;
+
+// for debugging purpose
+window.VigilantTransis = Transis;
+
 // globalTransisObjectConfig
 var defaultGlobalTransisObject = null;
 
@@ -131,7 +137,7 @@ function componentCmp(a, b) {
 
 function preFlush() {
   updateLog = {};
-  _transis2.default.Object.delay(postFlush);
+  Transis.Object.delay(postFlush);
 }
 
 function postFlush() {
@@ -154,7 +160,7 @@ function postFlush() {
       component.forceUpdate();
     }
   });
-  _transis2.default.Object.delayPreFlush(preFlush);
+  Transis.Object.delayPreFlush(preFlush);
 }
 
 function queueUpdate(component) {
@@ -166,7 +172,7 @@ function logUpdate(component) {
   updateLog[component._transisId] = true;
 }
 
-_transis2.default.Object.delayPreFlush(preFlush);
+Transis.Object.delayPreFlush(preFlush);
 
 // end of copied from transis
 
@@ -227,10 +233,10 @@ var componentWillMount = function componentWillMount(_ref) {
       for (var k in state) {
         if (_this.state[k] !== globalTransisObject[k]) {
           // local state is out of date, off syncing it
-          unbindState(_this.state[k], state[k], _this._transisQueueUpdate);
+          unbindState(_this.state[k], state[k], _this._transisQueueUpdate
 
           // globalTransisObject state needs to be attached, on syncing it
-          bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
+          );bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
 
           stateToUpdate[k] = globalTransisObject[k];
         }
@@ -311,8 +317,9 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
         _this2.state = Object.keys(state).reduce(function (result, key) {
           result[key] = globalTransisObject[key];
           return result;
-        }, {});
+        }, {}
         // console.warn('intialized state to', this.state)
+        );
       }
       if (props) {
         _this2.componentWillReceiveProps = function (nextProps) {
@@ -350,6 +357,7 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
   return higherOrderComponent;
 };
 
+transisAware.Transis = Transis; // for debugging
 exports.default = transisAware;
 
 /***/ }),

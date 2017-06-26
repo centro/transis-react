@@ -1,4 +1,6 @@
-import transisAware from './transisAware'
+// import transisAware from './transisAware'
+import transisAware from '../../dist/transis-react'
+
 import { shallow, mount, render } from 'enzyme'
 import React, { Component } from 'react'
 import Transis from 'transis'
@@ -8,6 +10,7 @@ test('HelloWorld renders `Hello World`', () => {
   expect(shallow(<HelloWorld/>).find('h1').text()).toEqual('Hello World')
 })
 
+debugger
 describe('PropMixin', function() {
   const Model = Transis.Object.extend(function() {
     this.prop('foo')
@@ -46,7 +49,7 @@ describe('PropMixin', function() {
     model.baz = 'baz value'
   })
 
-  test('expect same instance of transis', () => {
+  test.only('expect same instance of transis', () => {
     expect(Transis).toEqual(transisAware.Transis)
   })
 
