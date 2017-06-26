@@ -10,7 +10,6 @@ test('HelloWorld renders `Hello World`', () => {
   expect(shallow(<HelloWorld/>).find('h1').text()).toEqual('Hello World')
 })
 
-debugger
 describe('PropMixin', function() {
   const Model = Transis.Object.extend(function() {
     this.prop('foo')
@@ -49,7 +48,7 @@ describe('PropMixin', function() {
     model.baz = 'baz value'
   })
 
-  test.only('expect same instance of transis', () => {
+  test('expect same instance of transis', () => {
     expect(Transis).toEqual(transisAware.Transis)
   })
 
@@ -57,12 +56,15 @@ describe('PropMixin', function() {
     expect(component.find('.foo').text()).toBe('init foo')
   })
 
-  test('props mixins', () => {
+  test.only('props mixins', () => {
+    var spy = jest.spyOn(component, 'forceUpdate')
+    component.forceUpdate()
     model.foo = 'foo value'
     Transis.Object.flush()
+    expect(spy).toHaveBeenCalled()
     // console.warn('DEBUGGING')
     // console.warn(model)
     // console.warn(component)
-    expect(component.find('.foo').text()).toBe('foo value')
+    // expect(component.find('.foo').text()).toBe('foo value')
   })
 })
