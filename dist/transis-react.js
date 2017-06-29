@@ -7,7 +7,7 @@
 		exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));
 	else
 		root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(global) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -91,15 +91,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(3);
+var _reactDom = __webpack_require__(4);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _transis = __webpack_require__(4);
+var _transis = __webpack_require__(5);
 
 var _transis2 = _interopRequireDefault(_transis);
 
@@ -111,11 +111,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var globalVariable = void 0;
+try {
+  globalVariable = window;
+} catch (e) {
+  globalVariable = global;
+}
+
 // TODO: work around for this multiple instance issue
-var Transis = window.Transis || _transis2.default;
+var Transis = globalVariable.Transis || _transis2.default;
 
 // for debugging purpose
-window.VigilantTransis = Transis;
+globalVariable.VigilantTransis = Transis;
 
 // globalTransisObjectConfig
 var defaultGlobalTransisObject = null;
@@ -154,12 +161,19 @@ function postFlush() {
   // components that also need an update. This avoids the case where we force update a component
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
-  components.sort(componentCmp).forEach(function (component) {
-    if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
-      // has mounted
-      component.forceUpdate();
-    }
-  });
+
+  console.warn(1, components[0].constructor);
+  try {
+    components.sort(componentCmp).forEach(function (component) {
+      if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
+        // has mounted
+        component.forceUpdate();
+      }
+    });
+  } catch (e) {
+    console.warn(e);
+    console.warn(2);
+  }
   Transis.Object.delayPreFlush(preFlush);
 }
 
@@ -359,6 +373,7 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
 
 transisAware.Transis = Transis; // for debugging
 exports.default = transisAware;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 1 */
@@ -383,7 +398,28 @@ exports.default = _transisAware2.default;
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 3 */
@@ -396,6 +432,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ })
 /******/ ]);

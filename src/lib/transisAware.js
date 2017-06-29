@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import MyTransis from 'transis'
 
+
+let globalVariable;
+try {
+  globalVariable = window;
+} catch (e) {
+  globalVariable = global;
+}
+
 // TODO: work around for this multiple instance issue
-const Transis = window.Transis || MyTransis
+const Transis = globalVariable.Transis || MyTransis
 
 // for debugging purpose
-window.VigilantTransis = Transis
+globalVariable.VigilantTransis = Transis
 
 // globalTransisObjectConfig
 let defaultGlobalTransisObject = null;
@@ -41,11 +49,19 @@ function postFlush() {
   // components that also need an update. This avoids the case where we force update a component
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
+
+  console.warn(1, components[0].constructor)
+  try {
   components.sort(componentCmp).forEach(function(component) {
     if (!updateLog[component._transisId] && ReactDOM.findDOMNode(component)) { // has mounted
       component.forceUpdate();
     }
   });
+  }
+  catch (e) {
+    console.warn(e)
+    console.warn(2)
+  }
   Transis.Object.delayPreFlush(preFlush);
 }
 

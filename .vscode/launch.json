@@ -27,6 +27,23 @@
       "address": "localhost",
       "port": 5858,
       "outFiles": [ ]
+    },
+
+    // seemed to have worked, NOTE: winner!
+    {
+      "name": "Debug Jest",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "./node_modules/.bin/jest",
+        "-i",
+        "--env",
+        "jest-environment-node-debug"
+      ],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
     }
   ]
 }
