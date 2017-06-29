@@ -1,10 +1,28 @@
-// import transisAware from './transisAware'
-import transisAware from '../../dist/transis-react'
+import transisAware from './transisAware' // sometimes two instance of transis occurs
 
 import { shallow, mount, render } from 'enzyme'
 import React, { Component } from 'react'
 import Transis from 'transis'
+import { JSDOM } from 'jsdom'
 
+// setup for enzyme to mount
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom;
+
+function copyProps(src, target) {
+  const props = Object.getOwnPropertyNames(src)
+    .filter(prop => typeof target[prop] === 'undefined')
+    .map(prop => Object.getOwnPropertyDescriptor(src, prop));
+  Object.defineProperties(target, props);
+}
+
+global.window = window;
+global.document = window.document;
+global.navigator = { userAgent: 'node.js' };
+copyProps(window, global);
+// end of setup for enzyme to mount
+
+// TODO: delet this
 test('HelloWorld renders `Hello World`', () => {
   const HelloWorld = () => <h1>Hello World</h1>
   expect(shallow(<HelloWorld/>).find('h1').text()).toEqual('Hello World')
@@ -17,11 +35,7 @@ describe('PropMixin', function() {
     this.prop('baz')
   })
 
-  const PropMixinComponent = transisAware({
-    props: {
-      model: ['foo', 'bar']
-    }
-  }, class PropMixinTest extends Component {
+  class PropMixinCore extends Component {
     componentWillMount () {
       // console.warn('Props Mixin Test have been mounted', this.props)
     }
@@ -34,37 +48,42 @@ describe('PropMixin', function() {
         <div className="baz">{baz}</div>
       </div>
     }
-  })
+  }
 
-  const model = new Model({
-    foo: 'init foo'
-  })
-  const component = render(<PropMixinComponent model={model}/>)
+  // mixins
+  const PropMixinComponent = transisAware({
+    props: {
+      model: ['foo', 'bar']
+    }
+  }, PropMixinCore)
+
+  const model = new Model({ foo: 'foo 1' })
+  let component;
 
   beforeEach(() => {
-    // console.warn('ran')
-    model.foo = 'foo value'
-    model.bar = 'bar value'
-    model.baz = 'baz value'
+    component = mount(<PropMixinComponent model={model}/>)
   })
+  afterEach(() => component.unmount())
 
-  test('expect same instance of transis', () => {
-    expect(Transis).toEqual(transisAware.Transis)
-  })
+  test(
+    'expect same instance of transis',
+    () => expect(Transis).toEqual(transisAware.Transis)
+  )
 
   test('initially', () => {
-    expect(component.find('.foo').text()).toBe('init foo')
+    expect(component.find('.foo').text()).toBe('foo 1')
   })
 
-  test.only('props mixins', () => {
-    // var spy = jest.spyOn(component.constructor.prototype, 'forceUpdate')
-    // component.forceUpdate()
-    model.foo = 'foo value'
-    Transis.Object.flush()
-    // expect(spy).toHaveBeenCalled()
-    // console.warn('DEBUGGING')
-    // console.warn(model)
-    // console.warn(component)
-    // expect(component.find('.foo').text()).toBe('foo value')
+  test('W/O props mixin no update', () => {
+    const noMixin = mount(<PropMixinCore model={model}/>)
+    model.foo = 'foo 2'
+    Transis.Object.flush() // needed for running this single test
+    expect(noMixin.find('.foo').text()).toBe('foo 1')
+  })
+
+  test('props mixins', () => {
+    model.foo = 'foo 2'
+    Transis.Object.flush() // needed for running this single test
+    expect(component.find('.foo').text()).toBe('foo 2')
   })
 })

@@ -111,18 +111,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var globalVariable = void 0;
+var globalVar = void 0;
 try {
-  globalVariable = window;
+  globalVar = window;
 } catch (e) {
-  globalVariable = global;
+  globalVar = global;
 }
 
 // TODO: work around for this multiple instance issue
-var Transis = globalVariable.Transis || _transis2.default;
+var Transis = globalVar.Transis || _transis2.default;
 
 // for debugging purpose
-globalVariable.VigilantTransis = Transis;
+globalVar.VigilantTransis = Transis;
 
 // globalTransisObjectConfig
 var defaultGlobalTransisObject = null;
@@ -161,8 +161,6 @@ function postFlush() {
   // components that also need an update. This avoids the case where we force update a component
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
-
-  console.warn(1, components[0].constructor);
   try {
     components.sort(componentCmp).forEach(function (component) {
       if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {

@@ -30,6 +30,7 @@
     "enzyme": "^2.9.1",
     "jest": "^20.0.4",
     "jest-environment-node-debug": "^2.0.0",
+    "jsdom": "^11.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
@@ -44,5 +45,4 @@
   "jest": {
     "verbose": true
   }
-
 }
