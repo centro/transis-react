@@ -47,9 +47,6 @@ const Model = Transis.Object.extend(function() {
 const model = new Model()
 
 class CoreComponent extends Component {
-  componentWillMount () {
-    // console.warn('Props Mixin Test have been mounted', this.props)
-  }
   render() {
     if (!this.props.model) return false
     const { foo, bar, baz } = this.props.model
@@ -107,7 +104,18 @@ describe('StateMixin', () => {
     state: {
       model: ['baz']
     }
-  }, CoreComponent)
+  }, class CoreComponent2 extends Component {
+  render() {
+    if (!this.props.model) return false
+    const { foo, bar, baz } = this.props.model
+    return <div>
+      <div className="foo">{foo}</div>
+      <div className="bar">{bar}</div>
+      <div className="baz">{baz}</div>
+    </div>
+  }
+}
+)
   let component;
 
   beforeEach(() => {

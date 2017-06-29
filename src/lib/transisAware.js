@@ -16,9 +16,6 @@ const Transis = globalVar.Transis || MyTransis
 // for debugging purpose
 globalVar.VigilantTransis = Transis
 
-// globalTransisObjectConfig
-let defaultGlobalTransisObject = null;
-
 // copied from transis
 let nextId = 1;
 let updateLog = {};
@@ -38,7 +35,7 @@ function preFlush() {
 function postFlush() {
   let components = [];
 
-  console.warn('post flush triggered')
+  // console.warn('post flush triggered')
   for (let id in updateQueue) {
     components.push(updateQueue[id]);
     delete updateQueue[id];
@@ -57,14 +54,14 @@ function postFlush() {
     });
   }
   catch (e) {
-    console.warn(e)
-    console.warn(2)
+    // console.warn(e)
+    // console.warn(2)
   }
   Transis.Object.delayPreFlush(preFlush);
 }
 
 function queueUpdate(component) {
-  console.warn('queueUpdate')
+  // console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
@@ -119,7 +116,7 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
   if (state) {
     // core register sync method
     this._transisSyncState = () => {
-      console.warn('transis sync update triggered')
+      // console.warn('transis sync update triggered')
 
       var stateToUpdate = {};
       for (let k in state) {
@@ -159,7 +156,7 @@ const transisAware = (
   { global, state, props },
   ComposedComponent
 ) => {
-  const globalTransisObject = global || defaultGlobalTransisObject
+  const globalTransisObject = global
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state)
   }
