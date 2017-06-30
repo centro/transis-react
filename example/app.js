@@ -20,6 +20,7 @@ window.globalObj = new (Transis.Object.extend(function() {
 
 const Book = Transis.Model.extend('Book', function() {
   this.attr('name', 'string')
+  this.prop('pages')
   this.hasOne('author', 'Author', { inverse: 'books' })
 })
 
@@ -39,6 +40,7 @@ setInterval(() =>
 
 globalObj.book = new Book({
   name: 'A catcher in the rye',
+  pages: 354,
   author: new Author({
     name: 'Salinger',
     age: 37
@@ -66,7 +68,7 @@ const App = transisAware(
     global: globalObj,
     state: {
       time: [],
-      book: ['name', 'author.name']
+      book: ['name', 'author.name', 'pages']
     },
   },
   class AppCore extends Component {
@@ -80,16 +82,22 @@ const App = transisAware(
         <h1>React Transis</h1>
         <p> Time: {time && time.toLocaleTimeString()} </p>
         <p> Book: {book.name} </p>
+        <p> Book: {book.pages} </p>
         <p> Author: {author.name}, <AuthorAge author={author} /> </p>
 
         <button onClick={() => book.name = fakeString(10)}>
           Change book title
-          <div>state - primitive</div>
+          <div>state - attr</div>
+        </button>
+
+        <button onClick={() => book.pages = Math.floor(Math.random()*500)}>
+          Change book pages
+          <div>state - prop</div>
         </button>
 
         <button onClick={() => book.author.name = fakeString(10)}>
           Change author name
-          <div>state - attr</div>
+          <div>state - association - primitive</div>
         </button>
         <button onClick={() =>
           book.author.age = Math.floor(Math.random() * 100)
