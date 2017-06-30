@@ -19,7 +19,7 @@ globalVar.VigilantTransis = Transis
 // copied from transis
 let nextId = 1;
 let updateLog = {};
-let updateQueue = {};
+export let updateQueue = {};
 
 function componentCmp(a, b) {
   if (a._transisId < b._transisId) { return -1; }
@@ -61,7 +61,7 @@ function postFlush() {
 }
 
 function queueUpdate(component) {
-  // console.warn('queueUpdate')
+  console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
@@ -110,8 +110,10 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
   if (state || props) {
       // setting transis id
     this._transisId = this._transisId || nextId++;
+
     // setting main update function
-    this._transisQueueUpdate = this._transisQueueUpdate || (() => { queueUpdate(this); });
+    const wrapQueueUpdate = () => { queueUpdate(this) } // name this function
+    this._transisQueueUpdate = this._transisQueueUpdate || wrapQueueUpdate;
   }
   if (state) {
     // core register sync method
@@ -160,6 +162,14 @@ const transisAware = (
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state)
   }
+
+  // TODO: convert prop into into an object of empty arrays
+  // e.g.
+  //    StateMixin({}, 'a', 'b', 'c')
+  //  ->
+  //    props {}= { a: [], b: [], c: [] }
+  // MISSING
+
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     constructor(propArgs) {
       super(propArgs)

@@ -33,10 +33,10 @@ const Author = Transis.Model.extend('Author', function() {
 
 globalObj.time = new Date
 // data setup
-setInterval(() =>
-  globalObj.time = new Date, // to string with .toLocaleTimeString()
-  1000
-)
+// setInterval(() =>
+//   globalObj.time = new Date, // to string with .toLocaleTimeString()
+//   1000
+// )
 
 globalObj.book = new Book({
   name: 'A catcher in the rye',
