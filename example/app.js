@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import Transis from 'transis'
 
-import transisAware from '../dist/transis-react' // TODO: seems to be the only way to use the same Transis instance.
-// import transisAware from 'transis-react' // // TODO: not working, get it to work
+import transisAware from '../src/index' // // TODO: not working, get it to work
 
 const fakeString = n => Array.from(Array(n || 10).keys()).map(n =>  String.fromCharCode(Math.floor(Math.random()*26) + 97)).join('')
 
@@ -99,6 +98,12 @@ ReactDOM.render(
       <Legacy />
     </fieldset>
     <br/> <br/> <br/>
+
+    <fieldset>
+      <legend><h2> Provider -- </h2></legend>
+      ...fill in here
+    </fieldset>
+    <br/> <br/>
 
     <fieldset>
       <legend><h3>Controls</h3></legend>
