@@ -43,7 +43,7 @@
     "transis": "^0.11.0"
   },
   "jest": {
-    "verbose": true,
+    "verbose": false,
     "collectCoverage": false,
     "modulePaths": [
       "<rootDir>/src/"
@@ -53,6 +53,7 @@
       "!**/node_modules/**",
       "!src/helper/testSetup.js"
     ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(legacy.)?(test|spec))\\.jsx?$",
     "coverageReporters": ["json", "lcov", "text"],
     "setupFiles": ["./src/helper/testSetup"],
     "globals": {

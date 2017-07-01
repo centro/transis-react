@@ -111,6 +111,8 @@ const App = transisAware(
 )
 
 ReactDOM.render(
-  <App />,
+  <div>
+    <App />
+  </div>,
   document.getElementById('app')
 )

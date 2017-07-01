@@ -86,11 +86,11 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateQueue = undefined;
+exports.StateMixinLegacy = exports.PropsMixinLegacy = exports.updateQueue = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(2);
 
@@ -121,7 +121,7 @@ var nextId = 1;
 var updateLog = {};
 var updateQueue = exports.updateQueue = {};
 
-function componentCmp(a, b) {
+function componentComparison(a, b) {
   if (a._transisId < b._transisId) {
     return -1;
   } else if (a._transisId > b._transisId) {
@@ -150,7 +150,7 @@ function postFlush() {
   // components that also need an update. This avoids the case where we force update a component
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
-  components.sort(componentCmp).forEach(function (component) {
+  components.sort(componentComparison).forEach(function (component) {
     if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
       // has mounted
       component.forceUpdate();
@@ -263,17 +263,10 @@ var componentWillMount = function componentWillMount(_ref) {
 // * end Refactor Effort *
 
 // main constructor
-var transisAware = function transisAware() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  var _args$ = args[0],
-      globalTransisObject = _args$.global,
-      state = _args$.state,
-      props = _args$.props,
-      ComposedComponent = args[1];
-
+var transisAware = function transisAware(_ref2, ComposedComponent) {
+  var globalTransisObject = _ref2.global,
+      state = _ref2.state,
+      props = _ref2.props;
 
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state);
@@ -284,7 +277,6 @@ var transisAware = function transisAware() {
   //    StateMixin({}, 'a', 'b', 'c')
   //  ->
   //    props {}= { a: [], b: [], c: [] }
-  debugger;
   if ({}.toString.call(state).includes('Array')) {
     // is an array
     state = state.reduce(function (obj, stateName) {
@@ -296,12 +288,10 @@ var transisAware = function transisAware() {
   var higherOrderComponent = function (_React$Component) {
     _inherits(HigherOrderComponent, _React$Component);
 
+    // allow both component will mount to get triggered
     function HigherOrderComponent(propArgs) {
       _classCallCheck(this, HigherOrderComponent);
 
-      // consider move the following into instance methods
-
-      // allow both component will mount to get triggered
       var _this2 = _possibleConstructorReturn(this, (HigherOrderComponent.__proto__ || Object.getPrototypeOf(HigherOrderComponent)).call(this, propArgs));
 
       _this2.componentWillMount = function () {
@@ -311,11 +301,11 @@ var transisAware = function transisAware() {
       };
 
       _this2.componentDidMount = function () {
-        logUpdate(_this2);
+        return logUpdate(_this2);
       };
 
       _this2.componentDidUpdate = function () {
-        logUpdate(_this2);
+        return logUpdate(_this2);
       };
 
       _this2.componentWillUnmount = function () {
@@ -332,14 +322,16 @@ var transisAware = function transisAware() {
         }
       };
 
+      _this2.render = function () {
+        return _react2.default.createElement(ComposedComponent, _extends({}, _this2.props, _this2.state));
+      };
+
       if (state) {
         // initialize State
         _this2.state = Object.keys(state).reduce(function (result, key) {
           result[key] = globalTransisObject[key];
           return result;
-        }, {}
-        // console.warn('intialized state to', this.state)
-        );
+        }, {});
       }
       if (props) {
         _this2.componentWillReceiveProps = function (nextProps) {
@@ -365,20 +357,206 @@ var transisAware = function transisAware() {
       return _this2;
     }
 
-    _createClass(HigherOrderComponent, [{
-      key: 'render',
-      value: function render() {
-        return _react2.default.createElement(ComposedComponent, _extends({}, this.props, this.state));
-      }
-    }]);
-
     return HigherOrderComponent;
   }(_react2.default.Component);
   return higherOrderComponent;
 };
 
-transisAware.Transis = _transis2.default; // for debugging
+transisAware.Transis = _transis2.default; // for verifying Transis instances
+
 exports.default = transisAware;
+
+// Legacy support
+
+// Legacy Prop Mixin
+
+var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(props) {
+  return {
+    componentWillMount: function componentWillMount() {
+      var _this3 = this;
+
+      this._transisId = this._transisId || nextId++;
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        queueUpdate(_this3);
+      };
+
+      var _loop2 = function _loop2(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].on(prop, this._transisQueueUpdate);
+          }
+        }, _this3);
+      };
+
+      for (var k in props) {
+        _loop2(k);
+      }
+    },
+
+    componentDidMount: function componentDidMount() {
+      logUpdate(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      logUpdate(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this4 = this;
+
+      var _loop3 = function _loop3(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].off(prop, this._transisQueueUpdate);
+          }
+        }, _this4);
+      };
+
+      for (var k in props) {
+        _loop3(k);
+      }
+    },
+
+    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+      var _this5 = this;
+
+      var _loop4 = function _loop4(k) {
+        props[k].forEach(function (prop) {
+          if (nextProps[k] !== this.props[k]) {
+            if (this.props[k]) {
+              this.props[k].off(prop, this._transisQueueUpdate);
+            }
+            if (nextProps[k]) {
+              nextProps[k].on(prop, this._transisQueueUpdate);
+            }
+          }
+        }, _this5);
+      };
+
+      for (var k in props) {
+        _loop4(k);
+      }
+    }
+  };
+};
+
+// Legacy State Mixin
+var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  var object = args[0],
+      props = args[1];
+
+  if ((typeof props === 'undefined' ? 'undefined' : _typeof(props)) !== 'object') {
+    // convert prop into into an object of empty arrays
+    // e.g.
+    //    StateMixin({}, 'a', 'b', 'c')
+    //  ->
+    //    props {}= { a: [], b: [], c: [] }
+    props = [].slice.call(args, 1).reduce(function (acc, prop) {
+      acc[prop] = [];
+      return acc;
+    }, {});
+  }
+
+  return {
+    getInitialState: function getInitialState() {
+      var state = {};
+      for (var k in props) {
+        state[k] = object[k];
+      }
+      return state;
+    },
+
+    componentWillMount: function componentWillMount() {
+      var _this6 = this;
+
+      this._transisId = this._transisId || nextId++;
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        queueUpdate(_this6);
+      };
+
+      this._transisSyncState = function () {
+        var state = {};
+
+        // for appstate variables, loop
+
+        var _loop5 = function _loop5(k) {
+          if (_this6.state[k] !== object[k]) {
+            // if the var is changed
+            // if local state var exist and it can `off`?!, turn off the update watcher
+            if (_this6.state[k] && typeof _this6.state[k].off === 'function') {
+              props[k].forEach(function (path) {
+                _this6.state[k].off(path, _this6._transisQueueUpdate);
+              });
+            }
+
+            // if global state var exist and it can `on`?!, turn on update watcher
+            if (object[k] && typeof object[k].on === 'function') {
+              props[k].forEach(function (path) {
+                object[k].on(path, _this6._transisQueueUpdate);
+              });
+            }
+
+            state[k] = object[k]; // prepare to attach global var to local var
+          }
+        };
+
+        for (var k in props) {
+          _loop5(k);
+        }
+
+        if (Object.keys(state).length) {
+          _this6.setState(state);
+        } // update if there is a need
+      };
+
+      var _loop6 = function _loop6(k) {
+        // loop through states, on sync all states initially
+        if (object[k] && typeof object[k].on === 'function') {
+          // global object
+          props[k].forEach(function (path) {
+            object[k].on(path, _this6._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop6(k);
+      }
+
+      object.on('*', this._transisSyncState);
+    },
+
+    componentDidMount: function componentDidMount() {
+      logUpdate(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      logUpdate(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this7 = this;
+
+      var _loop7 = function _loop7(k) {
+        if (_this7.state[k] && typeof _this7.state[k].off === 'function') {
+          props[k].forEach(function (path) {
+            _this7.state[k].off(path, _this7._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop7(k);
+      }
+
+      object.off('*', this._transisSyncState);
+    }
+  };
+};
 
 /***/ }),
 /* 1 */
@@ -390,6 +568,7 @@ exports.default = transisAware;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.PropsMixin = exports.StateMixin = undefined;
 
 var _transisAware = __webpack_require__(0);
 
@@ -398,6 +577,8 @@ var _transisAware2 = _interopRequireDefault(_transisAware);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _transisAware2.default;
+exports.StateMixin = _transisAware.StateMixinLegacy;
+exports.PropsMixin = _transisAware.PropsMixinLegacy;
 
 /***/ }),
 /* 2 */
