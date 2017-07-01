@@ -64,9 +64,10 @@ const App = transisAware(
   },
   class AppCore extends Component {
     render() {
-      const { book: { name, pages, author } } = this.props
+      const { book: { name, pages, author }, constant } = this.props
 
       return <div>
+        <p> CONSTANT PROP: { constant } </p>
         <p> Book: {name} </p>
         <p> Book: {pages} </p>
         <p> Author: {author.name}, <_AuthorAge author={author} /> </p>
@@ -90,19 +91,19 @@ ReactDOM.render(
 
     <fieldset>
       <legend><h2> Nouveau -- <Clock/> </h2></legend>
-      <App />
+      <App constant="Its a constant!" />
     </fieldset>
     <br/> <br/>
 
     <fieldset>
       <legend> <h2>Legacy -- <ClockLegacy/> </h2></legend>
-      <Legacy />
+      <Legacy constant="Its a constant!"/>
     </fieldset>
     <br/> <br/> <br/>
 
     <fieldset>
       <legend><h2> Provider -- <ClockProvider/></h2></legend>
-      <Provider />
+      <Provider constant="Its a constant!"/>
     </fieldset>
     <br/> <br/>
 

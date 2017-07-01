@@ -53,7 +53,7 @@
       "!**/node_modules/**",
       "!src/helper/testSetup.js"
     ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(legacy.)?(test|spec))\\.jsx?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(provider.)?(test|spec))\\.jsx?$",
     "coverageReporters": ["json", "lcov", "text"],
     "setupFiles": ["./src/helper/testSetup"],
     "globals": {

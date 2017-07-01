@@ -8,22 +8,20 @@ const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 
 
 // NOTE: Should not be reliant on these global vars, stubbed out and fake
-//
-// const copyProps = (src, target) => {
-//   Object.defineProperties(
-//     target,
-//     Object.getOwnPropertyNames(src)
-//       .filter(prop => typeof target[prop] === 'undefined')
-//       .map(prop => Object.getOwnPropertyDescriptor(src, prop)
-//     )
-//   );
-// }
+const copyProps = (src, target) => {
+  Object.defineProperties(
+    target,
+    Object.getOwnPropertyNames(src)
+      .filter(prop => typeof target[prop] === 'undefined')
+      .map(prop => Object.getOwnPropertyDescriptor(src, prop)
+    )
+  );
+}
 
-// copyProps(jsdom.window, global); // making the jsdom.window more global like
-// global.window = jsdom.window;
-// global.document = jsdom.window.document;
-// global.navigator = { userAgent: 'node.js' };
-//
+copyProps(jsdom.window, global); // making the jsdom.window more global like
+global.window = jsdom.window;
+global.document = jsdom.window.document;
+global.navigator = { userAgent: 'node.js' };
 // END OF BAD GLOBALS
 
 

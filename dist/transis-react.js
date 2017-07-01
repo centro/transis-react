@@ -153,8 +153,14 @@ function postFlush() {
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
   components.sort(componentComparison).forEach(function (component) {
-    if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
-      // has mounted
+    try {
+      // TODO: figureout why this doesn't work with provider
+      var hasMounted = _reactDom2.default.findDOMNode(component);
+    } catch (e) {
+      console.warn('TransisAware attempted to update an unmounted component: ' + component);
+    }
+
+    if (!updateLog[component._transisId] && hasMounted) {
       component.forceUpdate();
     }
   });
@@ -288,26 +294,35 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
     _inherits(HigherOrderComponent, _React$Component);
 
     // allow both component will mount to get triggered
+    // debugMode = false
     function HigherOrderComponent(propArgs) {
       _classCallCheck(this, HigherOrderComponent);
+
+      // if (propArgs.debug) { this.debugMode = true }
 
       var _this2 = _possibleConstructorReturn(this, (HigherOrderComponent.__proto__ || Object.getPrototypeOf(HigherOrderComponent)).call(this, propArgs));
 
       _this2.componentWillMount = function () {
+        // this.debugMode && console.warn('component will mount', this._transisId)
         return componentWillMount.call(_this2, {
           globalTransisObject: globalTransisObject, state: state, props: props
         });
       };
 
       _this2.componentDidMount = function () {
-        return logUpdate(_this2);
+        // this.debugMode && console.warn('component did mounted', this._transisId)
+        _this2.haveMounted = true;
+        logUpdate(_this2);
       };
 
       _this2.componentDidUpdate = function () {
-        return logUpdate(_this2);
+        // this.debugMode && console.warn('component did update', this._transisId)
+        logUpdate(_this2);
       };
 
       _this2.componentWillUnmount = function () {
+        // this.debugMode && console.warn('component will unmount', this._transisId)
+        _this2.haveUnmounted = true;
         if (state) {
           for (var k in state) {
             unbindState(_this2.state[k], state[k], _this2._transisQueueUpdate);
@@ -441,27 +456,24 @@ var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(prop
 
 // Provider
 var TransisProvider = function TransisProvider(props) {
-  // debugger;
   var global = props.global,
       mixState = props.mixState,
       mixProps = props.mixProps,
       children = props.children,
       otherProps = _objectWithoutProperties(props, ['global', 'mixState', 'mixProps', 'children']);
 
-  var HigherOrder = transisAware({
+  var HigherOrderProvider = transisAware({
     global: global,
     state: mixState,
     props: mixProps
   }, function (coreProps) {
-    return (
-      // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
-      _react2.default.cloneElement(children, Object.assign({}, coreProps, otherProps))
-    );
+    // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
+
+    return _react2.default.createElement(children.type, _extends({}, children.props, coreProps));
+    // return React.cloneElement(children, coreProps) // equivalent, preserves refs
   });
 
-  return _react2.default.createElement(HigherOrder, otherProps
-  // return <div> <HigherOrder {...otherProps}/> </div>
-  );
+  return _react2.default.createElement(HigherOrderProvider, otherProps);
 };
 
 // Legacy State Mixin
@@ -477,9 +489,7 @@ var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
   if ((typeof props === 'undefined' ? 'undefined' : _typeof(props)) !== 'object') {
     // convert prop into into an object of empty arrays
     // e.g.
-    //    StateMixin({}, 'a', 'b', 'c')
-    //  ->
-    //    props {}= { a: [], b: [], c: [] }
+    // StateMixin({}, 'a', 'b', 'c') -> props become { a: [], b: [], c: [] }
     props = [].slice.call(args, 1).reduce(function (acc, prop) {
       acc[prop] = [];
       return acc;

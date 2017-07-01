@@ -1,10 +1,4 @@
-import transisAware from 'transisAware' // sometimes two instance of transis occurs
-
-// TODOS:
-// lifecycle
-// transisId ( need to share with Legacy )
-// state and prop mixin conflict
-// rerender times, use jasmine if necessary
+import { TransisProvider } from 'transisAware' // sometimes two instance of transis occurs
 
 const Model = Transis.Object.extend(function() {
   this.prop('foo')
@@ -31,13 +25,14 @@ describe('PropMixin', function() {
   let component;
   const model = new Model()
 
-  const PropMixinComponent = transisAware({
-    props: { model: ['foo', 'bar'] }
-  }, CoreComponent)
+  const PropMixinComponent = () =>
+    <TransisProvider model={model} mixProps={{ model: ['foo', 'bar'] }}>
+      <CoreComponent />
+    </TransisProvider>
 
   beforeEach(() => {
     model.reset()
-    component = mount(<PropMixinComponent model={model}/>)
+    component = mount(<PropMixinComponent />)
   })
   afterEach(() => component.unmount())
 
@@ -66,12 +61,15 @@ describe('StateMixin', () => {
     this.prop('b')
   })
   const appState = new AppState({ model: new Model })
-  // with state mixin
-  const StateMixinComponent = transisAware({
-    global: appState,
-    state: { model: ['baz'] }
-  }, CoreComponent)
+
   let component;
+  const StateMixinComponent = () =>
+    <TransisProvider
+      global={appState}
+      mixState={{ model: ['baz'] }}
+    >
+      <CoreComponent />
+    </TransisProvider>
 
   beforeEach(() => {
     appState.model.reset()
@@ -102,13 +100,14 @@ describe('StateMixin', () => {
   })
 
   it('understand argument (globalVar, "a", "b") as (globalVar, { a: [], b: []}) ', () => {
-    const SmartMixinComponent = transisAware(
-      {
-        global: new AppState({ a: 'Abc', b: 'Bcd' }),
-        state: ['a', 'b']
-      },
-      ({ a, b }) => <div>{a}, {b}</div>
-    )
+    const DumbCore = ({ a, b }) => <div>{a}, {b}</div>
+    const SmartMixinComponent = () =>
+      <TransisProvider
+        global={new AppState({ a: 'Abc', b: 'Bcd' })}
+        mixState={['a', 'b']}
+      >
+        <DumbCore />
+      </TransisProvider>
     let component = mount(<SmartMixinComponent />)
     expect(component.text()).toBe('Abc, Bcd')
   })

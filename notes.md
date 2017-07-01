@@ -40,6 +40,7 @@ Q: @Corey, what exactly does delayPreFlush do?
 # TODOS:
 -[ ] tests
 -[ ] splitting out into modules
+-[ ] proptypes
 
 -[ ] ProviderComponent, need to test all lifecycle behaviors on this
 

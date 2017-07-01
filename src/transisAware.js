@@ -37,7 +37,13 @@ function postFlush() {
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
   components.sort(componentComparison).forEach(function(component) {
-    if (!updateLog[component._transisId] && ReactDOM.findDOMNode(component)) { // has mounted
+    try { // TODO: figureout why this doesn't work with provider
+      var hasMounted = ReactDOM.findDOMNode(component)
+    } catch(e) {
+      console.warn(`TransisAware attempted to update an unmounted component: ${component}`)
+    }
+
+    if (!updateLog[component._transisId] && hasMounted) {
       component.forceUpdate();
     }
   });
@@ -158,31 +164,11 @@ const transisAware = (
 
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     // allow both component will mount to get triggered
-    componentWillMount = () => {
-      return componentWillMount.call(this, {
-        globalTransisObject, state, props
-      })
-    }
-
-    componentDidMount = () => logUpdate(this)
-    componentDidUpdate = () => logUpdate(this)
-
-    componentWillUnmount = () => {
-      if (state) {
-        for (let k in state) {
-          unbindState(this.state[k], state[k], this._transisQueueUpdate)
-        }
-        globalTransisObject.off('*', this._transisSyncState);
-      }
-      if (props) {
-        for (let k in props) {
-          unbindProps(this.props[k], props[k], this._transisQueueUpdate)
-        }
-      }
-    };
-
+    // debugMode = false
     constructor(propArgs) {
       super(propArgs)
+      // if (propArgs.debug) { this.debugMode = true }
+
       if (state) {
         // initialize State
         this.state = Object.keys(state).reduce((result, key) => {
@@ -208,6 +194,39 @@ const transisAware = (
         }
       }
     }
+
+    componentWillMount = () => {
+      // this.debugMode && console.warn('component will mount', this._transisId)
+      return componentWillMount.call(this, {
+        globalTransisObject, state, props
+      })
+    }
+
+    componentDidMount = () => {
+      // this.debugMode && console.warn('component did mounted', this._transisId)
+      this.haveMounted = true
+      logUpdate(this)
+    }
+    componentDidUpdate = () => {
+      // this.debugMode && console.warn('component did update', this._transisId)
+      logUpdate(this)
+    }
+
+    componentWillUnmount = () => {
+      // this.debugMode && console.warn('component will unmount', this._transisId)
+      this.haveUnmounted = true
+      if (state) {
+        for (let k in state) {
+          unbindState(this.state[k], state[k], this._transisQueueUpdate)
+        }
+        globalTransisObject.off('*', this._transisSyncState);
+      }
+      if (props) {
+        for (let k in props) {
+          unbindProps(this.props[k], props[k], this._transisQueueUpdate)
+        }
+      }
+    };
 
     render = () => <ComposedComponent {...this.props} {...this.state} />
   };
@@ -266,23 +285,20 @@ export const PropsMixinLegacy = function(props) {
 
 // Provider
 export const TransisProvider = (props) => {
-  // debugger;
   const { global, mixState, mixProps, children, ...otherProps } = props
 
-  const HigherOrder = transisAware({
+  const HigherOrderProvider = transisAware({
     global,
     state: mixState,
     props: mixProps
-  }, coreProps =>
-  // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
-    React.cloneElement(children,
-      Object.assign({}, coreProps, otherProps)
-    )
-  )
+  }, coreProps => {
+    // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
 
+    return <children.type {...children.props} {...coreProps} />
+    // return React.cloneElement(children, coreProps) // equivalent, preserves refs
+  })
 
-  return React.createElement(HigherOrder, otherProps)
-  // return <div> <HigherOrder {...otherProps}/> </div>
+  return <HigherOrderProvider {...otherProps}/>
 }
 
 // Legacy State Mixin
@@ -291,9 +307,7 @@ export const StateMixinLegacy = function(...args) {
   if (typeof props !== 'object') {
     // convert prop into into an object of empty arrays
     // e.g.
-    //    StateMixin({}, 'a', 'b', 'c')
-    //  ->
-    //    props {}= { a: [], b: [], c: [] }
+    // StateMixin({}, 'a', 'b', 'c') -> props become { a: [], b: [], c: [] }
     props = [].slice.call(args, 1).reduce(function(acc, prop) {
       acc[prop] = [];
       return acc;

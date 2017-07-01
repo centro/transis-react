@@ -17,19 +17,21 @@ const ClockCore = props => <span>
 
 
 // state mixin
-export default (props) => {
+const MainProvider = (props) => {
   return <TransisProvider
     global={window.globalObj}
     mixState={{
       book: ['name', 'author.name', 'pages']
     }}
   >
-    <DefaultCore />
+    <DefaultCore {...props}/>
   </TransisProvider>
 }
+export default MainProvider
 
-const DefaultCore = ({ book: { name, pages, author } }) => {
+const DefaultCore = ({ book: { name, pages, author }, constant }) => {
   return <div>
+    <p> CONSTANT PROP: { constant } </p>
     <p> Book: {name} </p>
     <p> Book: {pages} </p>
     <p> Author: {author.name}, <_AuthorAge author={author} /></p>
@@ -41,6 +43,7 @@ const DefaultCore = ({ book: { name, pages, author } }) => {
 const _AuthorAge = props => {
   return <TransisProvider
     {...props}
+    debug
     mixProps={{ author: ['age']}}
   >
     <_AuthorAgeCore/>

@@ -18,10 +18,13 @@ const AppLegacy = React.createClass({
       book: ['name', 'author.name', 'pages']
     })
   ],
+
   render() {
     const { book: { name, pages, author } } = this.state
+    const { constant } = this.props
 
     return <div>
+      <p> CONSTANT PROP: { constant } </p>
       <p> Book: {name} </p>
       <p> Book: {pages} </p>
       <p> Author: {author.name}, <AuthorAge author={author} /> </p>
