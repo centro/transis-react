@@ -1,27 +1,17 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import MyTransis from 'transis'
+import Transis from 'transis'
 
-
-let globalVar;
-try {
-  globalVar = window;
-} catch (e) {
-  globalVar = global;
-}
-
-// TODO: work around for this multiple instance issue
-const Transis = globalVar.Transis || MyTransis
-
-// for debugging purpose
-globalVar.VigilantTransis = Transis
+// Note: not exactly sure when this is needed: work around for this multiple instance issue
+// let mundo; try { mundo = window } catch (e) { mundo = global }
+// const Transis = mundo.Transis || MyTransis
 
 // copied from transis
 let nextId = 1;
 let updateLog = {};
 export let updateQueue = {};
 
-function componentCmp(a, b) {
+function componentComparison(a, b) {
   if (a._transisId < b._transisId) { return -1; }
   else if (a._transisId > b._transisId) { return 1; }
   else { return 0; }
@@ -46,22 +36,17 @@ function postFlush() {
   // components that also need an update. This avoids the case where we force update a component
   // and then force update one of its ancestors, which may unnecessarily render the component
   // again.
-  try {
-    components.sort(componentCmp).forEach(function(component) {
-      if (!updateLog[component._transisId] && ReactDOM.findDOMNode(component)) { // has mounted
-        component.forceUpdate();
-      }
-    });
-  }
-  catch (e) {
-    // console.warn(e)
-    // console.warn(2)
-  }
+  components.sort(componentComparison).forEach(function(component) {
+    if (!updateLog[component._transisId] && ReactDOM.findDOMNode(component)) { // has mounted
+      component.forceUpdate();
+    }
+  });
+
   Transis.Object.delayPreFlush(preFlush);
 }
 
 function queueUpdate(component) {
-  console.warn('queueUpdate')
+  // console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
@@ -155,10 +140,9 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
 
 // main constructor
 const transisAware = (
-  { global, state, props },
-  ComposedComponent
+  { global: globalTransisObject, state, props },
+  ComposedComponent,
 ) => {
-  const globalTransisObject = global
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state)
   }
@@ -168,50 +152,46 @@ const transisAware = (
   //    StateMixin({}, 'a', 'b', 'c')
   //  ->
   //    props {}= { a: [], b: [], c: [] }
-  // MISSING
+  if (({}).toString.call(state).includes('Array')) { // is an array
+    state = state.reduce((obj, stateName) => {
+      obj[stateName] = []
+      return obj
+    }, {})
+  }
 
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
+    // allow both component will mount to get triggered
+    componentWillMount = () => {
+      return componentWillMount.call(this, {
+        globalTransisObject, state, props
+      })
+    }
+
+    componentDidMount = () => logUpdate(this)
+    componentDidUpdate = () => logUpdate(this)
+
+    componentWillUnmount = () => {
+      if (state) {
+        for (let k in state) {
+          unbindState(this.state[k], state[k], this._transisQueueUpdate)
+        }
+        globalTransisObject.off('*', this._transisSyncState);
+      }
+      if (props) {
+        for (let k in props) {
+          unbindProps(this.props[k], props[k], this._transisQueueUpdate)
+        }
+      }
+    };
+
     constructor(propArgs) {
       super(propArgs)
-
-      // consider move the following into instance methods
-
-      // allow both component will mount to get triggered
-      this.componentWillMount = () => {
-        return componentWillMount.call(this, {
-          globalTransisObject, state, props
-        })
-      }
-
-      this.componentDidMount = () => {
-        logUpdate(this)
-      }
-
-      this.componentDidUpdate = () => {
-        logUpdate(this)
-      }
-
-      this.componentWillUnmount = () => {
-        if (state) {
-          for (let k in state) {
-            unbindState(this.state[k], state[k], this._transisQueueUpdate)
-          }
-          globalTransisObject.off('*', this._transisSyncState);
-        }
-        if (props) {
-          for (let k in props) {
-            unbindProps(this.props[k], props[k], this._transisQueueUpdate)
-          }
-        }
-      };
-
       if (state) {
         // initialize State
         this.state = Object.keys(state).reduce((result, key) => {
           result[key] = globalTransisObject[key]
           return result
         }, {})
-        // console.warn('intialized state to', this.state)
       }
       if (props) {
         this.componentWillReceiveProps = (nextProps) => {
@@ -232,12 +212,11 @@ const transisAware = (
       }
     }
 
-    render() {
-      return <ComposedComponent {...this.props} {...this.state} />;
-    }
+    render = () => <ComposedComponent {...this.props} {...this.state} />
   };
   return higherOrderComponent;
 }
 
-transisAware.Transis = Transis // for debugging
+transisAware.Transis = Transis // for verifying Transis instances
+
 export default transisAware

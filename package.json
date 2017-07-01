@@ -43,6 +43,22 @@
     "transis": "^0.11.0"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "collectCoverage": false,
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "collectCoverageFrom" : [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!src/helper/testSetup.js"
+    ],
+    "coverageReporters": ["json", "lcov", "text"],
+    "setupFiles": ["./src/helper/testSetup"],
+    "globals": {
+      "React": true,
+      "Transis": true,
+      "mundo": true
+    }
   }
 }
