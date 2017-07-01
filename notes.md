@@ -45,12 +45,12 @@ Q: @Corey, what exactly does delayPreFlush do?
 
 ```js
   <Parent
+    global={appState}
     mixState={{
-      global: appState,
-      state: { campaign: ['name'] }
+      campaign: ['name']
     }}
     mixProps={{
-      props: { info: ["hidden"] }
+      info: ["hidden"]
     }}
     info={new TransisClass({ hidden: true })}
   >

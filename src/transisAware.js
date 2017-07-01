@@ -264,6 +264,27 @@ export const PropsMixinLegacy = function(props) {
   };
 };
 
+// Provider
+export const TransisProvider = (props) => {
+  // debugger;
+  const { global, mixState, mixProps, children, ...otherProps } = props
+
+  const HigherOrder = transisAware({
+    global,
+    state: mixState,
+    props: mixProps
+  }, coreProps =>
+  // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
+    React.cloneElement(children,
+      Object.assign({}, coreProps, otherProps)
+    )
+  )
+
+
+  return React.createElement(HigherOrder, otherProps)
+  // return <div> <HigherOrder {...otherProps}/> </div>
+}
+
 // Legacy State Mixin
 export const StateMixinLegacy = function(...args) {
   let [object, props] = args

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import transisAware, { StateMixin, PropsMixin } from '../src/index'
 
-const fakeString = n => Array.from(Array(n || 10).keys()).map(n =>  String.fromCharCode(Math.floor(Math.random()*26) + 97)).join('')
-
 const AuthorAge = React.createClass({
   mixins: [
     PropsMixin({

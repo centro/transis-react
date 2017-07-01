@@ -86,7 +86,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.StateMixinLegacy = exports.PropsMixinLegacy = exports.updateQueue = undefined;
+exports.StateMixinLegacy = exports.TransisProvider = exports.PropsMixinLegacy = exports.updateQueue = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -105,6 +105,8 @@ var _transis = __webpack_require__(4);
 var _transis2 = _interopRequireDefault(_transis);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -272,11 +274,8 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state);
   }
 
-  // TODO: convert prop into into an object of empty arrays
-  // e.g.
-  //    StateMixin({}, 'a', 'b', 'c')
-  //  ->
-  //    props {}= { a: [], b: [], c: [] }
+  // convert prop into into an object of empty arrays
+  // e.g. StateMixin({}, 'a', 'b', 'c') -> props {}= { a: [], b: [], c: [] }
   if ({}.toString.call(state).includes('Array')) {
     // is an array
     state = state.reduce(function (obj, stateName) {
@@ -440,7 +439,33 @@ var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(prop
   };
 };
 
+// Provider
+var TransisProvider = function TransisProvider(props) {
+  // debugger;
+  var global = props.global,
+      mixState = props.mixState,
+      mixProps = props.mixProps,
+      children = props.children,
+      otherProps = _objectWithoutProperties(props, ['global', 'mixState', 'mixProps', 'children']);
+
+  var HigherOrder = transisAware({
+    global: global,
+    state: mixState,
+    props: mixProps
+  }, function (coreProps) {
+    return (
+      // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
+      _react2.default.cloneElement(children, Object.assign({}, coreProps, otherProps))
+    );
+  });
+
+  return _react2.default.createElement(HigherOrder, otherProps
+  // return <div> <HigherOrder {...otherProps}/> </div>
+  );
+};
+
 // Legacy State Mixin
+exports.TransisProvider = TransisProvider;
 var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
   for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
@@ -568,7 +593,7 @@ var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PropsMixin = exports.StateMixin = undefined;
+exports.TransisProvider = exports.PropsMixin = exports.StateMixin = undefined;
 
 var _transisAware = __webpack_require__(0);
 
@@ -579,6 +604,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _transisAware2.default;
 exports.StateMixin = _transisAware.StateMixinLegacy;
 exports.PropsMixin = _transisAware.PropsMixinLegacy;
+exports.TransisProvider = _transisAware.TransisProvider;
 
 /***/ }),
 /* 2 */

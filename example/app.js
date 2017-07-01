@@ -59,7 +59,6 @@ const App = transisAware(
   {
     global: globalObj,
     state: {
-      time: [],
       book: ['name', 'author.name', 'pages']
     },
   },
@@ -83,6 +82,8 @@ const Clock = transisAware(
 )
 
 const { default: Legacy, Clock: ClockLegacy } = require('./app.legacy')
+const { default: Provider, Clock: ClockProvider } = require('./app.provider')
+
 ReactDOM.render(
   <div>
     <h1>React Transis Binding</h1>
@@ -100,8 +101,8 @@ ReactDOM.render(
     <br/> <br/> <br/>
 
     <fieldset>
-      <legend><h2> Provider -- </h2></legend>
-      ...fill in here
+      <legend><h2> Provider -- <ClockProvider/></h2></legend>
+      <Provider />
     </fieldset>
     <br/> <br/>
 
