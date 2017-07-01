@@ -31,12 +31,13 @@ const Author = Transis.Model.extend('Author', function() {
 })
 // end of models
 
+
+// model setups
 globalObj.time = new Date
-// data setup
-// setInterval(() =>
-//   globalObj.time = new Date, // to string with .toLocaleTimeString()
-//   1000
-// )
+setInterval(() =>
+  globalObj.time = new Date, // to string with .toLocaleTimeString()
+  1000
+)
 
 globalObj.book = new Book({
   name: 'A catcher in the rye',
@@ -46,21 +47,13 @@ globalObj.book = new Book({
     age: 37
   })
 })
+// end of model setup
 
-// end of data setup
 
-
-const AuthorAge = transisAware(
-  {
-    props: {
-      author: ['age']
-    }
-  },
-  class AuthorAgeCore extends Component {
-    render() {
-      return <span>{this.props.author.age}</span>
-    }
-  }
+// components
+const _AuthorAge = transisAware(
+  { props: { author: ['age'] } },
+  ({ author: { age } }) => <span>{age}</span>
 )
 
 const App = transisAware(
@@ -73,46 +66,63 @@ const App = transisAware(
   },
   class AppCore extends Component {
     render() {
-      const {
-        time, book = {},
-        book: { author = {} } = {}
-      } = this.props
+      const { book: { name, pages, author } } = this.props
 
       return <div>
-        <h1>React Transis</h1>
-        <p> Time: {time && time.toLocaleTimeString()} </p>
-        <p> Book: {book.name} </p>
-        <p> Book: {book.pages} </p>
-        <p> Author: {author.name}, <AuthorAge author={author} /> </p>
-
-        <button onClick={() => book.name = fakeString(10)}>
-          Change book title
-          <div>state - attr</div>
-        </button>
-
-        <button onClick={() => book.pages = Math.floor(Math.random()*500)}>
-          Change book pages
-          <div>state - prop</div>
-        </button>
-
-        <button onClick={() => book.author.name = fakeString(10)}>
-          Change author name
-          <div>state - association - primitive</div>
-        </button>
-        <button onClick={() =>
-          book.author.age = Math.floor(Math.random() * 100)
-        }>
-          Change author age
-          <div>props - attr</div>
-        </button>
+        <p> Book: {name} </p>
+        <p> Book: {pages} </p>
+        <p> Author: {author.name}, <_AuthorAge author={author} /> </p>
       </div>
     }
   }
 )
 
+// smart mixin
+const Clock = transisAware(
+  { global: globalObj, state: ['time'] },
+  ({ time }) => <span> {time && time.toLocaleTimeString()} </span>
+)
+
+const { default: Legacy, Clock: ClockLegacy } = require('./app.legacy')
 ReactDOM.render(
   <div>
-    <App />
+    <h1>React Transis Binding</h1>
+
+    <fieldset>
+      <legend><h2> Nouveau -- <Clock/> </h2></legend>
+      <App />
+    </fieldset>
+    <br/> <br/>
+
+    <fieldset>
+      <legend> <h2>Legacy -- <ClockLegacy/> </h2></legend>
+      <Legacy />
+    </fieldset>
+    <br/> <br/> <br/>
+
+    <fieldset>
+      <legend><h3>Controls</h3></legend>
+      <button onClick={() => globalObj.book.name = fakeString(10)}>
+        Change book title
+        <div>state - attr</div>
+      </button>
+
+      <button onClick={() => globalObj.book.pages = Math.floor(Math.random()*500)}>
+        Change book pages
+        <div>state - prop</div>
+      </button>
+
+      <button onClick={() => globalObj.book.author.name = fakeString(10)}>
+        Change author name
+        <div>state - association - primitive</div>
+      </button>
+      <button onClick={() =>
+        globalObj.book.author.age = Math.floor(Math.random() * 100)
+      }>
+        Change author age
+        <div>props - attr</div>
+      </button>
+    </fieldset>
   </div>,
   document.getElementById('app')
 )

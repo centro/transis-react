@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 179);
+/******/ 	return __webpack_require__(__webpack_require__.s = 175);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -828,7 +828,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var _prodInvariant = __webpack_require__(5);
 
 var DOMProperty = __webpack_require__(25);
-var ReactDOMComponentFlags = __webpack_require__(113);
+var ReactDOMComponentFlags = __webpack_require__(112);
 
 var invariant = __webpack_require__(1);
 
@@ -2085,7 +2085,7 @@ module.exports = ReactComponentTreeHook;
 var debugTool = null;
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactDebugTool = __webpack_require__(228);
+  var ReactDebugTool = __webpack_require__(224);
   debugTool = ReactDebugTool;
 }
 
@@ -2115,7 +2115,7 @@ module.exports = { debugTool: debugTool };
 var debugTool = null;
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactDebugTool = __webpack_require__(331);
+  var ReactDebugTool = __webpack_require__(328);
   debugTool = ReactDebugTool;
 }
 
@@ -2230,11 +2230,11 @@ module.exports = emptyFunction;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var CallbackQueue = __webpack_require__(111);
+var CallbackQueue = __webpack_require__(110);
 var PooledClass = __webpack_require__(27);
-var ReactFeatureFlags = __webpack_require__(116);
+var ReactFeatureFlags = __webpack_require__(115);
 var ReactReconciler = __webpack_require__(32);
-var Transaction = __webpack_require__(53);
+var Transaction = __webpack_require__(52);
 
 var invariant = __webpack_require__(1);
 
@@ -2525,7 +2525,7 @@ var CallbackQueue = __webpack_require__(144);
 var PooledClass = __webpack_require__(29);
 var ReactFeatureFlags = __webpack_require__(149);
 var ReactReconciler = __webpack_require__(36);
-var Transaction = __webpack_require__(61);
+var Transaction = __webpack_require__(60);
 
 var invariant = __webpack_require__(2);
 
@@ -3906,10 +3906,10 @@ var _assign = __webpack_require__(7);
 var ReactCurrentOwner = __webpack_require__(20);
 
 var warning = __webpack_require__(3);
-var canDefineProperty = __webpack_require__(56);
+var canDefineProperty = __webpack_require__(55);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var REACT_ELEMENT_TYPE = __webpack_require__(133);
+var REACT_ELEMENT_TYPE = __webpack_require__(132);
 
 var RESERVED_PROPS = {
   key: true,
@@ -4371,7 +4371,7 @@ var _assign = __webpack_require__(8);
 var ReactCurrentOwner = __webpack_require__(22);
 
 var warning = __webpack_require__(4);
-var canDefineProperty = __webpack_require__(64);
+var canDefineProperty = __webpack_require__(63);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = __webpack_require__(166);
@@ -4713,11 +4713,11 @@ module.exports = ReactElement;
 
 
 
-var DOMNamespaces = __webpack_require__(71);
-var setInnerHTML = __webpack_require__(55);
+var DOMNamespaces = __webpack_require__(69);
+var setInnerHTML = __webpack_require__(54);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(78);
-var setTextContent = __webpack_require__(130);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(76);
+var setTextContent = __webpack_require__(129);
 
 var ELEMENT_NODE_TYPE = 1;
 var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -4836,7 +4836,7 @@ module.exports = DOMLazyTree;
 
 
 
-var ReactRef = __webpack_require__(242);
+var ReactRef = __webpack_require__(238);
 var ReactInstrumentation = __webpack_require__(15);
 
 var warning = __webpack_require__(3);
@@ -5010,24 +5010,24 @@ module.exports = ReactReconciler;
 
 var _assign = __webpack_require__(7);
 
-var ReactBaseClasses = __webpack_require__(132);
-var ReactChildren = __webpack_require__(272);
-var ReactDOMFactories = __webpack_require__(273);
+var ReactBaseClasses = __webpack_require__(131);
+var ReactChildren = __webpack_require__(268);
+var ReactDOMFactories = __webpack_require__(269);
 var ReactElement = __webpack_require__(28);
-var ReactPropTypes = __webpack_require__(275);
-var ReactVersion = __webpack_require__(277);
+var ReactPropTypes = __webpack_require__(271);
+var ReactVersion = __webpack_require__(273);
 
-var createReactClass = __webpack_require__(279);
-var onlyChild = __webpack_require__(281);
+var createReactClass = __webpack_require__(275);
+var onlyChild = __webpack_require__(277);
 
 var createElement = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
-  var lowPriorityWarning = __webpack_require__(85);
-  var canDefineProperty = __webpack_require__(56);
-  var ReactElementValidator = __webpack_require__(134);
+  var lowPriorityWarning = __webpack_require__(83);
+  var canDefineProperty = __webpack_require__(55);
+  var ReactElementValidator = __webpack_require__(133);
   var didWarnPropTypesDeprecated = false;
   createElement = ReactElementValidator.createElement;
   createFactory = ReactElementValidator.createFactory;
@@ -5190,10 +5190,10 @@ module.exports = reactProdInvariant;
 
 
 
-var DOMNamespaces = __webpack_require__(88);
-var setInnerHTML = __webpack_require__(63);
+var DOMNamespaces = __webpack_require__(86);
+var setInnerHTML = __webpack_require__(62);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(95);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(93);
 var setTextContent = __webpack_require__(163);
 
 var ELEMENT_NODE_TYPE = 1;
@@ -5313,7 +5313,7 @@ module.exports = DOMLazyTree;
 
 
 
-var ReactRef = __webpack_require__(345);
+var ReactRef = __webpack_require__(342);
 var ReactInstrumentation = __webpack_require__(16);
 
 var warning = __webpack_require__(4);
@@ -5488,22 +5488,22 @@ module.exports = ReactReconciler;
 var _assign = __webpack_require__(8);
 
 var ReactBaseClasses = __webpack_require__(165);
-var ReactChildren = __webpack_require__(375);
-var ReactDOMFactories = __webpack_require__(376);
+var ReactChildren = __webpack_require__(372);
+var ReactDOMFactories = __webpack_require__(373);
 var ReactElement = __webpack_require__(30);
-var ReactPropTypes = __webpack_require__(378);
-var ReactVersion = __webpack_require__(380);
+var ReactPropTypes = __webpack_require__(375);
+var ReactVersion = __webpack_require__(377);
 
-var createReactClass = __webpack_require__(382);
-var onlyChild = __webpack_require__(384);
+var createReactClass = __webpack_require__(379);
+var onlyChild = __webpack_require__(381);
 
 var createElement = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
-  var lowPriorityWarning = __webpack_require__(102);
-  var canDefineProperty = __webpack_require__(64);
+  var lowPriorityWarning = __webpack_require__(100);
+  var canDefineProperty = __webpack_require__(63);
   var ReactElementValidator = __webpack_require__(167);
   var didWarnPropTypesDeprecated = false;
   createElement = ReactElementValidator.createElement;
@@ -5991,342 +5991,6 @@ function getPath(o, path) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.detectRecursion = detectRecursion;
-exports.type = type;
-exports.eq = eq;
-exports.arrayEq = arrayEq;
-exports.objectEq = objectEq;
-exports.camelize = camelize;
-exports.underscore = underscore;
-exports.capitalize = capitalize;
-exports.getPath = getPath;
-var toString = Object.prototype.toString;
-
-var seenObjects = [];
-
-// Internal: Used by `detectRecursion` to check to see if the given pair of objects has been
-// encountered yet on a previous recursive call.
-//
-// o1 - The first object to check for recursion.
-// o2 - The paired object to check for recursion.
-//
-// Returns `true` if the pair has been seen previously and `false` otherwise.
-function seen(o1, o2) {
-  var i, len;
-
-  for (i = 0, len = seenObjects.length; i < len; i++) {
-    if (seenObjects[i][0] === o1 && seenObjects[i][1] === o2) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-// Internal: Used by `detectRecursion` to mark the given pair of objects as seen before recursing.
-//
-// o1 - The first object to mark.
-// o2 - The paired object to mark.
-//
-// Returns nothing.
-function mark(o1, o2) {
-  seenObjects.push([o1, o2]);
-}
-
-// Internal: Used by `detectRecursion` to unmark the given pair of objects after a recursive call
-// has completed.
-//
-// o1 - The first object to unmark.
-// o2 - The paired object to unmark.
-//
-// Returns nothing.
-function unmark(o1, o2) {
-  var i, n;
-
-  for (i = 0, n = seenObjects.length; i < n; i++) {
-    if (seenObjects[i][0] === o1 && seenObjects[i][1] === o2) {
-      seenObjects.splice(i, 1);
-      return;
-    }
-  }
-}
-
-// Internal: Used by `getPath` to resolve a path into a value.
-//
-// o            - The object to resolve the path from.
-// pathSegments - An array of strings representing segments of the path to resolve.
-//
-// Returns the resolved value or `undefined` if some segment of the path does not exist.
-function _getPath(o, pathSegments) {
-  if (o == null) {
-    return undefined;
-  }
-
-  var head = pathSegments[0],
-      tail = pathSegments.slice(1);
-
-  if (Array.isArray(o) && !(head in o)) {
-    o = o.reduce(function (acc, x) {
-      if (!x) {
-        return acc;
-      }
-
-      var y = x[head];
-
-      if (Array.isArray(y)) {
-        acc.push.apply(acc, y);
-      } else {
-        acc.push(y);
-      }
-
-      return acc;
-    }, []);
-  } else {
-    o = o[head];
-  }
-
-  if (!tail.length) {
-    return o;
-  } else {
-    return o ? _getPath(o, tail) : undefined;
-  }
-}
-
-// Internal: Used to detect cases of recursion on the same pair of objects. Returns `true` if the
-// given objects have already been seen. Otherwise the given function is called and `false` is
-// returned.
-//
-// This function is used internally when traversing objects and arrays to avoid getting stuck in
-// infinite loops when circular objects are encountered. It should be wrapped around all recursive
-// function calls where a circular object may be encountered. See `Transis.eq` for an example.
-//
-// o1 - The first object to check for recursion.
-// o2 - The paired object to check for recursion (default: `undefined`).
-// f  - A function that make the recursive funciton call.
-//
-// Returns `true` if recursion on the given objects has been detected. If the given pair of objects
-//   has yet to be seen, calls `f` and returns `false`.
-function detectRecursion(o1, o2, f) {
-  if (arguments.length === 2) {
-    f = o2;o2 = undefined;
-  }
-
-  if (seen(o1, o2)) {
-    return true;
-  } else {
-    mark(o1, o2);
-    try {
-      f();
-    } finally {
-      unmark(o1, o2);
-    }
-    return false;
-  }
-};
-
-// Public: Returns a string indicating the type of the given object. This can be considered an
-// enhanced version of the javascript `typeof` operator.
-//
-// Examples
-//
-//   Transis.type([])       // => 'array'
-//   Transis.type({})       // => 'object'
-//   Transis.type(9)        // => 'number'
-//   Transis.type(/fo*/)    // => 'regexp'
-//   Transis.type(new Date) // => 'date'
-//
-// o - The object to get the type of.
-//
-// Returns a string indicating the object's type.
-function type(o) {
-  if (o === null) {
-    return 'null';
-  }
-  if (o === undefined) {
-    return 'undefined';
-  }
-
-  switch (toString.call(o)) {
-    case '[object Array]':
-      return 'array';
-    case '[object Arguments]':
-      return 'arguments';
-    case '[object Function]':
-      return 'function';
-    case '[object String]':
-      return 'string';
-    case '[object Number]':
-      return 'number';
-    case '[object Boolean]':
-      return 'boolean';
-    case '[object Date]':
-      return 'date';
-    case '[object RegExp]':
-      return 'regexp';
-    case '[object Object]':
-      if (o.hasOwnProperty('callee')) {
-        return 'arguments';
-      } // ie fallback
-      else {
-          return 'object';
-        }
-  }
-
-  return 'unknown';
-};
-
-// Public: Performs an object equality test. If the first argument is a `Transis.Object` then it is
-// sent the `eq` method, otherwise custom equality code is run based on the object type.
-//
-// a - Any object.
-// b - Any object.
-//
-// Returns `true` if the objects are equal and `false` otherwise.
-function eq(a, b) {
-  var atype, btype;
-
-  // identical objects are equal
-  if (a === b) {
-    return true;
-  }
-
-  // if the first argument is a Transis.Object, delegate to its `eq` method
-  if (a && a.objectId && typeof a.eq === 'function') {
-    return a.eq(b);
-  }
-
-  atype = type(a);
-  btype = type(b);
-
-  // native objects that are not of the same type are not equal
-  if (atype !== btype) {
-    return false;
-  }
-
-  switch (atype) {
-    case 'boolean':
-    case 'string':
-    case 'date':
-    case 'number':
-      return a.valueOf() === b.valueOf();
-    case 'regexp':
-      return a.source === b.source && a.global === b.global && a.multiline === b.multiline && a.ignoreCase === b.ignoreCase;
-    case 'array':
-      return arrayEq(a, b);
-    case 'object':
-      return objectEq(a, b);
-    default:
-      return false;
-  }
-}
-
-// Public: Performs a a deep array equality test.
-//
-// a - An Array object.
-// b - An Array object.
-//
-// Returns `true` if the objects are equal and `false` otherwise.
-function arrayEq(a, b) {
-  var r;
-
-  if (!Array.isArray(a) || !Array.isArray(b)) {
-    return false;
-  }
-
-  if (a.length !== b.length) {
-    return false;
-  }
-
-  r = true;
-
-  detectRecursion(a, b, function () {
-    var i, len;
-
-    for (i = 0, len = a.length; i < len; i++) {
-      if (!eq(a[i], b[i])) {
-        r = false;break;
-      }
-    }
-  });
-
-  return r;
-}
-
-// Public: Performs a a deep object equality test.
-//
-// a - Any object.
-// b - Any object.
-//
-// Returns `true` if the objects are equal and `false` otherwise.
-function objectEq(a, b) {
-  var akeys = Object.keys(a),
-      bkeys = Object.keys(b),
-      r;
-
-  if (akeys.length !== bkeys.length) {
-    return false;
-  }
-
-  r = true;
-
-  detectRecursion(a, b, function () {
-    var i, len, key;
-
-    for (i = 0, len = akeys.length; i < len; i++) {
-      key = akeys[i];
-      if (!b.hasOwnProperty(key)) {
-        r = false;break;
-      }
-      if (!eq(a[key], b[key])) {
-        r = false;break;
-      }
-    }
-  });
-
-  return r;
-}
-
-// Public: Converts the given string to CamelCase.
-function camelize(s) {
-  return typeof s === 'string' ? s.replace(/(?:[-_])(\w)/g, function (_, c) {
-    return c ? c.toUpperCase() : '';
-  }) : s;
-}
-
-// Public: Converts the given string to under_score_case.
-function underscore(s) {
-  return typeof s === 'string' ? s.replace(/([a-z\d])([A-Z]+)/g, '$1_$2').replace(/[-\s]+/g, '_').toLowerCase() : s;
-}
-
-// Public: Capitalizes the first letter of the given string.
-function capitalize(s) {
-  return typeof s === 'string' && s.length ? s[0].toUpperCase() + s.slice(1) : s;
-}
-
-// Public: Resolves a path into a value. The path must be relative to the given object.
-//
-// If an array is encountered in the middle of a path and the next segment does not match a property
-// of the array, then the property is accessed from each item within the array.
-//
-// o    - The object to resolve the path from.
-// path - A string containing the dot separated path to resolve.
-//
-// Returns the resolved value or `undefined` if some segment of the path does not exist.
-function getPath(o, path) {
-  return _getPath(o, path.split('.'));
-}
-
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6341,12 +6005,12 @@ function getPath(o, path) {
 
 var _prodInvariant = __webpack_require__(5);
 
-var EventPluginRegistry = __webpack_require__(50);
-var EventPluginUtils = __webpack_require__(72);
-var ReactErrorUtils = __webpack_require__(76);
+var EventPluginRegistry = __webpack_require__(49);
+var EventPluginUtils = __webpack_require__(70);
+var ReactErrorUtils = __webpack_require__(74);
 
-var accumulateInto = __webpack_require__(123);
-var forEachAccumulated = __webpack_require__(124);
+var accumulateInto = __webpack_require__(122);
+var forEachAccumulated = __webpack_require__(123);
 var invariant = __webpack_require__(1);
 
 /**
@@ -6603,7 +6267,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6619,11 +6283,11 @@ module.exports = EventPluginHub;
 
 
 
-var EventPluginHub = __webpack_require__(41);
-var EventPluginUtils = __webpack_require__(72);
+var EventPluginHub = __webpack_require__(40);
+var EventPluginUtils = __webpack_require__(70);
 
-var accumulateInto = __webpack_require__(123);
-var forEachAccumulated = __webpack_require__(124);
+var accumulateInto = __webpack_require__(122);
+var forEachAccumulated = __webpack_require__(123);
 var warning = __webpack_require__(3);
 
 var getListener = EventPluginHub.getListener;
@@ -6743,7 +6407,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6794,7 +6458,7 @@ var ReactInstanceMap = {
 module.exports = ReactInstanceMap;
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6812,7 +6476,7 @@ module.exports = ReactInstanceMap;
 
 var SyntheticEvent = __webpack_require__(23);
 
-var getEventTarget = __webpack_require__(81);
+var getEventTarget = __webpack_require__(79);
 
 /**
  * @interface UIEvent
@@ -6858,7 +6522,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6876,9 +6540,9 @@ module.exports = SyntheticUIEvent;
 
 var _prodInvariant = __webpack_require__(6);
 
-var EventPluginRegistry = __webpack_require__(58);
-var EventPluginUtils = __webpack_require__(89);
-var ReactErrorUtils = __webpack_require__(93);
+var EventPluginRegistry = __webpack_require__(57);
+var EventPluginUtils = __webpack_require__(87);
+var ReactErrorUtils = __webpack_require__(91);
 
 var accumulateInto = __webpack_require__(156);
 var forEachAccumulated = __webpack_require__(157);
@@ -7138,7 +6802,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7154,8 +6818,8 @@ module.exports = EventPluginHub;
 
 
 
-var EventPluginHub = __webpack_require__(45);
-var EventPluginUtils = __webpack_require__(89);
+var EventPluginHub = __webpack_require__(44);
+var EventPluginUtils = __webpack_require__(87);
 
 var accumulateInto = __webpack_require__(156);
 var forEachAccumulated = __webpack_require__(157);
@@ -7278,7 +6942,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7329,7 +6993,7 @@ var ReactInstanceMap = {
 module.exports = ReactInstanceMap;
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7347,7 +7011,7 @@ module.exports = ReactInstanceMap;
 
 var SyntheticEvent = __webpack_require__(24);
 
-var getEventTarget = __webpack_require__(98);
+var getEventTarget = __webpack_require__(96);
 
 /**
  * @interface UIEvent
@@ -7393,7 +7057,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7419,7 +7083,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7676,6 +7340,335 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+
+
+var _assign = __webpack_require__(7);
+
+var EventPluginRegistry = __webpack_require__(49);
+var ReactEventEmitterMixin = __webpack_require__(228);
+var ViewportMetrics = __webpack_require__(121);
+
+var getVendorPrefixedEventName = __webpack_require__(263);
+var isEventSupported = __webpack_require__(80);
+
+/**
+ * Summary of `ReactBrowserEventEmitter` event handling:
+ *
+ *  - Top-level delegation is used to trap most native browser events. This
+ *    may only occur in the main thread and is the responsibility of
+ *    ReactEventListener, which is injected and can therefore support pluggable
+ *    event sources. This is the only work that occurs in the main thread.
+ *
+ *  - We normalize and de-duplicate events to account for browser quirks. This
+ *    may be done in the worker thread.
+ *
+ *  - Forward these native events (with the associated top-level type used to
+ *    trap it) to `EventPluginHub`, which in turn will ask plugins if they want
+ *    to extract any synthetic events.
+ *
+ *  - The `EventPluginHub` will then process each event by annotating them with
+ *    "dispatches", a sequence of listeners and IDs that care about that event.
+ *
+ *  - The `EventPluginHub` then dispatches the events.
+ *
+ * Overview of React and the event system:
+ *
+ * +------------+    .
+ * |    DOM     |    .
+ * +------------+    .
+ *       |           .
+ *       v           .
+ * +------------+    .
+ * | ReactEvent |    .
+ * |  Listener  |    .
+ * +------------+    .                         +-----------+
+ *       |           .               +--------+|SimpleEvent|
+ *       |           .               |         |Plugin     |
+ * +-----|------+    .               v         +-----------+
+ * |     |      |    .    +--------------+                    +------------+
+ * |     +-----------.--->|EventPluginHub|                    |    Event   |
+ * |            |    .    |              |     +-----------+  | Propagators|
+ * | ReactEvent |    .    |              |     |TapEvent   |  |------------|
+ * |  Emitter   |    .    |              |<---+|Plugin     |  |other plugin|
+ * |            |    .    |              |     +-----------+  |  utilities |
+ * |     +-----------.--->|              |                    +------------+
+ * |     |      |    .    +--------------+
+ * +-----|------+    .                ^        +-----------+
+ *       |           .                |        |Enter/Leave|
+ *       +           .                +-------+|Plugin     |
+ * +-------------+   .                         +-----------+
+ * | application |   .
+ * |-------------|   .
+ * |             |   .
+ * |             |   .
+ * +-------------+   .
+ *                   .
+ *    React Core     .  General Purpose Event Plugin System
+ */
+
+var hasEventPageXY;
+var alreadyListeningTo = {};
+var isMonitoringScrollValue = false;
+var reactTopListenersCounter = 0;
+
+// For events like 'submit' which don't consistently bubble (which we trap at a
+// lower node than `document`), binding at `document` would cause duplicate
+// events so we don't include them here
+var topEventMapping = {
+  topAbort: 'abort',
+  topAnimationEnd: getVendorPrefixedEventName('animationend') || 'animationend',
+  topAnimationIteration: getVendorPrefixedEventName('animationiteration') || 'animationiteration',
+  topAnimationStart: getVendorPrefixedEventName('animationstart') || 'animationstart',
+  topBlur: 'blur',
+  topCanPlay: 'canplay',
+  topCanPlayThrough: 'canplaythrough',
+  topChange: 'change',
+  topClick: 'click',
+  topCompositionEnd: 'compositionend',
+  topCompositionStart: 'compositionstart',
+  topCompositionUpdate: 'compositionupdate',
+  topContextMenu: 'contextmenu',
+  topCopy: 'copy',
+  topCut: 'cut',
+  topDoubleClick: 'dblclick',
+  topDrag: 'drag',
+  topDragEnd: 'dragend',
+  topDragEnter: 'dragenter',
+  topDragExit: 'dragexit',
+  topDragLeave: 'dragleave',
+  topDragOver: 'dragover',
+  topDragStart: 'dragstart',
+  topDrop: 'drop',
+  topDurationChange: 'durationchange',
+  topEmptied: 'emptied',
+  topEncrypted: 'encrypted',
+  topEnded: 'ended',
+  topError: 'error',
+  topFocus: 'focus',
+  topInput: 'input',
+  topKeyDown: 'keydown',
+  topKeyPress: 'keypress',
+  topKeyUp: 'keyup',
+  topLoadedData: 'loadeddata',
+  topLoadedMetadata: 'loadedmetadata',
+  topLoadStart: 'loadstart',
+  topMouseDown: 'mousedown',
+  topMouseMove: 'mousemove',
+  topMouseOut: 'mouseout',
+  topMouseOver: 'mouseover',
+  topMouseUp: 'mouseup',
+  topPaste: 'paste',
+  topPause: 'pause',
+  topPlay: 'play',
+  topPlaying: 'playing',
+  topProgress: 'progress',
+  topRateChange: 'ratechange',
+  topScroll: 'scroll',
+  topSeeked: 'seeked',
+  topSeeking: 'seeking',
+  topSelectionChange: 'selectionchange',
+  topStalled: 'stalled',
+  topSuspend: 'suspend',
+  topTextInput: 'textInput',
+  topTimeUpdate: 'timeupdate',
+  topTouchCancel: 'touchcancel',
+  topTouchEnd: 'touchend',
+  topTouchMove: 'touchmove',
+  topTouchStart: 'touchstart',
+  topTransitionEnd: getVendorPrefixedEventName('transitionend') || 'transitionend',
+  topVolumeChange: 'volumechange',
+  topWaiting: 'waiting',
+  topWheel: 'wheel'
+};
+
+/**
+ * To ensure no conflicts with other potential React instances on the page
+ */
+var topListenersIDKey = '_reactListenersID' + String(Math.random()).slice(2);
+
+function getListeningForDocument(mountAt) {
+  // In IE8, `mountAt` is a host object and doesn't have `hasOwnProperty`
+  // directly.
+  if (!Object.prototype.hasOwnProperty.call(mountAt, topListenersIDKey)) {
+    mountAt[topListenersIDKey] = reactTopListenersCounter++;
+    alreadyListeningTo[mountAt[topListenersIDKey]] = {};
+  }
+  return alreadyListeningTo[mountAt[topListenersIDKey]];
+}
+
+/**
+ * `ReactBrowserEventEmitter` is used to attach top-level event listeners. For
+ * example:
+ *
+ *   EventPluginHub.putListener('myID', 'onClick', myFunction);
+ *
+ * This would allocate a "registration" of `('onClick', myFunction)` on 'myID'.
+ *
+ * @internal
+ */
+var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
+  /**
+   * Injectable event backend
+   */
+  ReactEventListener: null,
+
+  injection: {
+    /**
+     * @param {object} ReactEventListener
+     */
+    injectReactEventListener: function (ReactEventListener) {
+      ReactEventListener.setHandleTopLevel(ReactBrowserEventEmitter.handleTopLevel);
+      ReactBrowserEventEmitter.ReactEventListener = ReactEventListener;
+    }
+  },
+
+  /**
+   * Sets whether or not any created callbacks should be enabled.
+   *
+   * @param {boolean} enabled True if callbacks should be enabled.
+   */
+  setEnabled: function (enabled) {
+    if (ReactBrowserEventEmitter.ReactEventListener) {
+      ReactBrowserEventEmitter.ReactEventListener.setEnabled(enabled);
+    }
+  },
+
+  /**
+   * @return {boolean} True if callbacks are enabled.
+   */
+  isEnabled: function () {
+    return !!(ReactBrowserEventEmitter.ReactEventListener && ReactBrowserEventEmitter.ReactEventListener.isEnabled());
+  },
+
+  /**
+   * We listen for bubbled touch events on the document object.
+   *
+   * Firefox v8.01 (and possibly others) exhibited strange behavior when
+   * mounting `onmousemove` events at some node that was not the document
+   * element. The symptoms were that if your mouse is not moving over something
+   * contained within that mount point (for example on the background) the
+   * top-level listeners for `onmousemove` won't be called. However, if you
+   * register the `mousemove` on the document object, then it will of course
+   * catch all `mousemove`s. This along with iOS quirks, justifies restricting
+   * top-level listeners to the document object only, at least for these
+   * movement types of events and possibly all events.
+   *
+   * @see http://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
+   *
+   * Also, `keyup`/`keypress`/`keydown` do not bubble to the window on IE, but
+   * they bubble to document.
+   *
+   * @param {string} registrationName Name of listener (e.g. `onClick`).
+   * @param {object} contentDocumentHandle Document which owns the container
+   */
+  listenTo: function (registrationName, contentDocumentHandle) {
+    var mountAt = contentDocumentHandle;
+    var isListening = getListeningForDocument(mountAt);
+    var dependencies = EventPluginRegistry.registrationNameDependencies[registrationName];
+
+    for (var i = 0; i < dependencies.length; i++) {
+      var dependency = dependencies[i];
+      if (!(isListening.hasOwnProperty(dependency) && isListening[dependency])) {
+        if (dependency === 'topWheel') {
+          if (isEventSupported('wheel')) {
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'wheel', mountAt);
+          } else if (isEventSupported('mousewheel')) {
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'mousewheel', mountAt);
+          } else {
+            // Firefox needs to capture a different mouse scroll event.
+            // @see http://www.quirksmode.org/dom/events/tests/scroll.html
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'DOMMouseScroll', mountAt);
+          }
+        } else if (dependency === 'topScroll') {
+          if (isEventSupported('scroll', true)) {
+            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topScroll', 'scroll', mountAt);
+          } else {
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topScroll', 'scroll', ReactBrowserEventEmitter.ReactEventListener.WINDOW_HANDLE);
+          }
+        } else if (dependency === 'topFocus' || dependency === 'topBlur') {
+          if (isEventSupported('focus', true)) {
+            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topFocus', 'focus', mountAt);
+            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topBlur', 'blur', mountAt);
+          } else if (isEventSupported('focusin')) {
+            // IE has `focusin` and `focusout` events which bubble.
+            // @see http://www.quirksmode.org/blog/archives/2008/04/delegating_the.html
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topFocus', 'focusin', mountAt);
+            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topBlur', 'focusout', mountAt);
+          }
+
+          // to make sure blur and focus event listeners are only attached once
+          isListening.topBlur = true;
+          isListening.topFocus = true;
+        } else if (topEventMapping.hasOwnProperty(dependency)) {
+          ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent(dependency, topEventMapping[dependency], mountAt);
+        }
+
+        isListening[dependency] = true;
+      }
+    }
+  },
+
+  trapBubbledEvent: function (topLevelType, handlerBaseName, handle) {
+    return ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent(topLevelType, handlerBaseName, handle);
+  },
+
+  trapCapturedEvent: function (topLevelType, handlerBaseName, handle) {
+    return ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent(topLevelType, handlerBaseName, handle);
+  },
+
+  /**
+   * Protect against document.createEvent() returning null
+   * Some popup blocker extensions appear to do this:
+   * https://github.com/facebook/react/issues/6887
+   */
+  supportsEventPageXY: function () {
+    if (!document.createEvent) {
+      return false;
+    }
+    var ev = document.createEvent('MouseEvent');
+    return ev != null && 'pageX' in ev;
+  },
+
+  /**
+   * Listens to window scroll and resize events. We cache scroll values so that
+   * application code can access them without triggering reflows.
+   *
+   * ViewportMetrics is only used by SyntheticMouse/TouchEvent and only when
+   * pageX/pageY isn't supported (legacy browsers).
+   *
+   * NOTE: Scroll events do not bubble.
+   *
+   * @see http://www.quirksmode.org/dom/events/scroll.html
+   */
+  ensureScrollValueMonitoring: function () {
+    if (hasEventPageXY === undefined) {
+      hasEventPageXY = ReactBrowserEventEmitter.supportsEventPageXY();
+    }
+    if (!hasEventPageXY && !isMonitoringScrollValue) {
+      var refresh = ViewportMetrics.refreshScrollValues;
+      ReactBrowserEventEmitter.ReactEventListener.monitorScrollValue(refresh);
+      isMonitoringScrollValue = true;
+    }
+  }
+});
+
+module.exports = ReactBrowserEventEmitter;
 
 /***/ }),
 /* 51 */
@@ -7694,339 +7687,10 @@ module.exports = EventPluginRegistry;
 
 
 
-var _assign = __webpack_require__(7);
+var SyntheticUIEvent = __webpack_require__(43);
+var ViewportMetrics = __webpack_require__(121);
 
-var EventPluginRegistry = __webpack_require__(50);
-var ReactEventEmitterMixin = __webpack_require__(232);
-var ViewportMetrics = __webpack_require__(122);
-
-var getVendorPrefixedEventName = __webpack_require__(267);
-var isEventSupported = __webpack_require__(82);
-
-/**
- * Summary of `ReactBrowserEventEmitter` event handling:
- *
- *  - Top-level delegation is used to trap most native browser events. This
- *    may only occur in the main thread and is the responsibility of
- *    ReactEventListener, which is injected and can therefore support pluggable
- *    event sources. This is the only work that occurs in the main thread.
- *
- *  - We normalize and de-duplicate events to account for browser quirks. This
- *    may be done in the worker thread.
- *
- *  - Forward these native events (with the associated top-level type used to
- *    trap it) to `EventPluginHub`, which in turn will ask plugins if they want
- *    to extract any synthetic events.
- *
- *  - The `EventPluginHub` will then process each event by annotating them with
- *    "dispatches", a sequence of listeners and IDs that care about that event.
- *
- *  - The `EventPluginHub` then dispatches the events.
- *
- * Overview of React and the event system:
- *
- * +------------+    .
- * |    DOM     |    .
- * +------------+    .
- *       |           .
- *       v           .
- * +------------+    .
- * | ReactEvent |    .
- * |  Listener  |    .
- * +------------+    .                         +-----------+
- *       |           .               +--------+|SimpleEvent|
- *       |           .               |         |Plugin     |
- * +-----|------+    .               v         +-----------+
- * |     |      |    .    +--------------+                    +------------+
- * |     +-----------.--->|EventPluginHub|                    |    Event   |
- * |            |    .    |              |     +-----------+  | Propagators|
- * | ReactEvent |    .    |              |     |TapEvent   |  |------------|
- * |  Emitter   |    .    |              |<---+|Plugin     |  |other plugin|
- * |            |    .    |              |     +-----------+  |  utilities |
- * |     +-----------.--->|              |                    +------------+
- * |     |      |    .    +--------------+
- * +-----|------+    .                ^        +-----------+
- *       |           .                |        |Enter/Leave|
- *       +           .                +-------+|Plugin     |
- * +-------------+   .                         +-----------+
- * | application |   .
- * |-------------|   .
- * |             |   .
- * |             |   .
- * +-------------+   .
- *                   .
- *    React Core     .  General Purpose Event Plugin System
- */
-
-var hasEventPageXY;
-var alreadyListeningTo = {};
-var isMonitoringScrollValue = false;
-var reactTopListenersCounter = 0;
-
-// For events like 'submit' which don't consistently bubble (which we trap at a
-// lower node than `document`), binding at `document` would cause duplicate
-// events so we don't include them here
-var topEventMapping = {
-  topAbort: 'abort',
-  topAnimationEnd: getVendorPrefixedEventName('animationend') || 'animationend',
-  topAnimationIteration: getVendorPrefixedEventName('animationiteration') || 'animationiteration',
-  topAnimationStart: getVendorPrefixedEventName('animationstart') || 'animationstart',
-  topBlur: 'blur',
-  topCanPlay: 'canplay',
-  topCanPlayThrough: 'canplaythrough',
-  topChange: 'change',
-  topClick: 'click',
-  topCompositionEnd: 'compositionend',
-  topCompositionStart: 'compositionstart',
-  topCompositionUpdate: 'compositionupdate',
-  topContextMenu: 'contextmenu',
-  topCopy: 'copy',
-  topCut: 'cut',
-  topDoubleClick: 'dblclick',
-  topDrag: 'drag',
-  topDragEnd: 'dragend',
-  topDragEnter: 'dragenter',
-  topDragExit: 'dragexit',
-  topDragLeave: 'dragleave',
-  topDragOver: 'dragover',
-  topDragStart: 'dragstart',
-  topDrop: 'drop',
-  topDurationChange: 'durationchange',
-  topEmptied: 'emptied',
-  topEncrypted: 'encrypted',
-  topEnded: 'ended',
-  topError: 'error',
-  topFocus: 'focus',
-  topInput: 'input',
-  topKeyDown: 'keydown',
-  topKeyPress: 'keypress',
-  topKeyUp: 'keyup',
-  topLoadedData: 'loadeddata',
-  topLoadedMetadata: 'loadedmetadata',
-  topLoadStart: 'loadstart',
-  topMouseDown: 'mousedown',
-  topMouseMove: 'mousemove',
-  topMouseOut: 'mouseout',
-  topMouseOver: 'mouseover',
-  topMouseUp: 'mouseup',
-  topPaste: 'paste',
-  topPause: 'pause',
-  topPlay: 'play',
-  topPlaying: 'playing',
-  topProgress: 'progress',
-  topRateChange: 'ratechange',
-  topScroll: 'scroll',
-  topSeeked: 'seeked',
-  topSeeking: 'seeking',
-  topSelectionChange: 'selectionchange',
-  topStalled: 'stalled',
-  topSuspend: 'suspend',
-  topTextInput: 'textInput',
-  topTimeUpdate: 'timeupdate',
-  topTouchCancel: 'touchcancel',
-  topTouchEnd: 'touchend',
-  topTouchMove: 'touchmove',
-  topTouchStart: 'touchstart',
-  topTransitionEnd: getVendorPrefixedEventName('transitionend') || 'transitionend',
-  topVolumeChange: 'volumechange',
-  topWaiting: 'waiting',
-  topWheel: 'wheel'
-};
-
-/**
- * To ensure no conflicts with other potential React instances on the page
- */
-var topListenersIDKey = '_reactListenersID' + String(Math.random()).slice(2);
-
-function getListeningForDocument(mountAt) {
-  // In IE8, `mountAt` is a host object and doesn't have `hasOwnProperty`
-  // directly.
-  if (!Object.prototype.hasOwnProperty.call(mountAt, topListenersIDKey)) {
-    mountAt[topListenersIDKey] = reactTopListenersCounter++;
-    alreadyListeningTo[mountAt[topListenersIDKey]] = {};
-  }
-  return alreadyListeningTo[mountAt[topListenersIDKey]];
-}
-
-/**
- * `ReactBrowserEventEmitter` is used to attach top-level event listeners. For
- * example:
- *
- *   EventPluginHub.putListener('myID', 'onClick', myFunction);
- *
- * This would allocate a "registration" of `('onClick', myFunction)` on 'myID'.
- *
- * @internal
- */
-var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
-  /**
-   * Injectable event backend
-   */
-  ReactEventListener: null,
-
-  injection: {
-    /**
-     * @param {object} ReactEventListener
-     */
-    injectReactEventListener: function (ReactEventListener) {
-      ReactEventListener.setHandleTopLevel(ReactBrowserEventEmitter.handleTopLevel);
-      ReactBrowserEventEmitter.ReactEventListener = ReactEventListener;
-    }
-  },
-
-  /**
-   * Sets whether or not any created callbacks should be enabled.
-   *
-   * @param {boolean} enabled True if callbacks should be enabled.
-   */
-  setEnabled: function (enabled) {
-    if (ReactBrowserEventEmitter.ReactEventListener) {
-      ReactBrowserEventEmitter.ReactEventListener.setEnabled(enabled);
-    }
-  },
-
-  /**
-   * @return {boolean} True if callbacks are enabled.
-   */
-  isEnabled: function () {
-    return !!(ReactBrowserEventEmitter.ReactEventListener && ReactBrowserEventEmitter.ReactEventListener.isEnabled());
-  },
-
-  /**
-   * We listen for bubbled touch events on the document object.
-   *
-   * Firefox v8.01 (and possibly others) exhibited strange behavior when
-   * mounting `onmousemove` events at some node that was not the document
-   * element. The symptoms were that if your mouse is not moving over something
-   * contained within that mount point (for example on the background) the
-   * top-level listeners for `onmousemove` won't be called. However, if you
-   * register the `mousemove` on the document object, then it will of course
-   * catch all `mousemove`s. This along with iOS quirks, justifies restricting
-   * top-level listeners to the document object only, at least for these
-   * movement types of events and possibly all events.
-   *
-   * @see http://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
-   *
-   * Also, `keyup`/`keypress`/`keydown` do not bubble to the window on IE, but
-   * they bubble to document.
-   *
-   * @param {string} registrationName Name of listener (e.g. `onClick`).
-   * @param {object} contentDocumentHandle Document which owns the container
-   */
-  listenTo: function (registrationName, contentDocumentHandle) {
-    var mountAt = contentDocumentHandle;
-    var isListening = getListeningForDocument(mountAt);
-    var dependencies = EventPluginRegistry.registrationNameDependencies[registrationName];
-
-    for (var i = 0; i < dependencies.length; i++) {
-      var dependency = dependencies[i];
-      if (!(isListening.hasOwnProperty(dependency) && isListening[dependency])) {
-        if (dependency === 'topWheel') {
-          if (isEventSupported('wheel')) {
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'wheel', mountAt);
-          } else if (isEventSupported('mousewheel')) {
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'mousewheel', mountAt);
-          } else {
-            // Firefox needs to capture a different mouse scroll event.
-            // @see http://www.quirksmode.org/dom/events/tests/scroll.html
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'DOMMouseScroll', mountAt);
-          }
-        } else if (dependency === 'topScroll') {
-          if (isEventSupported('scroll', true)) {
-            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topScroll', 'scroll', mountAt);
-          } else {
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topScroll', 'scroll', ReactBrowserEventEmitter.ReactEventListener.WINDOW_HANDLE);
-          }
-        } else if (dependency === 'topFocus' || dependency === 'topBlur') {
-          if (isEventSupported('focus', true)) {
-            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topFocus', 'focus', mountAt);
-            ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topBlur', 'blur', mountAt);
-          } else if (isEventSupported('focusin')) {
-            // IE has `focusin` and `focusout` events which bubble.
-            // @see http://www.quirksmode.org/blog/archives/2008/04/delegating_the.html
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topFocus', 'focusin', mountAt);
-            ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topBlur', 'focusout', mountAt);
-          }
-
-          // to make sure blur and focus event listeners are only attached once
-          isListening.topBlur = true;
-          isListening.topFocus = true;
-        } else if (topEventMapping.hasOwnProperty(dependency)) {
-          ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent(dependency, topEventMapping[dependency], mountAt);
-        }
-
-        isListening[dependency] = true;
-      }
-    }
-  },
-
-  trapBubbledEvent: function (topLevelType, handlerBaseName, handle) {
-    return ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent(topLevelType, handlerBaseName, handle);
-  },
-
-  trapCapturedEvent: function (topLevelType, handlerBaseName, handle) {
-    return ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent(topLevelType, handlerBaseName, handle);
-  },
-
-  /**
-   * Protect against document.createEvent() returning null
-   * Some popup blocker extensions appear to do this:
-   * https://github.com/facebook/react/issues/6887
-   */
-  supportsEventPageXY: function () {
-    if (!document.createEvent) {
-      return false;
-    }
-    var ev = document.createEvent('MouseEvent');
-    return ev != null && 'pageX' in ev;
-  },
-
-  /**
-   * Listens to window scroll and resize events. We cache scroll values so that
-   * application code can access them without triggering reflows.
-   *
-   * ViewportMetrics is only used by SyntheticMouse/TouchEvent and only when
-   * pageX/pageY isn't supported (legacy browsers).
-   *
-   * NOTE: Scroll events do not bubble.
-   *
-   * @see http://www.quirksmode.org/dom/events/scroll.html
-   */
-  ensureScrollValueMonitoring: function () {
-    if (hasEventPageXY === undefined) {
-      hasEventPageXY = ReactBrowserEventEmitter.supportsEventPageXY();
-    }
-    if (!hasEventPageXY && !isMonitoringScrollValue) {
-      var refresh = ViewportMetrics.refreshScrollValues;
-      ReactBrowserEventEmitter.ReactEventListener.monitorScrollValue(refresh);
-      isMonitoringScrollValue = true;
-    }
-  }
-});
-
-module.exports = ReactBrowserEventEmitter;
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-
-
-var SyntheticUIEvent = __webpack_require__(44);
-var ViewportMetrics = __webpack_require__(122);
-
-var getEventModifierState = __webpack_require__(80);
+var getEventModifierState = __webpack_require__(78);
 
 /**
  * @interface MouseEvent
@@ -8084,7 +7748,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 module.exports = SyntheticMouseEvent;
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8318,7 +7982,7 @@ module.exports = TransactionImpl;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8445,7 +8109,7 @@ function escapeTextContentForBrowser(text) {
 module.exports = escapeTextContentForBrowser;
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8462,12 +8126,12 @@ module.exports = escapeTextContentForBrowser;
 
 
 var ExecutionEnvironment = __webpack_require__(11);
-var DOMNamespaces = __webpack_require__(71);
+var DOMNamespaces = __webpack_require__(69);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(78);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(76);
 
 // SVG temp container for IE lacking innerHTML
 var reusableSVGContainer;
@@ -8548,7 +8212,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = setInnerHTML;
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8580,7 +8244,7 @@ module.exports = canDefineProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8606,7 +8270,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8865,7 +8529,7 @@ module.exports = EventPluginRegistry;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8883,12 +8547,12 @@ module.exports = EventPluginRegistry;
 
 var _assign = __webpack_require__(8);
 
-var EventPluginRegistry = __webpack_require__(58);
-var ReactEventEmitterMixin = __webpack_require__(335);
+var EventPluginRegistry = __webpack_require__(57);
+var ReactEventEmitterMixin = __webpack_require__(332);
 var ViewportMetrics = __webpack_require__(155);
 
-var getVendorPrefixedEventName = __webpack_require__(370);
-var isEventSupported = __webpack_require__(99);
+var getVendorPrefixedEventName = __webpack_require__(367);
+var isEventSupported = __webpack_require__(97);
 
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:
@@ -9194,7 +8858,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 module.exports = ReactBrowserEventEmitter;
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9210,10 +8874,10 @@ module.exports = ReactBrowserEventEmitter;
 
 
 
-var SyntheticUIEvent = __webpack_require__(48);
+var SyntheticUIEvent = __webpack_require__(47);
 var ViewportMetrics = __webpack_require__(155);
 
-var getEventModifierState = __webpack_require__(97);
+var getEventModifierState = __webpack_require__(95);
 
 /**
  * @interface MouseEvent
@@ -9271,7 +8935,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 module.exports = SyntheticMouseEvent;
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9505,7 +9169,7 @@ module.exports = TransactionImpl;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9632,7 +9296,7 @@ function escapeTextContentForBrowser(text) {
 module.exports = escapeTextContentForBrowser;
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9649,12 +9313,12 @@ module.exports = escapeTextContentForBrowser;
 
 
 var ExecutionEnvironment = __webpack_require__(12);
-var DOMNamespaces = __webpack_require__(88);
+var DOMNamespaces = __webpack_require__(86);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(95);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(93);
 
 // SVG temp container for IE lacking innerHTML
 var reusableSVGContainer;
@@ -9735,7 +9399,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = setInnerHTML;
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9767,7 +9431,7 @@ module.exports = canDefineProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9777,7 +9441,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _object = __webpack_require__(66);
+var _object = __webpack_require__(65);
 
 var _object2 = _interopRequireDefault(_object);
 
@@ -9806,7 +9470,7 @@ var TransisArray = function () {
     return _Array;
   } else {
     // node.js
-    return __webpack_require__(171).runInNewContext("Array");
+    return __webpack_require__(281).runInNewContext("Array");
   }
 }();
 
@@ -10230,6 +9894,600 @@ TransisArray.from = function (a, mapFn, thisArg) {
 
 exports.default = TransisArray;
 module.exports = exports["default"];
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _util = __webpack_require__(39);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var objectId = 0,
+    changedObjects = {},
+    delayPreFlushCallbacks = [],
+    delayPostFlushCallbacks = [],
+    flushTimer;
+
+// Public: `Transis.Object` is the foundation of the `Transis` library. It implements a basic object
+// system and observable properties.
+//
+// To create a subclass of `Transis.Object` use the `extend` method and pass it a function. Inside of
+// the function is the "class body" where you can define both static and dynamic properties:
+//
+//   var Person = Transis.Object.extend(function() {
+//     // `this` refers to `MyClass`
+//
+//     // define static/class properties by attaching them to `this`.
+//     this.classMethod = function() {};
+//
+//     // create an intializer by defining the `init` method.
+//     this.prototype.init = function(firstName, lastName) {
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//     };
+//
+//     // define instance properties by adding them to the `prototype`
+//     this.prototype.fullName = function() {
+//       return this.firstName + ' ' + this.lastName;
+//     };
+//   });
+//
+//   Person.classMethod();
+//
+//   // instantiate an object using the `new` operator, any arguments will get passed to the `init`
+//   // method
+//   var joe = new Person('joe', 'blow');
+//   joe.fullName(); // 'Joe Blow'
+//
+// See `Transis.Object.prop` for defining observable properties.
+function TransisObject() {
+  Object.defineProperty(this, 'objectId', { value: ++objectId });
+  this.init.apply(this, arguments);
+};
+
+TransisObject.displayName = 'Transis.Object';
+
+function registerChange(object, prop) {
+  changedObjects[object.objectId] = changedObjects[object.objectId] || { object: object, props: {} };
+  changedObjects[object.objectId].props[prop] = true;
+}
+
+// Internal: Processes recorded property changes by traversing the property dependency graph and
+// forwarding changes to proxy objects.
+function propagateChanges() {
+  var seen = {};
+  var head = void 0;
+
+  for (var id in changedObjects) {
+    var _changedObjects$id = changedObjects[id];
+    var object = _changedObjects$id.object;
+    var props = _changedObjects$id.props;
+
+    for (var k in props) {
+      head = { object: object, name: k, next: head };
+      seen[id + k] = true;
+    }
+  }
+
+  while (head) {
+    var _head = head;
+    var name = _head.name;
+    var object = _head.object;
+    var _head$object = _head.object;
+    var _objectId = _head$object.objectId;
+    var __deps__ = _head$object.__deps__;
+    var __proxies__ = _head$object.__proxies__;
+
+    var deps = __deps__ && __deps__[name];
+
+    head = head.next;
+
+    registerChange(object, name);
+
+    if (object.__cache__) {
+      delete object.__cache__[name];
+    }
+
+    if (deps) {
+      for (var i = 0, n = deps.length; i < n; i++) {
+        var seenKey = _objectId + deps[i];
+
+        if (!seen[seenKey]) {
+          head = { object: object, name: deps[i], next: head };
+          seen[seenKey] = true;
+        }
+      }
+    }
+
+    if (__proxies__ && name.indexOf('.') === -1) {
+      for (var _k in __proxies__) {
+        var proxy = __proxies__[_k];
+        var proxyObject = proxy.object;
+        var proxyName = proxy.name + '.' + name;
+        var proxySeenKey = proxyObject.objectId + proxyName;
+
+        if (!seen[proxySeenKey]) {
+          head = { object: proxyObject, name: proxyName, next: head };
+          seen[proxySeenKey] = true;
+        }
+      }
+    }
+  }
+}
+
+// Internal: Flushes the current change queue. This notifies observers of the changed props as well
+// as observers of any props that depend on the changed props. Observers are only invoked once per
+// flush, regardless of how many of their dependent props have changed. Additionaly, cached values
+// are cleared where appropriate.
+function flush() {
+  var f = void 0;
+
+  while (f = delayPreFlushCallbacks.shift()) {
+    f();
+  }
+
+  propagateChanges();
+
+  var curChangedObjects = changedObjects;
+  changedObjects = {};
+  flushTimer = null;
+
+  for (var id in curChangedObjects) {
+    var _curChangedObjects$id = curChangedObjects[id];
+    var object = _curChangedObjects$id.object;
+    var props = _curChangedObjects$id.props;
+
+    var star = false;
+
+      for (var k in props) {
+      if (k.indexOf('.') === -1) {
+        star = true;
+      }
+      object.notify(k);
+    }
+
+    if (star) {
+      object.notify('*');
+    }
+  }
+
+  while (f = delayPostFlushCallbacks.shift()) {
+    f();
+  }
+}
+
+// Internal: Indicates whether the current name has a value cached.
+function isCached(name) {
+  return this.__cache__ ? this.__cache__.hasOwnProperty(name) : false;
+}
+
+// Internal: Returns the cached value for the given name.
+function getCached(name) {
+  return this.__cache__ ? this.__cache__[name] : undefined;
+}
+
+// Internal: Defines a property on the given object. See the docs for `Transis.prop`.
+//
+// Returns nothing.
+function defineProp(object, name) {
+  var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+  var descriptor = Object.assign({
+    name: name,
+    get: null,
+    set: null,
+    default: undefined,
+    on: [],
+    cache: false,
+    pure: !!(opts.get && opts.on && !opts.set)
+  }, opts, { readonly: opts.get && !opts.set });
+
+  if (!object.hasOwnProperty('__props__')) {
+    object.__props__ = Object.create(object.__props__ || null);
+  }
+
+  object.__props__[name] = descriptor;
+
+  if (!object.hasOwnProperty('__deps__')) {
+    object.__deps__ = Object.create(object.__deps__ || null);
+  }
+
+  descriptor.on.forEach(function (prop) {
+    (object.__deps__[prop] = object.__deps__[prop] || []).push(name);
+
+    if (prop.indexOf('.') !== -1) {
+      var segments = prop.split('.'),
+          first = segments[0];
+      if (segments.length > 2) {
+        throw new Error('Transis.Object.defineProp: dependent property paths of more than two segments are not allowed: `' + prop + '`');
+      }
+      (object.__deps__[first] = object.__deps__[first] || []).push(name);
+    }
+  });
+
+  Object.defineProperty(object, name, {
+    get: function get() {
+      return this._getProp(name);
+    },
+    set: descriptor.readonly ? undefined : function (value) {
+      this._setProp(name, value);
+    },
+    configurable: false,
+    enumerable: true
+  });
+}
+
+// Public: Flush the pending change queue. This should only be used in specs.
+TransisObject.flush = function () {
+  clearTimeout(flushTimer);
+  flush();
+  return this;
+};
+
+// Public: Clears the pending change queue. This should only be used in specs.
+TransisObject.clearChangeQueue = function () {
+  clearTimeout(flushTimer);
+  changedObjects = {};
+  return this;
+};
+
+// Public: Register a callback to be invoked immediately before the next flush cycle begins.
+//
+// f - A function.
+//
+// Returns the receiver;
+TransisObject.delayPreFlush = function (f) {
+  delayPreFlushCallbacks.push(f);
+  return this;
+};
+
+// Public: Register a callback to be invoked immediately after the next flush cycle completes.
+//
+// f - A function.
+//
+// Returns the receiver;
+TransisObject.delay = function (f) {
+  delayPostFlushCallbacks.push(f);
+  return this;
+};
+
+// Public: Creates a subclass of `Transis.Object`.
+TransisObject.extend = function (f) {
+  var subclass = function subclass() {
+    TransisObject.apply(this, arguments);
+  };
+
+  for (var k in this) {
+    if (this.hasOwnProperty(k)) {
+      subclass[k] = this[k];
+    }
+  }
+
+  subclass.prototype = Object.create(this.prototype);
+  subclass.prototype.constructor = subclass;
+  subclass.__super__ = this.prototype;
+
+  if (typeof f === 'function') {
+    f.call(subclass);
+  }
+
+  return subclass;
+};
+
+// Public: Defines a property on the class's prototype. Properties defined with this method are
+// observable using the `Transis.Object#on` method.
+//
+// name - A string containing the name of the property.
+// opts - An object containing one or more of the following keys:
+//   get       - A custom property getter function.
+//   set       - A custom property setter function.
+//   default   - Specify a default value for the property.
+//   on        - An array of dependent path names. Observers of the prop are notified when any of
+//               these props change. Paths may be at most two segments long.
+//   pure      - Boolean indicating whether the computed prop's `get` function is pure or not. When
+//               accessed, a pure prop's `get` function has its dependencies passed in and is called
+//               with `this` set to null. If you have a computed prop with dependencies and need to
+//               access `this`, then `pure` must be set to `false`.
+//   cache     - Set this to true to enable property caching. This is useful with computed
+//               properties that have their dependent events defined. If dependent events aren't
+//               defined, then the initially cached value will never be cleared.
+//
+// Examples
+//
+//   var Person = Transis.Object.extend(function() {
+//     this.prop('firstName');
+//     this.prop('lastName');
+//     this.prop('fullName', {
+//       on: ['firstName', 'lastName'],
+//       get: function(firstName, lastName) {
+//         return firstName + ' ' + lastName;
+//       }
+//     });
+//   });
+//
+//   var p = new Person({firstName: 'John', lastName: 'Doe'});
+//
+//   console.log(p.firstName);
+//   // John
+//   console.log(p.lastName);
+//   // Doe
+//   console.log(p.fullName);
+//   // John Doe
+//   p.on('firstName', function() { console.log('firstName changed:', p.firstName); });
+//   p.on('fullName', function() { console.log('fullName changed:', p.fullName); });
+//   p.firstName = 'Jane';
+//   // firstName changed: Jane
+//   // fullName changed: Jane Doe
+//
+// Returns the receiver.
+TransisObject.prop = function (name) {
+  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+  defineProp(this.prototype, name, opts);
+  return this;
+};
+
+// Public: Creates multiple props at once from the given object.
+//
+// props - An object mapping prop names to their options. See `Transis.Object#prop` for the
+//         available options.
+//
+// Returns the receiver.
+TransisObject.props = function (props) {
+  for (var name in props) {
+    this.prop(name, props[name]);
+  }
+  return this;
+};
+
+// Public: Returns a string containing the class's name.
+TransisObject.toString = function () {
+  return this.displayName || this.name || '(Unknown)';
+};
+
+// Public: The `Transis.Object` initializer. Sets the given props and begins observing dependent
+// property events. This method should never be called directly, its called by the `Transis.Object`
+// constructor function.
+//
+// props - An object containing properties to set. Only properties defined via `Transis.Object.prop`
+//         are settable.
+TransisObject.prototype.init = function (props) {
+  if (props) {
+    this.set(props);
+  }
+};
+
+// Public: Defines an observable property directly on the receiver. See the `Transis.Object.prop`
+// method for available options.
+TransisObject.prototype.prop = function (name) {
+  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+  defineProp(this, name, opts);
+  return this;
+};
+
+// Public: Creates multiple props at once from the given object directly on the receiver.
+TransisObject.prototype.props = TransisObject.props;
+
+// Public: Set multiple props at once. This method take special care to only set props that are
+// defined with `Transis.Object.prop` and are not readonly.
+//
+// props - An object containing props to set.
+//
+// Returns nothing.
+TransisObject.prototype.set = function (props) {
+  for (var k in props) {
+    if (this.__props__ && this.__props__[k] && !this.__props__[k].readonly) {
+      this[k] = props[k];
+    }
+  }
+};
+
+// Public: Register a callback to be invoked when the given prop changes. Callbacks are invoked
+// asynchronously whenever the property is changed directly or one of its dependent properties is
+// changed.
+//
+// prop     - The name of the property to observe.
+// callback - A function to invoke when the prop changes.
+//
+// Returns the receiver.
+TransisObject.prototype.on = function (prop, callback) {
+  this.__observers__ = this.__observers__ || {};
+  this.__observers__[prop] = this.__observers__[prop] || [];
+  this.__observers__[prop].push(callback);
+  return this;
+};
+
+// Public: Remove a prop observer.
+//
+// prop     - The name of the property to stop observing.
+// callback - The function passed to `Transis.Object#on`.
+//
+// Returns the receiver.
+TransisObject.prototype.off = function (prop, callback) {
+  if (this.__observers__ && this.__observers__[prop]) {
+    for (var i = this.__observers__[prop].length - 1; i >= 0; i--) {
+      if (this.__observers__[prop][i] === callback) {
+        this.__observers__[prop].splice(i, 1);
+      }
+    }
+  }
+  return this;
+};
+
+// Public: Notifies observers of an event. Observers are invoked with the name of the event and
+// any additional arguments passed to `notify`.
+//
+// event   - A string containing the name of the event.
+// ...args - Zero or more additional arguments to pass along to observers.
+//
+// Returns the receiver.
+TransisObject.prototype.notify = function (event) {
+  if (this.__observers__ && this.__observers__[event]) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    for (var i = 0, n = this.__observers__[event].length; i < n; i++) {
+      if (this.__observers__[event][i]) {
+        try {
+          var _observers__$event;
+
+          (_observers__$event = this.__observers__[event])[i].apply(_observers__$event, [event].concat(args));
+        } catch (e) {
+          console.error('Transis.Object#notify: exception caught in observer:', e);
+        }
+      }
+    }
+  }
+
+  return this;
+};
+
+// Public: Registers a property change and asynchronously triggers property observers. This is
+// called automatically when a prop is set. This should only be used when the state of a prop is
+// managed by external code.
+//
+// name - The name of the prop that has changed.
+//
+// Returns the receiver.
+TransisObject.prototype.didChange = function (name) {
+  registerChange(this, name);
+
+  // ensure that observers get triggered after promise callbacks
+  if (!flushTimer) {
+    flushTimer = setTimeout(function () {
+      Promise.resolve().then(flush);
+    });
+  }
+
+  return this;
+};
+
+// Public: Returns a string representation of the object.
+TransisObject.prototype.toString = function () {
+  return '#<' + this.constructor + ':' + this.objectId + '>';
+};
+
+// Public: Indicates whether the receiver is equal to the given object. The default implementation
+// simply does an identity comparison using the `===` operator. You'll likely want to override
+// this method in your sub-types in order to perform a more meaningful comparison.
+//
+// o - An object to compare against the receiver.
+//
+// Returns a `true` if the objects are equal and `false` otherwise.
+TransisObject.prototype.eq = function (other) {
+  return this === other;
+};
+
+// Public: Resolves the given path into a value, relative to the receiver. See `util.getPath`.
+TransisObject.prototype.getPath = function (path) {
+  return util.getPath(this, path);
+};
+
+// Internal: Returns the current value of the given property or the default value if it is not
+// defined.
+//
+// Returns the value of the property.
+// Throws `Error` if there is no property with the given name.
+TransisObject.prototype._getProp = function (name) {
+  var _this = this;
+
+  var desc = this.__props__ && this.__props__[name],
+      value;
+
+  if (!desc) {
+    throw new Error('Transis.Object#_getProp: unknown prop name `' + name + '`');
+  }
+
+  if (desc.cache && isCached.call(this, name)) {
+    return getCached.call(this, name);
+  }
+
+  if (desc.get && desc.pure) {
+    value = desc.get.apply(null, desc.on.map(function (path) {
+      return _this.getPath(path);
+    }));
+  } else if (desc.get) {
+    value = desc.get.call(this);
+  } else {
+    value = this['__' + name];
+  }
+
+  value = value === undefined ? desc.default : value;
+
+  if (desc.cache) {
+    (this.__cache__ = this.__cache__ || {})[name] = value;
+  }
+
+  return value;
+};
+
+// Internal: Sets the value of the given property.
+//
+// name - The name of the prop to change.
+// value - The new value of the prop.
+//
+// Returns the previous value.
+// Throws `Error` if there is no property with the given name.
+// Throws `TypeError` if the property is readonly.
+TransisObject.prototype._setProp = function (name, value) {
+  var descriptor = this.__props__ && this.__props__[name],
+      key = '__' + name,
+      old = this._getProp(name);
+
+  if (!descriptor) {
+    throw new Error('Transis.Object#_setProp: unknown prop name `' + name + '`');
+  }
+
+  if (descriptor.readonly) {
+    throw new TypeError('Transis.Object#_setProp: cannot set readonly property `' + name + '` of ' + this);
+  }
+
+  if (descriptor.set) {
+    descriptor.set.call(this, value);
+  } else {
+    this[key] = value;
+  }
+
+  if (!util.eq(old, this[key])) {
+    this.didChange(name);
+  }
+
+  return old;
+};
+
+// Internal: Registers a proxy object. All prop changes on the receiver will be proxied to the
+// given proxy object with the given name as a prefix for the property name.
+TransisObject.prototype._registerProxy = function (object, name) {
+  this.__proxies__ = this.__proxies__ || {};
+  this.__proxies__[object.objectId + ',' + name] = { object: object, name: name };
+  return this;
+};
+
+// Internal: Deregisters a proxy object previously registered with `#_registerProxy`.
+TransisObject.prototype._deregisterProxy = function (object, name) {
+  if (this.__proxies__) {
+    delete this.__proxies__[object.objectId + ',' + name];
+  }
+  return this;
+};
+
+TransisObject.displayName = 'Transis.Object';
+
+exports.default = TransisObject;
+module.exports = exports['default'];
 
 
 /***/ }),
@@ -10243,1651 +10501,64 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _object = __webpack_require__(65);
+
+var _object2 = _interopRequireDefault(_object);
+
+var _array = __webpack_require__(64);
+
+var _array2 = _interopRequireDefault(_array);
+
+var _model = __webpack_require__(384);
+
+var _model2 = _interopRequireDefault(_model);
+
+var _id_map = __webpack_require__(171);
+
+var _id_map2 = _interopRequireDefault(_id_map);
+
+var _react = __webpack_require__(385);
+
+var react = _interopRequireWildcard(_react);
+
 var _util = __webpack_require__(39);
 
 var util = _interopRequireWildcard(_util);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _parsers = __webpack_require__(101);
 
-var objectId = 0,
-    changedObjects = {},
-    delayPreFlushCallbacks = [],
-    delayPostFlushCallbacks = [],
-    flushTimer;
+var parsers = _interopRequireWildcard(_parsers);
 
-// Public: `Transis.Object` is the foundation of the `Transis` library. It implements a basic object
-// system and observable properties.
-//
-// To create a subclass of `Transis.Object` use the `extend` method and pass it a function. Inside of
-// the function is the "class body" where you can define both static and dynamic properties:
-//
-//   var Person = Transis.Object.extend(function() {
-//     // `this` refers to `MyClass`
-//
-//     // define static/class properties by attaching them to `this`.
-//     this.classMethod = function() {};
-//
-//     // create an intializer by defining the `init` method.
-//     this.prototype.init = function(firstName, lastName) {
-//       this.firstName = firstName;
-//       this.lastName = lastName;
-//     };
-//
-//     // define instance properties by adding them to the `prototype`
-//     this.prototype.fullName = function() {
-//       return this.firstName + ' ' + this.lastName;
-//     };
-//   });
-//
-//   Person.classMethod();
-//
-//   // instantiate an object using the `new` operator, any arguments will get passed to the `init`
-//   // method
-//   var joe = new Person('joe', 'blow');
-//   joe.fullName(); // 'Joe Blow'
-//
-// See `Transis.Object.prop` for defining observable properties.
-function TransisObject() {
-  Object.defineProperty(this, 'objectId', { value: ++objectId });
-  this.init.apply(this, arguments);
-};
+var _pluralize = __webpack_require__(139);
 
-TransisObject.displayName = 'Transis.Object';
-
-function registerChange(object, prop) {
-  changedObjects[object.objectId] = changedObjects[object.objectId] || { object: object, props: {} };
-  changedObjects[object.objectId].props[prop] = true;
-}
-
-// Internal: Processes recorded property changes by traversing the property dependency graph and
-// forwarding changes to proxy objects.
-function propagateChanges() {
-  var seen = {};
-  var head = void 0;
-
-  for (var id in changedObjects) {
-    var _changedObjects$id = changedObjects[id];
-    var object = _changedObjects$id.object;
-    var props = _changedObjects$id.props;
-
-    for (var k in props) {
-      head = { object: object, name: k, next: head };
-      seen[id + k] = true;
-    }
-  }
-
-  while (head) {
-    var _head = head;
-    var name = _head.name;
-    var object = _head.object;
-    var _head$object = _head.object;
-    var _objectId = _head$object.objectId;
-    var __deps__ = _head$object.__deps__;
-    var __proxies__ = _head$object.__proxies__;
-
-    var deps = __deps__ && __deps__[name];
-
-    head = head.next;
-
-    registerChange(object, name);
-
-    if (object.__cache__) {
-      delete object.__cache__[name];
-    }
-
-    if (deps) {
-      for (var i = 0, n = deps.length; i < n; i++) {
-        var seenKey = _objectId + deps[i];
-
-        if (!seen[seenKey]) {
-          head = { object: object, name: deps[i], next: head };
-          seen[seenKey] = true;
-        }
-      }
-    }
-
-    if (__proxies__ && name.indexOf('.') === -1) {
-      for (var _k in __proxies__) {
-        var proxy = __proxies__[_k];
-        var proxyObject = proxy.object;
-        var proxyName = proxy.name + '.' + name;
-        var proxySeenKey = proxyObject.objectId + proxyName;
-
-        if (!seen[proxySeenKey]) {
-          head = { object: proxyObject, name: proxyName, next: head };
-          seen[proxySeenKey] = true;
-        }
-      }
-    }
-  }
-}
-
-// Internal: Flushes the current change queue. This notifies observers of the changed props as well
-// as observers of any props that depend on the changed props. Observers are only invoked once per
-// flush, regardless of how many of their dependent props have changed. Additionaly, cached values
-// are cleared where appropriate.
-function flush() {
-  var f = void 0;
-
-  while (f = delayPreFlushCallbacks.shift()) {
-    f();
-  }
-
-  propagateChanges();
-
-  var curChangedObjects = changedObjects;
-  changedObjects = {};
-  flushTimer = null;
-
-  for (var id in curChangedObjects) {
-    var _curChangedObjects$id = curChangedObjects[id];
-    var object = _curChangedObjects$id.object;
-    var props = _curChangedObjects$id.props;
-
-    var star = false;
-
-    for (var k in props) {
-      if (k.indexOf('.') === -1) {
-        star = true;
-      }
-      object.notify(k);
-    }
-
-    if (star) {
-      object.notify('*');
-    }
-  }
-
-  while (f = delayPostFlushCallbacks.shift()) {
-    f();
-  }
-}
-
-// Internal: Indicates whether the current name has a value cached.
-function isCached(name) {
-  return this.__cache__ ? this.__cache__.hasOwnProperty(name) : false;
-}
-
-// Internal: Returns the cached value for the given name.
-function getCached(name) {
-  return this.__cache__ ? this.__cache__[name] : undefined;
-}
-
-// Internal: Defines a property on the given object. See the docs for `Transis.prop`.
-//
-// Returns nothing.
-function defineProp(object, name) {
-  var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-  var descriptor = Object.assign({
-    name: name,
-    get: null,
-    set: null,
-    default: undefined,
-    on: [],
-    cache: false,
-    pure: !!(opts.get && opts.on && !opts.set)
-  }, opts, { readonly: opts.get && !opts.set });
-
-  if (!object.hasOwnProperty('__props__')) {
-    object.__props__ = Object.create(object.__props__ || null);
-  }
-
-  object.__props__[name] = descriptor;
-
-  if (!object.hasOwnProperty('__deps__')) {
-    object.__deps__ = Object.create(object.__deps__ || null);
-  }
-
-  descriptor.on.forEach(function (prop) {
-    (object.__deps__[prop] = object.__deps__[prop] || []).push(name);
-
-    if (prop.indexOf('.') !== -1) {
-      var segments = prop.split('.'),
-          first = segments[0];
-      if (segments.length > 2) {
-        throw new Error('Transis.Object.defineProp: dependent property paths of more than two segments are not allowed: `' + prop + '`');
-      }
-      (object.__deps__[first] = object.__deps__[first] || []).push(name);
-    }
-  });
-
-  Object.defineProperty(object, name, {
-    get: function get() {
-      return this._getProp(name);
-    },
-    set: descriptor.readonly ? undefined : function (value) {
-      this._setProp(name, value);
-    },
-    configurable: false,
-    enumerable: true
-  });
-}
-
-// Public: Flush the pending change queue. This should only be used in specs.
-TransisObject.flush = function () {
-  clearTimeout(flushTimer);
-  flush();
-  return this;
-};
-
-// Public: Clears the pending change queue. This should only be used in specs.
-TransisObject.clearChangeQueue = function () {
-  clearTimeout(flushTimer);
-  changedObjects = {};
-  return this;
-};
-
-// Public: Register a callback to be invoked immediately before the next flush cycle begins.
-//
-// f - A function.
-//
-// Returns the receiver;
-TransisObject.delayPreFlush = function (f) {
-  delayPreFlushCallbacks.push(f);
-  return this;
-};
-
-// Public: Register a callback to be invoked immediately after the next flush cycle completes.
-//
-// f - A function.
-//
-// Returns the receiver;
-TransisObject.delay = function (f) {
-  delayPostFlushCallbacks.push(f);
-  return this;
-};
-
-// Public: Creates a subclass of `Transis.Object`.
-TransisObject.extend = function (f) {
-  var subclass = function subclass() {
-    TransisObject.apply(this, arguments);
-  };
-
-  for (var k in this) {
-    if (this.hasOwnProperty(k)) {
-      subclass[k] = this[k];
-    }
-  }
-
-  subclass.prototype = Object.create(this.prototype);
-  subclass.prototype.constructor = subclass;
-  subclass.__super__ = this.prototype;
-
-  if (typeof f === 'function') {
-    f.call(subclass);
-  }
-
-  return subclass;
-};
-
-// Public: Defines a property on the class's prototype. Properties defined with this method are
-// observable using the `Transis.Object#on` method.
-//
-// name - A string containing the name of the property.
-// opts - An object containing one or more of the following keys:
-//   get       - A custom property getter function.
-//   set       - A custom property setter function.
-//   default   - Specify a default value for the property.
-//   on        - An array of dependent path names. Observers of the prop are notified when any of
-//               these props change. Paths may be at most two segments long.
-//   pure      - Boolean indicating whether the computed prop's `get` function is pure or not. When
-//               accessed, a pure prop's `get` function has its dependencies passed in and is called
-//               with `this` set to null. If you have a computed prop with dependencies and need to
-//               access `this`, then `pure` must be set to `false`.
-//   cache     - Set this to true to enable property caching. This is useful with computed
-//               properties that have their dependent events defined. If dependent events aren't
-//               defined, then the initially cached value will never be cleared.
-//
-// Examples
-//
-//   var Person = Transis.Object.extend(function() {
-//     this.prop('firstName');
-//     this.prop('lastName');
-//     this.prop('fullName', {
-//       on: ['firstName', 'lastName'],
-//       get: function(firstName, lastName) {
-//         return firstName + ' ' + lastName;
-//       }
-//     });
-//   });
-//
-//   var p = new Person({firstName: 'John', lastName: 'Doe'});
-//
-//   console.log(p.firstName);
-//   // John
-//   console.log(p.lastName);
-//   // Doe
-//   console.log(p.fullName);
-//   // John Doe
-//   p.on('firstName', function() { console.log('firstName changed:', p.firstName); });
-//   p.on('fullName', function() { console.log('fullName changed:', p.fullName); });
-//   p.firstName = 'Jane';
-//   // firstName changed: Jane
-//   // fullName changed: Jane Doe
-//
-// Returns the receiver.
-TransisObject.prop = function (name) {
-  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-  defineProp(this.prototype, name, opts);
-  return this;
-};
-
-// Public: Creates multiple props at once from the given object.
-//
-// props - An object mapping prop names to their options. See `Transis.Object#prop` for the
-//         available options.
-//
-// Returns the receiver.
-TransisObject.props = function (props) {
-  for (var name in props) {
-    this.prop(name, props[name]);
-  }
-  return this;
-};
-
-// Public: Returns a string containing the class's name.
-TransisObject.toString = function () {
-  return this.displayName || this.name || '(Unknown)';
-};
-
-// Public: The `Transis.Object` initializer. Sets the given props and begins observing dependent
-// property events. This method should never be called directly, its called by the `Transis.Object`
-// constructor function.
-//
-// props - An object containing properties to set. Only properties defined via `Transis.Object.prop`
-//         are settable.
-TransisObject.prototype.init = function (props) {
-  if (props) {
-    this.set(props);
-  }
-};
-
-// Public: Defines an observable property directly on the receiver. See the `Transis.Object.prop`
-// method for available options.
-TransisObject.prototype.prop = function (name) {
-  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-  defineProp(this, name, opts);
-  return this;
-};
-
-// Public: Creates multiple props at once from the given object directly on the receiver.
-TransisObject.prototype.props = TransisObject.props;
-
-// Public: Set multiple props at once. This method take special care to only set props that are
-// defined with `Transis.Object.prop` and are not readonly.
-//
-// props - An object containing props to set.
-//
-// Returns nothing.
-TransisObject.prototype.set = function (props) {
-  for (var k in props) {
-    if (this.__props__ && this.__props__[k] && !this.__props__[k].readonly) {
-      this[k] = props[k];
-    }
-  }
-};
-
-// Public: Register a callback to be invoked when the given prop changes. Callbacks are invoked
-// asynchronously whenever the property is changed directly or one of its dependent properties is
-// changed.
-//
-// prop     - The name of the property to observe.
-// callback - A function to invoke when the prop changes.
-//
-// Returns the receiver.
-TransisObject.prototype.on = function (prop, callback) {
-  this.__observers__ = this.__observers__ || {};
-  this.__observers__[prop] = this.__observers__[prop] || [];
-  this.__observers__[prop].push(callback);
-  return this;
-};
-
-// Public: Remove a prop observer.
-//
-// prop     - The name of the property to stop observing.
-// callback - The function passed to `Transis.Object#on`.
-//
-// Returns the receiver.
-TransisObject.prototype.off = function (prop, callback) {
-  if (this.__observers__ && this.__observers__[prop]) {
-    for (var i = this.__observers__[prop].length - 1; i >= 0; i--) {
-      if (this.__observers__[prop][i] === callback) {
-        this.__observers__[prop].splice(i, 1);
-      }
-    }
-  }
-  return this;
-};
-
-// Public: Notifies observers of an event. Observers are invoked with the name of the event and
-// any additional arguments passed to `notify`.
-//
-// event   - A string containing the name of the event.
-// ...args - Zero or more additional arguments to pass along to observers.
-//
-// Returns the receiver.
-TransisObject.prototype.notify = function (event) {
-  if (this.__observers__ && this.__observers__[event]) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    for (var i = 0, n = this.__observers__[event].length; i < n; i++) {
-      if (this.__observers__[event][i]) {
-        try {
-          var _observers__$event;
-
-          (_observers__$event = this.__observers__[event])[i].apply(_observers__$event, [event].concat(args));
-        } catch (e) {
-          console.error('Transis.Object#notify: exception caught in observer:', e);
-        }
-      }
-    }
-  }
-
-  return this;
-};
-
-// Public: Registers a property change and asynchronously triggers property observers. This is
-// called automatically when a prop is set. This should only be used when the state of a prop is
-// managed by external code.
-//
-// name - The name of the prop that has changed.
-//
-// Returns the receiver.
-TransisObject.prototype.didChange = function (name) {
-  registerChange(this, name);
-
-  // ensure that observers get triggered after promise callbacks
-  if (!flushTimer) {
-    flushTimer = setTimeout(function () {
-      Promise.resolve().then(flush);
-    });
-  }
-
-  return this;
-};
-
-// Public: Returns a string representation of the object.
-TransisObject.prototype.toString = function () {
-  return '#<' + this.constructor + ':' + this.objectId + '>';
-};
-
-// Public: Indicates whether the receiver is equal to the given object. The default implementation
-// simply does an identity comparison using the `===` operator. You'll likely want to override
-// this method in your sub-types in order to perform a more meaningful comparison.
-//
-// o - An object to compare against the receiver.
-//
-// Returns a `true` if the objects are equal and `false` otherwise.
-TransisObject.prototype.eq = function (other) {
-  return this === other;
-};
-
-// Public: Resolves the given path into a value, relative to the receiver. See `util.getPath`.
-TransisObject.prototype.getPath = function (path) {
-  return util.getPath(this, path);
-};
-
-// Internal: Returns the current value of the given property or the default value if it is not
-// defined.
-//
-// Returns the value of the property.
-// Throws `Error` if there is no property with the given name.
-TransisObject.prototype._getProp = function (name) {
-  var _this = this;
-
-  var desc = this.__props__ && this.__props__[name],
-      value;
-
-  if (!desc) {
-    throw new Error('Transis.Object#_getProp: unknown prop name `' + name + '`');
-  }
-
-  if (desc.cache && isCached.call(this, name)) {
-    return getCached.call(this, name);
-  }
-
-  if (desc.get && desc.pure) {
-    value = desc.get.apply(null, desc.on.map(function (path) {
-      return _this.getPath(path);
-    }));
-  } else if (desc.get) {
-    value = desc.get.call(this);
-  } else {
-    value = this['__' + name];
-  }
-
-  value = value === undefined ? desc.default : value;
-
-  if (desc.cache) {
-    (this.__cache__ = this.__cache__ || {})[name] = value;
-  }
-
-  return value;
-};
-
-// Internal: Sets the value of the given property.
-//
-// name - The name of the prop to change.
-// value - The new value of the prop.
-//
-// Returns the previous value.
-// Throws `Error` if there is no property with the given name.
-// Throws `TypeError` if the property is readonly.
-TransisObject.prototype._setProp = function (name, value) {
-  var descriptor = this.__props__ && this.__props__[name],
-      key = '__' + name,
-      old = this._getProp(name);
-
-  if (!descriptor) {
-    throw new Error('Transis.Object#_setProp: unknown prop name `' + name + '`');
-  }
-
-  if (descriptor.readonly) {
-    throw new TypeError('Transis.Object#_setProp: cannot set readonly property `' + name + '` of ' + this);
-  }
-
-  if (descriptor.set) {
-    descriptor.set.call(this, value);
-  } else {
-    this[key] = value;
-  }
-
-  if (!util.eq(old, this[key])) {
-    this.didChange(name);
-  }
-
-  return old;
-};
-
-// Internal: Registers a proxy object. All prop changes on the receiver will be proxied to the
-// given proxy object with the given name as a prefix for the property name.
-TransisObject.prototype._registerProxy = function (object, name) {
-  this.__proxies__ = this.__proxies__ || {};
-  this.__proxies__[object.objectId + ',' + name] = { object: object, name: name };
-  return this;
-};
-
-// Internal: Deregisters a proxy object previously registered with `#_registerProxy`.
-TransisObject.prototype._deregisterProxy = function (object, name) {
-  if (this.__proxies__) {
-    delete this.__proxies__[object.objectId + ',' + name];
-  }
-  return this;
-};
-
-TransisObject.displayName = 'Transis.Object';
-
-exports.default = TransisObject;
-module.exports = exports['default'];
-
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _object = __webpack_require__(68);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _util = __webpack_require__(40);
-
-var util = _interopRequireWildcard(_util);
+var _pluralize2 = _interopRequireDefault(_pluralize);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var iframe;
+// Public: Resets Transis by clearing the ID map and clearing out the pending change queue. This
+// should only ever be used in specs.
+function reset() {
+  _id_map2.default.clear();
+  _object2.default.clearChangeQueue();
+}
 
-var TransisArray = function () {
-  // http://danielmendel.github.io/blog/2013/02/20/subclassing-javascript-arrays/
-
-  if (typeof window !== "undefined") {
-    // browser
-    iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-    frames[frames.length - 1].document.write("<script>parent._Array = Array;</script>");
-    var _Array = window._Array;
-    delete window._Array;
-    document.body.removeChild(iframe);
-    return _Array;
-  } else {
-    // node.js
-    return __webpack_require__(171).runInNewContext("Array");
-  }
-}();
-
-var _TransisArray$prototy = TransisArray.prototype;
-var concat = _TransisArray$prototy.concat;
-var slice = _TransisArray$prototy.slice;
-var splice = _TransisArray$prototy.splice;
-var map = _TransisArray$prototy.map;
-var filter = _TransisArray$prototy.filter;
-
-
-Object.assign(TransisArray, _object2.default);
-Object.assign(TransisArray.prototype, _object2.default.prototype);
-
-// Internal: Copy over polyfilled methods from `Array` to `Transis.Array`.
-['findIndex', 'find'].forEach(function (x) {
-  TransisArray.prototype[x] = Array.prototype[x];
-});
-
-// Public: Returns a new `Transis.Array` containing the given arguments as contents. This is the
-// main `Transis.Array` constructor, never use the `Transis.Array` constructor function directly.
-//
-// ...elements - The elements to add to the array.
-//
-// Returns a new `Transis.Array`.
-TransisArray.of = function () {
-  var a = new TransisArray(arguments.length),
-      i,
-      n;
-  _object2.default.call(a);
-  for (i = 0, n = arguments.length; i < n; i++) {
-    a[i] = arguments[i];
-  }
-  return a;
-};
-
-// Public: Creates a new `Transis.Array` from the given array-like object. Useful for converting a
-// regular array to a `Transis.Array`.
-//
-// a       - An array-like object.
-// mapFn   - Map function to call on every element of the array (optional).
-// thisArg - Value to use as this when executing mapFn (optional).
-//
-// Returns a new `Transis.Array`.
-TransisArray.from = function (a, mapFn, thisArg) {
-  var _this = this;
-
-  var arr = TransisArray.of.apply(null, a);
-  return mapFn ? arr.map(function (x) {
-    return mapFn.call(thisArg || _this, x);
-  }) : arr;
-};
-
-(function () {
-  this.displayName = 'Transis.Array';
-
-  this.prop('size', { get: function get() {
-      return this.length;
-    } });
-  this.prop('first', { get: function get() {
-      return this[0];
-    } });
-  this.prop('@', { get: function get() {
-      return this;
-    } });
-
-  // Public: Element reference and assignment method. When given one argument, returns the item at
-  // the specified index. When passed, two arguments, the second argument is set as the item at the
-  // index indicated by the first.
-  //
-  // Negative indices can be passed to reference elements from the end of the array (-1 is the last
-  // element in the array).
-  //
-  // i - A number representing an index in the array.
-  // v - A value to set at the given index (optional).
-  //
-  // Returns the value at the given index when passed one argument. Returns `undefined` if the index
-  //   is out of range.
-  // Returns `v` when given two arguments.
-  this.prototype.at = function (i, v) {
-    var length = this.length;
-
-    if (i < 0) {
-      i = length + i;
-    }
-
-    if (arguments.length === 1) {
-      return i >= 0 && i < length ? this[i] : undefined;
-    } else {
-      this.splice(i, 1, v);
-      return v;
-    }
-  };
-
-  // Public: `Transis.Array` equality test. This method performs an element-wise comparison between
-  // the receiver and the given array.
-  //
-  // other - A `Transis.Array` or native array to compare to the receiver.
-  //
-  // Returns `true` if the arrays are equal and `false` otherwise.
-  this.prototype.eq = function (other) {
-    return util.arrayEq(this, other);
-  };
-
-  // Internal: Performs the actual splice. This method is called by `Array#splice` and is always
-  // passed the number of elements to remove and an array of items to add whereas the `splice`
-  // method is more flexible in the arguments that it accepts.
-  this.prototype._splice = function (i, n, added) {
-    var removed = splice.apply(this, [i, n].concat(added));
-
-    if (n !== added.length) {
-      this.didChange('size');
-    }
-    if (i === 0) {
-      this.didChange('first');
-    }
-    this.didChange('@');
-
-    if (this.__proxy__) {
-      removed.forEach(function (x) {
-        if (x instanceof _object2.default || x instanceof TransisArray) {
-          x._deregisterProxy(this.__proxy__.to, this.__proxy__.name);
-        }
-      }, this);
-
-      added.forEach(function (x) {
-        if (x instanceof _object2.default || x instanceof TransisArray) {
-          x._registerProxy(this.__proxy__.to, this.__proxy__.name);
-        }
-      }, this);
-
-      this.__proxy__.to.didChange(this.__proxy__.name);
-    }
-
-    return TransisArray.from(removed);
-  };
-
-  // Public: Array mutator. All mutations made to an array (pushing, popping, assignment, etc.) are
-  // made through this method.
-  //
-  // i        - The index to start the mutation, may be negative.
-  // n        - The number of items to remove, starting from `i`. If not given, then all items
-  //            starting from `i` are removed.
-  // ...items - Zero or more items to add to the array, starting at index `i`.
-  //
-  // Returns a new `Transis.Array` containing the elements removed.
-  // Throws `Error` when given an index that is out of range.
-  this.prototype.splice = function (i, n) {
-    var added = slice.call(arguments, 2),
-        index = i < 0 ? this.length + i : i;
-
-    if (index < 0) {
-      throw new Error("Transis.Array#splice: index " + i + " is too small for " + this);
-    }
-
-    if (n === undefined) {
-      n = this.length - index;
-    }
-
-    return this._splice(index, n, added);
-  };
-
-  // Public: Adds one or more elements to the end of the array and returns the new length.
-  //
-  // ...elements - One or more objects to add to the end of the array.
-  //
-  // Returns the new length of the array.
-  this.prototype.push = function () {
-    var args = slice.call(arguments);
-    this.splice.apply(this, [this.length, 0].concat(args));
-    return this.length;
-  };
-
-  // Public: Adds one or more elements to the beginning of the array and returns the new length.
-  //
-  // ...elements - One or more objects to add to the beginning of the array.
-  //
-  // Returns the new length of the array.
-  this.prototype.unshift = function () {
-    var args = slice.call(arguments);
-    this.splice.apply(this, [0, 0].concat(args));
-    return this.length;
-  };
-
-  // Public: Removes the last element from the array and returns the element.
-  //
-  // Returns the last element in the array or `undefined` if the array length is 0.
-  this.prototype.pop = function () {
-    return this.length > 0 ? this.splice(-1, 1).at(0) : undefined;
-  };
-
-  // Public: Removes the first element from the array and returns the element.
-  //
-  // Returns the first element in the array or `undefined` if the array length is 0.
-  this.prototype.shift = function () {
-    return this.length > 0 ? this.splice(0, 1).at(0) : undefined;
-  };
-
-  // Public: Returns a shallow copy of a portion of an array into a new array.
-  //
-  // begin - Index at which to begin extraction. A negative index indicates an offset from the end
-  //         of the array. If omitted, slice begins from index 0.
-  // end   - Index at which to end extraction. Extracts up to but not including this index. A
-  //         negative index indicates an offset from the end of the array. If omitted, slice
-  //         extracts through the end of the array.
-  //
-  // Returns a new `Transis.Array`.
-  this.prototype.slice = function () {
-    return TransisArray.from(slice.apply(this, arguments));
-  };
-
-  // Public: Creates a new array with the results of calling the given function on every element in
-  // the array.
-  //
-  // callback - Function that produces a new element of the array. It takes three arguments:
-  //   current - The current element being processed.
-  //   index   - The index of the current element.
-  //   array   - The array map was called on.
-  // ctx      - Value to use as this when invoking callback.
-  //
-  // Returns a new `Transis.Array`.
-  this.prototype.map = function () {
-    return TransisArray.from(map.apply(this, arguments));
-  };
-
-  // Public: Creates a new array with all elements that pass the test implemented by the provided
-  // function.
-  //
-  // callback - Function to test each element of the array. Return true to keep the element and
-  //            false to discard.
-  // ctx      - Value to use as this when invoking callback.
-  //
-  // Returns a new `Transis.Array`.
-  this.prototype.filter = function () {
-    return TransisArray.from(filter.apply(this, arguments));
-  };
-
-  // Public: Returns a new `Transis.Array` comprised of the receiver joined with the array(s) or
-  // value(s) provided as arguments.
-  //
-  // ...value - Arrays or values to concatenate into the new array.
-  //
-  // Returns a new `Transis.Array`.
-  this.prototype.concat = function () {
-    return TransisArray.from(concat.apply(this, arguments));
-  };
-
-  // Public: Replaces the contents of the receiver with the contents of the given array.
-  //
-  // a - A `Transis.Array` or native array.
-  //
-  // Returns the receiver.
-  this.prototype.replace = function (a) {
-    this.splice.apply(this, [0, this.length].concat(a));
-    return this;
-  };
-
-  // Public: Clears the array by removing all elements.
-  //
-  // Returns the receiver.
-  this.prototype.clear = function () {
-    this.splice(0, this.length);
-    return this;
-  };
-
-  // Public: Builds a new array that is the one-dimensional flattening of the receiver. In other
-  // words, for every item that is itself an array, its items are added to the new array.
-  //
-  // Returns a new `Transis.Array` instance.
-  this.prototype.flatten = function () {
-    var a = TransisArray.of();
-
-    for (var i = 0, n = this.length; i < n; i++) {
-      var el = this[i];
-
-      if (el instanceof TransisArray) {
-        a = a.concat(el.flatten());
-      } else if (Array.isArray(el)) {
-        a = a.concat(TransisArray.from(el).flatten());
-      } else {
-        a.push(el);
-      }
-    }
-
-    return a;
-  };
-
-  // Public: Returns a new array with `null` and `undefined` items removed.
-  this.prototype.compact = function () {
-    return this.reduce(function (acc, el) {
-      if (el != null) {
-        acc.push(el);
-      }
-      return acc;
-    }, TransisArray.of());
-  };
-
-  // Public: Returns a new array containing only the unique items in the receiver.
-  this.prototype.uniq = function () {
-    var map = new Map();
-
-    return this.reduce(function (acc, el) {
-      if (!map.has(el)) {
-        map.set(el, true);acc.push(el);
-      }
-      return acc;
-    }, TransisArray.of());
-  };
-
-  // Public: Yields each set of consecutive `n` elements to the function as a native array.
-  //
-  // n - The number of consecutive elements to yield at a time.
-  // f - The function to yield each consecutive set of elements to.
-  //
-  // Examples
-  //
-  //   Transis.A(1,2,3,4,5,6,7).forEachCons(2, console.log);
-  //   // outputs:
-  //   // [ 1, 2 ]
-  //   // [ 2, 3 ]
-  //   // [ 3, 4 ]
-  //   // [ 4, 5 ]
-  //   // [ 5, 6 ]
-  //   // [ 6, 7 ]
-  //
-  // Returns nothing.
-  this.prototype.forEachCons = function (n, f) {
-    var a = [];
-
-    this.forEach(function (el) {
-      a.push(el);
-      if (a.length > n) {
-        a.shift();
-      }
-      if (a.length === n) {
-        f(a.slice(0));
-      }
-    });
-  };
-
-  // Public: Yields each slice of `n` elements to the function as a native array.
-  //
-  // n - The size of each slice to yield.
-  // f - The function to yield each slice to.
-  //
-  // Examples
-  //
-  //   Transis.A(1,2,3,4,5,6,7).forEachSlice(2, console.log);
-  //   // outputs:
-  //   // [ 1, 2 ]
-  //   // [ 3, 4 ]
-  //   // [ 5, 6 ]
-  //   // [ 7 ]
-  //
-  // Returns the receiver.
-  this.prototype.forEachSlice = function (n, f) {
-    var a = [];
-
-    this.forEach(function (el) {
-      a.push(el);
-      if (a.length === n) {
-        f(a);a = [];
-      }
-    });
-
-    if (a.length > 0) {
-      f(a);
-    }
-  };
-
-  // Public: Causes the array to begin proxying prop change notifications on itself as well as its
-  // elements to the given proxy object.
-  //
-  // to   - The object to proxy prop changes to.
-  // name - The name to use as a prefix on the proxied prop name.
-  //
-  // Returns the receiver.
-  this.prototype.proxy = function (to, name) {
-    if (this.__proxy__) {
-      this.unproxy();
-    }
-
-    this.__proxy__ = { to: to, name: name };
-
-    this.forEach(function (x) {
-      if (x instanceof _object2.default || x instanceof TransisArray) {
-        x._registerProxy(to, name);
-      }
-    });
-
-    return this;
-  };
-
-  // Public: Stop proxying prop changes.
-  this.prototype.unproxy = function () {
-    if (this.__proxy__) {
-      this.forEach(function (x) {
-        if (x instanceof _object2.default || x instanceof TransisArray) {
-          x._deregisterProxy(this.__proxy__.to, this.__proxy__.name);
-        }
-      }, this);
-      delete this.__proxy__;
-    }
-
-    return this;
-  };
-
-  // Public: Returns a string representation of the array.
-  this.prototype.toString = function () {
-    return "[" + this.map(function (x) {
-      return String(x);
-    }).join(', ') + "]";
-  };
-
-  // Public: Removes element from array and returns the removed element.
-  this.prototype.remove = function (el) {
-    var index = this.indexOf(el);
-    return index !== -1 ? this.splice(index, 1)[0] : null;
-  };
-}).call(TransisArray);
-
-exports.default = TransisArray;
+exports.default = Object.assign({
+  Object: _object2.default,
+  Array: _array2.default,
+  A: _array2.default.of,
+  Model: _model2.default,
+  pluralize: _pluralize2.default,
+  ReactPropsMixin: react.PropsMixin,
+  ReactStateMixin: react.StateMixin,
+  reset: reset
+}, util, parsers);
 module.exports = exports["default"];
 
 
 /***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _util = __webpack_require__(40);
-
-var util = _interopRequireWildcard(_util);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var objectId = 0,
-    changedObjects = {},
-    delayPreFlushCallbacks = [],
-    delayPostFlushCallbacks = [],
-    flushTimer;
-
-// Public: `Transis.Object` is the foundation of the `Transis` library. It implements a basic object
-// system and observable properties.
-//
-// To create a subclass of `Transis.Object` use the `extend` method and pass it a function. Inside of
-// the function is the "class body" where you can define both static and dynamic properties:
-//
-//   var Person = Transis.Object.extend(function() {
-//     // `this` refers to `MyClass`
-//
-//     // define static/class properties by attaching them to `this`.
-//     this.classMethod = function() {};
-//
-//     // create an intializer by defining the `init` method.
-//     this.prototype.init = function(firstName, lastName) {
-//       this.firstName = firstName;
-//       this.lastName = lastName;
-//     };
-//
-//     // define instance properties by adding them to the `prototype`
-//     this.prototype.fullName = function() {
-//       return this.firstName + ' ' + this.lastName;
-//     };
-//   });
-//
-//   Person.classMethod();
-//
-//   // instantiate an object using the `new` operator, any arguments will get passed to the `init`
-//   // method
-//   var joe = new Person('joe', 'blow');
-//   joe.fullName(); // 'Joe Blow'
-//
-// See `Transis.Object.prop` for defining observable properties.
-function TransisObject() {
-  Object.defineProperty(this, 'objectId', { value: ++objectId });
-  this.init.apply(this, arguments);
-};
-
-TransisObject.displayName = 'Transis.Object';
-
-function registerChange(object, prop) {
-  changedObjects[object.objectId] = changedObjects[object.objectId] || { object: object, props: {} };
-  changedObjects[object.objectId].props[prop] = true;
-}
-
-// Internal: Processes recorded property changes by traversing the property dependency graph and
-// forwarding changes to proxy objects.
-function propagateChanges() {
-  var seen = {};
-  var head = void 0;
-
-  for (var id in changedObjects) {
-    var _changedObjects$id = changedObjects[id];
-    var object = _changedObjects$id.object;
-    var props = _changedObjects$id.props;
-
-    for (var k in props) {
-      head = { object: object, name: k, next: head };
-      seen[id + k] = true;
-    }
-  }
-
-  while (head) {
-    var _head = head;
-    var name = _head.name;
-    var object = _head.object;
-    var _head$object = _head.object;
-    var _objectId = _head$object.objectId;
-    var __deps__ = _head$object.__deps__;
-    var __proxies__ = _head$object.__proxies__;
-
-    var deps = __deps__ && __deps__[name];
-
-    head = head.next;
-
-    registerChange(object, name);
-
-    if (object.__cache__) {
-      delete object.__cache__[name];
-    }
-
-    if (deps) {
-      for (var i = 0, n = deps.length; i < n; i++) {
-        var seenKey = _objectId + deps[i];
-
-        if (!seen[seenKey]) {
-          head = { object: object, name: deps[i], next: head };
-          seen[seenKey] = true;
-        }
-      }
-    }
-
-    if (__proxies__ && name.indexOf('.') === -1) {
-      for (var _k in __proxies__) {
-        var proxy = __proxies__[_k];
-        var proxyObject = proxy.object;
-        var proxyName = proxy.name + '.' + name;
-        var proxySeenKey = proxyObject.objectId + proxyName;
-
-        if (!seen[proxySeenKey]) {
-          head = { object: proxyObject, name: proxyName, next: head };
-          seen[proxySeenKey] = true;
-        }
-      }
-    }
-  }
-}
-
-// Internal: Flushes the current change queue. This notifies observers of the changed props as well
-// as observers of any props that depend on the changed props. Observers are only invoked once per
-// flush, regardless of how many of their dependent props have changed. Additionaly, cached values
-// are cleared where appropriate.
-function flush() {
-  var f = void 0;
-
-  while (f = delayPreFlushCallbacks.shift()) {
-    f();
-  }
-
-  propagateChanges();
-
-  var curChangedObjects = changedObjects;
-  changedObjects = {};
-  flushTimer = null;
-
-  for (var id in curChangedObjects) {
-    var _curChangedObjects$id = curChangedObjects[id];
-    var object = _curChangedObjects$id.object;
-    var props = _curChangedObjects$id.props;
-
-    var star = false;
-
-    for (var k in props) {
-      if (k.indexOf('.') === -1) {
-        star = true;
-      }
-      object.notify(k);
-    }
-
-    if (star) {
-      object.notify('*');
-    }
-  }
-
-  while (f = delayPostFlushCallbacks.shift()) {
-    f();
-  }
-}
-
-// Internal: Indicates whether the current name has a value cached.
-function isCached(name) {
-  return this.__cache__ ? this.__cache__.hasOwnProperty(name) : false;
-}
-
-// Internal: Returns the cached value for the given name.
-function getCached(name) {
-  return this.__cache__ ? this.__cache__[name] : undefined;
-}
-
-// Internal: Defines a property on the given object. See the docs for `Transis.prop`.
-//
-// Returns nothing.
-function defineProp(object, name) {
-  var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-  var descriptor = Object.assign({
-    name: name,
-    get: null,
-    set: null,
-    default: undefined,
-    on: [],
-    cache: false,
-    pure: !!(opts.get && opts.on && !opts.set)
-  }, opts, { readonly: opts.get && !opts.set });
-
-  if (!object.hasOwnProperty('__props__')) {
-    object.__props__ = Object.create(object.__props__ || null);
-  }
-
-  object.__props__[name] = descriptor;
-
-  if (!object.hasOwnProperty('__deps__')) {
-    object.__deps__ = Object.create(object.__deps__ || null);
-  }
-
-  descriptor.on.forEach(function (prop) {
-    (object.__deps__[prop] = object.__deps__[prop] || []).push(name);
-
-    if (prop.indexOf('.') !== -1) {
-      var segments = prop.split('.'),
-          first = segments[0];
-      if (segments.length > 2) {
-        throw new Error('Transis.Object.defineProp: dependent property paths of more than two segments are not allowed: `' + prop + '`');
-      }
-      (object.__deps__[first] = object.__deps__[first] || []).push(name);
-    }
-  });
-
-  Object.defineProperty(object, name, {
-    get: function get() {
-      return this._getProp(name);
-    },
-    set: descriptor.readonly ? undefined : function (value) {
-      this._setProp(name, value);
-    },
-    configurable: false,
-    enumerable: true
-  });
-}
-
-// Public: Flush the pending change queue. This should only be used in specs.
-TransisObject.flush = function () {
-  clearTimeout(flushTimer);
-  flush();
-  return this;
-};
-
-// Public: Clears the pending change queue. This should only be used in specs.
-TransisObject.clearChangeQueue = function () {
-  clearTimeout(flushTimer);
-  changedObjects = {};
-  return this;
-};
-
-// Public: Register a callback to be invoked immediately before the next flush cycle begins.
-//
-// f - A function.
-//
-// Returns the receiver;
-TransisObject.delayPreFlush = function (f) {
-  delayPreFlushCallbacks.push(f);
-  return this;
-};
-
-// Public: Register a callback to be invoked immediately after the next flush cycle completes.
-//
-// f - A function.
-//
-// Returns the receiver;
-TransisObject.delay = function (f) {
-  delayPostFlushCallbacks.push(f);
-  return this;
-};
-
-// Public: Creates a subclass of `Transis.Object`.
-TransisObject.extend = function (f) {
-  var subclass = function subclass() {
-    TransisObject.apply(this, arguments);
-  };
-
-  for (var k in this) {
-    if (this.hasOwnProperty(k)) {
-      subclass[k] = this[k];
-    }
-  }
-
-  subclass.prototype = Object.create(this.prototype);
-  subclass.prototype.constructor = subclass;
-  subclass.__super__ = this.prototype;
-
-  if (typeof f === 'function') {
-    f.call(subclass);
-  }
-
-  return subclass;
-};
-
-// Public: Defines a property on the class's prototype. Properties defined with this method are
-// observable using the `Transis.Object#on` method.
-//
-// name - A string containing the name of the property.
-// opts - An object containing one or more of the following keys:
-//   get       - A custom property getter function.
-//   set       - A custom property setter function.
-//   default   - Specify a default value for the property.
-//   on        - An array of dependent path names. Observers of the prop are notified when any of
-//               these props change. Paths may be at most two segments long.
-//   pure      - Boolean indicating whether the computed prop's `get` function is pure or not. When
-//               accessed, a pure prop's `get` function has its dependencies passed in and is called
-//               with `this` set to null. If you have a computed prop with dependencies and need to
-//               access `this`, then `pure` must be set to `false`.
-//   cache     - Set this to true to enable property caching. This is useful with computed
-//               properties that have their dependent events defined. If dependent events aren't
-//               defined, then the initially cached value will never be cleared.
-//
-// Examples
-//
-//   var Person = Transis.Object.extend(function() {
-//     this.prop('firstName');
-//     this.prop('lastName');
-//     this.prop('fullName', {
-//       on: ['firstName', 'lastName'],
-//       get: function(firstName, lastName) {
-//         return firstName + ' ' + lastName;
-//       }
-//     });
-//   });
-//
-//   var p = new Person({firstName: 'John', lastName: 'Doe'});
-//
-//   console.log(p.firstName);
-//   // John
-//   console.log(p.lastName);
-//   // Doe
-//   console.log(p.fullName);
-//   // John Doe
-//   p.on('firstName', function() { console.log('firstName changed:', p.firstName); });
-//   p.on('fullName', function() { console.log('fullName changed:', p.fullName); });
-//   p.firstName = 'Jane';
-//   // firstName changed: Jane
-//   // fullName changed: Jane Doe
-//
-// Returns the receiver.
-TransisObject.prop = function (name) {
-  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-  defineProp(this.prototype, name, opts);
-  return this;
-};
-
-// Public: Creates multiple props at once from the given object.
-//
-// props - An object mapping prop names to their options. See `Transis.Object#prop` for the
-//         available options.
-//
-// Returns the receiver.
-TransisObject.props = function (props) {
-  for (var name in props) {
-    this.prop(name, props[name]);
-  }
-  return this;
-};
-
-// Public: Returns a string containing the class's name.
-TransisObject.toString = function () {
-  return this.displayName || this.name || '(Unknown)';
-};
-
-// Public: The `Transis.Object` initializer. Sets the given props and begins observing dependent
-// property events. This method should never be called directly, its called by the `Transis.Object`
-// constructor function.
-//
-// props - An object containing properties to set. Only properties defined via `Transis.Object.prop`
-//         are settable.
-TransisObject.prototype.init = function (props) {
-  if (props) {
-    this.set(props);
-  }
-};
-
-// Public: Defines an observable property directly on the receiver. See the `Transis.Object.prop`
-// method for available options.
-TransisObject.prototype.prop = function (name) {
-  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-  defineProp(this, name, opts);
-  return this;
-};
-
-// Public: Creates multiple props at once from the given object directly on the receiver.
-TransisObject.prototype.props = TransisObject.props;
-
-// Public: Set multiple props at once. This method take special care to only set props that are
-// defined with `Transis.Object.prop` and are not readonly.
-//
-// props - An object containing props to set.
-//
-// Returns nothing.
-TransisObject.prototype.set = function (props) {
-  for (var k in props) {
-    if (this.__props__ && this.__props__[k] && !this.__props__[k].readonly) {
-      this[k] = props[k];
-    }
-  }
-};
-
-// Public: Register a callback to be invoked when the given prop changes. Callbacks are invoked
-// asynchronously whenever the property is changed directly or one of its dependent properties is
-// changed.
-//
-// prop     - The name of the property to observe.
-// callback - A function to invoke when the prop changes.
-//
-// Returns the receiver.
-TransisObject.prototype.on = function (prop, callback) {
-  this.__observers__ = this.__observers__ || {};
-  this.__observers__[prop] = this.__observers__[prop] || [];
-  this.__observers__[prop].push(callback);
-  return this;
-};
-
-// Public: Remove a prop observer.
-//
-// prop     - The name of the property to stop observing.
-// callback - The function passed to `Transis.Object#on`.
-//
-// Returns the receiver.
-TransisObject.prototype.off = function (prop, callback) {
-  if (this.__observers__ && this.__observers__[prop]) {
-    for (var i = this.__observers__[prop].length - 1; i >= 0; i--) {
-      if (this.__observers__[prop][i] === callback) {
-        this.__observers__[prop].splice(i, 1);
-      }
-    }
-  }
-  return this;
-};
-
-// Public: Notifies observers of an event. Observers are invoked with the name of the event and
-// any additional arguments passed to `notify`.
-//
-// event   - A string containing the name of the event.
-// ...args - Zero or more additional arguments to pass along to observers.
-//
-// Returns the receiver.
-TransisObject.prototype.notify = function (event) {
-  if (this.__observers__ && this.__observers__[event]) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    for (var i = 0, n = this.__observers__[event].length; i < n; i++) {
-      if (this.__observers__[event][i]) {
-        try {
-          var _observers__$event;
-
-          (_observers__$event = this.__observers__[event])[i].apply(_observers__$event, [event].concat(args));
-        } catch (e) {
-          console.error('Transis.Object#notify: exception caught in observer:', e);
-        }
-      }
-    }
-  }
-
-  return this;
-};
-
-// Public: Registers a property change and asynchronously triggers property observers. This is
-// called automatically when a prop is set. This should only be used when the state of a prop is
-// managed by external code.
-//
-// name - The name of the prop that has changed.
-//
-// Returns the receiver.
-TransisObject.prototype.didChange = function (name) {
-  registerChange(this, name);
-
-  // ensure that observers get triggered after promise callbacks
-  if (!flushTimer) {
-    flushTimer = setTimeout(function () {
-      Promise.resolve().then(flush);
-    });
-  }
-
-  return this;
-};
-
-// Public: Returns a string representation of the object.
-TransisObject.prototype.toString = function () {
-  return '#<' + this.constructor + ':' + this.objectId + '>';
-};
-
-// Public: Indicates whether the receiver is equal to the given object. The default implementation
-// simply does an identity comparison using the `===` operator. You'll likely want to override
-// this method in your sub-types in order to perform a more meaningful comparison.
-//
-// o - An object to compare against the receiver.
-//
-// Returns a `true` if the objects are equal and `false` otherwise.
-TransisObject.prototype.eq = function (other) {
-  return this === other;
-};
-
-// Public: Resolves the given path into a value, relative to the receiver. See `util.getPath`.
-TransisObject.prototype.getPath = function (path) {
-  return util.getPath(this, path);
-};
-
-// Internal: Returns the current value of the given property or the default value if it is not
-// defined.
-//
-// Returns the value of the property.
-// Throws `Error` if there is no property with the given name.
-TransisObject.prototype._getProp = function (name) {
-  var _this = this;
-
-  var desc = this.__props__ && this.__props__[name],
-      value;
-
-  if (!desc) {
-    throw new Error('Transis.Object#_getProp: unknown prop name `' + name + '`');
-  }
-
-  if (desc.cache && isCached.call(this, name)) {
-    return getCached.call(this, name);
-  }
-
-  if (desc.get && desc.pure) {
-    value = desc.get.apply(null, desc.on.map(function (path) {
-      return _this.getPath(path);
-    }));
-  } else if (desc.get) {
-    value = desc.get.call(this);
-  } else {
-    value = this['__' + name];
-  }
-
-  value = value === undefined ? desc.default : value;
-
-  if (desc.cache) {
-    (this.__cache__ = this.__cache__ || {})[name] = value;
-  }
-
-  return value;
-};
-
-// Internal: Sets the value of the given property.
-//
-// name - The name of the prop to change.
-// value - The new value of the prop.
-//
-// Returns the previous value.
-// Throws `Error` if there is no property with the given name.
-// Throws `TypeError` if the property is readonly.
-TransisObject.prototype._setProp = function (name, value) {
-  var descriptor = this.__props__ && this.__props__[name],
-      key = '__' + name,
-      old = this._getProp(name);
-
-  if (!descriptor) {
-    throw new Error('Transis.Object#_setProp: unknown prop name `' + name + '`');
-  }
-
-  if (descriptor.readonly) {
-    throw new TypeError('Transis.Object#_setProp: cannot set readonly property `' + name + '` of ' + this);
-  }
-
-  if (descriptor.set) {
-    descriptor.set.call(this, value);
-  } else {
-    this[key] = value;
-  }
-
-  if (!util.eq(old, this[key])) {
-    this.didChange(name);
-  }
-
-  return old;
-};
-
-// Internal: Registers a proxy object. All prop changes on the receiver will be proxied to the
-// given proxy object with the given name as a prefix for the property name.
-TransisObject.prototype._registerProxy = function (object, name) {
-  this.__proxies__ = this.__proxies__ || {};
-  this.__proxies__[object.objectId + ',' + name] = { object: object, name: name };
-  return this;
-};
-
-// Internal: Deregisters a proxy object previously registered with `#_registerProxy`.
-TransisObject.prototype._deregisterProxy = function (object, name) {
-  if (this.__proxies__) {
-    delete this.__proxies__[object.objectId + ',' + name];
-  }
-  return this;
-};
-
-TransisObject.displayName = 'Transis.Object';
-
-exports.default = TransisObject;
-module.exports = exports['default'];
-
-
-/***/ }),
-/* 69 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11960,7 +10631,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 70 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11977,13 +10648,13 @@ module.exports = shallowEqual;
 
 
 var DOMLazyTree = __webpack_require__(31);
-var Danger = __webpack_require__(205);
+var Danger = __webpack_require__(201);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactInstrumentation = __webpack_require__(15);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(78);
-var setInnerHTML = __webpack_require__(55);
-var setTextContent = __webpack_require__(130);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(76);
+var setInnerHTML = __webpack_require__(54);
+var setTextContent = __webpack_require__(129);
 
 function getNodeAfter(parentNode, node) {
   // Special case for text components, which return [open, close] comments
@@ -12192,7 +10863,7 @@ module.exports = DOMChildrenOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 71 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12217,7 +10888,7 @@ var DOMNamespaces = {
 module.exports = DOMNamespaces;
 
 /***/ }),
-/* 72 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12235,7 +10906,7 @@ module.exports = DOMNamespaces;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactErrorUtils = __webpack_require__(76);
+var ReactErrorUtils = __webpack_require__(74);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -12449,7 +11120,7 @@ module.exports = EventPluginUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 73 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12513,7 +11184,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 74 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12531,8 +11202,8 @@ module.exports = KeyEscapeUtils;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactPropTypesSecret = __webpack_require__(121);
-var propTypesFactory = __webpack_require__(108);
+var ReactPropTypesSecret = __webpack_require__(120);
+var propTypesFactory = __webpack_require__(107);
 
 var React = __webpack_require__(33);
 var PropTypes = propTypesFactory(React.isValidElement);
@@ -12657,7 +11328,7 @@ module.exports = LinkedValueUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 75 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12707,7 +11378,7 @@ module.exports = ReactComponentEnvironment;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 76 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12789,7 +11460,7 @@ module.exports = ReactErrorUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 77 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12808,7 +11479,7 @@ module.exports = ReactErrorUtils;
 var _prodInvariant = __webpack_require__(5);
 
 var ReactCurrentOwner = __webpack_require__(20);
-var ReactInstanceMap = __webpack_require__(43);
+var ReactInstanceMap = __webpack_require__(42);
 var ReactInstrumentation = __webpack_require__(15);
 var ReactUpdates = __webpack_require__(19);
 
@@ -13029,7 +11700,7 @@ module.exports = ReactUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 78 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13066,7 +11737,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 module.exports = createMicrosoftUnsafeLocalFunction;
 
 /***/ }),
-/* 79 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13121,7 +11792,7 @@ function getEventCharCode(nativeEvent) {
 module.exports = getEventCharCode;
 
 /***/ }),
-/* 80 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13169,7 +11840,7 @@ function getEventModifierState(nativeEvent) {
 module.exports = getEventModifierState;
 
 /***/ }),
-/* 81 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13209,7 +11880,7 @@ function getEventTarget(nativeEvent) {
 module.exports = getEventTarget;
 
 /***/ }),
-/* 82 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13274,7 +11945,7 @@ function isEventSupported(eventNameSuffix, capture) {
 module.exports = isEventSupported;
 
 /***/ }),
-/* 83 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13321,7 +11992,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 /***/ }),
-/* 84 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13698,7 +12369,7 @@ module.exports = validateDOMNesting;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 85 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13769,7 +12440,7 @@ module.exports = lowPriorityWarning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 86 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13842,7 +12513,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 87 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13859,12 +12530,12 @@ module.exports = shallowEqual;
 
 
 var DOMLazyTree = __webpack_require__(35);
-var Danger = __webpack_require__(308);
+var Danger = __webpack_require__(305);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactInstrumentation = __webpack_require__(16);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(95);
-var setInnerHTML = __webpack_require__(63);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(93);
+var setInnerHTML = __webpack_require__(62);
 var setTextContent = __webpack_require__(163);
 
 function getNodeAfter(parentNode, node) {
@@ -14074,7 +12745,7 @@ module.exports = DOMChildrenOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 88 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14099,7 +12770,7 @@ var DOMNamespaces = {
 module.exports = DOMNamespaces;
 
 /***/ }),
-/* 89 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14117,7 +12788,7 @@ module.exports = DOMNamespaces;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactErrorUtils = __webpack_require__(93);
+var ReactErrorUtils = __webpack_require__(91);
 
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(4);
@@ -14331,7 +13002,7 @@ module.exports = EventPluginUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 90 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14395,7 +13066,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 91 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14414,7 +13085,7 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__(6);
 
 var ReactPropTypesSecret = __webpack_require__(154);
-var propTypesFactory = __webpack_require__(141);
+var propTypesFactory = __webpack_require__(140);
 
 var React = __webpack_require__(37);
 var PropTypes = propTypesFactory(React.isValidElement);
@@ -14539,7 +13210,7 @@ module.exports = LinkedValueUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 92 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14589,7 +13260,7 @@ module.exports = ReactComponentEnvironment;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 93 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14671,7 +13342,7 @@ module.exports = ReactErrorUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 94 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14690,7 +13361,7 @@ module.exports = ReactErrorUtils;
 var _prodInvariant = __webpack_require__(6);
 
 var ReactCurrentOwner = __webpack_require__(22);
-var ReactInstanceMap = __webpack_require__(47);
+var ReactInstanceMap = __webpack_require__(46);
 var ReactInstrumentation = __webpack_require__(16);
 var ReactUpdates = __webpack_require__(21);
 
@@ -14911,7 +13582,7 @@ module.exports = ReactUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 95 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14948,7 +13619,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 module.exports = createMicrosoftUnsafeLocalFunction;
 
 /***/ }),
-/* 96 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15003,7 +13674,7 @@ function getEventCharCode(nativeEvent) {
 module.exports = getEventCharCode;
 
 /***/ }),
-/* 97 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15051,7 +13722,7 @@ function getEventModifierState(nativeEvent) {
 module.exports = getEventModifierState;
 
 /***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15091,7 +13762,7 @@ function getEventTarget(nativeEvent) {
 module.exports = getEventTarget;
 
 /***/ }),
-/* 99 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15156,7 +13827,7 @@ function isEventSupported(eventNameSuffix, capture) {
 module.exports = isEventSupported;
 
 /***/ }),
-/* 100 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15203,7 +13874,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 /***/ }),
-/* 101 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15580,7 +14251,7 @@ module.exports = validateDOMNesting;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 102 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15651,315 +14322,828 @@ module.exports = lowPriorityWarning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.parseNumber = parseNumber;
+exports.parsePercent = parsePercent;
+exports.parseDate = parseDate;
+exports.parseDateTime = parseDateTime;
+exports.parseEmail = parseEmail;
+exports.parsePhone = parsePhone;
+exports.parseDuration = parseDuration;
+var NUMBER_RE = /^[-]?([0-9]*[0-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[0-9][0-9]*)$/;
+
+// Public: Parses a string containing a number.
+//
+// s - The string to parse.
+//
+// Returns a number or `null` if parsing fails.
+function parseNumber(s) {
+  s = String(s).replace(/[^\d-.]/g, '').replace(/\.$/, '');
+  if (!s.match(NUMBER_RE)) {
+    return null;
+  }
+  return parseFloat(s, 10);
+}
+
+var MDY_DATE_RE = /^\s*(\d{1,2})\D?(\d{1,2})(?:\D?(\d{2,4}))?\s*$/;
+var ISO8601_DATE_RE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
+
+// Public: Parses a string containing a percent.
+//
+// s - The string to parse.
+//
+// Returns a number or `null` if parsing fails.
+function parsePercent(s) {
+  var n = parseNumber(String(s).replace('%', ''));
+  return n == null ? null : n / 100;
+}
+
+// Public: Parses a string containing a date in the following formats:
+//   - YYYY-MM-DD (ISO8601)
+//   - MM/DD
+//   - MM?DD?YY, where ? is a non-digit character
+//   - MM?DD?YYYY, where ? is a non-digit character
+//   - MMDDYY
+//   - MMDDYYYY
+//
+// s - The string to parse.
+//
+// Returns a `Date` or `null` if parsing fails.
+function parseDate(s) {
+  var m, d, y, date, parts;
+
+  s = String(s).replace(/\s/g, '');
+
+  if (parts = s.match(ISO8601_DATE_RE)) {
+    y = parseInt(parts[1], 10);
+    m = parseInt(parts[2], 10) - 1;
+    d = parseInt(parts[3], 10);
+    date = new Date(y, m, d);
+    return date.getMonth() === m ? date : null;
+  } else if (parts = s.match(MDY_DATE_RE)) {
+    m = parseInt(parts[1], 10) - 1;
+    d = parseInt(parts[2], 10);
+    y = parts[3] ? parseInt(parts[3], 10) : new Date().getFullYear();
+    if (0 <= y && y <= 68) {
+      y += 2000;
+    }
+    if (69 <= y && y <= 99) {
+      y += 1900;
+    }
+    date = new Date(y, m, d);
+    return date.getMonth() === m ? date : null;
+  } else {
+    return null;
+  }
+}
+
+var NO_TZ_RE = /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?$/;
+
+// Public: Parses a string containing an ISO8601 formatted date and time.
+//
+// s - The string to parse.
+//
+// Returns a `Date` or `null` if parsing fails.
+function parseDateTime(s) {
+  var n;
+  s = String(s);
+  if (s.match(NO_TZ_RE)) {
+    s += 'Z';
+  }
+  return (n = Date.parse(s)) ? new Date(n) : null;
+}
+
+var EMAIL_FORMAT = /^([^@\s]+)@[-a-z0-9.]+\.+[a-z]{2,}$/i;
+
+// Public: Parses a string containing an email.
+//
+// s - The string to parse.
+//
+// Returns the email string.
+function parseEmail(s) {
+  s = String(s);
+  return EMAIL_FORMAT.test(s) ? s : null;
+}
+
+var PHONE_FORMAT = /^\d{10}$/;
+var PHONE_CHARS = /[\(\)\s-]/g;
+
+// Public: Parses a string containing an phone number.
+//
+// s - The string to parse.
+//
+// Returns the phone string.
+function parsePhone(s) {
+  s = String(s);
+  return PHONE_FORMAT.test(s.replace(PHONE_CHARS, '')) ? s : null;
+}
+
+var DURATION_RE = /^\s*(?:(?::?\d+)|(?::?\d+:\d+)|(?:\d+:\d+:\d+))\s*$/;
+
+// Public: Parses a string containing a time duration. The format is: "HH:MM:SS" where hours and
+// minutes are optional.
+//
+// s - The string to parse.
+//
+// Returns the number of seconds or `null` if parsing fails.
+function parseDuration(s) {
+  s = String(s);
+
+  if (!DURATION_RE.test(s)) {
+    return null;
+  }
+
+  var parts = s.split(':').map(function (p) {
+    return +p;
+  });
+
+  if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  } else if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  } else {
+    return parts[0];
+  }
+}
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function webpackUniversalModuleDefinition(root, factory) {
+  if (( false ? 'undefined' : _typeof2(exports)) === 'object' && ( false ? 'undefined' : _typeof2(module)) === 'object') module.exports = factory(__webpack_require__(170), __webpack_require__(142), __webpack_require__(66));else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(170), __webpack_require__(142), __webpack_require__(66)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if ((typeof exports === 'undefined' ? 'undefined' : _typeof2(exports)) === 'object') exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));else root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
+})(undefined, function (__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
+  return (/******/function (modules) {
+      // webpackBootstrap
+      /******/ // The module cache
+      /******/var installedModules = {};
+      /******/
+      /******/ // The require function
+      /******/function __webpack_require__(moduleId) {
+        /******/
+        /******/ // Check if module is in cache
+        /******/if (installedModules[moduleId]) {
+          /******/return installedModules[moduleId].exports;
+          /******/
+        }
+        /******/ // Create a new module (and put it into the cache)
+        /******/var module = installedModules[moduleId] = {
+          /******/i: moduleId,
+          /******/l: false,
+          /******/exports: {}
+          /******/ };
+        /******/
+        /******/ // Execute the module function
+        /******/modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+        /******/
+        /******/ // Flag the module as loaded
+        /******/module.l = true;
+        /******/
+        /******/ // Return the exports of the module
+        /******/return module.exports;
+        /******/
+      }
+      /******/
+      /******/
+      /******/ // expose the modules object (__webpack_modules__)
+      /******/__webpack_require__.m = modules;
+      /******/
+      /******/ // expose the module cache
+      /******/__webpack_require__.c = installedModules;
+      /******/
+      /******/ // identity function for calling harmony imports with the correct context
+      /******/__webpack_require__.i = function (value) {
+        return value;
+      };
+      /******/
+      /******/ // define getter function for harmony exports
+      /******/__webpack_require__.d = function (exports, name, getter) {
+        /******/if (!__webpack_require__.o(exports, name)) {
+          /******/Object.defineProperty(exports, name, {
+            /******/configurable: false,
+            /******/enumerable: true,
+            /******/get: getter
+            /******/ });
+          /******/
+        }
+        /******/
+      };
+      /******/
+      /******/ // getDefaultExport function for compatibility with non-harmony modules
+      /******/__webpack_require__.n = function (module) {
+        /******/var getter = module && module.__esModule ?
+        /******/function getDefault() {
+          return module['default'];
+        } :
+        /******/function getModuleExports() {
+          return module;
+        };
+        /******/__webpack_require__.d(getter, 'a', getter);
+        /******/return getter;
+        /******/
+      };
+      /******/
+      /******/ // Object.prototype.hasOwnProperty.call
+      /******/__webpack_require__.o = function (object, property) {
+        return Object.prototype.hasOwnProperty.call(object, property);
+      };
+      /******/
+      /******/ // __webpack_public_path__
+      /******/__webpack_require__.p = "";
+      /******/
+      /******/ // Load entry module and return exports
+      /******/return __webpack_require__(__webpack_require__.s = 1);
+      /******/
+    }(
+    /************************************************************************/
+    /******/[
+    /* 0 */
+    /***/function (module, exports, __webpack_require__) {
+
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.StateMixinLegacy = exports.PropsMixinLegacy = exports.updateQueue = undefined;
+
+      var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+        return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+      } : function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+      };
+
+      var _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }return target;
+      };
+
+      var _react = __webpack_require__(2);
+
+      var _react2 = _interopRequireDefault(_react);
+
+      var _reactDom = __webpack_require__(3);
+
+      var _reactDom2 = _interopRequireDefault(_reactDom);
+
+      var _transis = __webpack_require__(4);
+
+      var _transis2 = _interopRequireDefault(_transis);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      function _possibleConstructorReturn(self, call) {
+        if (!self) {
+          throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }return call && ((typeof call === 'undefined' ? 'undefined' : _typeof2(call)) === "object" || typeof call === "function") ? call : self;
+      }
+
+      function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+          throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof2(superClass)));
+        }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+      }
+
+      // Note: not exactly sure when this is needed: work around for this multiple instance issue
+      // let mundo; try { mundo = window } catch (e) { mundo = global }
+      // const Transis = mundo.Transis || MyTransis
+
+      // copied from transis
+      var nextId = 1;
+      var updateLog = {};
+      var updateQueue = exports.updateQueue = {};
+
+      function componentComparison(a, b) {
+        if (a._transisId < b._transisId) {
+          return -1;
+        } else if (a._transisId > b._transisId) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+
+      function preFlush() {
+        updateLog = {};
+        _transis2.default.Object.delay(postFlush);
+      }
+
+      function postFlush() {
+        var components = [];
+
+        // console.warn('post flush triggered')
+        for (var id in updateQueue) {
+          components.push(updateQueue[id]);
+          delete updateQueue[id];
+        }
+
+        // Sort the components by their assigned _transisId. Since components get mounted from the top
+        // down, this should ensure that parent components are force updated before any descendent
+        // components that also need an update. This avoids the case where we force update a component
+        // and then force update one of its ancestors, which may unnecessarily render the component
+        // again.
+        components.sort(componentComparison).forEach(function (component) {
+          if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
+            // has mounted
+            component.forceUpdate();
+          }
+        });
+
+        _transis2.default.Object.delayPreFlush(preFlush);
+      }
+
+      function queueUpdate(component) {
+        // console.warn('queueUpdate')
+        updateQueue[component._transisId] = component;
+      }
+
+      function logUpdate(component) {
+        updateLog[component._transisId] = true;
+      }
+
+      _transis2.default.Object.delayPreFlush(preFlush);
+
+      // end of copied from transis
+
+
+      // * Refactor Effort *
+      // @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
+      // @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
+      var bindState = function bindState(globalTransisObjectVar, attrsToWatch, callback) {
+        if (globalTransisObjectVar && typeof globalTransisObjectVar.on === 'function') {
+          attrsToWatch.forEach(function (attrPath) {
+            return globalTransisObjectVar.on(attrPath, callback);
+          });
+        }
+      };
+
+      var unbindState = function unbindState(stateVar, attrsToWatch, callback) {
+        if (stateVar && typeof stateVar.off === 'function') {
+          attrsToWatch.forEach(function (attrPath) {
+            return stateVar.off(attrPath, callback);
+          });
+        }
+      };
+
+      var unbindProps = function unbindProps(propsVar, attrsToWatch, callback) {
+        attrsToWatch.forEach(function (attrPath) {
+          return propsVar && propsVar.off(attrPath, callback);
+        });
+      };
+
+      var bindProps = function bindProps(propsVar, attrsToWatch, callback) {
+        attrsToWatch.forEach(function (attrPath) {
+          return propsVar && propsVar.on(attrPath, callback);
+        });
+      };
+
+      // component will mount
+      var componentWillMount = function componentWillMount(_ref) {
+        var _this = this;
+
+        var globalTransisObject = _ref.globalTransisObject,
+            state = _ref.state,
+            props = _ref.props;
+
+        if (state || props) {
+          // setting transis id
+          this._transisId = this._transisId || nextId++;
+
+          // setting main update function
+          var wrapQueueUpdate = function wrapQueueUpdate() {
+            queueUpdate(_this);
+          }; // name this function
+          this._transisQueueUpdate = this._transisQueueUpdate || wrapQueueUpdate;
+        }
+        if (state) {
+          // core register sync method
+          this._transisSyncState = function () {
+            // console.warn('transis sync update triggered')
+
+            var stateToUpdate = {};
+            for (var k in state) {
+              if (_this.state[k] !== globalTransisObject[k]) {
+                // local state is out of date, off syncing it
+                unbindState(_this.state[k], state[k], _this._transisQueueUpdate
+
+                // globalTransisObject state needs to be attached, on syncing it
+                );bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
+
+                stateToUpdate[k] = globalTransisObject[k];
+              }
+            } // end of for loop
+
+            if (Object.keys(stateToUpdate).length) {
+              _this.setState(stateToUpdate);
+            }
+          };
+
+          for (var k in state) {
+            // loop through states, on sync all states initially
+            bindState(globalTransisObject[k], state[k], this._transisQueueUpdate);
+          }
+
+          globalTransisObject.on('*', this._transisSyncState);
+        }
+
+        if (props) {
+          for (var _k in props) {
+            bindProps(this.props[_k], props[_k], this._transisQueueUpdate);
+          }
+        }
+      }; // end of Component Will Mount Factory
+      // * end Refactor Effort *
+
+      // main constructor
+      var transisAware = function transisAware(_ref2, ComposedComponent) {
+        var globalTransisObject = _ref2.global,
+            state = _ref2.state,
+            props = _ref2.props;
+
+        if (!globalTransisObject && state) {
+          throw new Error("Cannot compose with-state component without global transis object, state: ", state);
+        }
+
+        // TODO: convert prop into into an object of empty arrays
+        // e.g.
+        //    StateMixin({}, 'a', 'b', 'c')
+        //  ->
+        //    props {}= { a: [], b: [], c: [] }
+        if ({}.toString.call(state).includes('Array')) {
+          // is an array
+          state = state.reduce(function (obj, stateName) {
+            obj[stateName] = [];
+            return obj;
+          }, {});
+        }
+
+        var higherOrderComponent = function (_React$Component) {
+          _inherits(HigherOrderComponent, _React$Component);
+
+          // allow both component will mount to get triggered
+          function HigherOrderComponent(propArgs) {
+            _classCallCheck(this, HigherOrderComponent);
+
+            var _this2 = _possibleConstructorReturn(this, (HigherOrderComponent.__proto__ || Object.getPrototypeOf(HigherOrderComponent)).call(this, propArgs));
+
+            _this2.componentWillMount = function () {
+              return componentWillMount.call(_this2, {
+                globalTransisObject: globalTransisObject, state: state, props: props
+              });
+            };
+
+            _this2.componentDidMount = function () {
+              return logUpdate(_this2);
+            };
+
+            _this2.componentDidUpdate = function () {
+              return logUpdate(_this2);
+            };
+
+            _this2.componentWillUnmount = function () {
+              if (state) {
+                for (var k in state) {
+                  unbindState(_this2.state[k], state[k], _this2._transisQueueUpdate);
+                }
+                globalTransisObject.off('*', _this2._transisSyncState);
+              }
+              if (props) {
+                for (var _k2 in props) {
+                  unbindProps(_this2.props[_k2], props[_k2], _this2._transisQueueUpdate);
+                }
+              }
+            };
+
+            _this2.render = function () {
+              return _react2.default.createElement(ComposedComponent, _extends({}, _this2.props, _this2.state));
+            };
+
+            if (state) {
+              // initialize State
+              _this2.state = Object.keys(state).reduce(function (result, key) {
+                result[key] = globalTransisObject[key];
+                return result;
+              }, {});
+            }
+            if (props) {
+              _this2.componentWillReceiveProps = function (nextProps) {
+                var _loop = function _loop(k) {
+                  props[k].forEach(function (prop) {
+                    if (nextProps[k] !== _this2.props[k]) {
+                      if (_this2.props[k]) {
+                        _this2.props[k].off(prop, _this2._transisQueueUpdate);
+                      }
+                      if (nextProps[k]) {
+                        nextProps[k].on(prop, _this2._transisQueueUpdate);
+                      }
+                    }
+                  });
+                };
+
+                // console.warn('component will receive props', nextProps)
+                for (var k in props) {
+                  _loop(k);
+                }
+              };
+            }
+            return _this2;
+          }
+
+          return HigherOrderComponent;
+        }(_react2.default.Component);
+        return higherOrderComponent;
+      };
+
+      transisAware.Transis = _transis2.default; // for verifying Transis instances
+
+      exports.default = transisAware;
+
+      // Legacy support
+
+      // Legacy Prop Mixin
+
+      var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(props) {
+        return {
+          componentWillMount: function componentWillMount() {
+            var _this3 = this;
+
+            this._transisId = this._transisId || nextId++;
+            this._transisQueueUpdate = this._transisQueueUpdate || function () {
+              queueUpdate(_this3);
+            };
+
+            var _loop2 = function _loop2(k) {
+              props[k].forEach(function (prop) {
+                if (this.props[k]) {
+                  this.props[k].on(prop, this._transisQueueUpdate);
+                }
+              }, _this3);
+            };
+
+            for (var k in props) {
+              _loop2(k);
+            }
+          },
+
+          componentDidMount: function componentDidMount() {
+            logUpdate(this);
+          },
+
+          componentDidUpdate: function componentDidUpdate() {
+            logUpdate(this);
+          },
+
+          componentWillUnmount: function componentWillUnmount() {
+            var _this4 = this;
+
+            var _loop3 = function _loop3(k) {
+              props[k].forEach(function (prop) {
+                if (this.props[k]) {
+                  this.props[k].off(prop, this._transisQueueUpdate);
+                }
+              }, _this4);
+            };
+
+            for (var k in props) {
+              _loop3(k);
+            }
+          },
+
+          componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+            var _this5 = this;
+
+            var _loop4 = function _loop4(k) {
+              props[k].forEach(function (prop) {
+                if (nextProps[k] !== this.props[k]) {
+                  if (this.props[k]) {
+                    this.props[k].off(prop, this._transisQueueUpdate);
+                  }
+                  if (nextProps[k]) {
+                    nextProps[k].on(prop, this._transisQueueUpdate);
+                  }
+                }
+              }, _this5);
+            };
+
+            for (var k in props) {
+              _loop4(k);
+            }
+          }
+        };
+      };
+
+      // Legacy State Mixin
+      var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        var object = args[0],
+            props = args[1];
+
+        if ((typeof props === 'undefined' ? 'undefined' : _typeof(props)) !== 'object') {
+          // convert prop into into an object of empty arrays
+          // e.g.
+          //    StateMixin({}, 'a', 'b', 'c')
+          //  ->
+          //    props {}= { a: [], b: [], c: [] }
+          props = [].slice.call(args, 1).reduce(function (acc, prop) {
+            acc[prop] = [];
+            return acc;
+          }, {});
+        }
+
+        return {
+          getInitialState: function getInitialState() {
+            var state = {};
+            for (var k in props) {
+              state[k] = object[k];
+            }
+            return state;
+          },
+
+          componentWillMount: function componentWillMount() {
+            var _this6 = this;
+
+            this._transisId = this._transisId || nextId++;
+            this._transisQueueUpdate = this._transisQueueUpdate || function () {
+              queueUpdate(_this6);
+            };
+
+            this._transisSyncState = function () {
+              var state = {};
+
+              // for appstate variables, loop
+
+              var _loop5 = function _loop5(k) {
+                if (_this6.state[k] !== object[k]) {
+                  // if the var is changed
+                  // if local state var exist and it can `off`?!, turn off the update watcher
+                  if (_this6.state[k] && typeof _this6.state[k].off === 'function') {
+                    props[k].forEach(function (path) {
+                      _this6.state[k].off(path, _this6._transisQueueUpdate);
+                    });
+                  }
+
+                  // if global state var exist and it can `on`?!, turn on update watcher
+                  if (object[k] && typeof object[k].on === 'function') {
+                    props[k].forEach(function (path) {
+                      object[k].on(path, _this6._transisQueueUpdate);
+                    });
+                  }
+
+                  state[k] = object[k]; // prepare to attach global var to local var
+                }
+              };
+
+              for (var k in props) {
+                _loop5(k);
+              }
+
+              if (Object.keys(state).length) {
+                _this6.setState(state);
+              } // update if there is a need
+            };
+
+            var _loop6 = function _loop6(k) {
+              // loop through states, on sync all states initially
+              if (object[k] && typeof object[k].on === 'function') {
+                // global object
+                props[k].forEach(function (path) {
+                  object[k].on(path, _this6._transisQueueUpdate);
+                });
+              }
+            };
+
+            for (var k in props) {
+              _loop6(k);
+            }
+
+            object.on('*', this._transisSyncState);
+          },
+
+          componentDidMount: function componentDidMount() {
+            logUpdate(this);
+          },
+
+          componentDidUpdate: function componentDidUpdate() {
+            logUpdate(this);
+          },
+
+          componentWillUnmount: function componentWillUnmount() {
+            var _this7 = this;
+
+            var _loop7 = function _loop7(k) {
+              if (_this7.state[k] && typeof _this7.state[k].off === 'function') {
+                props[k].forEach(function (path) {
+                  _this7.state[k].off(path, _this7._transisQueueUpdate);
+                });
+              }
+            };
+
+            for (var k in props) {
+              _loop7(k);
+            }
+
+            object.off('*', this._transisSyncState);
+          }
+        };
+      };
+
+      /***/
+    },
+    /* 1 */
+    /***/function (module, exports, __webpack_require__) {
+
+      "use strict";
+
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.PropsMixin = exports.StateMixin = undefined;
+
+      var _transisAware = __webpack_require__(0);
+
+      var _transisAware2 = _interopRequireDefault(_transisAware);
+
+      function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : { default: obj };
+      }
+
+      exports.default = _transisAware2.default;
+      exports.StateMixin = _transisAware.StateMixinLegacy;
+      exports.PropsMixin = _transisAware.PropsMixinLegacy;
+
+      /***/
+    },
+    /* 2 */
+    /***/function (module, exports) {
+
+      module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+      /***/
+    },
+    /* 3 */
+    /***/function (module, exports) {
+
+      module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+      /***/
+    },
+    /* 4 */
+    /***/function (module, exports) {
+
+      module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+      /***/
+    }]
+    /******/)
+  );
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(282)(module)))
+
+/***/ }),
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.parseNumber = parseNumber;
-exports.parsePercent = parsePercent;
-exports.parseDate = parseDate;
-exports.parseDateTime = parseDateTime;
-exports.parseEmail = parseEmail;
-exports.parsePhone = parsePhone;
-exports.parseDuration = parseDuration;
-var NUMBER_RE = /^[-]?([0-9]*[0-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[0-9][0-9]*)$/;
-
-// Public: Parses a string containing a number.
-//
-// s - The string to parse.
-//
-// Returns a number or `null` if parsing fails.
-function parseNumber(s) {
-  s = String(s).replace(/[^\d-.]/g, '').replace(/\.$/, '');
-  if (!s.match(NUMBER_RE)) {
-    return null;
-  }
-  return parseFloat(s, 10);
-}
-
-var MDY_DATE_RE = /^\s*(\d{1,2})\D?(\d{1,2})(?:\D?(\d{2,4}))?\s*$/;
-var ISO8601_DATE_RE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
-
-// Public: Parses a string containing a percent.
-//
-// s - The string to parse.
-//
-// Returns a number or `null` if parsing fails.
-function parsePercent(s) {
-  var n = parseNumber(String(s).replace('%', ''));
-  return n == null ? null : n / 100;
-}
-
-// Public: Parses a string containing a date in the following formats:
-//   - YYYY-MM-DD (ISO8601)
-//   - MM/DD
-//   - MM?DD?YY, where ? is a non-digit character
-//   - MM?DD?YYYY, where ? is a non-digit character
-//   - MMDDYY
-//   - MMDDYYYY
-//
-// s - The string to parse.
-//
-// Returns a `Date` or `null` if parsing fails.
-function parseDate(s) {
-  var m, d, y, date, parts;
-
-  s = String(s).replace(/\s/g, '');
-
-  if (parts = s.match(ISO8601_DATE_RE)) {
-    y = parseInt(parts[1], 10);
-    m = parseInt(parts[2], 10) - 1;
-    d = parseInt(parts[3], 10);
-    date = new Date(y, m, d);
-    return date.getMonth() === m ? date : null;
-  } else if (parts = s.match(MDY_DATE_RE)) {
-    m = parseInt(parts[1], 10) - 1;
-    d = parseInt(parts[2], 10);
-    y = parts[3] ? parseInt(parts[3], 10) : new Date().getFullYear();
-    if (0 <= y && y <= 68) {
-      y += 2000;
-    }
-    if (69 <= y && y <= 99) {
-      y += 1900;
-    }
-    date = new Date(y, m, d);
-    return date.getMonth() === m ? date : null;
-  } else {
-    return null;
-  }
-}
-
-var NO_TZ_RE = /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?$/;
-
-// Public: Parses a string containing an ISO8601 formatted date and time.
-//
-// s - The string to parse.
-//
-// Returns a `Date` or `null` if parsing fails.
-function parseDateTime(s) {
-  var n;
-  s = String(s);
-  if (s.match(NO_TZ_RE)) {
-    s += 'Z';
-  }
-  return (n = Date.parse(s)) ? new Date(n) : null;
-}
-
-var EMAIL_FORMAT = /^([^@\s]+)@[-a-z0-9.]+\.+[a-z]{2,}$/i;
-
-// Public: Parses a string containing an email.
-//
-// s - The string to parse.
-//
-// Returns the email string.
-function parseEmail(s) {
-  s = String(s);
-  return EMAIL_FORMAT.test(s) ? s : null;
-}
-
-var PHONE_FORMAT = /^\d{10}$/;
-var PHONE_CHARS = /[\(\)\s-]/g;
-
-// Public: Parses a string containing an phone number.
-//
-// s - The string to parse.
-//
-// Returns the phone string.
-function parsePhone(s) {
-  s = String(s);
-  return PHONE_FORMAT.test(s.replace(PHONE_CHARS, '')) ? s : null;
-}
-
-var DURATION_RE = /^\s*(?:(?::?\d+)|(?::?\d+:\d+)|(?:\d+:\d+:\d+))\s*$/;
-
-// Public: Parses a string containing a time duration. The format is: "HH:MM:SS" where hours and
-// minutes are optional.
-//
-// s - The string to parse.
-//
-// Returns the number of seconds or `null` if parsing fails.
-function parseDuration(s) {
-  s = String(s);
-
-  if (!DURATION_RE.test(s)) {
-    return null;
-  }
-
-  var parts = s.split(':').map(function (p) {
-    return +p;
-  });
-
-  if (parts.length === 3) {
-    return parts[0] * 3600 + parts[1] * 60 + parts[2];
-  } else if (parts.length === 2) {
-    return parts[0] * 60 + parts[1];
-  } else {
-    return parts[0];
-  }
-}
+module.exports = __webpack_require__(33);
 
 
 /***/ }),
 /* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.parseNumber = parseNumber;
-exports.parsePercent = parsePercent;
-exports.parseDate = parseDate;
-exports.parseDateTime = parseDateTime;
-exports.parseEmail = parseEmail;
-exports.parsePhone = parsePhone;
-exports.parseDuration = parseDuration;
-var NUMBER_RE = /^[-]?([0-9]*[0-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[0-9][0-9]*)$/;
-
-// Public: Parses a string containing a number.
-//
-// s - The string to parse.
-//
-// Returns a number or `null` if parsing fails.
-function parseNumber(s) {
-  s = String(s).replace(/[^\d-.]/g, '').replace(/\.$/, '');
-  if (!s.match(NUMBER_RE)) {
-    return null;
-  }
-  return parseFloat(s, 10);
-}
-
-var MDY_DATE_RE = /^\s*(\d{1,2})\D?(\d{1,2})(?:\D?(\d{2,4}))?\s*$/;
-var ISO8601_DATE_RE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
-
-// Public: Parses a string containing a percent.
-//
-// s - The string to parse.
-//
-// Returns a number or `null` if parsing fails.
-function parsePercent(s) {
-  var n = parseNumber(String(s).replace('%', ''));
-  return n == null ? null : n / 100;
-}
-
-// Public: Parses a string containing a date in the following formats:
-//   - YYYY-MM-DD (ISO8601)
-//   - MM/DD
-//   - MM?DD?YY, where ? is a non-digit character
-//   - MM?DD?YYYY, where ? is a non-digit character
-//   - MMDDYY
-//   - MMDDYYYY
-//
-// s - The string to parse.
-//
-// Returns a `Date` or `null` if parsing fails.
-function parseDate(s) {
-  var m, d, y, date, parts;
-
-  s = String(s).replace(/\s/g, '');
-
-  if (parts = s.match(ISO8601_DATE_RE)) {
-    y = parseInt(parts[1], 10);
-    m = parseInt(parts[2], 10) - 1;
-    d = parseInt(parts[3], 10);
-    date = new Date(y, m, d);
-    return date.getMonth() === m ? date : null;
-  } else if (parts = s.match(MDY_DATE_RE)) {
-    m = parseInt(parts[1], 10) - 1;
-    d = parseInt(parts[2], 10);
-    y = parts[3] ? parseInt(parts[3], 10) : new Date().getFullYear();
-    if (0 <= y && y <= 68) {
-      y += 2000;
-    }
-    if (69 <= y && y <= 99) {
-      y += 1900;
-    }
-    date = new Date(y, m, d);
-    return date.getMonth() === m ? date : null;
-  } else {
-    return null;
-  }
-}
-
-var NO_TZ_RE = /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?$/;
-
-// Public: Parses a string containing an ISO8601 formatted date and time.
-//
-// s - The string to parse.
-//
-// Returns a `Date` or `null` if parsing fails.
-function parseDateTime(s) {
-  var n;
-  s = String(s);
-  if (s.match(NO_TZ_RE)) {
-    s += 'Z';
-  }
-  return (n = Date.parse(s)) ? new Date(n) : null;
-}
-
-var EMAIL_FORMAT = /^([^@\s]+)@[-a-z0-9.]+\.+[a-z]{2,}$/i;
-
-// Public: Parses a string containing an email.
-//
-// s - The string to parse.
-//
-// Returns the email string.
-function parseEmail(s) {
-  s = String(s);
-  return EMAIL_FORMAT.test(s) ? s : null;
-}
-
-var PHONE_FORMAT = /^\d{10}$/;
-var PHONE_CHARS = /[\(\)\s-]/g;
-
-// Public: Parses a string containing an phone number.
-//
-// s - The string to parse.
-//
-// Returns the phone string.
-function parsePhone(s) {
-  s = String(s);
-  return PHONE_FORMAT.test(s.replace(PHONE_CHARS, '')) ? s : null;
-}
-
-var DURATION_RE = /^\s*(?:(?::?\d+)|(?::?\d+:\d+)|(?:\d+:\d+:\d+))\s*$/;
-
-// Public: Parses a string containing a time duration. The format is: "HH:MM:SS" where hours and
-// minutes are optional.
-//
-// s - The string to parse.
-//
-// Returns the number of seconds or `null` if parsing fails.
-function parseDuration(s) {
-  s = String(s);
-
-  if (!DURATION_RE.test(s)) {
-    return null;
-  }
-
-  var parts = s.split(':').map(function (p) {
-    return +p;
-  });
-
-  if (parts.length === 3) {
-    return parts[0] * 3600 + parts[1] * 60 + parts[2];
-  } else if (parts.length === 2) {
-    return parts[0] * 60 + parts[1];
-  } else {
-    return parts[0];
-  }
-}
-
-
-/***/ }),
-/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16049,7 +15233,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16081,7 +15265,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16125,7 +15309,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16144,7 +15328,7 @@ module.exports = getActiveElement;
 // Therefore we re-export development-only version with all the PropTypes checks here.
 // However if one is migrating to the `prop-types` npm library, they will go through the
 // `index.js` entry point, and it will branch depending on the environment.
-var factory = __webpack_require__(199);
+var factory = __webpack_require__(195);
 module.exports = function(isValidElement) {
   // It is still allowed in 15.5.
   var throwOnDirectAccess = false;
@@ -16153,7 +15337,7 @@ module.exports = function(isValidElement) {
 
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16174,7 +15358,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16333,7 +15517,7 @@ var CSSProperty = {
 module.exports = CSSProperty;
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16458,7 +15642,7 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16478,7 +15662,7 @@ var DOMProperty = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactInstrumentation = __webpack_require__(15);
 
-var quoteAttributeValueForBrowser = __webpack_require__(268);
+var quoteAttributeValueForBrowser = __webpack_require__(264);
 var warning = __webpack_require__(3);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -16699,7 +15883,7 @@ module.exports = DOMPropertyOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16722,7 +15906,7 @@ var ReactDOMComponentFlags = {
 module.exports = ReactDOMComponentFlags;
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16740,7 +15924,7 @@ module.exports = ReactDOMComponentFlags;
 
 var _assign = __webpack_require__(7);
 
-var LinkedValueUtils = __webpack_require__(74);
+var LinkedValueUtils = __webpack_require__(72);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(19);
 
@@ -16928,7 +16112,7 @@ module.exports = ReactDOMSelect;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16963,7 +16147,7 @@ ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 module.exports = ReactEmptyComponent;
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16990,7 +16174,7 @@ var ReactFeatureFlags = {
 module.exports = ReactFeatureFlags;
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17064,7 +16248,7 @@ module.exports = ReactHostComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17080,11 +16264,11 @@ module.exports = ReactHostComponent;
 
 
 
-var ReactDOMSelection = __webpack_require__(223);
+var ReactDOMSelection = __webpack_require__(219);
 
-var containsNode = __webpack_require__(185);
-var focusNode = __webpack_require__(106);
-var getActiveElement = __webpack_require__(107);
+var containsNode = __webpack_require__(181);
+var focusNode = __webpack_require__(105);
+var getActiveElement = __webpack_require__(106);
 
 function isInDocument(node) {
   return containsNode(document.documentElement, node);
@@ -17192,7 +16376,7 @@ var ReactInputSelection = {
 module.exports = ReactInputSelection;
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17213,24 +16397,24 @@ var _prodInvariant = __webpack_require__(5);
 var DOMLazyTree = __webpack_require__(31);
 var DOMProperty = __webpack_require__(25);
 var React = __webpack_require__(33);
-var ReactBrowserEventEmitter = __webpack_require__(51);
+var ReactBrowserEventEmitter = __webpack_require__(50);
 var ReactCurrentOwner = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactDOMContainerInfo = __webpack_require__(215);
-var ReactDOMFeatureFlags = __webpack_require__(217);
-var ReactFeatureFlags = __webpack_require__(116);
-var ReactInstanceMap = __webpack_require__(43);
+var ReactDOMContainerInfo = __webpack_require__(211);
+var ReactDOMFeatureFlags = __webpack_require__(213);
+var ReactFeatureFlags = __webpack_require__(115);
+var ReactInstanceMap = __webpack_require__(42);
 var ReactInstrumentation = __webpack_require__(15);
-var ReactMarkupChecksum = __webpack_require__(237);
+var ReactMarkupChecksum = __webpack_require__(233);
 var ReactReconciler = __webpack_require__(32);
-var ReactUpdateQueue = __webpack_require__(77);
+var ReactUpdateQueue = __webpack_require__(75);
 var ReactUpdates = __webpack_require__(19);
 
-var emptyObject = __webpack_require__(49);
-var instantiateReactComponent = __webpack_require__(128);
+var emptyObject = __webpack_require__(48);
+var instantiateReactComponent = __webpack_require__(127);
 var invariant = __webpack_require__(1);
-var setInnerHTML = __webpack_require__(55);
-var shouldUpdateReactComponent = __webpack_require__(83);
+var setInnerHTML = __webpack_require__(54);
+var shouldUpdateReactComponent = __webpack_require__(81);
 var warning = __webpack_require__(3);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -17736,7 +16920,7 @@ module.exports = ReactMount;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17782,7 +16966,7 @@ module.exports = ReactNodeTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17804,7 +16988,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17834,7 +17018,7 @@ var ViewportMetrics = {
 module.exports = ViewportMetrics;
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17898,7 +17082,7 @@ module.exports = accumulateInto;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17934,7 +17118,7 @@ function forEachAccumulated(arr, cb, scope) {
 module.exports = forEachAccumulated;
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17950,7 +17134,7 @@ module.exports = forEachAccumulated;
 
 
 
-var ReactNodeTypes = __webpack_require__(120);
+var ReactNodeTypes = __webpack_require__(119);
 
 function getHostComponentFromComposite(inst) {
   var type;
@@ -17969,7 +17153,7 @@ function getHostComponentFromComposite(inst) {
 module.exports = getHostComponentFromComposite;
 
 /***/ }),
-/* 126 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18007,7 +17191,7 @@ function getTextContentAccessor() {
 module.exports = getTextContentAccessor;
 
 /***/ }),
-/* 127 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18135,7 +17319,7 @@ var inputValueTracking = {
 module.exports = inputValueTracking;
 
 /***/ }),
-/* 128 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18154,11 +17338,11 @@ module.exports = inputValueTracking;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var ReactCompositeComponent = __webpack_require__(212);
-var ReactEmptyComponent = __webpack_require__(115);
-var ReactHostComponent = __webpack_require__(117);
+var ReactCompositeComponent = __webpack_require__(208);
+var ReactEmptyComponent = __webpack_require__(114);
+var ReactHostComponent = __webpack_require__(116);
 
-var getNextDebugID = __webpack_require__(280);
+var getNextDebugID = __webpack_require__(276);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
 
@@ -18270,7 +17454,7 @@ module.exports = instantiateReactComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18326,7 +17510,7 @@ function isTextInputElement(elem) {
 module.exports = isTextInputElement;
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18343,8 +17527,8 @@ module.exports = isTextInputElement;
 
 
 var ExecutionEnvironment = __webpack_require__(11);
-var escapeTextContentForBrowser = __webpack_require__(54);
-var setInnerHTML = __webpack_require__(55);
+var escapeTextContentForBrowser = __webpack_require__(53);
+var setInnerHTML = __webpack_require__(54);
 
 /**
  * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -18383,7 +17567,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = setTextContent;
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18402,11 +17586,11 @@ module.exports = setTextContent;
 var _prodInvariant = __webpack_require__(5);
 
 var ReactCurrentOwner = __webpack_require__(20);
-var REACT_ELEMENT_TYPE = __webpack_require__(231);
+var REACT_ELEMENT_TYPE = __webpack_require__(227);
 
-var getIteratorFn = __webpack_require__(265);
+var getIteratorFn = __webpack_require__(261);
 var invariant = __webpack_require__(1);
-var KeyEscapeUtils = __webpack_require__(73);
+var KeyEscapeUtils = __webpack_require__(71);
 var warning = __webpack_require__(3);
 
 var SEPARATOR = '.';
@@ -18565,7 +17749,7 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18584,12 +17768,12 @@ module.exports = traverseAllChildren;
 var _prodInvariant = __webpack_require__(34),
     _assign = __webpack_require__(7);
 
-var ReactNoopUpdateQueue = __webpack_require__(135);
+var ReactNoopUpdateQueue = __webpack_require__(134);
 
-var canDefineProperty = __webpack_require__(56);
-var emptyObject = __webpack_require__(49);
+var canDefineProperty = __webpack_require__(55);
+var emptyObject = __webpack_require__(48);
 var invariant = __webpack_require__(1);
-var lowPriorityWarning = __webpack_require__(85);
+var lowPriorityWarning = __webpack_require__(83);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -18714,7 +17898,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18739,7 +17923,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18766,12 +17950,12 @@ var ReactCurrentOwner = __webpack_require__(20);
 var ReactComponentTreeHook = __webpack_require__(13);
 var ReactElement = __webpack_require__(28);
 
-var checkReactTypeSpec = __webpack_require__(278);
+var checkReactTypeSpec = __webpack_require__(274);
 
-var canDefineProperty = __webpack_require__(56);
-var getIteratorFn = __webpack_require__(136);
+var canDefineProperty = __webpack_require__(55);
+var getIteratorFn = __webpack_require__(135);
 var warning = __webpack_require__(3);
-var lowPriorityWarning = __webpack_require__(85);
+var lowPriorityWarning = __webpack_require__(83);
 
 function getDeclarationErrorAddendum() {
   if (ReactCurrentOwner.current) {
@@ -19000,7 +18184,7 @@ module.exports = ReactElementValidator;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19101,7 +18285,7 @@ module.exports = ReactNoopUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 136 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19147,7 +18331,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19237,7 +18421,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 138 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19269,7 +18453,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 139 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19313,7 +18497,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 140 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* global define */
@@ -19775,7 +18959,7 @@ module.exports = getActiveElement;
 
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19794,7 +18978,7 @@ module.exports = getActiveElement;
 // Therefore we re-export development-only version with all the PropTypes checks here.
 // However if one is migrating to the `prop-types` npm library, they will go through the
 // `index.js` entry point, and it will branch depending on the environment.
-var factory = __webpack_require__(301);
+var factory = __webpack_require__(299);
 module.exports = function(isValidElement) {
   // It is still allowed in 15.5.
   var throwOnDirectAccess = false;
@@ -19803,7 +18987,7 @@ module.exports = function(isValidElement) {
 
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19821,6 +19005,16 @@ module.exports = function(isValidElement) {
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(313);
 
 
 /***/ }),
@@ -20128,7 +19322,7 @@ var DOMProperty = __webpack_require__(26);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactInstrumentation = __webpack_require__(16);
 
-var quoteAttributeValueForBrowser = __webpack_require__(371);
+var quoteAttributeValueForBrowser = __webpack_require__(368);
 var warning = __webpack_require__(4);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -20390,7 +19584,7 @@ module.exports = ReactDOMComponentFlags;
 
 var _assign = __webpack_require__(8);
 
-var LinkedValueUtils = __webpack_require__(91);
+var LinkedValueUtils = __webpack_require__(89);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactUpdates = __webpack_require__(21);
 
@@ -20730,11 +19924,11 @@ module.exports = ReactHostComponent;
 
 
 
-var ReactDOMSelection = __webpack_require__(326);
+var ReactDOMSelection = __webpack_require__(323);
 
-var containsNode = __webpack_require__(288);
-var focusNode = __webpack_require__(138);
-var getActiveElement = __webpack_require__(139);
+var containsNode = __webpack_require__(286);
+var focusNode = __webpack_require__(137);
+var getActiveElement = __webpack_require__(138);
 
 function isInDocument(node) {
   return containsNode(document.documentElement, node);
@@ -20863,24 +20057,24 @@ var _prodInvariant = __webpack_require__(6);
 var DOMLazyTree = __webpack_require__(35);
 var DOMProperty = __webpack_require__(26);
 var React = __webpack_require__(37);
-var ReactBrowserEventEmitter = __webpack_require__(59);
+var ReactBrowserEventEmitter = __webpack_require__(58);
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(10);
-var ReactDOMContainerInfo = __webpack_require__(318);
-var ReactDOMFeatureFlags = __webpack_require__(320);
+var ReactDOMContainerInfo = __webpack_require__(315);
+var ReactDOMFeatureFlags = __webpack_require__(317);
 var ReactFeatureFlags = __webpack_require__(149);
-var ReactInstanceMap = __webpack_require__(47);
+var ReactInstanceMap = __webpack_require__(46);
 var ReactInstrumentation = __webpack_require__(16);
-var ReactMarkupChecksum = __webpack_require__(340);
+var ReactMarkupChecksum = __webpack_require__(337);
 var ReactReconciler = __webpack_require__(36);
-var ReactUpdateQueue = __webpack_require__(94);
+var ReactUpdateQueue = __webpack_require__(92);
 var ReactUpdates = __webpack_require__(21);
 
-var emptyObject = __webpack_require__(57);
+var emptyObject = __webpack_require__(56);
 var instantiateReactComponent = __webpack_require__(161);
 var invariant = __webpack_require__(2);
-var setInnerHTML = __webpack_require__(63);
-var shouldUpdateReactComponent = __webpack_require__(100);
+var setInnerHTML = __webpack_require__(62);
+var shouldUpdateReactComponent = __webpack_require__(98);
 var warning = __webpack_require__(4);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -21804,11 +20998,11 @@ module.exports = inputValueTracking;
 var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
-var ReactCompositeComponent = __webpack_require__(315);
+var ReactCompositeComponent = __webpack_require__(312);
 var ReactEmptyComponent = __webpack_require__(148);
 var ReactHostComponent = __webpack_require__(150);
 
-var getNextDebugID = __webpack_require__(383);
+var getNextDebugID = __webpack_require__(380);
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(4);
 
@@ -21993,8 +21187,8 @@ module.exports = isTextInputElement;
 
 
 var ExecutionEnvironment = __webpack_require__(12);
-var escapeTextContentForBrowser = __webpack_require__(62);
-var setInnerHTML = __webpack_require__(63);
+var escapeTextContentForBrowser = __webpack_require__(61);
+var setInnerHTML = __webpack_require__(62);
 
 /**
  * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -22052,11 +21246,11 @@ module.exports = setTextContent;
 var _prodInvariant = __webpack_require__(6);
 
 var ReactCurrentOwner = __webpack_require__(22);
-var REACT_ELEMENT_TYPE = __webpack_require__(334);
+var REACT_ELEMENT_TYPE = __webpack_require__(331);
 
-var getIteratorFn = __webpack_require__(368);
+var getIteratorFn = __webpack_require__(365);
 var invariant = __webpack_require__(2);
-var KeyEscapeUtils = __webpack_require__(90);
+var KeyEscapeUtils = __webpack_require__(88);
 var warning = __webpack_require__(4);
 
 var SEPARATOR = '.';
@@ -22236,10 +21430,10 @@ var _prodInvariant = __webpack_require__(38),
 
 var ReactNoopUpdateQueue = __webpack_require__(168);
 
-var canDefineProperty = __webpack_require__(64);
-var emptyObject = __webpack_require__(57);
+var canDefineProperty = __webpack_require__(63);
+var emptyObject = __webpack_require__(56);
 var invariant = __webpack_require__(2);
-var lowPriorityWarning = __webpack_require__(102);
+var lowPriorityWarning = __webpack_require__(100);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -22416,12 +21610,12 @@ var ReactCurrentOwner = __webpack_require__(22);
 var ReactComponentTreeHook = __webpack_require__(14);
 var ReactElement = __webpack_require__(30);
 
-var checkReactTypeSpec = __webpack_require__(381);
+var checkReactTypeSpec = __webpack_require__(378);
 
-var canDefineProperty = __webpack_require__(64);
+var canDefineProperty = __webpack_require__(63);
 var getIteratorFn = __webpack_require__(169);
 var warning = __webpack_require__(4);
-var lowPriorityWarning = __webpack_require__(102);
+var lowPriorityWarning = __webpack_require__(100);
 
 function getDeclarationErrorAddendum() {
   if (ReactCurrentOwner.current) {
@@ -22803,6 +21997,16 @@ module.exports = getIteratorFn;
 "use strict";
 
 
+module.exports = __webpack_require__(37);
+
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22851,610 +22055,106 @@ module.exports = exports["default"];
 
 
 /***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var indexOf = __webpack_require__(197);
-
-var Object_keys = function (obj) {
-    if (Object.keys) return Object.keys(obj)
-    else {
-        var res = [];
-        for (var key in obj) res.push(key)
-        return res;
-    }
-};
-
-var forEach = function (xs, fn) {
-    if (xs.forEach) return xs.forEach(fn)
-    else for (var i = 0; i < xs.length; i++) {
-        fn(xs[i], i, xs);
-    }
-};
-
-var defineProp = (function() {
-    try {
-        Object.defineProperty({}, '_', {});
-        return function(obj, name, value) {
-            Object.defineProperty(obj, name, {
-                writable: true,
-                enumerable: false,
-                configurable: true,
-                value: value
-            })
-        };
-    } catch(e) {
-        return function(obj, name, value) {
-            obj[name] = value;
-        };
-    }
-}());
-
-var globals = ['Array', 'Boolean', 'Date', 'Error', 'EvalError', 'Function',
-'Infinity', 'JSON', 'Math', 'NaN', 'Number', 'Object', 'RangeError',
-'ReferenceError', 'RegExp', 'String', 'SyntaxError', 'TypeError', 'URIError',
-'decodeURI', 'decodeURIComponent', 'encodeURI', 'encodeURIComponent', 'escape',
-'eval', 'isFinite', 'isNaN', 'parseFloat', 'parseInt', 'undefined', 'unescape'];
-
-function Context() {}
-Context.prototype = {};
-
-var Script = exports.Script = function NodeScript (code) {
-    if (!(this instanceof Script)) return new Script(code);
-    this.code = code;
-};
-
-Script.prototype.runInContext = function (context) {
-    if (!(context instanceof Context)) {
-        throw new TypeError("needs a 'context' argument.");
-    }
-    
-    var iframe = document.createElement('iframe');
-    if (!iframe.style) iframe.style = {};
-    iframe.style.display = 'none';
-    
-    document.body.appendChild(iframe);
-    
-    var win = iframe.contentWindow;
-    var wEval = win.eval, wExecScript = win.execScript;
-
-    if (!wEval && wExecScript) {
-        // win.eval() magically appears when this is called in IE:
-        wExecScript.call(win, 'null');
-        wEval = win.eval;
-    }
-    
-    forEach(Object_keys(context), function (key) {
-        win[key] = context[key];
-    });
-    forEach(globals, function (key) {
-        if (context[key]) {
-            win[key] = context[key];
-        }
-    });
-    
-    var winKeys = Object_keys(win);
-
-    var res = wEval.call(win, this.code);
-    
-    forEach(Object_keys(win), function (key) {
-        // Avoid copying circular objects like `top` and `window` by only
-        // updating existing context properties or new properties in the `win`
-        // that was only introduced after the eval.
-        if (key in context || indexOf(winKeys, key) === -1) {
-            context[key] = win[key];
-        }
-    });
-
-    forEach(globals, function (key) {
-        if (!(key in context)) {
-            defineProp(context, key, win[key]);
-        }
-    });
-    
-    document.body.removeChild(iframe);
-    
-    return res;
-};
-
-Script.prototype.runInThisContext = function () {
-    return eval(this.code); // maybe...
-};
-
-Script.prototype.runInNewContext = function (context) {
-    var ctx = Script.createContext(context);
-    var res = this.runInContext(ctx);
-
-    forEach(Object_keys(ctx), function (key) {
-        context[key] = ctx[key];
-    });
-
-    return res;
-};
-
-forEach(Object_keys(Script.prototype), function (name) {
-    exports[name] = Script[name] = function (code) {
-        var s = Script(code);
-        return s[name].apply(s, [].slice.call(arguments, 1));
-    };
-});
-
-exports.createScript = function (code) {
-    return exports.Script(code);
-};
-
-exports.createContext = Script.createContext = function (context) {
-    var copy = new Context();
-    if(typeof context === 'object') {
-        forEach(Object_keys(context), function (key) {
-            copy[key] = context[key];
-        });
-    }
-    return copy;
-};
-
-
-/***/ }),
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* global define */
+"use strict";
 
-(function (root, pluralize) {
-  /* istanbul ignore else */
-  if (true) {
-    // Node.
-    module.exports = pluralize();
-  } else if (typeof define === 'function' && define.amd) {
-    // AMD, registers as an anonymous module.
-    define(function () {
-      return pluralize();
-    });
-  } else {
-    // Browser global.
-    root.pluralize = pluralize();
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Clock = undefined;
+
+var _react = __webpack_require__(103);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _transisReact = __webpack_require__(102);
+
+var _transisReact2 = _interopRequireDefault(_transisReact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var fakeString = function fakeString(n) {
+  return Array.from(Array(n || 10).keys()).map(function (n) {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  }).join('');
+};
+
+var AuthorAge = _react2.default.createClass({
+  displayName: 'AuthorAge',
+
+  mixins: [(0, _transisReact.PropsMixin)({
+    author: ['age']
+  })],
+  render: function render() {
+    return _react2.default.createElement(
+      'span',
+      null,
+      this.props.author.age
+    );
   }
-})(this, function () {
-  // Rule storage - pluralize and singularize need to be run sequentially,
-  // while other rules can be optimized using an object for instant lookups.
-  var pluralRules = [];
-  var singularRules = [];
-  var uncountables = {};
-  var irregularPlurals = {};
-  var irregularSingles = {};
-
-  /**
-   * Title case a string.
-   *
-   * @param  {string} str
-   * @return {string}
-   */
-  function toTitleCase (str) {
-    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
-  }
-
-  /**
-   * Sanitize a pluralization rule to a usable regular expression.
-   *
-   * @param  {(RegExp|string)} rule
-   * @return {RegExp}
-   */
-  function sanitizeRule (rule) {
-    if (typeof rule === 'string') {
-      return new RegExp('^' + rule + '$', 'i');
-    }
-
-    return rule;
-  }
-
-  /**
-   * Pass in a word token to produce a function that can replicate the case on
-   * another word.
-   *
-   * @param  {string}   word
-   * @param  {string}   token
-   * @return {Function}
-   */
-  function restoreCase (word, token) {
-    // Upper cased words. E.g. "HELLO".
-    if (word === word.toUpperCase()) {
-      return token.toUpperCase();
-    }
-
-    // Title cased words. E.g. "Title".
-    if (word[0] === word[0].toUpperCase()) {
-      return toTitleCase(token);
-    }
-
-    // Lower cased words. E.g. "test".
-    return token.toLowerCase();
-  }
-
-  /**
-   * Interpolate a regexp string.
-   *
-   * @param  {string} str
-   * @param  {Array}  args
-   * @return {string}
-   */
-  function interpolate (str, args) {
-    return str.replace(/\$(\d{1,2})/g, function (match, index) {
-      return args[index] || '';
-    });
-  }
-
-  /**
-   * Sanitize a word by passing in the word and sanitization rules.
-   *
-   * @param  {String}   token
-   * @param  {String}   word
-   * @param  {Array}    collection
-   * @return {String}
-   */
-  function sanitizeWord (token, word, collection) {
-    // Empty string or doesn't need fixing.
-    if (!token.length || uncountables.hasOwnProperty(token)) {
-      return word;
-    }
-
-    var len = collection.length;
-
-    // Iterate over the sanitization rules and use the first one to match.
-    while (len--) {
-      var rule = collection[len];
-
-      // If the rule passes, return the replacement.
-      if (rule[0].test(word)) {
-        return word.replace(rule[0], function (match, index, word) {
-          var result = interpolate(rule[1], arguments);
-
-          if (match === '') {
-            return restoreCase(word[index - 1], result);
-          }
-
-          return restoreCase(match, result);
-        });
-      }
-    }
-
-    return word;
-  }
-
-  /**
-   * Replace a word with the updated word.
-   *
-   * @param  {Object}   replaceMap
-   * @param  {Object}   keepMap
-   * @param  {Array}    rules
-   * @return {Function}
-   */
-  function replaceWord (replaceMap, keepMap, rules) {
-    return function (word) {
-      // Get the correct token and case restoration functions.
-      var token = word.toLowerCase();
-
-      // Check against the keep object map.
-      if (keepMap.hasOwnProperty(token)) {
-        return restoreCase(word, token);
-      }
-
-      // Check against the replacement map for a direct word replacement.
-      if (replaceMap.hasOwnProperty(token)) {
-        return restoreCase(word, replaceMap[token]);
-      }
-
-      // Run all the rules against the word.
-      return sanitizeWord(token, word, rules);
-    };
-  }
-
-  /**
-   * Pluralize or singularize a word based on the passed in count.
-   *
-   * @param  {String}  word
-   * @param  {Number}  count
-   * @param  {Boolean} inclusive
-   * @return {String}
-   */
-  function pluralize (word, count, inclusive) {
-    var pluralized = count === 1
-      ? pluralize.singular(word) : pluralize.plural(word);
-
-    return (inclusive ? count + ' ' : '') + pluralized;
-  }
-
-  /**
-   * Pluralize a word.
-   *
-   * @type {Function}
-   */
-  pluralize.plural = replaceWord(
-    irregularSingles, irregularPlurals, pluralRules
-  );
-
-  /**
-   * Singularize a word.
-   *
-   * @type {Function}
-   */
-  pluralize.singular = replaceWord(
-    irregularPlurals, irregularSingles, singularRules
-  );
-
-  /**
-   * Add a pluralization rule to the collection.
-   *
-   * @param {(string|RegExp)} rule
-   * @param {string}          replacement
-   */
-  pluralize.addPluralRule = function (rule, replacement) {
-    pluralRules.push([sanitizeRule(rule), replacement]);
-  };
-
-  /**
-   * Add a singularization rule to the collection.
-   *
-   * @param {(string|RegExp)} rule
-   * @param {string}          replacement
-   */
-  pluralize.addSingularRule = function (rule, replacement) {
-    singularRules.push([sanitizeRule(rule), replacement]);
-  };
-
-  /**
-   * Add an uncountable word rule.
-   *
-   * @param {(string|RegExp)} word
-   */
-  pluralize.addUncountableRule = function (word) {
-    if (typeof word === 'string') {
-      uncountables[word.toLowerCase()] = true;
-      return;
-    }
-
-    // Set singular and plural references for the word.
-    pluralize.addPluralRule(word, '$0');
-    pluralize.addSingularRule(word, '$0');
-  };
-
-  /**
-   * Add an irregular word definition.
-   *
-   * @param {String} single
-   * @param {String} plural
-   */
-  pluralize.addIrregularRule = function (single, plural) {
-    plural = plural.toLowerCase();
-    single = single.toLowerCase();
-
-    irregularSingles[single] = plural;
-    irregularPlurals[plural] = single;
-  };
-
-  /**
-   * Irregular rules.
-   */
-  [
-    // Pronouns.
-    ['I', 'we'],
-    ['me', 'us'],
-    ['he', 'they'],
-    ['she', 'they'],
-    ['them', 'them'],
-    ['myself', 'ourselves'],
-    ['yourself', 'yourselves'],
-    ['itself', 'themselves'],
-    ['herself', 'themselves'],
-    ['himself', 'themselves'],
-    ['themself', 'themselves'],
-    ['is', 'are'],
-    ['was', 'were'],
-    ['has', 'have'],
-    ['this', 'these'],
-    ['that', 'those'],
-    // Words ending in with a consonant and `o`.
-    ['echo', 'echoes'],
-    ['dingo', 'dingoes'],
-    ['volcano', 'volcanoes'],
-    ['tornado', 'tornadoes'],
-    ['torpedo', 'torpedoes'],
-    // Ends with `us`.
-    ['genus', 'genera'],
-    ['viscus', 'viscera'],
-    // Ends with `ma`.
-    ['stigma', 'stigmata'],
-    ['stoma', 'stomata'],
-    ['dogma', 'dogmata'],
-    ['lemma', 'lemmata'],
-    ['schema', 'schemata'],
-    ['anathema', 'anathemata'],
-    // Other irregular rules.
-    ['ox', 'oxen'],
-    ['axe', 'axes'],
-    ['die', 'dice'],
-    ['yes', 'yeses'],
-    ['foot', 'feet'],
-    ['eave', 'eaves'],
-    ['goose', 'geese'],
-    ['tooth', 'teeth'],
-    ['quiz', 'quizzes'],
-    ['human', 'humans'],
-    ['proof', 'proofs'],
-    ['carve', 'carves'],
-    ['valve', 'valves'],
-    ['looey', 'looies'],
-    ['thief', 'thieves'],
-    ['groove', 'grooves'],
-    ['pickaxe', 'pickaxes'],
-    ['whiskey', 'whiskies']
-  ].forEach(function (rule) {
-    return pluralize.addIrregularRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Pluralization rules.
-   */
-  [
-    [/s?$/i, 's'],
-    [/([^aeiou]ese)$/i, '$1'],
-    [/(ax|test)is$/i, '$1es'],
-    [/(alias|[^aou]us|tlas|gas|ris)$/i, '$1es'],
-    [/(e[mn]u)s?$/i, '$1s'],
-    [/([^l]ias|[aeiou]las|[emjzr]as|[iu]am)$/i, '$1'],
-    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1i'],
-    [/(alumn|alg|vertebr)(?:a|ae)$/i, '$1ae'],
-    [/(seraph|cherub)(?:im)?$/i, '$1im'],
-    [/(her|at|gr)o$/i, '$1oes'],
-    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i, '$1a'],
-    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)(?:a|on)$/i, '$1a'],
-    [/sis$/i, 'ses'],
-    [/(?:(kni|wi|li)fe|(ar|l|ea|eo|oa|hoo)f)$/i, '$1$2ves'],
-    [/([^aeiouy]|qu)y$/i, '$1ies'],
-    [/([^ch][ieo][ln])ey$/i, '$1ies'],
-    [/(x|ch|ss|sh|zz)$/i, '$1es'],
-    [/(matr|cod|mur|sil|vert|ind|append)(?:ix|ex)$/i, '$1ices'],
-    [/(m|l)(?:ice|ouse)$/i, '$1ice'],
-    [/(pe)(?:rson|ople)$/i, '$1ople'],
-    [/(child)(?:ren)?$/i, '$1ren'],
-    [/eaux$/i, '$0'],
-    [/m[ae]n$/i, 'men'],
-    ['thou', 'you']
-  ].forEach(function (rule) {
-    return pluralize.addPluralRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Singularization rules.
-   */
-  [
-    [/s$/i, ''],
-    [/(ss)$/i, '$1'],
-    [/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)(?:sis|ses)$/i, '$1sis'],
-    [/(^analy)(?:sis|ses)$/i, '$1sis'],
-    [/(wi|kni|(?:after|half|high|low|mid|non|night|[^\w]|^)li)ves$/i, '$1fe'],
-    [/(ar|(?:wo|[ae])l|[eo][ao])ves$/i, '$1f'],
-    [/ies$/i, 'y'],
-    [/\b([pl]|zomb|(?:neck|cross)?t|coll|faer|food|gen|goon|group|lass|talk|goal|cut)ies$/i, '$1ie'],
-    [/\b(mon|smil)ies$/i, '$1ey'],
-    [/(m|l)ice$/i, '$1ouse'],
-    [/(seraph|cherub)im$/i, '$1'],
-    [/(x|ch|ss|sh|zz|tto|go|cho|alias|[^aou]us|tlas|gas|(?:her|at|gr)o|ris)(?:es)?$/i, '$1'],
-    [/(e[mn]u)s?$/i, '$1'],
-    [/(movie|twelve)s$/i, '$1'],
-    [/(cris|test|diagnos)(?:is|es)$/i, '$1is'],
-    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1us'],
-    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|quor)a$/i, '$1um'],
-    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)a$/i, '$1on'],
-    [/(alumn|alg|vertebr)ae$/i, '$1a'],
-    [/(cod|mur|sil|vert|ind)ices$/i, '$1ex'],
-    [/(matr|append)ices$/i, '$1ix'],
-    [/(pe)(rson|ople)$/i, '$1rson'],
-    [/(child)ren$/i, '$1'],
-    [/(eau)x?$/i, '$1'],
-    [/men$/i, 'man']
-  ].forEach(function (rule) {
-    return pluralize.addSingularRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Uncountable rules.
-   */
-  [
-    // Singular words with no plurals.
-    'advice',
-    'adulthood',
-    'agenda',
-    'aid',
-    'alcohol',
-    'ammo',
-    'athletics',
-    'bison',
-    'blood',
-    'bream',
-    'buffalo',
-    'butter',
-    'carp',
-    'cash',
-    'chassis',
-    'chess',
-    'clothing',
-    'commerce',
-    'cod',
-    'cooperation',
-    'corps',
-    'digestion',
-    'debris',
-    'diabetes',
-    'energy',
-    'equipment',
-    'elk',
-    'excretion',
-    'expertise',
-    'flounder',
-    'fun',
-    'gallows',
-    'garbage',
-    'graffiti',
-    'headquarters',
-    'health',
-    'herpes',
-    'highjinks',
-    'homework',
-    'housework',
-    'information',
-    'jeans',
-    'justice',
-    'kudos',
-    'labour',
-    'literature',
-    'machinery',
-    'mackerel',
-    'mail',
-    'media',
-    'mews',
-    'moose',
-    'music',
-    'news',
-    'pike',
-    'plankton',
-    'pliers',
-    'pollution',
-    'premises',
-    'rain',
-    'research',
-    'rice',
-    'salmon',
-    'scissors',
-    'series',
-    'sewage',
-    'shambles',
-    'shrimp',
-    'species',
-    'staff',
-    'swine',
-    'trout',
-    'traffic',
-    'transporation',
-    'tuna',
-    'wealth',
-    'welfare',
-    'whiting',
-    'wildebeest',
-    'wildlife',
-    'you',
-    // Regexes.
-    /pox$/i, // "chickpox", "smallpox"
-    /ois$/i,
-    /deer$/i, // "deer", "reindeer"
-    /fish$/i, // "fish", "blowfish", "angelfish"
-    /sheep$/i,
-    /measles$/i,
-    /[^aeiou]ese$/i // "chinese", "japanese"
-  ].forEach(pluralize.addUncountableRule);
-
-  return pluralize;
 });
 
+var AppLegacy = _react2.default.createClass({
+  displayName: 'AppLegacy',
+
+  mixins: [(0, _transisReact.StateMixin)(window.globalObj, {
+    book: ['name', 'author.name', 'pages']
+  })],
+  render: function render() {
+    var _state$book = this.state.book,
+        name = _state$book.name,
+        pages = _state$book.pages,
+        author = _state$book.author;
+
+
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'p',
+        null,
+        ' Book: ',
+        name,
+        ' '
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        ' Book: ',
+        pages,
+        ' '
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        ' Author: ',
+        author.name,
+        ', ',
+        _react2.default.createElement(AuthorAge, { author: author }),
+        ' '
+      )
+    );
+  }
+});
+exports.default = AppLegacy;
+
+// smart mixin
+
+var Clock = exports.Clock = _react2.default.createClass({
+  displayName: 'Clock',
+
+  mixins: [(0, _transisReact.StateMixin)(window.globalObj, 'time')],
+  render: function render() {
+    return _react2.default.createElement(
+      'span',
+      null,
+      this.state.time && this.state.time.toLocaleTimeString()
+    );
+  }
+});
 
 /***/ }),
 /* 173 */
@@ -23463,81 +22163,17 @@ exports.createContext = Script.createContext = function (context) {
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var IdMap = {
-  models: new Map(),
-
-  insert: function insert(model) {
-    var klass = model.constructor,
-        id = model.id,
-        map;
-
-    if (!(map = this.models.get(klass))) {
-      this.models.set(klass, map = new Map());
-    }
-
-    if (map.get(id)) {
-      throw new Error("IdMap.insert: model of type `" + klass + "` and id `" + id + "` has already been inserted");
-    }
-
-    map.set(id, model);
-
-    return this;
-  },
-
-  get: function get(klass, id) {
-    var map = this.models.get(klass);
-    return map && map.get(id);
-  },
-
-  delete: function _delete(model) {
-    var map = this.models.get(model.constructor);
-    if (!map) {
-      return this;
-    }
-    map.delete(model.id);
-    return this;
-  },
-
-  clear: function clear() {
-    this.models.clear();return this;
-  }
-};
-
-exports.default = IdMap;
-module.exports = exports["default"];
+module.exports = __webpack_require__(209);
 
 
 /***/ }),
 /* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-module.exports = __webpack_require__(213);
-
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(33);
-
-
-/***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(181);
+var content = __webpack_require__(177);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -23545,7 +22181,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(283)(content, options);
+var update = __webpack_require__(279)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -23562,480 +22198,7 @@ if(false) {
 }
 
 /***/ }),
-/* 177 */
-/***/ (function(module, exports, __webpack_require__) {
-
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(386), __webpack_require__(302), __webpack_require__(388));
-	else if(typeof define === 'function' && define.amd)
-		define(["react", "react-dom", "transis"], factory);
-	else if(typeof exports === 'object')
-		exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));
-	else
-		root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(3);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _transis = __webpack_require__(4);
-
-var _transis2 = _interopRequireDefault(_transis);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// globalTransisObjectConfig
-var defaultGlobalTransisObject = null;
-
-// copied from transis
-var nextId = 1;
-var updateLog = {};
-var updateQueue = {};
-
-function componentCmp(a, b) {
-  if (a._transisId < b._transisId) {
-    return -1;
-  } else if (a._transisId > b._transisId) {
-    return 1;
-  } else {
-    return 0;
-  }
-}
-
-function preFlush() {
-  updateLog = {};
-  _transis2.default.Object.delay(postFlush);
-}
-
-function postFlush() {
-  var components = [];
-
-  console.warn('post flush triggered');
-  for (var id in updateQueue) {
-    components.push(updateQueue[id]);
-    delete updateQueue[id];
-  }
-
-  // Sort the components by their assigned _transisId. Since components get mounted from the top
-  // down, this should ensure that parent components are force updated before any descendent
-  // components that also need an update. This avoids the case where we force update a component
-  // and then force update one of its ancestors, which may unnecessarily render the component
-  // again.
-  components.sort(componentCmp).forEach(function (component) {
-    if (!updateLog[component._transisId] && _reactDom2.default.findDOMNode(component)) {
-      // has mounted
-      component.forceUpdate();
-    }
-  });
-  _transis2.default.Object.delayPreFlush(preFlush);
-}
-
-function queueUpdate(component) {
-  console.warn('queueUpdate');
-  updateQueue[component._transisId] = component;
-}
-
-function logUpdate(component) {
-  updateLog[component._transisId] = true;
-}
-
-_transis2.default.Object.delayPreFlush(preFlush);
-
-// end of copied from transis
-
-
-// * Refactor Effort *
-// @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
-// @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
-var bindState = function bindState(globalTransisObjectVar, attrsToWatch, callback) {
-  if (globalTransisObjectVar && typeof globalTransisObjectVar.on === 'function') {
-    attrsToWatch.forEach(function (attrPath) {
-      return globalTransisObjectVar.on(attrPath, callback);
-    });
-  }
-};
-
-var unbindState = function unbindState(stateVar, attrsToWatch, callback) {
-  if (stateVar && typeof stateVar.off === 'function') {
-    attrsToWatch.forEach(function (attrPath) {
-      return stateVar.off(attrPath, callback);
-    });
-  }
-};
-
-var unbindProps = function unbindProps(propsVar, attrsToWatch, callback) {
-  attrsToWatch.forEach(function (attrPath) {
-    return propsVar && propsVar.off(attrPath, callback);
-  });
-};
-
-var bindProps = function bindProps(propsVar, attrsToWatch, callback) {
-  attrsToWatch.forEach(function (attrPath) {
-    return propsVar && propsVar.on(attrPath, callback);
-  });
-};
-
-// component will mount
-var componentWillMount = function componentWillMount(_ref) {
-  var _this = this;
-
-  var globalTransisObject = _ref.globalTransisObject,
-      state = _ref.state,
-      props = _ref.props;
-
-  if (state || props) {
-    // setting transis id
-    this._transisId = this._transisId || nextId++;
-    // setting main update function
-    this._transisQueueUpdate = this._transisQueueUpdate || function () {
-      queueUpdate(_this);
-    };
-  }
-  if (state) {
-    // core register sync method
-    this._transisSyncState = function () {
-      console.warn('transis sync update triggered');
-
-      var stateToUpdate = {};
-      for (var k in state) {
-        if (_this.state[k] !== globalTransisObject[k]) {
-          // local state is out of date, off syncing it
-          unbindState(_this.state[k], state[k], _this._transisQueueUpdate
-
-          // globalTransisObject state needs to be attached, on syncing it
-          );bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
-
-          stateToUpdate[k] = globalTransisObject[k];
-        }
-      } // end of for loop
-
-      if (Object.keys(stateToUpdate).length) {
-        _this.setState(stateToUpdate);
-      }
-    };
-
-    for (var k in state) {
-      // loop through states, on sync all states initially
-      bindState(globalTransisObject[k], state[k], this._transisQueueUpdate);
-    }
-
-    globalTransisObject.on('*', this._transisSyncState);
-  }
-
-  if (props) {
-    for (var _k in props) {
-      bindProps(this.props[_k], props[_k], this._transisQueueUpdate);
-    }
-  }
-}; // end of Component Will Mount Factory
-// * end Refactor Effort *
-
-// main constructor
-var transisAware = function transisAware(_ref2, ComposedComponent) {
-  var global = _ref2.global,
-      state = _ref2.state,
-      props = _ref2.props;
-
-  var globalTransisObject = global || defaultGlobalTransisObject;
-  if (!globalTransisObject && state) {
-    throw new Error("Cannot compose with-state component without global transis object, state: ", state);
-  }
-  var higherOrderComponent = function (_React$Component) {
-    _inherits(HigherOrderComponent, _React$Component);
-
-    function HigherOrderComponent(propArgs) {
-      _classCallCheck(this, HigherOrderComponent);
-
-      // consider move the following into instance methods
-
-      // allow both component will mount to get triggered
-      var _this2 = _possibleConstructorReturn(this, (HigherOrderComponent.__proto__ || Object.getPrototypeOf(HigherOrderComponent)).call(this, propArgs));
-
-      _this2.componentWillMount = function () {
-        return componentWillMount.call(_this2, {
-          globalTransisObject: globalTransisObject, state: state, props: props
-        });
-      };
-
-      _this2.componentDidMount = function () {
-        logUpdate(_this2);
-      };
-
-      _this2.componentDidUpdate = function () {
-        logUpdate(_this2);
-      };
-
-      _this2.componentWillUnmount = function () {
-        if (state) {
-          for (var k in state) {
-            unbindState(_this2.state[k], state[k], _this2._transisQueueUpdate);
-          }
-          globalTransisObject.off('*', _this2._transisSyncState);
-        }
-        if (props) {
-          for (var _k2 in props) {
-            unbindProps(_this2.props[_k2], props[_k2], _this2._transisQueueUpdate);
-          }
-        }
-      };
-
-      if (state) {
-        // initialize State
-        _this2.state = Object.keys(state).reduce(function (result, key) {
-          result[key] = globalTransisObject[key];
-          return result;
-        }, {}
-        // console.warn('intialized state to', this.state)
-        );
-      }
-      if (props) {
-        _this2.componentWillReceiveProps = function (nextProps) {
-          var _loop = function _loop(k) {
-            props[k].forEach(function (prop) {
-              if (nextProps[k] !== _this2.props[k]) {
-                if (_this2.props[k]) {
-                  _this2.props[k].off(prop, _this2._transisQueueUpdate);
-                }
-                if (nextProps[k]) {
-                  nextProps[k].on(prop, _this2._transisQueueUpdate);
-                }
-              }
-            });
-          };
-
-          // console.warn('component will receive props', nextProps)
-          for (var k in props) {
-            _loop(k);
-          }
-        };
-      }
-      return _this2;
-    }
-
-    _createClass(HigherOrderComponent, [{
-      key: 'render',
-      value: function render() {
-        return _react2.default.createElement(ComposedComponent, _extends({}, this.props, this.state));
-      }
-    }]);
-
-    return HigherOrderComponent;
-  }(_react2.default.Component);
-  return higherOrderComponent;
-};
-
-transisAware.config = function (_ref3) {
-  var newGlobalTransisObject = _ref3.defaultGlobalTransisObject;
-
-  defaultGlobalTransisObject = newGlobalTransisObject;
-};
-
-exports.default = transisAware;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _transisAware = __webpack_require__(0);
-
-var _transisAware2 = _interopRequireDefault(_transisAware);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _transisAware2.default;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
-
-/***/ })
-/******/ ]);
-});
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _object = __webpack_require__(68);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(67);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _model = __webpack_require__(393);
-
-var _model2 = _interopRequireDefault(_model);
-
-var _id_map = __webpack_require__(173);
-
-var _id_map2 = _interopRequireDefault(_id_map);
-
-var _react = __webpack_require__(394);
-
-var react = _interopRequireWildcard(_react);
-
-var _util = __webpack_require__(40);
-
-var util = _interopRequireWildcard(_util);
-
-var _parsers = __webpack_require__(104);
-
-var parsers = _interopRequireWildcard(_parsers);
-
-var _pluralize = __webpack_require__(172);
-
-var _pluralize2 = _interopRequireDefault(_pluralize);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Public: Resets Transis by clearing the ID map and clearing out the pending change queue. This
-// should only ever be used in specs.
-function reset() {
-  _id_map2.default.clear();
-  _object2.default.clearChangeQueue();
-}
-
-exports.default = Object.assign({
-  Object: _object2.default,
-  Array: _array2.default,
-  A: _array2.default.of,
-  Model: _model2.default,
-  pluralize: _pluralize2.default,
-  ReactPropsMixin: react.PropsMixin,
-  ReactStateMixin: react.StateMixin,
-  reset: reset
-}, util, parsers);
-module.exports = exports["default"];
-
-
-/***/ }),
-/* 179 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24043,21 +22206,21 @@ module.exports = exports["default"];
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(176);
+__webpack_require__(174);
 
-var _reactDom = __webpack_require__(174);
+var _reactDom = __webpack_require__(173);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _react = __webpack_require__(175);
+var _react = __webpack_require__(103);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _transis = __webpack_require__(178);
+var _transis = __webpack_require__(66);
 
 var _transis2 = _interopRequireDefault(_transis);
 
-var _transisReact = __webpack_require__(177);
+var _transisReact = __webpack_require__(102);
 
 var _transisReact2 = _interopRequireDefault(_transisReact);
 
@@ -24069,13 +22232,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-window.Transis = _transis2.default; // for debugging purpose
+// TODO: seems to be the only way to use the same Transis instance.
+// import transisAware from 'transis-react' // // TODO: not working, get it to work
 
 var fakeString = function fakeString(n) {
   return Array.from(Array(n || 10).keys()).map(function (n) {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
   }).join('');
 };
+
+// debugging purpose
+window.Transis = _transis2.default;
 
 // model setup
 window.globalObj = new (_transis2.default.Object.extend(function () {
@@ -24086,6 +22253,7 @@ window.globalObj = new (_transis2.default.Object.extend(function () {
 
 var Book = _transis2.default.Model.extend('Book', function () {
   this.attr('name', 'string');
+  this.prop('pages');
   this.hasOne('author', 'Author', { inverse: 'books' });
 });
 
@@ -24096,8 +22264,9 @@ var Author = _transis2.default.Model.extend('Author', function () {
 });
 // end of models
 
+
+// model setups
 globalObj.time = new Date();
-// data setup
 setInterval(function () {
   return globalObj.time = new Date();
 }, // to string with .toLocaleTimeString()
@@ -24105,50 +22274,33 @@ setInterval(function () {
 
 globalObj.book = new Book({
   name: 'A catcher in the rye',
+  pages: 354,
   author: new Author({
     name: 'Salinger',
     age: 37
   })
 });
+// end of model setup
 
-// end of data setup
 
-
-var AuthorAge = (0, _transisReact2.default)({
-  props: {
-    author: ['age']
-  }
-}, function (_Component) {
-  _inherits(AuthorAgeCore, _Component);
-
-  function AuthorAgeCore() {
-    _classCallCheck(this, AuthorAgeCore);
-
-    return _possibleConstructorReturn(this, (AuthorAgeCore.__proto__ || Object.getPrototypeOf(AuthorAgeCore)).apply(this, arguments));
-  }
-
-  _createClass(AuthorAgeCore, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'span',
-        null,
-        this.props.author.age
-      );
-    }
-  }]);
-
-  return AuthorAgeCore;
-}(_react.Component));
+// components
+var _AuthorAge = (0, _transisReact2.default)({ props: { author: ['age'] } }, function (_ref) {
+  var age = _ref.author.age;
+  return _react2.default.createElement(
+    'span',
+    null,
+    age
+  );
+});
 
 var App = (0, _transisReact2.default)({
   global: globalObj,
   state: {
     time: [],
-    book: ['name', 'author.name']
+    book: ['name', 'author.name', 'pages']
   }
-}, function (_Component2) {
-  _inherits(AppCore, _Component2);
+}, function (_Component) {
+  _inherits(AppCore, _Component);
 
   function AppCore() {
     _classCallCheck(this, AppCore);
@@ -24159,36 +22311,27 @@ var App = (0, _transisReact2.default)({
   _createClass(AppCore, [{
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          time = _props.time,
-          _props$book = _props.book,
-          book = _props$book === undefined ? {} : _props$book,
-          _props$book2 = _props.book;
-      _props$book2 = _props$book2 === undefined ? {} : _props$book2;
-      var _props$book2$author = _props$book2.author,
-          author = _props$book2$author === undefined ? {} : _props$book2$author;
+      var _state$book = this.state.book,
+          name = _state$book.name,
+          pages = _state$book.pages,
+          author = _state$book.author;
 
 
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
-          'h1',
-          null,
-          'React Transis'
-        ),
-        _react2.default.createElement(
           'p',
           null,
-          ' Time: ',
-          time && time.toLocaleTimeString(),
+          ' Book: ',
+          name,
           ' '
         ),
         _react2.default.createElement(
           'p',
           null,
           ' Book: ',
-          book.name,
+          pages,
           ' '
         ),
         _react2.default.createElement(
@@ -24197,44 +22340,8 @@ var App = (0, _transisReact2.default)({
           ' Author: ',
           author.name,
           ', ',
-          _react2.default.createElement(AuthorAge, { author: author }),
+          _react2.default.createElement(_AuthorAge, { author: author }),
           ' '
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: function onClick() {
-              return book.name = fakeString(10);
-            } },
-          'Change book title',
-          _react2.default.createElement(
-            'div',
-            null,
-            'state - primitive'
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: function onClick() {
-              return book.author.name = fakeString(10);
-            } },
-          'Change author name',
-          _react2.default.createElement(
-            'div',
-            null,
-            'state - attr'
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: function onClick() {
-              return book.author.age = Math.floor(Math.random() * 100);
-            } },
-          'Change author age',
-          _react2.default.createElement(
-            'div',
-            null,
-            'props - attr'
-          )
         )
       );
     }
@@ -24243,10 +22350,136 @@ var App = (0, _transisReact2.default)({
   return AppCore;
 }(_react.Component));
 
-_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
+// smart mixin
+var Clock = (0, _transisReact2.default)({ global: globalObj, state: ['time'] }, function (_ref2) {
+  var time = _ref2.time;
+  return _react2.default.createElement(
+    'span',
+    null,
+    ' ',
+    time && time.toLocaleTimeString(),
+    ' '
+  );
+});
+
+var _require = __webpack_require__(172),
+    Legacy = _require.default,
+    ClockLegacy = _require.Clock;
+
+_reactDom2.default.render(_react2.default.createElement(
+  'div',
+  null,
+  _react2.default.createElement(
+    'h1',
+    null,
+    'React Transis Binding'
+  ),
+  _react2.default.createElement(
+    'fieldset',
+    null,
+    _react2.default.createElement(
+      'legend',
+      null,
+      _react2.default.createElement(
+        'h2',
+        null,
+        ' Nouveau -- ',
+        _react2.default.createElement(Clock, null),
+        ' '
+      )
+    ),
+    _react2.default.createElement(App, null)
+  ),
+  _react2.default.createElement('br', null),
+  ' ',
+  _react2.default.createElement('br', null),
+  _react2.default.createElement(
+    'fieldset',
+    null,
+    _react2.default.createElement(
+      'legend',
+      null,
+      ' ',
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Legacy -- ',
+        _react2.default.createElement(ClockLegacy, null),
+        ' '
+      )
+    ),
+    _react2.default.createElement(Legacy, null)
+  ),
+  _react2.default.createElement('br', null),
+  ' ',
+  _react2.default.createElement('br', null),
+  ' ',
+  _react2.default.createElement('br', null),
+  _react2.default.createElement(
+    'fieldset',
+    null,
+    _react2.default.createElement(
+      'legend',
+      null,
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Controls'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return globalObj.book.name = fakeString(10);
+        } },
+      'Change book title',
+      _react2.default.createElement(
+        'div',
+        null,
+        'state - attr'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return globalObj.book.pages = Math.floor(Math.random() * 500);
+        } },
+      'Change book pages',
+      _react2.default.createElement(
+        'div',
+        null,
+        'state - prop'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return globalObj.book.author.name = fakeString(10);
+        } },
+      'Change author name',
+      _react2.default.createElement(
+        'div',
+        null,
+        'state - association - primitive'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return globalObj.book.author.age = Math.floor(Math.random() * 100);
+        } },
+      'Change author age',
+      _react2.default.createElement(
+        'div',
+        null,
+        'props - attr'
+      )
+    )
+  )
+), document.getElementById('app'));
 
 /***/ }),
-/* 180 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24264,7 +22497,7 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 
 var _assign = __webpack_require__(7);
 
-var emptyObject = __webpack_require__(49);
+var emptyObject = __webpack_require__(48);
 var _invariant = __webpack_require__(1);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -25126,10 +23359,10 @@ module.exports = factory;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 181 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(182)(undefined);
+exports = module.exports = __webpack_require__(178)(undefined);
 // imports
 
 
@@ -25140,7 +23373,7 @@ exports.push([module.i, "body div, button {\n  font-size: 16px;\n  font-family: 
 
 
 /***/ }),
-/* 182 */
+/* 178 */
 /***/ (function(module, exports) {
 
 /*
@@ -25222,7 +23455,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 183 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25259,7 +23492,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 184 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25276,7 +23509,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(183);
+var camelize = __webpack_require__(179);
 
 var msPattern = /^-ms-/;
 
@@ -25304,7 +23537,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 185 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25321,7 +23554,7 @@ module.exports = camelizeStyleName;
  * 
  */
 
-var isTextNode = __webpack_require__(193);
+var isTextNode = __webpack_require__(189);
 
 /*eslint-disable no-bitwise */
 
@@ -25349,7 +23582,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 186 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25482,7 +23715,7 @@ module.exports = createArrayFromMixed;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 187 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25503,8 +23736,8 @@ module.exports = createArrayFromMixed;
 
 var ExecutionEnvironment = __webpack_require__(11);
 
-var createArrayFromMixed = __webpack_require__(186);
-var getMarkupWrap = __webpack_require__(188);
+var createArrayFromMixed = __webpack_require__(182);
+var getMarkupWrap = __webpack_require__(184);
 var invariant = __webpack_require__(1);
 
 /**
@@ -25572,7 +23805,7 @@ module.exports = createNodesFromMarkup;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 188 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25673,7 +23906,7 @@ module.exports = getMarkupWrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 189 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25717,7 +23950,7 @@ function getUnboundedScrollPosition(scrollable) {
 module.exports = getUnboundedScrollPosition;
 
 /***/ }),
-/* 190 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25755,7 +23988,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 191 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25772,7 +24005,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(190);
+var hyphenate = __webpack_require__(186);
 
 var msPattern = /^ms-/;
 
@@ -25799,7 +24032,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 192 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25829,7 +24062,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 193 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25846,7 +24079,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(192);
+var isNode = __webpack_require__(188);
 
 /**
  * @param {*} object The object to check.
@@ -25859,7 +24092,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 194 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25894,7 +24127,7 @@ function memoizeStringOnly(callback) {
 module.exports = memoizeStringOnly;
 
 /***/ }),
-/* 195 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25922,7 +24155,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = performance || {};
 
 /***/ }),
-/* 196 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25939,7 +24172,7 @@ module.exports = performance || {};
  * @typechecks
  */
 
-var performance = __webpack_require__(195);
+var performance = __webpack_require__(191);
 
 var performanceNow;
 
@@ -25961,7 +24194,7 @@ if (performance.now) {
 module.exports = performanceNow;
 
 /***/ }),
-/* 197 */
+/* 193 */
 /***/ (function(module, exports) {
 
 
@@ -25976,7 +24209,7 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
-/* 198 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25994,7 +24227,7 @@ module.exports = function(arr, obj){
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(1);
   var warning = __webpack_require__(3);
-  var ReactPropTypesSecret = __webpack_require__(109);
+  var ReactPropTypesSecret = __webpack_require__(108);
   var loggedTypeFailures = {};
 }
 
@@ -26045,7 +24278,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 199 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26064,8 +24297,8 @@ var emptyFunction = __webpack_require__(17);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
 
-var ReactPropTypesSecret = __webpack_require__(109);
-var checkPropTypes = __webpack_require__(198);
+var ReactPropTypesSecret = __webpack_require__(108);
+var checkPropTypes = __webpack_require__(194);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -26565,7 +24798,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 200 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26644,7 +24877,7 @@ var ARIADOMPropertyConfig = {
 module.exports = ARIADOMPropertyConfig;
 
 /***/ }),
-/* 201 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26662,7 +24895,7 @@ module.exports = ARIADOMPropertyConfig;
 
 var ReactDOMComponentTree = __webpack_require__(9);
 
-var focusNode = __webpack_require__(106);
+var focusNode = __webpack_require__(105);
 
 var AutoFocusUtils = {
   focusDOMComponent: function () {
@@ -26673,7 +24906,7 @@ var AutoFocusUtils = {
 module.exports = AutoFocusUtils;
 
 /***/ }),
-/* 202 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26689,11 +24922,11 @@ module.exports = AutoFocusUtils;
 
 
 
-var EventPropagators = __webpack_require__(42);
+var EventPropagators = __webpack_require__(41);
 var ExecutionEnvironment = __webpack_require__(11);
-var FallbackCompositionState = __webpack_require__(208);
-var SyntheticCompositionEvent = __webpack_require__(251);
-var SyntheticInputEvent = __webpack_require__(254);
+var FallbackCompositionState = __webpack_require__(204);
+var SyntheticCompositionEvent = __webpack_require__(247);
+var SyntheticInputEvent = __webpack_require__(250);
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
@@ -27062,7 +25295,7 @@ var BeforeInputEventPlugin = {
 module.exports = BeforeInputEventPlugin;
 
 /***/ }),
-/* 203 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27078,14 +25311,14 @@ module.exports = BeforeInputEventPlugin;
 
 
 
-var CSSProperty = __webpack_require__(110);
+var CSSProperty = __webpack_require__(109);
 var ExecutionEnvironment = __webpack_require__(11);
 var ReactInstrumentation = __webpack_require__(15);
 
-var camelizeStyleName = __webpack_require__(184);
-var dangerousStyleValue = __webpack_require__(261);
-var hyphenateStyleName = __webpack_require__(191);
-var memoizeStringOnly = __webpack_require__(194);
+var camelizeStyleName = __webpack_require__(180);
+var dangerousStyleValue = __webpack_require__(257);
+var hyphenateStyleName = __webpack_require__(187);
+var memoizeStringOnly = __webpack_require__(190);
 var warning = __webpack_require__(3);
 
 var processStyleName = memoizeStringOnly(function (styleName) {
@@ -27283,7 +25516,7 @@ module.exports = CSSPropertyOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 204 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27299,17 +25532,17 @@ module.exports = CSSPropertyOperations;
 
 
 
-var EventPluginHub = __webpack_require__(41);
-var EventPropagators = __webpack_require__(42);
+var EventPluginHub = __webpack_require__(40);
+var EventPropagators = __webpack_require__(41);
 var ExecutionEnvironment = __webpack_require__(11);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(19);
 var SyntheticEvent = __webpack_require__(23);
 
-var inputValueTracking = __webpack_require__(127);
-var getEventTarget = __webpack_require__(81);
-var isEventSupported = __webpack_require__(82);
-var isTextInputElement = __webpack_require__(129);
+var inputValueTracking = __webpack_require__(126);
+var getEventTarget = __webpack_require__(79);
+var isEventSupported = __webpack_require__(80);
+var isTextInputElement = __webpack_require__(128);
 
 var eventTypes = {
   change: {
@@ -27600,7 +25833,7 @@ var ChangeEventPlugin = {
 module.exports = ChangeEventPlugin;
 
 /***/ }),
-/* 205 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27621,7 +25854,7 @@ var _prodInvariant = __webpack_require__(5);
 var DOMLazyTree = __webpack_require__(31);
 var ExecutionEnvironment = __webpack_require__(11);
 
-var createNodesFromMarkup = __webpack_require__(187);
+var createNodesFromMarkup = __webpack_require__(183);
 var emptyFunction = __webpack_require__(17);
 var invariant = __webpack_require__(1);
 
@@ -27652,7 +25885,7 @@ module.exports = Danger;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 206 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27683,7 +25916,7 @@ var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'Tap
 module.exports = DefaultEventPluginOrder;
 
 /***/ }),
-/* 207 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27699,9 +25932,9 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(42);
+var EventPropagators = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(9);
-var SyntheticMouseEvent = __webpack_require__(52);
+var SyntheticMouseEvent = __webpack_require__(51);
 
 var eventTypes = {
   mouseEnter: {
@@ -27786,7 +26019,7 @@ var EnterLeaveEventPlugin = {
 module.exports = EnterLeaveEventPlugin;
 
 /***/ }),
-/* 208 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27806,7 +26039,7 @@ var _assign = __webpack_require__(7);
 
 var PooledClass = __webpack_require__(27);
 
-var getTextContentAccessor = __webpack_require__(126);
+var getTextContentAccessor = __webpack_require__(125);
 
 /**
  * This helper class stores information about text content of a target node,
@@ -27886,7 +26119,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 module.exports = FallbackCompositionState;
 
 /***/ }),
-/* 209 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28127,7 +26360,7 @@ var HTMLDOMPropertyConfig = {
 module.exports = HTMLDOMPropertyConfig;
 
 /***/ }),
-/* 210 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28145,10 +26378,10 @@ module.exports = HTMLDOMPropertyConfig;
 
 var ReactReconciler = __webpack_require__(32);
 
-var instantiateReactComponent = __webpack_require__(128);
-var KeyEscapeUtils = __webpack_require__(73);
-var shouldUpdateReactComponent = __webpack_require__(83);
-var traverseAllChildren = __webpack_require__(131);
+var instantiateReactComponent = __webpack_require__(127);
+var KeyEscapeUtils = __webpack_require__(71);
+var shouldUpdateReactComponent = __webpack_require__(81);
+var traverseAllChildren = __webpack_require__(130);
 var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
@@ -28286,7 +26519,7 @@ module.exports = ReactChildReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 211 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28302,8 +26535,8 @@ module.exports = ReactChildReconciler;
 
 
 
-var DOMChildrenOperations = __webpack_require__(70);
-var ReactDOMIDOperations = __webpack_require__(218);
+var DOMChildrenOperations = __webpack_require__(68);
+var ReactDOMIDOperations = __webpack_require__(214);
 
 /**
  * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -28319,7 +26552,7 @@ var ReactComponentBrowserEnvironment = {
 module.exports = ReactComponentBrowserEnvironment;
 
 /***/ }),
-/* 212 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28339,22 +26572,22 @@ var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
 var React = __webpack_require__(33);
-var ReactComponentEnvironment = __webpack_require__(75);
+var ReactComponentEnvironment = __webpack_require__(73);
 var ReactCurrentOwner = __webpack_require__(20);
-var ReactErrorUtils = __webpack_require__(76);
-var ReactInstanceMap = __webpack_require__(43);
+var ReactErrorUtils = __webpack_require__(74);
+var ReactInstanceMap = __webpack_require__(42);
 var ReactInstrumentation = __webpack_require__(15);
-var ReactNodeTypes = __webpack_require__(120);
+var ReactNodeTypes = __webpack_require__(119);
 var ReactReconciler = __webpack_require__(32);
 
 if (process.env.NODE_ENV !== 'production') {
-  var checkReactTypeSpec = __webpack_require__(260);
+  var checkReactTypeSpec = __webpack_require__(256);
 }
 
-var emptyObject = __webpack_require__(49);
+var emptyObject = __webpack_require__(48);
 var invariant = __webpack_require__(1);
-var shallowEqual = __webpack_require__(69);
-var shouldUpdateReactComponent = __webpack_require__(83);
+var shallowEqual = __webpack_require__(67);
+var shouldUpdateReactComponent = __webpack_require__(81);
 var warning = __webpack_require__(3);
 
 var CompositeTypes = {
@@ -29225,7 +27458,7 @@ module.exports = ReactCompositeComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 213 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29244,15 +27477,15 @@ module.exports = ReactCompositeComponent;
 
 
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactDefaultInjection = __webpack_require__(230);
-var ReactMount = __webpack_require__(119);
+var ReactDefaultInjection = __webpack_require__(226);
+var ReactMount = __webpack_require__(118);
 var ReactReconciler = __webpack_require__(32);
 var ReactUpdates = __webpack_require__(19);
-var ReactVersion = __webpack_require__(245);
+var ReactVersion = __webpack_require__(241);
 
-var findDOMNode = __webpack_require__(262);
-var getHostComponentFromComposite = __webpack_require__(125);
-var renderSubtreeIntoContainer = __webpack_require__(269);
+var findDOMNode = __webpack_require__(258);
+var getHostComponentFromComposite = __webpack_require__(124);
+var renderSubtreeIntoContainer = __webpack_require__(265);
 var warning = __webpack_require__(3);
 
 ReactDefaultInjection.inject();
@@ -29329,9 +27562,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 if (process.env.NODE_ENV !== 'production') {
   var ReactInstrumentation = __webpack_require__(15);
-  var ReactDOMUnknownPropertyHook = __webpack_require__(227);
-  var ReactDOMNullInputValuePropHook = __webpack_require__(221);
-  var ReactDOMInvalidARIAHook = __webpack_require__(220);
+  var ReactDOMUnknownPropertyHook = __webpack_require__(223);
+  var ReactDOMNullInputValuePropHook = __webpack_require__(217);
+  var ReactDOMInvalidARIAHook = __webpack_require__(216);
 
   ReactInstrumentation.debugTool.addHook(ReactDOMUnknownPropertyHook);
   ReactInstrumentation.debugTool.addHook(ReactDOMNullInputValuePropHook);
@@ -29342,7 +27575,7 @@ module.exports = ReactDOM;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 214 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29363,32 +27596,32 @@ module.exports = ReactDOM;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var AutoFocusUtils = __webpack_require__(201);
-var CSSPropertyOperations = __webpack_require__(203);
+var AutoFocusUtils = __webpack_require__(197);
+var CSSPropertyOperations = __webpack_require__(199);
 var DOMLazyTree = __webpack_require__(31);
-var DOMNamespaces = __webpack_require__(71);
+var DOMNamespaces = __webpack_require__(69);
 var DOMProperty = __webpack_require__(25);
-var DOMPropertyOperations = __webpack_require__(112);
-var EventPluginHub = __webpack_require__(41);
-var EventPluginRegistry = __webpack_require__(50);
-var ReactBrowserEventEmitter = __webpack_require__(51);
-var ReactDOMComponentFlags = __webpack_require__(113);
+var DOMPropertyOperations = __webpack_require__(111);
+var EventPluginHub = __webpack_require__(40);
+var EventPluginRegistry = __webpack_require__(49);
+var ReactBrowserEventEmitter = __webpack_require__(50);
+var ReactDOMComponentFlags = __webpack_require__(112);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactDOMInput = __webpack_require__(219);
-var ReactDOMOption = __webpack_require__(222);
-var ReactDOMSelect = __webpack_require__(114);
-var ReactDOMTextarea = __webpack_require__(225);
+var ReactDOMInput = __webpack_require__(215);
+var ReactDOMOption = __webpack_require__(218);
+var ReactDOMSelect = __webpack_require__(113);
+var ReactDOMTextarea = __webpack_require__(221);
 var ReactInstrumentation = __webpack_require__(15);
-var ReactMultiChild = __webpack_require__(238);
-var ReactServerRenderingTransaction = __webpack_require__(243);
+var ReactMultiChild = __webpack_require__(234);
+var ReactServerRenderingTransaction = __webpack_require__(239);
 
 var emptyFunction = __webpack_require__(17);
-var escapeTextContentForBrowser = __webpack_require__(54);
+var escapeTextContentForBrowser = __webpack_require__(53);
 var invariant = __webpack_require__(1);
-var isEventSupported = __webpack_require__(82);
-var shallowEqual = __webpack_require__(69);
-var inputValueTracking = __webpack_require__(127);
-var validateDOMNesting = __webpack_require__(84);
+var isEventSupported = __webpack_require__(80);
+var shallowEqual = __webpack_require__(67);
+var inputValueTracking = __webpack_require__(126);
+var validateDOMNesting = __webpack_require__(82);
 var warning = __webpack_require__(3);
 
 var Flags = ReactDOMComponentFlags;
@@ -30358,7 +28591,7 @@ module.exports = ReactDOMComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 215 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30374,7 +28607,7 @@ module.exports = ReactDOMComponent;
 
 
 
-var validateDOMNesting = __webpack_require__(84);
+var validateDOMNesting = __webpack_require__(82);
 
 var DOC_NODE_TYPE = 9;
 
@@ -30397,7 +28630,7 @@ module.exports = ReactDOMContainerInfo;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 216 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30462,7 +28695,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 module.exports = ReactDOMEmptyComponent;
 
 /***/ }),
-/* 217 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30486,7 +28719,7 @@ var ReactDOMFeatureFlags = {
 module.exports = ReactDOMFeatureFlags;
 
 /***/ }),
-/* 218 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30502,7 +28735,7 @@ module.exports = ReactDOMFeatureFlags;
 
 
 
-var DOMChildrenOperations = __webpack_require__(70);
+var DOMChildrenOperations = __webpack_require__(68);
 var ReactDOMComponentTree = __webpack_require__(9);
 
 /**
@@ -30524,7 +28757,7 @@ var ReactDOMIDOperations = {
 module.exports = ReactDOMIDOperations;
 
 /***/ }),
-/* 219 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30543,8 +28776,8 @@ module.exports = ReactDOMIDOperations;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var DOMPropertyOperations = __webpack_require__(112);
-var LinkedValueUtils = __webpack_require__(74);
+var DOMPropertyOperations = __webpack_require__(111);
+var LinkedValueUtils = __webpack_require__(72);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(19);
 
@@ -30817,7 +29050,7 @@ module.exports = ReactDOMInput;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 220 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30916,7 +29149,7 @@ module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 221 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30965,7 +29198,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 222 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30985,7 +29218,7 @@ var _assign = __webpack_require__(7);
 
 var React = __webpack_require__(33);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactDOMSelect = __webpack_require__(114);
+var ReactDOMSelect = __webpack_require__(113);
 
 var warning = __webpack_require__(3);
 var didWarnInvalidOptionChildren = false;
@@ -31093,7 +29326,7 @@ module.exports = ReactDOMOption;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 223 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31111,8 +29344,8 @@ module.exports = ReactDOMOption;
 
 var ExecutionEnvironment = __webpack_require__(11);
 
-var getNodeForCharacterOffset = __webpack_require__(266);
-var getTextContentAccessor = __webpack_require__(126);
+var getNodeForCharacterOffset = __webpack_require__(262);
+var getTextContentAccessor = __webpack_require__(125);
 
 /**
  * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -31310,7 +29543,7 @@ var ReactDOMSelection = {
 module.exports = ReactDOMSelection;
 
 /***/ }),
-/* 224 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31329,13 +29562,13 @@ module.exports = ReactDOMSelection;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var DOMChildrenOperations = __webpack_require__(70);
+var DOMChildrenOperations = __webpack_require__(68);
 var DOMLazyTree = __webpack_require__(31);
 var ReactDOMComponentTree = __webpack_require__(9);
 
-var escapeTextContentForBrowser = __webpack_require__(54);
+var escapeTextContentForBrowser = __webpack_require__(53);
 var invariant = __webpack_require__(1);
-var validateDOMNesting = __webpack_require__(84);
+var validateDOMNesting = __webpack_require__(82);
 
 /**
  * Text nodes violate a couple assumptions that React makes about components:
@@ -31478,7 +29711,7 @@ module.exports = ReactDOMTextComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 225 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31497,7 +29730,7 @@ module.exports = ReactDOMTextComponent;
 var _prodInvariant = __webpack_require__(5),
     _assign = __webpack_require__(7);
 
-var LinkedValueUtils = __webpack_require__(74);
+var LinkedValueUtils = __webpack_require__(72);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(19);
 
@@ -31644,7 +29877,7 @@ module.exports = ReactDOMTextarea;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 226 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31786,7 +30019,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 227 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31803,7 +30036,7 @@ module.exports = {
 
 
 var DOMProperty = __webpack_require__(25);
-var EventPluginRegistry = __webpack_require__(50);
+var EventPluginRegistry = __webpack_require__(49);
 var ReactComponentTreeHook = __webpack_require__(13);
 
 var warning = __webpack_require__(3);
@@ -31904,7 +30137,7 @@ module.exports = ReactDOMUnknownPropertyHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 228 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31921,12 +30154,12 @@ module.exports = ReactDOMUnknownPropertyHook;
 
 
 
-var ReactInvalidSetStateWarningHook = __webpack_require__(236);
-var ReactHostOperationHistoryHook = __webpack_require__(234);
+var ReactInvalidSetStateWarningHook = __webpack_require__(232);
+var ReactHostOperationHistoryHook = __webpack_require__(230);
 var ReactComponentTreeHook = __webpack_require__(13);
 var ExecutionEnvironment = __webpack_require__(11);
 
-var performanceNow = __webpack_require__(196);
+var performanceNow = __webpack_require__(192);
 var warning = __webpack_require__(3);
 
 var hooks = [];
@@ -32271,7 +30504,7 @@ module.exports = ReactDebugTool;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 229 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32290,7 +30523,7 @@ module.exports = ReactDebugTool;
 var _assign = __webpack_require__(7);
 
 var ReactUpdates = __webpack_require__(19);
-var Transaction = __webpack_require__(53);
+var Transaction = __webpack_require__(52);
 
 var emptyFunction = __webpack_require__(17);
 
@@ -32344,7 +30577,7 @@ var ReactDefaultBatchingStrategy = {
 module.exports = ReactDefaultBatchingStrategy;
 
 /***/ }),
-/* 230 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32360,25 +30593,25 @@ module.exports = ReactDefaultBatchingStrategy;
 
 
 
-var ARIADOMPropertyConfig = __webpack_require__(200);
-var BeforeInputEventPlugin = __webpack_require__(202);
-var ChangeEventPlugin = __webpack_require__(204);
-var DefaultEventPluginOrder = __webpack_require__(206);
-var EnterLeaveEventPlugin = __webpack_require__(207);
-var HTMLDOMPropertyConfig = __webpack_require__(209);
-var ReactComponentBrowserEnvironment = __webpack_require__(211);
-var ReactDOMComponent = __webpack_require__(214);
+var ARIADOMPropertyConfig = __webpack_require__(196);
+var BeforeInputEventPlugin = __webpack_require__(198);
+var ChangeEventPlugin = __webpack_require__(200);
+var DefaultEventPluginOrder = __webpack_require__(202);
+var EnterLeaveEventPlugin = __webpack_require__(203);
+var HTMLDOMPropertyConfig = __webpack_require__(205);
+var ReactComponentBrowserEnvironment = __webpack_require__(207);
+var ReactDOMComponent = __webpack_require__(210);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactDOMEmptyComponent = __webpack_require__(216);
-var ReactDOMTreeTraversal = __webpack_require__(226);
-var ReactDOMTextComponent = __webpack_require__(224);
-var ReactDefaultBatchingStrategy = __webpack_require__(229);
-var ReactEventListener = __webpack_require__(233);
-var ReactInjection = __webpack_require__(235);
-var ReactReconcileTransaction = __webpack_require__(241);
-var SVGDOMPropertyConfig = __webpack_require__(246);
-var SelectEventPlugin = __webpack_require__(247);
-var SimpleEventPlugin = __webpack_require__(248);
+var ReactDOMEmptyComponent = __webpack_require__(212);
+var ReactDOMTreeTraversal = __webpack_require__(222);
+var ReactDOMTextComponent = __webpack_require__(220);
+var ReactDefaultBatchingStrategy = __webpack_require__(225);
+var ReactEventListener = __webpack_require__(229);
+var ReactInjection = __webpack_require__(231);
+var ReactReconcileTransaction = __webpack_require__(237);
+var SVGDOMPropertyConfig = __webpack_require__(242);
+var SelectEventPlugin = __webpack_require__(243);
+var SimpleEventPlugin = __webpack_require__(244);
 
 var alreadyInjected = false;
 
@@ -32435,7 +30668,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 231 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32460,7 +30693,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 232 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32476,7 +30709,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var EventPluginHub = __webpack_require__(41);
+var EventPluginHub = __webpack_require__(40);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -32497,7 +30730,7 @@ var ReactEventEmitterMixin = {
 module.exports = ReactEventEmitterMixin;
 
 /***/ }),
-/* 233 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32515,14 +30748,14 @@ module.exports = ReactEventEmitterMixin;
 
 var _assign = __webpack_require__(7);
 
-var EventListener = __webpack_require__(105);
+var EventListener = __webpack_require__(104);
 var ExecutionEnvironment = __webpack_require__(11);
 var PooledClass = __webpack_require__(27);
 var ReactDOMComponentTree = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(19);
 
-var getEventTarget = __webpack_require__(81);
-var getUnboundedScrollPosition = __webpack_require__(189);
+var getEventTarget = __webpack_require__(79);
+var getUnboundedScrollPosition = __webpack_require__(185);
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -32657,7 +30890,7 @@ var ReactEventListener = {
 module.exports = ReactEventListener;
 
 /***/ }),
-/* 234 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32696,7 +30929,7 @@ var ReactHostOperationHistoryHook = {
 module.exports = ReactHostOperationHistoryHook;
 
 /***/ }),
-/* 235 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32713,12 +30946,12 @@ module.exports = ReactHostOperationHistoryHook;
 
 
 var DOMProperty = __webpack_require__(25);
-var EventPluginHub = __webpack_require__(41);
-var EventPluginUtils = __webpack_require__(72);
-var ReactComponentEnvironment = __webpack_require__(75);
-var ReactEmptyComponent = __webpack_require__(115);
-var ReactBrowserEventEmitter = __webpack_require__(51);
-var ReactHostComponent = __webpack_require__(117);
+var EventPluginHub = __webpack_require__(40);
+var EventPluginUtils = __webpack_require__(70);
+var ReactComponentEnvironment = __webpack_require__(73);
+var ReactEmptyComponent = __webpack_require__(114);
+var ReactBrowserEventEmitter = __webpack_require__(50);
+var ReactHostComponent = __webpack_require__(116);
 var ReactUpdates = __webpack_require__(19);
 
 var ReactInjection = {
@@ -32735,7 +30968,7 @@ var ReactInjection = {
 module.exports = ReactInjection;
 
 /***/ }),
-/* 236 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32778,7 +31011,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 237 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32794,7 +31027,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 
 
 
-var adler32 = __webpack_require__(259);
+var adler32 = __webpack_require__(255);
 
 var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
@@ -32833,7 +31066,7 @@ var ReactMarkupChecksum = {
 module.exports = ReactMarkupChecksum;
 
 /***/ }),
-/* 238 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32851,16 +31084,16 @@ module.exports = ReactMarkupChecksum;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactComponentEnvironment = __webpack_require__(75);
-var ReactInstanceMap = __webpack_require__(43);
+var ReactComponentEnvironment = __webpack_require__(73);
+var ReactInstanceMap = __webpack_require__(42);
 var ReactInstrumentation = __webpack_require__(15);
 
 var ReactCurrentOwner = __webpack_require__(20);
 var ReactReconciler = __webpack_require__(32);
-var ReactChildReconciler = __webpack_require__(210);
+var ReactChildReconciler = __webpack_require__(206);
 
 var emptyFunction = __webpack_require__(17);
-var flattenChildren = __webpack_require__(263);
+var flattenChildren = __webpack_require__(259);
 var invariant = __webpack_require__(1);
 
 /**
@@ -33285,7 +31518,7 @@ module.exports = ReactMultiChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 239 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33384,7 +31617,7 @@ module.exports = ReactOwner;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 240 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33415,7 +31648,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 241 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33433,13 +31666,13 @@ module.exports = ReactPropTypeLocationNames;
 
 var _assign = __webpack_require__(7);
 
-var CallbackQueue = __webpack_require__(111);
+var CallbackQueue = __webpack_require__(110);
 var PooledClass = __webpack_require__(27);
-var ReactBrowserEventEmitter = __webpack_require__(51);
-var ReactInputSelection = __webpack_require__(118);
+var ReactBrowserEventEmitter = __webpack_require__(50);
+var ReactInputSelection = __webpack_require__(117);
 var ReactInstrumentation = __webpack_require__(15);
-var Transaction = __webpack_require__(53);
-var ReactUpdateQueue = __webpack_require__(77);
+var Transaction = __webpack_require__(52);
+var ReactUpdateQueue = __webpack_require__(75);
 
 /**
  * Ensures that, when possible, the selection range (currently selected text
@@ -33599,7 +31832,7 @@ module.exports = ReactReconcileTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 242 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33616,7 +31849,7 @@ module.exports = ReactReconcileTransaction;
 
 
 
-var ReactOwner = __webpack_require__(239);
+var ReactOwner = __webpack_require__(235);
 
 var ReactRef = {};
 
@@ -33693,7 +31926,7 @@ ReactRef.detachRefs = function (instance, element) {
 module.exports = ReactRef;
 
 /***/ }),
-/* 243 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33712,9 +31945,9 @@ module.exports = ReactRef;
 var _assign = __webpack_require__(7);
 
 var PooledClass = __webpack_require__(27);
-var Transaction = __webpack_require__(53);
+var Transaction = __webpack_require__(52);
 var ReactInstrumentation = __webpack_require__(15);
-var ReactServerUpdateQueue = __webpack_require__(244);
+var ReactServerUpdateQueue = __webpack_require__(240);
 
 /**
  * Executed within the scope of the `Transaction` instance. Consider these as
@@ -33789,7 +32022,7 @@ module.exports = ReactServerRenderingTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 244 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33808,7 +32041,7 @@ module.exports = ReactServerRenderingTransaction;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ReactUpdateQueue = __webpack_require__(77);
+var ReactUpdateQueue = __webpack_require__(75);
 
 var warning = __webpack_require__(3);
 
@@ -33934,7 +32167,7 @@ module.exports = ReactServerUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 245 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33953,7 +32186,7 @@ module.exports = ReactServerUpdateQueue;
 module.exports = '15.6.1';
 
 /***/ }),
-/* 246 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34260,7 +32493,7 @@ Object.keys(ATTRS).forEach(function (key) {
 module.exports = SVGDOMPropertyConfig;
 
 /***/ }),
-/* 247 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34276,15 +32509,15 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(42);
+var EventPropagators = __webpack_require__(41);
 var ExecutionEnvironment = __webpack_require__(11);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactInputSelection = __webpack_require__(118);
+var ReactInputSelection = __webpack_require__(117);
 var SyntheticEvent = __webpack_require__(23);
 
-var getActiveElement = __webpack_require__(107);
-var isTextInputElement = __webpack_require__(129);
-var shallowEqual = __webpack_require__(69);
+var getActiveElement = __webpack_require__(106);
+var isTextInputElement = __webpack_require__(128);
+var shallowEqual = __webpack_require__(67);
 
 var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
@@ -34453,7 +32686,7 @@ var SelectEventPlugin = {
 module.exports = SelectEventPlugin;
 
 /***/ }),
-/* 248 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34472,23 +32705,23 @@ module.exports = SelectEventPlugin;
 
 var _prodInvariant = __webpack_require__(5);
 
-var EventListener = __webpack_require__(105);
-var EventPropagators = __webpack_require__(42);
+var EventListener = __webpack_require__(104);
+var EventPropagators = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(9);
-var SyntheticAnimationEvent = __webpack_require__(249);
-var SyntheticClipboardEvent = __webpack_require__(250);
+var SyntheticAnimationEvent = __webpack_require__(245);
+var SyntheticClipboardEvent = __webpack_require__(246);
 var SyntheticEvent = __webpack_require__(23);
-var SyntheticFocusEvent = __webpack_require__(253);
-var SyntheticKeyboardEvent = __webpack_require__(255);
-var SyntheticMouseEvent = __webpack_require__(52);
-var SyntheticDragEvent = __webpack_require__(252);
-var SyntheticTouchEvent = __webpack_require__(256);
-var SyntheticTransitionEvent = __webpack_require__(257);
-var SyntheticUIEvent = __webpack_require__(44);
-var SyntheticWheelEvent = __webpack_require__(258);
+var SyntheticFocusEvent = __webpack_require__(249);
+var SyntheticKeyboardEvent = __webpack_require__(251);
+var SyntheticMouseEvent = __webpack_require__(51);
+var SyntheticDragEvent = __webpack_require__(248);
+var SyntheticTouchEvent = __webpack_require__(252);
+var SyntheticTransitionEvent = __webpack_require__(253);
+var SyntheticUIEvent = __webpack_require__(43);
+var SyntheticWheelEvent = __webpack_require__(254);
 
 var emptyFunction = __webpack_require__(17);
-var getEventCharCode = __webpack_require__(79);
+var getEventCharCode = __webpack_require__(77);
 var invariant = __webpack_require__(1);
 
 /**
@@ -34685,7 +32918,7 @@ module.exports = SimpleEventPlugin;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 249 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34729,7 +32962,7 @@ SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 module.exports = SyntheticAnimationEvent;
 
 /***/ }),
-/* 250 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34772,7 +33005,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 module.exports = SyntheticClipboardEvent;
 
 /***/ }),
-/* 251 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34813,7 +33046,7 @@ SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface
 module.exports = SyntheticCompositionEvent;
 
 /***/ }),
-/* 252 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34829,7 +33062,7 @@ module.exports = SyntheticCompositionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(52);
+var SyntheticMouseEvent = __webpack_require__(51);
 
 /**
  * @interface DragEvent
@@ -34854,7 +33087,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 module.exports = SyntheticDragEvent;
 
 /***/ }),
-/* 253 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34870,7 +33103,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(44);
+var SyntheticUIEvent = __webpack_require__(43);
 
 /**
  * @interface FocusEvent
@@ -34895,7 +33128,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 module.exports = SyntheticFocusEvent;
 
 /***/ }),
-/* 254 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34937,7 +33170,7 @@ SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 module.exports = SyntheticInputEvent;
 
 /***/ }),
-/* 255 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34953,11 +33186,11 @@ module.exports = SyntheticInputEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(44);
+var SyntheticUIEvent = __webpack_require__(43);
 
-var getEventCharCode = __webpack_require__(79);
-var getEventKey = __webpack_require__(264);
-var getEventModifierState = __webpack_require__(80);
+var getEventCharCode = __webpack_require__(77);
+var getEventKey = __webpack_require__(260);
+var getEventModifierState = __webpack_require__(78);
 
 /**
  * @interface KeyboardEvent
@@ -35026,7 +33259,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 module.exports = SyntheticKeyboardEvent;
 
 /***/ }),
-/* 256 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35042,9 +33275,9 @@ module.exports = SyntheticKeyboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(44);
+var SyntheticUIEvent = __webpack_require__(43);
 
-var getEventModifierState = __webpack_require__(80);
+var getEventModifierState = __webpack_require__(78);
 
 /**
  * @interface TouchEvent
@@ -35076,7 +33309,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 module.exports = SyntheticTouchEvent;
 
 /***/ }),
-/* 257 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35120,7 +33353,7 @@ SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 module.exports = SyntheticTransitionEvent;
 
 /***/ }),
-/* 258 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35136,7 +33369,7 @@ module.exports = SyntheticTransitionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(52);
+var SyntheticMouseEvent = __webpack_require__(51);
 
 /**
  * @interface WheelEvent
@@ -35176,7 +33409,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 module.exports = SyntheticWheelEvent;
 
 /***/ }),
-/* 259 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35225,7 +33458,7 @@ function adler32(data) {
 module.exports = adler32;
 
 /***/ }),
-/* 260 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35243,8 +33476,8 @@ module.exports = adler32;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactPropTypeLocationNames = __webpack_require__(240);
-var ReactPropTypesSecret = __webpack_require__(121);
+var ReactPropTypeLocationNames = __webpack_require__(236);
+var ReactPropTypesSecret = __webpack_require__(120);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -35318,7 +33551,7 @@ module.exports = checkReactTypeSpec;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 261 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35334,7 +33567,7 @@ module.exports = checkReactTypeSpec;
 
 
 
-var CSSProperty = __webpack_require__(110);
+var CSSProperty = __webpack_require__(109);
 var warning = __webpack_require__(3);
 
 var isUnitlessNumber = CSSProperty.isUnitlessNumber;
@@ -35403,7 +33636,7 @@ module.exports = dangerousStyleValue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 262 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35423,9 +33656,9 @@ var _prodInvariant = __webpack_require__(5);
 
 var ReactCurrentOwner = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(9);
-var ReactInstanceMap = __webpack_require__(43);
+var ReactInstanceMap = __webpack_require__(42);
 
-var getHostComponentFromComposite = __webpack_require__(125);
+var getHostComponentFromComposite = __webpack_require__(124);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
 
@@ -35469,7 +33702,7 @@ module.exports = findDOMNode;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 263 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35486,8 +33719,8 @@ module.exports = findDOMNode;
 
 
 
-var KeyEscapeUtils = __webpack_require__(73);
-var traverseAllChildren = __webpack_require__(131);
+var KeyEscapeUtils = __webpack_require__(71);
+var traverseAllChildren = __webpack_require__(130);
 var warning = __webpack_require__(3);
 
 var ReactComponentTreeHook;
@@ -35551,7 +33784,7 @@ module.exports = flattenChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 264 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35567,7 +33800,7 @@ module.exports = flattenChildren;
 
 
 
-var getEventCharCode = __webpack_require__(79);
+var getEventCharCode = __webpack_require__(77);
 
 /**
  * Normalization of deprecated HTML5 `key` values
@@ -35668,7 +33901,7 @@ function getEventKey(nativeEvent) {
 module.exports = getEventKey;
 
 /***/ }),
-/* 265 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35714,7 +33947,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 266 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35793,7 +34026,7 @@ function getNodeForCharacterOffset(root, offset) {
 module.exports = getNodeForCharacterOffset;
 
 /***/ }),
-/* 267 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35899,7 +34132,7 @@ function getVendorPrefixedEventName(eventName) {
 module.exports = getVendorPrefixedEventName;
 
 /***/ }),
-/* 268 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35915,7 +34148,7 @@ module.exports = getVendorPrefixedEventName;
 
 
 
-var escapeTextContentForBrowser = __webpack_require__(54);
+var escapeTextContentForBrowser = __webpack_require__(53);
 
 /**
  * Escapes attribute value to prevent scripting attacks.
@@ -35930,7 +34163,7 @@ function quoteAttributeValueForBrowser(value) {
 module.exports = quoteAttributeValueForBrowser;
 
 /***/ }),
-/* 269 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35946,12 +34179,12 @@ module.exports = quoteAttributeValueForBrowser;
 
 
 
-var ReactMount = __webpack_require__(119);
+var ReactMount = __webpack_require__(118);
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ }),
-/* 270 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36015,7 +34248,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 271 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36133,7 +34366,7 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 272 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36149,11 +34382,11 @@ module.exports = PooledClass;
 
 
 
-var PooledClass = __webpack_require__(271);
+var PooledClass = __webpack_require__(267);
 var ReactElement = __webpack_require__(28);
 
 var emptyFunction = __webpack_require__(17);
-var traverseAllChildren = __webpack_require__(282);
+var traverseAllChildren = __webpack_require__(278);
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
 var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -36329,7 +34562,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 /***/ }),
-/* 273 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36354,7 +34587,7 @@ var ReactElement = __webpack_require__(28);
  */
 var createDOMFactory = ReactElement.createFactory;
 if (process.env.NODE_ENV !== 'production') {
-  var ReactElementValidator = __webpack_require__(134);
+  var ReactElementValidator = __webpack_require__(133);
   createDOMFactory = ReactElementValidator.createFactory;
 }
 
@@ -36504,7 +34737,7 @@ module.exports = ReactDOMFactories;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 274 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36535,7 +34768,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 275 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36554,12 +34787,12 @@ module.exports = ReactPropTypeLocationNames;
 var _require = __webpack_require__(28),
     isValidElement = _require.isValidElement;
 
-var factory = __webpack_require__(108);
+var factory = __webpack_require__(107);
 
 module.exports = factory(isValidElement);
 
 /***/ }),
-/* 276 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36581,7 +34814,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 277 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36600,7 +34833,7 @@ module.exports = ReactPropTypesSecret;
 module.exports = '15.6.1';
 
 /***/ }),
-/* 278 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36618,8 +34851,8 @@ module.exports = '15.6.1';
 
 var _prodInvariant = __webpack_require__(34);
 
-var ReactPropTypeLocationNames = __webpack_require__(274);
-var ReactPropTypesSecret = __webpack_require__(276);
+var ReactPropTypeLocationNames = __webpack_require__(270);
+var ReactPropTypesSecret = __webpack_require__(272);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -36693,7 +34926,7 @@ module.exports = checkReactTypeSpec;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 279 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36709,19 +34942,19 @@ module.exports = checkReactTypeSpec;
 
 
 
-var _require = __webpack_require__(132),
+var _require = __webpack_require__(131),
     Component = _require.Component;
 
 var _require2 = __webpack_require__(28),
     isValidElement = _require2.isValidElement;
 
-var ReactNoopUpdateQueue = __webpack_require__(135);
-var factory = __webpack_require__(180);
+var ReactNoopUpdateQueue = __webpack_require__(134);
+var factory = __webpack_require__(176);
 
 module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 /***/ }),
-/* 280 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36747,7 +34980,7 @@ function getNextDebugID() {
 module.exports = getNextDebugID;
 
 /***/ }),
-/* 281 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36791,7 +35024,7 @@ module.exports = onlyChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 282 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36810,11 +35043,11 @@ module.exports = onlyChild;
 var _prodInvariant = __webpack_require__(34);
 
 var ReactCurrentOwner = __webpack_require__(20);
-var REACT_ELEMENT_TYPE = __webpack_require__(133);
+var REACT_ELEMENT_TYPE = __webpack_require__(132);
 
-var getIteratorFn = __webpack_require__(136);
+var getIteratorFn = __webpack_require__(135);
 var invariant = __webpack_require__(1);
-var KeyEscapeUtils = __webpack_require__(270);
+var KeyEscapeUtils = __webpack_require__(266);
 var warning = __webpack_require__(3);
 
 var SEPARATOR = '.';
@@ -36973,7 +35206,7 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 283 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -37019,7 +35252,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(284);
+var	fixUrls = __webpack_require__(280);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -37332,7 +35565,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 284 */
+/* 280 */
 /***/ (function(module, exports) {
 
 
@@ -37427,7 +35660,179 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 285 */
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var indexOf = __webpack_require__(193);
+
+var Object_keys = function (obj) {
+    if (Object.keys) return Object.keys(obj)
+    else {
+        var res = [];
+        for (var key in obj) res.push(key)
+        return res;
+    }
+};
+
+var forEach = function (xs, fn) {
+    if (xs.forEach) return xs.forEach(fn)
+    else for (var i = 0; i < xs.length; i++) {
+        fn(xs[i], i, xs);
+    }
+};
+
+var defineProp = (function() {
+    try {
+        Object.defineProperty({}, '_', {});
+        return function(obj, name, value) {
+            Object.defineProperty(obj, name, {
+                writable: true,
+                enumerable: false,
+                configurable: true,
+                value: value
+            })
+        };
+    } catch(e) {
+        return function(obj, name, value) {
+            obj[name] = value;
+        };
+    }
+}());
+
+var globals = ['Array', 'Boolean', 'Date', 'Error', 'EvalError', 'Function',
+'Infinity', 'JSON', 'Math', 'NaN', 'Number', 'Object', 'RangeError',
+'ReferenceError', 'RegExp', 'String', 'SyntaxError', 'TypeError', 'URIError',
+'decodeURI', 'decodeURIComponent', 'encodeURI', 'encodeURIComponent', 'escape',
+'eval', 'isFinite', 'isNaN', 'parseFloat', 'parseInt', 'undefined', 'unescape'];
+
+function Context() {}
+Context.prototype = {};
+
+var Script = exports.Script = function NodeScript (code) {
+    if (!(this instanceof Script)) return new Script(code);
+    this.code = code;
+};
+
+Script.prototype.runInContext = function (context) {
+    if (!(context instanceof Context)) {
+        throw new TypeError("needs a 'context' argument.");
+    }
+    
+    var iframe = document.createElement('iframe');
+    if (!iframe.style) iframe.style = {};
+    iframe.style.display = 'none';
+    
+    document.body.appendChild(iframe);
+    
+    var win = iframe.contentWindow;
+    var wEval = win.eval, wExecScript = win.execScript;
+
+    if (!wEval && wExecScript) {
+        // win.eval() magically appears when this is called in IE:
+        wExecScript.call(win, 'null');
+        wEval = win.eval;
+    }
+    
+    forEach(Object_keys(context), function (key) {
+        win[key] = context[key];
+    });
+    forEach(globals, function (key) {
+        if (context[key]) {
+            win[key] = context[key];
+        }
+    });
+    
+    var winKeys = Object_keys(win);
+
+    var res = wEval.call(win, this.code);
+    
+    forEach(Object_keys(win), function (key) {
+        // Avoid copying circular objects like `top` and `window` by only
+        // updating existing context properties or new properties in the `win`
+        // that was only introduced after the eval.
+        if (key in context || indexOf(winKeys, key) === -1) {
+            context[key] = win[key];
+        }
+    });
+
+    forEach(globals, function (key) {
+        if (!(key in context)) {
+            defineProp(context, key, win[key]);
+        }
+    });
+    
+    document.body.removeChild(iframe);
+    
+    return res;
+};
+
+Script.prototype.runInThisContext = function () {
+    return eval(this.code); // maybe...
+};
+
+Script.prototype.runInNewContext = function (context) {
+    var ctx = Script.createContext(context);
+    var res = this.runInContext(ctx);
+
+    forEach(Object_keys(ctx), function (key) {
+        context[key] = ctx[key];
+    });
+
+    return res;
+};
+
+forEach(Object_keys(Script.prototype), function (name) {
+    exports[name] = Script[name] = function (code) {
+        var s = Script(code);
+        return s[name].apply(s, [].slice.call(arguments, 1));
+    };
+});
+
+exports.createScript = function (code) {
+    return exports.Script(code);
+};
+
+exports.createContext = Script.createContext = function (context) {
+    var copy = new Context();
+    if(typeof context === 'object') {
+        forEach(Object_keys(context), function (key) {
+            copy[key] = context[key];
+        });
+    }
+    return copy;
+};
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37445,7 +35850,7 @@ module.exports = function (css) {
 
 var _assign = __webpack_require__(8);
 
-var emptyObject = __webpack_require__(57);
+var emptyObject = __webpack_require__(56);
 var _invariant = __webpack_require__(2);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -38307,7 +36712,7 @@ module.exports = factory;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 286 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38344,7 +36749,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 287 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38361,7 +36766,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(286);
+var camelize = __webpack_require__(284);
 
 var msPattern = /^-ms-/;
 
@@ -38389,7 +36794,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 288 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38406,7 +36811,7 @@ module.exports = camelizeStyleName;
  * 
  */
 
-var isTextNode = __webpack_require__(296);
+var isTextNode = __webpack_require__(294);
 
 /*eslint-disable no-bitwise */
 
@@ -38434,7 +36839,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 289 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38567,7 +36972,7 @@ module.exports = createArrayFromMixed;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 290 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38588,8 +36993,8 @@ module.exports = createArrayFromMixed;
 
 var ExecutionEnvironment = __webpack_require__(12);
 
-var createArrayFromMixed = __webpack_require__(289);
-var getMarkupWrap = __webpack_require__(291);
+var createArrayFromMixed = __webpack_require__(287);
+var getMarkupWrap = __webpack_require__(289);
 var invariant = __webpack_require__(2);
 
 /**
@@ -38657,7 +37062,7 @@ module.exports = createNodesFromMarkup;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 291 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38758,7 +37163,7 @@ module.exports = getMarkupWrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 292 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38802,7 +37207,7 @@ function getUnboundedScrollPosition(scrollable) {
 module.exports = getUnboundedScrollPosition;
 
 /***/ }),
-/* 293 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38840,7 +37245,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 294 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38857,7 +37262,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(293);
+var hyphenate = __webpack_require__(291);
 
 var msPattern = /^ms-/;
 
@@ -38884,7 +37289,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 295 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38914,7 +37319,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 296 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38931,7 +37336,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(295);
+var isNode = __webpack_require__(293);
 
 /**
  * @param {*} object The object to check.
@@ -38944,7 +37349,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 297 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38979,7 +37384,7 @@ function memoizeStringOnly(callback) {
 module.exports = memoizeStringOnly;
 
 /***/ }),
-/* 298 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39007,7 +37412,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = performance || {};
 
 /***/ }),
-/* 299 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39024,7 +37429,7 @@ module.exports = performance || {};
  * @typechecks
  */
 
-var performance = __webpack_require__(298);
+var performance = __webpack_require__(296);
 
 var performanceNow;
 
@@ -39046,7 +37451,7 @@ if (performance.now) {
 module.exports = performanceNow;
 
 /***/ }),
-/* 300 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39064,7 +37469,7 @@ module.exports = performanceNow;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(2);
   var warning = __webpack_require__(4);
-  var ReactPropTypesSecret = __webpack_require__(142);
+  var ReactPropTypesSecret = __webpack_require__(141);
   var loggedTypeFailures = {};
 }
 
@@ -39115,7 +37520,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 301 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39134,8 +37539,8 @@ var emptyFunction = __webpack_require__(18);
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(4);
 
-var ReactPropTypesSecret = __webpack_require__(142);
-var checkPropTypes = __webpack_require__(300);
+var ReactPropTypesSecret = __webpack_require__(141);
+var checkPropTypes = __webpack_require__(298);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -39635,17 +38040,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 302 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(316);
-
-
-/***/ }),
-/* 303 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39724,7 +38119,7 @@ var ARIADOMPropertyConfig = {
 module.exports = ARIADOMPropertyConfig;
 
 /***/ }),
-/* 304 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39742,7 +38137,7 @@ module.exports = ARIADOMPropertyConfig;
 
 var ReactDOMComponentTree = __webpack_require__(10);
 
-var focusNode = __webpack_require__(138);
+var focusNode = __webpack_require__(137);
 
 var AutoFocusUtils = {
   focusDOMComponent: function () {
@@ -39753,7 +38148,7 @@ var AutoFocusUtils = {
 module.exports = AutoFocusUtils;
 
 /***/ }),
-/* 305 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39769,11 +38164,11 @@ module.exports = AutoFocusUtils;
 
 
 
-var EventPropagators = __webpack_require__(46);
+var EventPropagators = __webpack_require__(45);
 var ExecutionEnvironment = __webpack_require__(12);
-var FallbackCompositionState = __webpack_require__(311);
-var SyntheticCompositionEvent = __webpack_require__(354);
-var SyntheticInputEvent = __webpack_require__(357);
+var FallbackCompositionState = __webpack_require__(308);
+var SyntheticCompositionEvent = __webpack_require__(351);
+var SyntheticInputEvent = __webpack_require__(354);
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
@@ -40142,7 +38537,7 @@ var BeforeInputEventPlugin = {
 module.exports = BeforeInputEventPlugin;
 
 /***/ }),
-/* 306 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40162,10 +38557,10 @@ var CSSProperty = __webpack_require__(143);
 var ExecutionEnvironment = __webpack_require__(12);
 var ReactInstrumentation = __webpack_require__(16);
 
-var camelizeStyleName = __webpack_require__(287);
-var dangerousStyleValue = __webpack_require__(364);
-var hyphenateStyleName = __webpack_require__(294);
-var memoizeStringOnly = __webpack_require__(297);
+var camelizeStyleName = __webpack_require__(285);
+var dangerousStyleValue = __webpack_require__(361);
+var hyphenateStyleName = __webpack_require__(292);
+var memoizeStringOnly = __webpack_require__(295);
 var warning = __webpack_require__(4);
 
 var processStyleName = memoizeStringOnly(function (styleName) {
@@ -40363,7 +38758,7 @@ module.exports = CSSPropertyOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 307 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40379,16 +38774,16 @@ module.exports = CSSPropertyOperations;
 
 
 
-var EventPluginHub = __webpack_require__(45);
-var EventPropagators = __webpack_require__(46);
+var EventPluginHub = __webpack_require__(44);
+var EventPropagators = __webpack_require__(45);
 var ExecutionEnvironment = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactUpdates = __webpack_require__(21);
 var SyntheticEvent = __webpack_require__(24);
 
 var inputValueTracking = __webpack_require__(160);
-var getEventTarget = __webpack_require__(98);
-var isEventSupported = __webpack_require__(99);
+var getEventTarget = __webpack_require__(96);
+var isEventSupported = __webpack_require__(97);
 var isTextInputElement = __webpack_require__(162);
 
 var eventTypes = {
@@ -40680,7 +39075,7 @@ var ChangeEventPlugin = {
 module.exports = ChangeEventPlugin;
 
 /***/ }),
-/* 308 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40701,7 +39096,7 @@ var _prodInvariant = __webpack_require__(6);
 var DOMLazyTree = __webpack_require__(35);
 var ExecutionEnvironment = __webpack_require__(12);
 
-var createNodesFromMarkup = __webpack_require__(290);
+var createNodesFromMarkup = __webpack_require__(288);
 var emptyFunction = __webpack_require__(18);
 var invariant = __webpack_require__(2);
 
@@ -40732,7 +39127,7 @@ module.exports = Danger;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 309 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40763,7 +39158,7 @@ var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'Tap
 module.exports = DefaultEventPluginOrder;
 
 /***/ }),
-/* 310 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40779,9 +39174,9 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(46);
+var EventPropagators = __webpack_require__(45);
 var ReactDOMComponentTree = __webpack_require__(10);
-var SyntheticMouseEvent = __webpack_require__(60);
+var SyntheticMouseEvent = __webpack_require__(59);
 
 var eventTypes = {
   mouseEnter: {
@@ -40866,7 +39261,7 @@ var EnterLeaveEventPlugin = {
 module.exports = EnterLeaveEventPlugin;
 
 /***/ }),
-/* 311 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40966,7 +39361,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 module.exports = FallbackCompositionState;
 
 /***/ }),
-/* 312 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41207,7 +39602,7 @@ var HTMLDOMPropertyConfig = {
 module.exports = HTMLDOMPropertyConfig;
 
 /***/ }),
-/* 313 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41226,8 +39621,8 @@ module.exports = HTMLDOMPropertyConfig;
 var ReactReconciler = __webpack_require__(36);
 
 var instantiateReactComponent = __webpack_require__(161);
-var KeyEscapeUtils = __webpack_require__(90);
-var shouldUpdateReactComponent = __webpack_require__(100);
+var KeyEscapeUtils = __webpack_require__(88);
+var shouldUpdateReactComponent = __webpack_require__(98);
 var traverseAllChildren = __webpack_require__(164);
 var warning = __webpack_require__(4);
 
@@ -41366,7 +39761,7 @@ module.exports = ReactChildReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 314 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41382,8 +39777,8 @@ module.exports = ReactChildReconciler;
 
 
 
-var DOMChildrenOperations = __webpack_require__(87);
-var ReactDOMIDOperations = __webpack_require__(321);
+var DOMChildrenOperations = __webpack_require__(85);
+var ReactDOMIDOperations = __webpack_require__(318);
 
 /**
  * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -41399,7 +39794,7 @@ var ReactComponentBrowserEnvironment = {
 module.exports = ReactComponentBrowserEnvironment;
 
 /***/ }),
-/* 315 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41419,22 +39814,22 @@ var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
 var React = __webpack_require__(37);
-var ReactComponentEnvironment = __webpack_require__(92);
+var ReactComponentEnvironment = __webpack_require__(90);
 var ReactCurrentOwner = __webpack_require__(22);
-var ReactErrorUtils = __webpack_require__(93);
-var ReactInstanceMap = __webpack_require__(47);
+var ReactErrorUtils = __webpack_require__(91);
+var ReactInstanceMap = __webpack_require__(46);
 var ReactInstrumentation = __webpack_require__(16);
 var ReactNodeTypes = __webpack_require__(153);
 var ReactReconciler = __webpack_require__(36);
 
 if (process.env.NODE_ENV !== 'production') {
-  var checkReactTypeSpec = __webpack_require__(363);
+  var checkReactTypeSpec = __webpack_require__(360);
 }
 
-var emptyObject = __webpack_require__(57);
+var emptyObject = __webpack_require__(56);
 var invariant = __webpack_require__(2);
-var shallowEqual = __webpack_require__(86);
-var shouldUpdateReactComponent = __webpack_require__(100);
+var shallowEqual = __webpack_require__(84);
+var shouldUpdateReactComponent = __webpack_require__(98);
 var warning = __webpack_require__(4);
 
 var CompositeTypes = {
@@ -42305,7 +40700,7 @@ module.exports = ReactCompositeComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 316 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42324,15 +40719,15 @@ module.exports = ReactCompositeComponent;
 
 
 var ReactDOMComponentTree = __webpack_require__(10);
-var ReactDefaultInjection = __webpack_require__(333);
+var ReactDefaultInjection = __webpack_require__(330);
 var ReactMount = __webpack_require__(152);
 var ReactReconciler = __webpack_require__(36);
 var ReactUpdates = __webpack_require__(21);
-var ReactVersion = __webpack_require__(348);
+var ReactVersion = __webpack_require__(345);
 
-var findDOMNode = __webpack_require__(365);
+var findDOMNode = __webpack_require__(362);
 var getHostComponentFromComposite = __webpack_require__(158);
-var renderSubtreeIntoContainer = __webpack_require__(372);
+var renderSubtreeIntoContainer = __webpack_require__(369);
 var warning = __webpack_require__(4);
 
 ReactDefaultInjection.inject();
@@ -42409,9 +40804,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 if (process.env.NODE_ENV !== 'production') {
   var ReactInstrumentation = __webpack_require__(16);
-  var ReactDOMUnknownPropertyHook = __webpack_require__(330);
-  var ReactDOMNullInputValuePropHook = __webpack_require__(324);
-  var ReactDOMInvalidARIAHook = __webpack_require__(323);
+  var ReactDOMUnknownPropertyHook = __webpack_require__(327);
+  var ReactDOMNullInputValuePropHook = __webpack_require__(321);
+  var ReactDOMInvalidARIAHook = __webpack_require__(320);
 
   ReactInstrumentation.debugTool.addHook(ReactDOMUnknownPropertyHook);
   ReactInstrumentation.debugTool.addHook(ReactDOMNullInputValuePropHook);
@@ -42422,7 +40817,7 @@ module.exports = ReactDOM;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 317 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42443,32 +40838,32 @@ module.exports = ReactDOM;
 var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
-var AutoFocusUtils = __webpack_require__(304);
-var CSSPropertyOperations = __webpack_require__(306);
+var AutoFocusUtils = __webpack_require__(301);
+var CSSPropertyOperations = __webpack_require__(303);
 var DOMLazyTree = __webpack_require__(35);
-var DOMNamespaces = __webpack_require__(88);
+var DOMNamespaces = __webpack_require__(86);
 var DOMProperty = __webpack_require__(26);
 var DOMPropertyOperations = __webpack_require__(145);
-var EventPluginHub = __webpack_require__(45);
-var EventPluginRegistry = __webpack_require__(58);
-var ReactBrowserEventEmitter = __webpack_require__(59);
+var EventPluginHub = __webpack_require__(44);
+var EventPluginRegistry = __webpack_require__(57);
+var ReactBrowserEventEmitter = __webpack_require__(58);
 var ReactDOMComponentFlags = __webpack_require__(146);
 var ReactDOMComponentTree = __webpack_require__(10);
-var ReactDOMInput = __webpack_require__(322);
-var ReactDOMOption = __webpack_require__(325);
+var ReactDOMInput = __webpack_require__(319);
+var ReactDOMOption = __webpack_require__(322);
 var ReactDOMSelect = __webpack_require__(147);
-var ReactDOMTextarea = __webpack_require__(328);
+var ReactDOMTextarea = __webpack_require__(325);
 var ReactInstrumentation = __webpack_require__(16);
-var ReactMultiChild = __webpack_require__(341);
-var ReactServerRenderingTransaction = __webpack_require__(346);
+var ReactMultiChild = __webpack_require__(338);
+var ReactServerRenderingTransaction = __webpack_require__(343);
 
 var emptyFunction = __webpack_require__(18);
-var escapeTextContentForBrowser = __webpack_require__(62);
+var escapeTextContentForBrowser = __webpack_require__(61);
 var invariant = __webpack_require__(2);
-var isEventSupported = __webpack_require__(99);
-var shallowEqual = __webpack_require__(86);
+var isEventSupported = __webpack_require__(97);
+var shallowEqual = __webpack_require__(84);
 var inputValueTracking = __webpack_require__(160);
-var validateDOMNesting = __webpack_require__(101);
+var validateDOMNesting = __webpack_require__(99);
 var warning = __webpack_require__(4);
 
 var Flags = ReactDOMComponentFlags;
@@ -43438,7 +41833,7 @@ module.exports = ReactDOMComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 318 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43454,7 +41849,7 @@ module.exports = ReactDOMComponent;
 
 
 
-var validateDOMNesting = __webpack_require__(101);
+var validateDOMNesting = __webpack_require__(99);
 
 var DOC_NODE_TYPE = 9;
 
@@ -43477,7 +41872,7 @@ module.exports = ReactDOMContainerInfo;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 319 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43542,7 +41937,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 module.exports = ReactDOMEmptyComponent;
 
 /***/ }),
-/* 320 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43566,7 +41961,7 @@ var ReactDOMFeatureFlags = {
 module.exports = ReactDOMFeatureFlags;
 
 /***/ }),
-/* 321 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43582,7 +41977,7 @@ module.exports = ReactDOMFeatureFlags;
 
 
 
-var DOMChildrenOperations = __webpack_require__(87);
+var DOMChildrenOperations = __webpack_require__(85);
 var ReactDOMComponentTree = __webpack_require__(10);
 
 /**
@@ -43604,7 +41999,7 @@ var ReactDOMIDOperations = {
 module.exports = ReactDOMIDOperations;
 
 /***/ }),
-/* 322 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43624,7 +42019,7 @@ var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
 var DOMPropertyOperations = __webpack_require__(145);
-var LinkedValueUtils = __webpack_require__(91);
+var LinkedValueUtils = __webpack_require__(89);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactUpdates = __webpack_require__(21);
 
@@ -43897,7 +42292,7 @@ module.exports = ReactDOMInput;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 323 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43996,7 +42391,7 @@ module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 324 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44045,7 +42440,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 325 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44173,7 +42568,7 @@ module.exports = ReactDOMOption;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 326 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44191,7 +42586,7 @@ module.exports = ReactDOMOption;
 
 var ExecutionEnvironment = __webpack_require__(12);
 
-var getNodeForCharacterOffset = __webpack_require__(369);
+var getNodeForCharacterOffset = __webpack_require__(366);
 var getTextContentAccessor = __webpack_require__(159);
 
 /**
@@ -44390,7 +42785,7 @@ var ReactDOMSelection = {
 module.exports = ReactDOMSelection;
 
 /***/ }),
-/* 327 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44409,13 +42804,13 @@ module.exports = ReactDOMSelection;
 var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
-var DOMChildrenOperations = __webpack_require__(87);
+var DOMChildrenOperations = __webpack_require__(85);
 var DOMLazyTree = __webpack_require__(35);
 var ReactDOMComponentTree = __webpack_require__(10);
 
-var escapeTextContentForBrowser = __webpack_require__(62);
+var escapeTextContentForBrowser = __webpack_require__(61);
 var invariant = __webpack_require__(2);
-var validateDOMNesting = __webpack_require__(101);
+var validateDOMNesting = __webpack_require__(99);
 
 /**
  * Text nodes violate a couple assumptions that React makes about components:
@@ -44558,7 +42953,7 @@ module.exports = ReactDOMTextComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 328 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44577,7 +42972,7 @@ module.exports = ReactDOMTextComponent;
 var _prodInvariant = __webpack_require__(6),
     _assign = __webpack_require__(8);
 
-var LinkedValueUtils = __webpack_require__(91);
+var LinkedValueUtils = __webpack_require__(89);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactUpdates = __webpack_require__(21);
 
@@ -44724,7 +43119,7 @@ module.exports = ReactDOMTextarea;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 329 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44866,7 +43261,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 330 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44883,7 +43278,7 @@ module.exports = {
 
 
 var DOMProperty = __webpack_require__(26);
-var EventPluginRegistry = __webpack_require__(58);
+var EventPluginRegistry = __webpack_require__(57);
 var ReactComponentTreeHook = __webpack_require__(14);
 
 var warning = __webpack_require__(4);
@@ -44984,7 +43379,7 @@ module.exports = ReactDOMUnknownPropertyHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 331 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45001,12 +43396,12 @@ module.exports = ReactDOMUnknownPropertyHook;
 
 
 
-var ReactInvalidSetStateWarningHook = __webpack_require__(339);
-var ReactHostOperationHistoryHook = __webpack_require__(337);
+var ReactInvalidSetStateWarningHook = __webpack_require__(336);
+var ReactHostOperationHistoryHook = __webpack_require__(334);
 var ReactComponentTreeHook = __webpack_require__(14);
 var ExecutionEnvironment = __webpack_require__(12);
 
-var performanceNow = __webpack_require__(299);
+var performanceNow = __webpack_require__(297);
 var warning = __webpack_require__(4);
 
 var hooks = [];
@@ -45351,7 +43746,7 @@ module.exports = ReactDebugTool;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 332 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45370,7 +43765,7 @@ module.exports = ReactDebugTool;
 var _assign = __webpack_require__(8);
 
 var ReactUpdates = __webpack_require__(21);
-var Transaction = __webpack_require__(61);
+var Transaction = __webpack_require__(60);
 
 var emptyFunction = __webpack_require__(18);
 
@@ -45424,7 +43819,7 @@ var ReactDefaultBatchingStrategy = {
 module.exports = ReactDefaultBatchingStrategy;
 
 /***/ }),
-/* 333 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45440,25 +43835,25 @@ module.exports = ReactDefaultBatchingStrategy;
 
 
 
-var ARIADOMPropertyConfig = __webpack_require__(303);
-var BeforeInputEventPlugin = __webpack_require__(305);
-var ChangeEventPlugin = __webpack_require__(307);
-var DefaultEventPluginOrder = __webpack_require__(309);
-var EnterLeaveEventPlugin = __webpack_require__(310);
-var HTMLDOMPropertyConfig = __webpack_require__(312);
-var ReactComponentBrowserEnvironment = __webpack_require__(314);
-var ReactDOMComponent = __webpack_require__(317);
+var ARIADOMPropertyConfig = __webpack_require__(300);
+var BeforeInputEventPlugin = __webpack_require__(302);
+var ChangeEventPlugin = __webpack_require__(304);
+var DefaultEventPluginOrder = __webpack_require__(306);
+var EnterLeaveEventPlugin = __webpack_require__(307);
+var HTMLDOMPropertyConfig = __webpack_require__(309);
+var ReactComponentBrowserEnvironment = __webpack_require__(311);
+var ReactDOMComponent = __webpack_require__(314);
 var ReactDOMComponentTree = __webpack_require__(10);
-var ReactDOMEmptyComponent = __webpack_require__(319);
-var ReactDOMTreeTraversal = __webpack_require__(329);
-var ReactDOMTextComponent = __webpack_require__(327);
-var ReactDefaultBatchingStrategy = __webpack_require__(332);
-var ReactEventListener = __webpack_require__(336);
-var ReactInjection = __webpack_require__(338);
-var ReactReconcileTransaction = __webpack_require__(344);
-var SVGDOMPropertyConfig = __webpack_require__(349);
-var SelectEventPlugin = __webpack_require__(350);
-var SimpleEventPlugin = __webpack_require__(351);
+var ReactDOMEmptyComponent = __webpack_require__(316);
+var ReactDOMTreeTraversal = __webpack_require__(326);
+var ReactDOMTextComponent = __webpack_require__(324);
+var ReactDefaultBatchingStrategy = __webpack_require__(329);
+var ReactEventListener = __webpack_require__(333);
+var ReactInjection = __webpack_require__(335);
+var ReactReconcileTransaction = __webpack_require__(341);
+var SVGDOMPropertyConfig = __webpack_require__(346);
+var SelectEventPlugin = __webpack_require__(347);
+var SimpleEventPlugin = __webpack_require__(348);
 
 var alreadyInjected = false;
 
@@ -45515,7 +43910,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 334 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45540,7 +43935,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 335 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45556,7 +43951,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var EventPluginHub = __webpack_require__(45);
+var EventPluginHub = __webpack_require__(44);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -45577,7 +43972,7 @@ var ReactEventEmitterMixin = {
 module.exports = ReactEventEmitterMixin;
 
 /***/ }),
-/* 336 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45595,14 +43990,14 @@ module.exports = ReactEventEmitterMixin;
 
 var _assign = __webpack_require__(8);
 
-var EventListener = __webpack_require__(137);
+var EventListener = __webpack_require__(136);
 var ExecutionEnvironment = __webpack_require__(12);
 var PooledClass = __webpack_require__(29);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactUpdates = __webpack_require__(21);
 
-var getEventTarget = __webpack_require__(98);
-var getUnboundedScrollPosition = __webpack_require__(292);
+var getEventTarget = __webpack_require__(96);
+var getUnboundedScrollPosition = __webpack_require__(290);
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -45737,7 +44132,7 @@ var ReactEventListener = {
 module.exports = ReactEventListener;
 
 /***/ }),
-/* 337 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45776,7 +44171,7 @@ var ReactHostOperationHistoryHook = {
 module.exports = ReactHostOperationHistoryHook;
 
 /***/ }),
-/* 338 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45793,11 +44188,11 @@ module.exports = ReactHostOperationHistoryHook;
 
 
 var DOMProperty = __webpack_require__(26);
-var EventPluginHub = __webpack_require__(45);
-var EventPluginUtils = __webpack_require__(89);
-var ReactComponentEnvironment = __webpack_require__(92);
+var EventPluginHub = __webpack_require__(44);
+var EventPluginUtils = __webpack_require__(87);
+var ReactComponentEnvironment = __webpack_require__(90);
 var ReactEmptyComponent = __webpack_require__(148);
-var ReactBrowserEventEmitter = __webpack_require__(59);
+var ReactBrowserEventEmitter = __webpack_require__(58);
 var ReactHostComponent = __webpack_require__(150);
 var ReactUpdates = __webpack_require__(21);
 
@@ -45815,7 +44210,7 @@ var ReactInjection = {
 module.exports = ReactInjection;
 
 /***/ }),
-/* 339 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45858,7 +44253,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 340 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45874,7 +44269,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 
 
 
-var adler32 = __webpack_require__(362);
+var adler32 = __webpack_require__(359);
 
 var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
@@ -45913,7 +44308,7 @@ var ReactMarkupChecksum = {
 module.exports = ReactMarkupChecksum;
 
 /***/ }),
-/* 341 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45931,16 +44326,16 @@ module.exports = ReactMarkupChecksum;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactComponentEnvironment = __webpack_require__(92);
-var ReactInstanceMap = __webpack_require__(47);
+var ReactComponentEnvironment = __webpack_require__(90);
+var ReactInstanceMap = __webpack_require__(46);
 var ReactInstrumentation = __webpack_require__(16);
 
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactReconciler = __webpack_require__(36);
-var ReactChildReconciler = __webpack_require__(313);
+var ReactChildReconciler = __webpack_require__(310);
 
 var emptyFunction = __webpack_require__(18);
-var flattenChildren = __webpack_require__(366);
+var flattenChildren = __webpack_require__(363);
 var invariant = __webpack_require__(2);
 
 /**
@@ -46365,7 +44760,7 @@ module.exports = ReactMultiChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 342 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46464,7 +44859,7 @@ module.exports = ReactOwner;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 343 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46495,7 +44890,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 344 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46515,11 +44910,11 @@ var _assign = __webpack_require__(8);
 
 var CallbackQueue = __webpack_require__(144);
 var PooledClass = __webpack_require__(29);
-var ReactBrowserEventEmitter = __webpack_require__(59);
+var ReactBrowserEventEmitter = __webpack_require__(58);
 var ReactInputSelection = __webpack_require__(151);
 var ReactInstrumentation = __webpack_require__(16);
-var Transaction = __webpack_require__(61);
-var ReactUpdateQueue = __webpack_require__(94);
+var Transaction = __webpack_require__(60);
+var ReactUpdateQueue = __webpack_require__(92);
 
 /**
  * Ensures that, when possible, the selection range (currently selected text
@@ -46679,7 +45074,7 @@ module.exports = ReactReconcileTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 345 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46696,7 +45091,7 @@ module.exports = ReactReconcileTransaction;
 
 
 
-var ReactOwner = __webpack_require__(342);
+var ReactOwner = __webpack_require__(339);
 
 var ReactRef = {};
 
@@ -46773,7 +45168,7 @@ ReactRef.detachRefs = function (instance, element) {
 module.exports = ReactRef;
 
 /***/ }),
-/* 346 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46792,9 +45187,9 @@ module.exports = ReactRef;
 var _assign = __webpack_require__(8);
 
 var PooledClass = __webpack_require__(29);
-var Transaction = __webpack_require__(61);
+var Transaction = __webpack_require__(60);
 var ReactInstrumentation = __webpack_require__(16);
-var ReactServerUpdateQueue = __webpack_require__(347);
+var ReactServerUpdateQueue = __webpack_require__(344);
 
 /**
  * Executed within the scope of the `Transaction` instance. Consider these as
@@ -46869,7 +45264,7 @@ module.exports = ReactServerRenderingTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 347 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46888,7 +45283,7 @@ module.exports = ReactServerRenderingTransaction;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ReactUpdateQueue = __webpack_require__(94);
+var ReactUpdateQueue = __webpack_require__(92);
 
 var warning = __webpack_require__(4);
 
@@ -47014,7 +45409,7 @@ module.exports = ReactServerUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 348 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47033,7 +45428,7 @@ module.exports = ReactServerUpdateQueue;
 module.exports = '15.6.1';
 
 /***/ }),
-/* 349 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47340,7 +45735,7 @@ Object.keys(ATTRS).forEach(function (key) {
 module.exports = SVGDOMPropertyConfig;
 
 /***/ }),
-/* 350 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47356,15 +45751,15 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(46);
+var EventPropagators = __webpack_require__(45);
 var ExecutionEnvironment = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(10);
 var ReactInputSelection = __webpack_require__(151);
 var SyntheticEvent = __webpack_require__(24);
 
-var getActiveElement = __webpack_require__(139);
+var getActiveElement = __webpack_require__(138);
 var isTextInputElement = __webpack_require__(162);
-var shallowEqual = __webpack_require__(86);
+var shallowEqual = __webpack_require__(84);
 
 var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
@@ -47533,7 +45928,7 @@ var SelectEventPlugin = {
 module.exports = SelectEventPlugin;
 
 /***/ }),
-/* 351 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47552,23 +45947,23 @@ module.exports = SelectEventPlugin;
 
 var _prodInvariant = __webpack_require__(6);
 
-var EventListener = __webpack_require__(137);
-var EventPropagators = __webpack_require__(46);
+var EventListener = __webpack_require__(136);
+var EventPropagators = __webpack_require__(45);
 var ReactDOMComponentTree = __webpack_require__(10);
-var SyntheticAnimationEvent = __webpack_require__(352);
-var SyntheticClipboardEvent = __webpack_require__(353);
+var SyntheticAnimationEvent = __webpack_require__(349);
+var SyntheticClipboardEvent = __webpack_require__(350);
 var SyntheticEvent = __webpack_require__(24);
-var SyntheticFocusEvent = __webpack_require__(356);
-var SyntheticKeyboardEvent = __webpack_require__(358);
-var SyntheticMouseEvent = __webpack_require__(60);
-var SyntheticDragEvent = __webpack_require__(355);
-var SyntheticTouchEvent = __webpack_require__(359);
-var SyntheticTransitionEvent = __webpack_require__(360);
-var SyntheticUIEvent = __webpack_require__(48);
-var SyntheticWheelEvent = __webpack_require__(361);
+var SyntheticFocusEvent = __webpack_require__(353);
+var SyntheticKeyboardEvent = __webpack_require__(355);
+var SyntheticMouseEvent = __webpack_require__(59);
+var SyntheticDragEvent = __webpack_require__(352);
+var SyntheticTouchEvent = __webpack_require__(356);
+var SyntheticTransitionEvent = __webpack_require__(357);
+var SyntheticUIEvent = __webpack_require__(47);
+var SyntheticWheelEvent = __webpack_require__(358);
 
 var emptyFunction = __webpack_require__(18);
-var getEventCharCode = __webpack_require__(96);
+var getEventCharCode = __webpack_require__(94);
 var invariant = __webpack_require__(2);
 
 /**
@@ -47765,7 +46160,7 @@ module.exports = SimpleEventPlugin;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 352 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47809,7 +46204,7 @@ SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 module.exports = SyntheticAnimationEvent;
 
 /***/ }),
-/* 353 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47852,7 +46247,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 module.exports = SyntheticClipboardEvent;
 
 /***/ }),
-/* 354 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47893,7 +46288,7 @@ SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface
 module.exports = SyntheticCompositionEvent;
 
 /***/ }),
-/* 355 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47909,7 +46304,7 @@ module.exports = SyntheticCompositionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(60);
+var SyntheticMouseEvent = __webpack_require__(59);
 
 /**
  * @interface DragEvent
@@ -47934,7 +46329,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 module.exports = SyntheticDragEvent;
 
 /***/ }),
-/* 356 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47950,7 +46345,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(48);
+var SyntheticUIEvent = __webpack_require__(47);
 
 /**
  * @interface FocusEvent
@@ -47975,7 +46370,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 module.exports = SyntheticFocusEvent;
 
 /***/ }),
-/* 357 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48017,7 +46412,7 @@ SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 module.exports = SyntheticInputEvent;
 
 /***/ }),
-/* 358 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48033,11 +46428,11 @@ module.exports = SyntheticInputEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(48);
+var SyntheticUIEvent = __webpack_require__(47);
 
-var getEventCharCode = __webpack_require__(96);
-var getEventKey = __webpack_require__(367);
-var getEventModifierState = __webpack_require__(97);
+var getEventCharCode = __webpack_require__(94);
+var getEventKey = __webpack_require__(364);
+var getEventModifierState = __webpack_require__(95);
 
 /**
  * @interface KeyboardEvent
@@ -48106,7 +46501,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 module.exports = SyntheticKeyboardEvent;
 
 /***/ }),
-/* 359 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48122,9 +46517,9 @@ module.exports = SyntheticKeyboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(48);
+var SyntheticUIEvent = __webpack_require__(47);
 
-var getEventModifierState = __webpack_require__(97);
+var getEventModifierState = __webpack_require__(95);
 
 /**
  * @interface TouchEvent
@@ -48156,7 +46551,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 module.exports = SyntheticTouchEvent;
 
 /***/ }),
-/* 360 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48200,7 +46595,7 @@ SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 module.exports = SyntheticTransitionEvent;
 
 /***/ }),
-/* 361 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48216,7 +46611,7 @@ module.exports = SyntheticTransitionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(60);
+var SyntheticMouseEvent = __webpack_require__(59);
 
 /**
  * @interface WheelEvent
@@ -48256,7 +46651,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 module.exports = SyntheticWheelEvent;
 
 /***/ }),
-/* 362 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48305,7 +46700,7 @@ function adler32(data) {
 module.exports = adler32;
 
 /***/ }),
-/* 363 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48323,7 +46718,7 @@ module.exports = adler32;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactPropTypeLocationNames = __webpack_require__(343);
+var ReactPropTypeLocationNames = __webpack_require__(340);
 var ReactPropTypesSecret = __webpack_require__(154);
 
 var invariant = __webpack_require__(2);
@@ -48398,7 +46793,7 @@ module.exports = checkReactTypeSpec;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 364 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48483,7 +46878,7 @@ module.exports = dangerousStyleValue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 365 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48503,7 +46898,7 @@ var _prodInvariant = __webpack_require__(6);
 
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(10);
-var ReactInstanceMap = __webpack_require__(47);
+var ReactInstanceMap = __webpack_require__(46);
 
 var getHostComponentFromComposite = __webpack_require__(158);
 var invariant = __webpack_require__(2);
@@ -48549,7 +46944,7 @@ module.exports = findDOMNode;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 366 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48566,7 +46961,7 @@ module.exports = findDOMNode;
 
 
 
-var KeyEscapeUtils = __webpack_require__(90);
+var KeyEscapeUtils = __webpack_require__(88);
 var traverseAllChildren = __webpack_require__(164);
 var warning = __webpack_require__(4);
 
@@ -48631,7 +47026,7 @@ module.exports = flattenChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 367 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48647,7 +47042,7 @@ module.exports = flattenChildren;
 
 
 
-var getEventCharCode = __webpack_require__(96);
+var getEventCharCode = __webpack_require__(94);
 
 /**
  * Normalization of deprecated HTML5 `key` values
@@ -48748,7 +47143,7 @@ function getEventKey(nativeEvent) {
 module.exports = getEventKey;
 
 /***/ }),
-/* 368 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48794,7 +47189,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 369 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48873,7 +47268,7 @@ function getNodeForCharacterOffset(root, offset) {
 module.exports = getNodeForCharacterOffset;
 
 /***/ }),
-/* 370 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48979,7 +47374,7 @@ function getVendorPrefixedEventName(eventName) {
 module.exports = getVendorPrefixedEventName;
 
 /***/ }),
-/* 371 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48995,7 +47390,7 @@ module.exports = getVendorPrefixedEventName;
 
 
 
-var escapeTextContentForBrowser = __webpack_require__(62);
+var escapeTextContentForBrowser = __webpack_require__(61);
 
 /**
  * Escapes attribute value to prevent scripting attacks.
@@ -49010,7 +47405,7 @@ function quoteAttributeValueForBrowser(value) {
 module.exports = quoteAttributeValueForBrowser;
 
 /***/ }),
-/* 372 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49031,7 +47426,7 @@ var ReactMount = __webpack_require__(152);
 module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ }),
-/* 373 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49095,7 +47490,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 374 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49213,7 +47608,7 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 375 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49229,11 +47624,11 @@ module.exports = PooledClass;
 
 
 
-var PooledClass = __webpack_require__(374);
+var PooledClass = __webpack_require__(371);
 var ReactElement = __webpack_require__(30);
 
 var emptyFunction = __webpack_require__(18);
-var traverseAllChildren = __webpack_require__(385);
+var traverseAllChildren = __webpack_require__(382);
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
 var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -49409,7 +47804,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 /***/ }),
-/* 376 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49584,7 +47979,7 @@ module.exports = ReactDOMFactories;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 377 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49615,7 +48010,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 378 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49634,12 +48029,12 @@ module.exports = ReactPropTypeLocationNames;
 var _require = __webpack_require__(30),
     isValidElement = _require.isValidElement;
 
-var factory = __webpack_require__(141);
+var factory = __webpack_require__(140);
 
 module.exports = factory(isValidElement);
 
 /***/ }),
-/* 379 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49661,7 +48056,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 380 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49680,7 +48075,7 @@ module.exports = ReactPropTypesSecret;
 module.exports = '15.6.1';
 
 /***/ }),
-/* 381 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49698,8 +48093,8 @@ module.exports = '15.6.1';
 
 var _prodInvariant = __webpack_require__(38);
 
-var ReactPropTypeLocationNames = __webpack_require__(377);
-var ReactPropTypesSecret = __webpack_require__(379);
+var ReactPropTypeLocationNames = __webpack_require__(374);
+var ReactPropTypesSecret = __webpack_require__(376);
 
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(4);
@@ -49773,7 +48168,7 @@ module.exports = checkReactTypeSpec;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 382 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49796,12 +48191,12 @@ var _require2 = __webpack_require__(30),
     isValidElement = _require2.isValidElement;
 
 var ReactNoopUpdateQueue = __webpack_require__(168);
-var factory = __webpack_require__(285);
+var factory = __webpack_require__(283);
 
 module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 /***/ }),
-/* 383 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49827,7 +48222,7 @@ function getNextDebugID() {
 module.exports = getNextDebugID;
 
 /***/ }),
-/* 384 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49871,7 +48266,7 @@ module.exports = onlyChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 385 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49894,7 +48289,7 @@ var REACT_ELEMENT_TYPE = __webpack_require__(166);
 
 var getIteratorFn = __webpack_require__(169);
 var invariant = __webpack_require__(2);
-var KeyEscapeUtils = __webpack_require__(373);
+var KeyEscapeUtils = __webpack_require__(370);
 var warning = __webpack_require__(4);
 
 var SEPARATOR = '.';
@@ -50053,2172 +48448,2095 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
+/* 383 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DateTimeAttr = exports.DateAttr = exports.BooleanAttr = exports.NumberAttr = exports.IntegerAttr = exports.StringAttr = exports.IdentityAttr = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _parsers = __webpack_require__(101);
+
+var parsers = _interopRequireWildcard(_parsers);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var IdentityAttr = exports.IdentityAttr = {
+  coerce: function coerce(v) {
+    return v;
+  },
+  serialize: function serialize(v) {
+    return v;
+  }
+};
+
+var StringAttr = exports.StringAttr = function () {
+  function StringAttr() {
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    _classCallCheck(this, StringAttr);
+
+    this.opts = Object.assign({ trim: true }, opts);
+  }
+
+  _createClass(StringAttr, [{
+    key: 'coerce',
+    value: function coerce(v) {
+      v = v != null ? String(v) : v;
+      if (typeof v === 'string' && this.opts.trim) {
+        v = v.trim();
+      }
+      return v;
+    }
+  }, {
+    key: 'serialize',
+    value: function serialize(s) {
+      return s;
+    }
+  }]);
+
+  return StringAttr;
+}();
+
+var IntegerAttr = exports.IntegerAttr = {
+  coerce: function coerce(v) {
+    if (typeof v === 'number') {
+      return Math.round(v);
+    } else if (typeof v === 'string') {
+      var parsed = parsers.parseNumber(v);
+      return parsed ? Math.round(parsed) : parsed;
+    } else if (v === undefined) {
+      return undefined;
+    } else {
+      return null;
+    }
+  },
+  serialize: function serialize(n) {
+    return n;
+  }
+};
+
+var NumberAttr = exports.NumberAttr = {
+  coerce: function coerce(v) {
+    if (typeof v === 'number') {
+      return v;
+    } else if (typeof v === 'string') {
+      return parsers.parseNumber(v);
+    } else if (v === undefined) {
+      return undefined;
+    } else {
+      return null;
+    }
+  },
+  serialize: function serialize(n) {
+    return n;
+  }
+};
+
+var BooleanAttr = exports.BooleanAttr = {
+  coerce: function coerce(v) {
+    return v === undefined ? v : !!v;
+  },
+  serialize: function serialize(b) {
+    return b;
+  }
+};
+
+var DateAttr = exports.DateAttr = {
+  coerce: function coerce(v) {
+    if (v == null || v instanceof Date) {
+      return v;
+    }
+    if (typeof v === 'number') {
+      return new Date(v);
+    }
+
+    if (typeof v !== 'string') {
+      throw new Error('Transis.DateAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
+    }
+
+    return parsers.parseDate(v);
+  },
+  serialize: function serialize(date) {
+    return date instanceof Date ? date.toJSON().replace(/T.*$/, '') : date;
+  }
+};
+
+var DateTimeAttr = exports.DateTimeAttr = {
+  coerce: function coerce(v) {
+    if (v == null || v instanceof Date) {
+      return v;
+    }
+    if (typeof v === 'number') {
+      return new Date(v);
+    }
+
+    if (typeof v !== 'string') {
+      throw new Error('Transis.DateTimeAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
+    }
+
+    return parsers.parseDateTime(v);
+  },
+  serialize: function serialize(date) {
+    return date instanceof Date ? date.toJSON() : date;
+  }
+};
+
+
+/***/ }),
+/* 384 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+var _pluralize = __webpack_require__(139);
+
+var _pluralize2 = _interopRequireDefault(_pluralize);
+
+var _id_map = __webpack_require__(171);
+
+var _id_map2 = _interopRequireDefault(_id_map);
+
+var _object = __webpack_require__(65);
+
+var _object2 = _interopRequireDefault(_object);
+
+var _array = __webpack_require__(64);
+
+var _array2 = _interopRequireDefault(_array);
+
+var _validations = __webpack_require__(386);
+
+var _validations2 = _interopRequireDefault(_validations);
+
+var _attrs = __webpack_require__(383);
+
+var attrs = _interopRequireWildcard(_attrs);
+
+var _util = __webpack_require__(39);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var registeredAttrs = {},
+    subclasses = {},
+    loads = [];
+
+var NEW = 'new';
+var EMPTY = 'empty';
+var LOADED = 'loaded';
+var DELETED = 'deleted';
+
+// Internal: Returns the `Transis.Model` subclass with the given name.
+//
+// name  - A string representing the name of a `Transis.Model` subclass.
+// raise - A boolean indicating whether an exception should be raised if the name can't be
+//         resolved (default: `true`).
+//
+// Returns the resolved subclass constructor function or `undefined` if a class with the given
+//   name is not known.
+// Throws `Error` if the `raise` argument is `true` and the name cannot not be resolved.
+function resolve(name) {
+  var raise = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+  var klass = typeof name === 'function' ? name : subclasses[name];
+
+  if (!klass && raise) {
+    throw new Error("Transis.Model.resolve: could not resolve subclass: `" + name + "`");
+  }
+
+  return klass;
+};
+
+// Internal: Checks to make sure the given object is of the type specified in the given
+// association descriptor.
+//
+// Returns nothing.
+// Throws `Error` if the given object isn't of the type specified in the association descriptor.
+function checkAssociatedType(desc, o) {
+  var klass = resolve(desc.klass);
+
+  if (o && !(o instanceof klass)) {
+    throw new Error(desc.debugName + ": expected an object of type `" + desc.klass + "` but received `" + o + "` instead");
+  }
+}
+
+// Internal: The overridden `_splice` method used on `hasMany` arrays. This method syncs changes to
+// the array to the inverse side of the association and maintains a list of changes made.
+function hasManySplice(i, n, added) {
+  var owner = this.__owner__,
+      desc = this.__desc__,
+      inverse = desc.inverse,
+      name = desc.name,
+      removed,
+      changes,
+      i;
+
+  added.forEach(function (o) {
+    return checkAssociatedType(desc, o);
+  });
+
+  removed = _array2.default.prototype._splice.call(this, i, n, added);
+
+  if (inverse && !this.__handlingInverse__) {
+    removed.forEach(function (model) {
+      model._inverseRemoved(inverse, owner);
+    }, this);
+    added.forEach(function (model) {
+      model._inverseAdded(inverse, owner);
+    }, this);
+  }
+
+  if (desc.owner && !loads.length) {
+    changes = owner.ownChanges[name] = owner.ownChanges[name] || { added: [], removed: [] };
+
+    removed.forEach(function (m) {
+      if ((i = changes.added.indexOf(m)) !== -1) {
+        changes.added.splice(i, 1);
+      } else if (changes.removed.indexOf(m) === -1) {
+        changes.removed.push(m);
+      }
+    });
+
+    added.forEach(function (m) {
+      if ((i = changes.removed.indexOf(m)) !== -1) {
+        changes.removed.splice(i, 1);
+      } else if (changes.added.indexOf(m) === -1) {
+        changes.added.push(m);
+      }
+    });
+
+    if (!changes.added.length && !changes.removed.length) {
+      owner._clearChange(name);
+    } else {
+      owner._setChange(name, changes);
+    }
+  }
+
+  return removed;
+}
+
+// Internal: Called when a model is added to the inverse side of a `hasMany` association in order to
+// sync the change to the `hasMany` side.
+function hasManyInverseAdd(model) {
+  this.__handlingInverse__ = true;
+  this.push(model);
+  this.__handlingInverse__ = false;
+}
+
+// Internal: Called when a model is removed from the inverse side of a `hasMany` association in
+// order to sync the change to the `hasMany` side.
+function hasManyInverseRemove(model) {
+  var i = this.indexOf(model);
+
+  if (i >= 0) {
+    this.__handlingInverse__ = true;
+    this.splice(i, 1);
+    this.__handlingInverse__ = false;
+  }
+}
+
+// Internal: Builds an array that manages a `hasMany` association. A hasMany array is a
+// `Transis.Array` that overrides the `_splice` method in order to handle syncing the inverse side
+// of the association.
+function hasManyArray(owner, desc) {
+  var a = _array2.default.of();
+  a.proxy(owner, desc.name);
+  a.__owner__ = owner;
+  a.__desc__ = desc;
+  a._splice = hasManySplice;
+  a._inverseAdd = hasManyInverseAdd;
+  a._inverseRemove = hasManyInverseRemove;
+  return a;
+}
+
+// Internal: Provides the implementation of the query array's `query` method.
+function queryArrayQuery() {
+  var _this = this;
+
+  var queryOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var opts = Object.assign({}, this.baseOpts, queryOpts);
+
+  if (this.isPaged) {
+    opts.page = opts.page || 1;
+  }
+
+  if (this.isBusy) {
+    if (util.eq(opts, this.currentOpts)) {
+      return this;
+    }
+
+    if (!this.__queued__) {
+      this.__promise__ = this.__promise__.then(function () {
+        _this.query(_this.__queued__);
+        _this.__queued__ = undefined;
+        return _this.__promise__;
+      });
+    }
+
+    this.__queued__ = opts;
+  } else {
+    this.isBusy = true;
+    this.currentOpts = opts;
+    this.__promise__ = this.__modelClass__._callMapper('query', [opts]).then(function (result) {
+      var results = Array.isArray(result) ? result : result.results;
+      var meta = Array.isArray(result) ? {} : result.meta;
+
+      _this.isBusy = false;
+      _this.meta = meta;
+      _this.error = undefined;
+
+      if (!results) {
+        throw new Error(_this + "#query: mapper failed to return any results");
+      }
+
+      if (_this.isPaged && typeof meta.totalCount !== 'number') {
+        throw new Error(_this + "#query: mapper failed to return total count for paged query");
+      }
+
+      try {
+        var models = _this.__modelClass__.loadAll(results);
+
+        if (_this.isPaged) {
+          _this.length = meta.totalCount;
+          _this.splice.apply(_this, [(opts.page - 1) * _this.baseOpts.pageSize, models.length].concat(models));
+        } else {
+          _this.replace(models);
+        }
+      } catch (e) {
+        console.error(e);throw e;
+      }
+    }, function (e) {
+      _this.isBusy = false;
+      _this.error = e;
+      return Promise.reject(e);
+    });
+  }
+
+  return this;
+}
+
+// Internal: Provides the implementation of the query array's `then` method.
+function queryArrayThen(f1, f2) {
+  return this.__promise__.then(f1, f2);
+}
+
+// Internal: Provides the implementation of the query array's `catch` method.
+function queryArrayCatch(f) {
+  return this.__promise__.catch(f);
+}
+
+// Internal: Provides the implementation of the query array's `at` method.
+function queryArrayAt(i) {
+  var r = _array2.default.prototype.at.apply(this, arguments);
+  var pageSize = this.baseOpts && this.baseOpts.pageSize;
+
+  if (arguments.length === 1 && !r && pageSize) {
+    this.query({ page: Math.floor(i / pageSize) + 1 });
+  }
+
+  return r;
+}
+
+// Internal: Sets the given object on a `hasOne` property.
+//
+// desc - An association descriptor.
+// v    - The value to set.
+// sync - Set to true to notify the inverse side of the association so that it can update itself.
+//
+// Returns nothing.
+// Throws `Error` if the given object isn't of the type specified in the association descriptor.
+function hasOneSet(desc, v, sync) {
+  var name = desc.name,
+      k = "__" + name,
+      prev = this[k],
+      inv = desc.inverse;
+
+  checkAssociatedType(desc, v);
+
+  this[k] = v;
+
+  if (sync && inv && prev) {
+    prev._inverseRemoved(inv, this);
+  }
+  if (sync && inv && v) {
+    v._inverseAdded(inv, this);
+  }
+
+  if (prev) {
+    prev._deregisterProxy(this, name);
+  }
+  if (v) {
+    v._registerProxy(this, name);
+  }
+}
+
+// Internal: Callback for a successful model deletion. Updates the model's state, removes it from
+// the identity map, and removes removes it from any associations its currently participating in.
+function mapperDeleteSuccess() {
+  var _this2 = this;
+
+  _id_map2.default.delete(this);
+  this.isBusy = false;
+  this.sourceState = DELETED;
+  this._clearErrors();
+
+  var _loop = function _loop(name) {
+    var desc = _this2.associations[name];
+    if (!desc.inverse) {
+      return "continue";
+    }
+    if (desc.type === 'hasOne') {
+      var m = void 0;
+      if (m = _this2[name]) {
+        m._inverseRemoved(desc.inverse, _this2);
+      }
+    } else if (desc.type === 'hasMany') {
+      _this2[name].slice(0).forEach(function (m) {
+        m._inverseRemoved(desc.inverse, _this2);
+      });
+    }
+  };
+
+  for (var name in this.associations) {
+    var _ret = _loop(name);
+
+    if (_ret === "continue") continue;
+  }
+}
+
+var Model = _object2.default.extend(function () {
+  this.displayName = 'Transis.Model';
+
+  // Public: Creates a subclass of `Transis.Model`. This method overrides the `Transis.Object.extend`
+  // method in order to force `Model` subclasses to be named.
+  this.extend = function (name, f) {
+    if (typeof name !== 'string') {
+      throw new Error(this + ".extend: a name is required");
+    }
+
+    var subclass = _object2.default.extend.call(this);
+    subclass.displayName = name;
+    subclasses[name] = subclass;
+
+    if (typeof f === 'function') {
+      f.call(subclass);
+    }
+
+    if (this.displayName !== 'Transis.Model') {
+      this.subclasses = this.subclasses || [];
+      this.subclasses.push(name);
+    }
+
+    return subclass;
+  };
+
+  this.resolveSubclass = function (name) {
+    if (!this.subclasses || this.subclasses.indexOf(name) < 0) {
+      throw new Error(this + ".resolveSubclass: could not find subclass " + name);
+    }
+
+    return resolve(name);
+  };
+
+  // Public: Returns an empty instance of the model class. An empty instance contains only an id
+  // and must be retrieved from the mapper before any of its attributes will be available. Since the
+  // model's data mapper will likely need to perform an async action to retrieve data, this method
+  // is used to construct an object that is suitable for returning from `Model.get` immediately.
+  // Once the data mapper has finished loading the actual model data, the empty model will have its
+  // attributes filled in.
+  //
+  // id - The id of the model.
+  //
+  // Returns a new instance of the class.
+  this.empty = function (id) {
+    var model = new this({ id: id });
+    model.sourceState = EMPTY;
+    return model;
+  };
+
+  // Public: Registers a new attribute type available to be used on `Model` subclasses.
+  //
+  // name      - A string representing the name of the attribute type.
+  // converter - A converter object or constructor function. Converter objects must implement two
+  //             methods: `coerce` and `serialize`. The `coerce` method should take the given value
+  //             and do its best to convert it to attribute's actual type. The `serialize` method
+  //             should take the coerced value and return something suitable for JSON serialization.
+  //             If a constructor function is given here, it will be instantiated once for each
+  //             declared attribute of this type and will be passed the options object given to the
+  //             `.attr` method.
+  //
+  // Returns the receiver.
+  this.registerAttr = function (name, converter) {
+    if (registeredAttrs[name]) {
+      throw new Error(this + ".registerAttr: an attribute with the name `" + name + "` has already been defined");
+    }
+
+    registeredAttrs[name] = converter;
+
+    return this;
+  };
+
+  this.registerAttr('identity', attrs.IdentityAttr);
+  this.registerAttr('string', attrs.StringAttr);
+  this.registerAttr('integer', attrs.IntegerAttr);
+  this.registerAttr('number', attrs.NumberAttr);
+  this.registerAttr('boolean', attrs.BooleanAttr);
+  this.registerAttr('date', attrs.DateAttr);
+  this.registerAttr('datetime', attrs.DateTimeAttr);
+
+  // Public: Defines an attribute on the model class. Attributes are typed properties that can
+  // parse/coerce raw values (say from a JSON object) into objects of the property type. Calling
+  // this method will define a property on the class's `prototype` so that it is available to all
+  // instances.
+  //
+  // Attribute values are automatically coerced to their proper type when set. The original value is
+  // available in the property named "<name>BeforeCoercion".
+  //
+  // name - A string representing the name of the attribute.
+  // type - A string representing the type of the attribute (this must have been previously
+  //        registered with `Model.registerAttr`).
+  // opts - An object containing properties to pass to the attribute's converter object (default:
+  //        `{}`).
+  //
+  // Returns the receiver.
+  this.attr = function (name, type) {
+    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+    var converter = registeredAttrs[type];
+
+    if (!converter) {
+      throw new Error(this + ".attr: unknown attribute type: `" + type + "`");
+    }
+
+    if (typeof converter === 'function') {
+      converter = new converter(opts);
+    }
+
+    this.prop(name, {
+      attr: true,
+      converter: converter,
+      get: function get() {
+        return this["__" + name];
+      },
+      set: function set(v) {
+        this["__" + name] = converter.coerce(v);
+        this[name + "BeforeCoercion"] = v;
+      },
+      default: 'default' in opts ? opts.default : undefined
+    });
+
+    return this;
+  };
+
+  // Public: Defines a `hasOne` association on the receiver class. This method will generate a
+  // property with the given name that can be used to get or set the associated model.
+  //
+  // name  - A string representing the name of the association.
+  // klass - Either the constructor function of the associated model or a string containing the name
+  //         of the associated constructor function. Passing a string here is useful for the case
+  //         where you are defining an association where the associated constructor function has yet
+  //         to be defined.
+  // opts  - An object containing zero or more of the following keys (default: `{}`):
+  //   inverse - Used for establishing two way associations, this is the name of the property on the
+  //             associated object that points back to the receiver class.
+  //
+  // Returns the receiver.
+  this.hasOne = function (name, klass) {
+    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+    var desc;
+
+    if (!this.prototype.hasOwnProperty('associations')) {
+      this.prototype.associations = Object.create(this.prototype.associations);
+    }
+
+    this.prototype.associations[name] = desc = Object.assign({}, opts, {
+      type: 'hasOne', name: name, klass: klass, debugName: this.toString() + "#" + name
+    });
+
+    if (desc.owner) {
+      if (!this.prototype.hasOwnProperty('__deps__')) {
+        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
+      }
+
+      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
+      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
+    }
+
+    this.prop(name, {
+      get: function get() {
+        return this["__" + name];
+      },
+      set: function set(v) {
+        hasOneSet.call(this, desc, v, true);
+      }
+    });
+
+    return this;
+  };
+
+  // Public: Defines a `hasMany` association on the receiver class. This method will generate a
+  // property with the given name that can be used to get or set an array of associated model
+  // objects. It will also generate methods that can be used to manipulate the array. A `hasMany`
+  // association with the name `widgets` would generate the following methods:
+  //
+  // addWidgets    - Adds one or more `Widget` models to the association array.
+  // removeWidgets - Removes one ore more `Widget` models from the association array.
+  // clearWidgets  - Empties the association array.
+  //
+  // Its important to use these generated methods to manipulate the array instead of manipulating it
+  // directly since they take care of syncing changes to the inverse side of the association when
+  // the association is two way.
+  //
+  // name  - A string representing the name of the association.
+  // klass - Either the constructor function of the associated model or a string containing the name
+  //         of the associated constructor function. Passing a string here is useful for the case
+  //         where you are defining an association where the associated constructor function has yet
+  //         to be defined.
+  // opts  - (see hasOne description)
+  //
+  // Returns the receiver.
+  this.hasMany = function (name, klass) {
+    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+    var k = "__" + name,
+        desc;
+
+    if (!this.prototype.hasOwnProperty('associations')) {
+      this.prototype.associations = Object.create(this.prototype.associations);
+    }
+
+    this.prototype.associations[name] = desc = Object.assign({}, opts, {
+      type: 'hasMany', name: name, klass: klass, singular: (0, _pluralize2.default)(name, 1), debugName: this.toString() + "#" + name
+    });
+
+    if (desc.owner) {
+      if (!this.prototype.hasOwnProperty('__deps__')) {
+        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
+      }
+
+      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
+      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
+    }
+
+    this.prop(name, {
+      get: function get() {
+        if (this[k]) {
+          return this[k];
+        }
+        desc.klass = resolve(desc.klass);
+        return this[k] = hasManyArray(this, desc);
+      },
+      set: function set(a) {
+        this[k].replace(a);
+      }
+    });
+  };
+
+  // Public: Add a validator for the given attribute. The validator function or method should use
+  // the `Model#addError` method to record a validation error when one is detected.
+  //
+  // name - The name of the property to validate.
+  // f    - A validator function or the name of an instance method.
+  // opts - An `on:` option can be provided to specify the context in which to validate.
+  //
+  // Returns the receiver.
+  this.validate = function (name, f) {
+    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+    if (!this.prototype.hasOwnProperty('validators')) {
+      this.prototype.validators = Object.create(this.prototype.validators);
+    }
+
+    (this.prototype.validators[name] = this.prototype.validators[name] || []).push({ validator: f, opts: opts });
+
+    return this;
+  };
+
+  // Public: Loads the given model attributes into the identity map. This method should be called by
+  // your data mapper(s) when new data is successfully retrieved.
+  //
+  // attrs - An object containing the attributes for a single model. If the attributes contain
+  //         references to defined associations, those associated objects will be loaded as well.
+  //
+  // Returns the loaded model instance.
+  // Throws `Error` if the given attributes do not contain an `id` attribute.
+  this.load = function (attrs) {
+    var id = attrs.id,
+        associations = this.prototype.associations,
+        associated = {},
+        model,
+        LoadKlass;
+
+    if (id == null) {
+      throw new Error(this + ".load: an `id` attribute is required");
+    }
+
+    loads.push(true);
+
+    attrs = Object.assign({}, attrs);
+    if (typeof this.getSubclass === 'function') {
+      LoadKlass = this.resolveSubclass(this.getSubclass(attrs));
+    } else {
+      LoadKlass = this;
+    }
+
+    model = _id_map2.default.get(LoadKlass, id) || new LoadKlass();
+
+    delete attrs.id;
+
+    // extract associated attributes
+    for (var name in associations) {
+      var _desc = associations[name];
+
+      if (name in attrs) {
+        associated[name] = attrs[name];
+        delete attrs[name];
+      } else if (_desc.type === 'hasOne' && name + "Id" in attrs) {
+        associated[name] = attrs[name + "Id"];
+        delete attrs[name + "Id"];
+      } else if (_desc.type === 'hasOne' && name + "_id" in attrs) {
+        associated[name] = attrs[name + "_id"];
+        delete attrs[name + "_id"];
+      } else if (_desc.type === 'hasMany' && _desc.singular + "Ids" in attrs) {
+        associated[name] = attrs[_desc.singular + "Ids"];
+        delete attrs[_desc.singular + "Ids"];
+      } else if (_desc.type === 'hasMany' && _desc.singular + "_ids" in attrs) {
+        associated[name] = attrs[_desc.singular + "_ids"];
+        delete attrs[_desc.singular + "_ids"];
+      }
+    }
+
+    // set non-association attributes
+    model.set(attrs);
+
+    // set id if necessary
+    if (model.id === undefined) {
+      model.id = id;
+    }
+
+    // load and set each association
+
+    var _loop2 = function _loop2(_name) {
+      var klass = resolve(associations[_name].klass);
+      var data = associated[_name];
+
+      // clear association
+      if (!data) {
+        model[_name] = null;
+        return "continue";
+      }
+
+      if (associations[_name].type === 'hasOne') {
+        var other = (typeof data === "undefined" ? "undefined" : _typeof(data)) === 'object' ? klass.load(data) : klass.local(data);
+        model[_name] = other;
+      } else if (associations[_name].type === 'hasMany') {
+        (function () {
+          var others = [];
+          data.forEach(function (o) {
+            others.push((typeof o === "undefined" ? "undefined" : _typeof(o)) === 'object' ? klass.load(o) : klass.local(o));
+          });
+          model[_name] = others;
+        })();
+      }
+    };
+
+    for (var _name in associated) {
+      var _ret2 = _loop2(_name);
+
+      if (_ret2 === "continue") continue;
+    }
+
+    model.sourceState = LOADED;
+    model._clearChanges();
+    model._clearErrors();
+
+    loads.pop();
+
+    return model;
+  };
+
+  // Public: Loads an array of attribute objects.
+  //
+  // objects - An array containing attribute hashes.
+  //
+  // Returns an array of loaded model instances.
+  this.loadAll = function (objects) {
+    var _this3 = this;
+
+    return objects.map(function (object) {
+      return _this3.load(object);
+    });
+  };
+
+  // Public: Creates a new query array but does not invoke its `query` method. This is useful for
+  // cases where you want to initialize an empty query, but not yet run it.
+  //
+  // The array returned by this method is decorated with the following additional properties:
+  //
+  //   modelClass  - The `Transis.Model` subclass that `buildQuery` was invoked on.
+  //   baseOpts    - The options passed to this method. These options will be sent with every query.
+  //   currentOpts - The most recent options passed to the mapper.
+  //   isBusy      - Boolean property indicating whether a query is in progress.
+  //   isPaged     - Indicates whether the query array pages its results.
+  //   error       - An error message set on the array when the mapper fails to fulfill its promise.
+  //   meta        - Metadata provided by the mapper. May be used for paging results.
+  //
+  // And with these additional methods:
+  //
+  //   query: Execute a query by invoking the `query` method on the modelClass's mapper. This will
+  //   put the array into a busy state (indicated by the `isBusy` property) until the mapper has
+  //   fulfilled its promise. When the promise is successfully resolved, the returned data is loaded
+  //   via `Transis.Model.loadAll` and the materialized models are replaced into the array. When the
+  //   promise is rejected, the error message returned by the mapper is made available on the `error`
+  //   property.
+  //
+  //   If the this method is called while the array is currently busy, then the call to the mapper
+  //   is queued until the current query completes.
+  //
+  //   Passing the `pageSize` option to `buildQuery` turns the query into a paged query. Paged
+  //   queries load a page of results at a time instead of simply replacing their contents on each
+  //   call to `#query`. In order for this to work the mapper must resolve its promise with an
+  //   object that contains a `results` key pointing to an array of records and a `meta` key that
+  //   points to an object containing a `totalCount` key. The length of the query array will be set
+  //   to the value of `totalCount` and the results will be spliced into the array at the offset
+  //   indicated by the `page` option. Any models from pages loaded previously will remain in the
+  //   array.
+  //
+  //   When an item is accessed via the `#at` method from a page that has yet to be fetched, the
+  //   query array will automatically invoke the mapper to fetch that page. This effectively gives
+  //   you a sparse array that will automatically lazily load its contents when then are needed.
+  //   This behavior works very well with a virtualized list component.
+  //
+  //   Here is an example of the object expected from the mapper:
+  //
+  //   {
+  //     meta: {totalCount: 321},
+  //     results: [{id: 1}, {id: 2}, {id: 3}]
+  //   }
+  //
+  //
+  //   opts - An object to pass along to the mapper (default: `{}`).
+  //
+  //   Returns the receiver.
+  //
+  //   then: Registers fulfillment and rejection handlers on the latest promise object returned by
+  //   the modelClass's mapper. If the `query` method has yet to be called, then the `onFulfilled`
+  //   handler is invoked immediately.
+  //
+  //   When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
+  //   `onFulfilled` handler is called with the error message from the mapper.
+  //
+  //   onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
+  //   onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
+  //
+  //   Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
+  //
+  //   catch: Registers a rejection handler on the latest promise object returned by the
+  //   modelClass's mapper.
+  //
+  //   onRejected - A function to be invoked when the latest promise from the mapper is rejected.
+  //
+  //   Returns a new `Promise` that is resolved to the return value of the callback if it is called.
+  //
+  // baseOpts - An object to pass along to the mapper method when the query is executed with the
+  //            `#query` method. Any options passed to the `#query` method will be merged in with
+  //            the options given here (default: `{}`). The `pageSize` option in particular is
+  //            special as it makes the resulting query array a paged query. See the discussion
+  //            above.
+  //
+  // Returns a new `Transis.Array` decorated with the properties and methods described above.
+  this.buildQuery = function () {
+    var baseOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    var a = _array2.default.of();
+
+    a.__modelClass__ = this;
+    a.__promise__ = Promise.resolve();
+
+    a.props({
+      modelClass: { get: function get() {
+          return this.__modelClass__;
+        } },
+      baseOpts: {},
+      currentOpts: {},
+      isBusy: { default: false },
+      isPaged: { on: ['baseOpts'], get: function get(baseOpts) {
+          return typeof baseOpts.pageSize === 'number';
+        } },
+      error: {},
+      meta: {}
+    });
+
+    a.baseOpts = baseOpts;
+    a.query = queryArrayQuery;
+    a.then = queryArrayThen;
+    a.catch = queryArrayCatch;
+    a.at = queryArrayAt;
+
+    return a;
+  };
+
+  // Public: Creates a new `Transis.QueryArray` and invokes its `query` method with the given
+  // options.
+  //
+  // opts - An options object to pass to the `Transis.QueryArray#query` method (default: `{}`).
+  //
+  // Returns a new `Transis.QueryArray`.
+  this.query = function () {
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    return this.buildQuery().query(opts);
+  };
+
+  // Public: Retrieves a model from the identity map or creates a new empty model instance. If you
+  // want to get the model from the mapper, then use the `Model.get` method.
+  //
+  // id - The id of the model to get.
+  //
+  // Returns an instance of the receiver.
+  this.local = function (id) {
+    return _id_map2.default.get(this, id) || this.empty(id);
+  };
+
+  // Public: Gets a model instance, either from the identity map or from the mapper. If the model
+  // has already been loaded into the identity map, then it is simply returned, otherwise the data
+  // mapper's `get` method will be invoked and an empty model will be returned.
+  //
+  // id   - The id of the model to get.
+  // opts - An object containing zero or more of the following keys (default: `{}`):
+  //   refresh - When true, the mapper's get method will be called regardless of whether the model
+  //             exists in the identity map.
+  //
+  // Returns an instance of the receiver.
+  this.get = function (id) {
+    var _this4 = this;
+
+    var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+    var model = this.local(id),
+        getOpts = Object.assign({}, opts);
+    delete getOpts.refresh;
+
+    if (model.isEmpty || opts.refresh) {
+      model.isBusy = true;
+      model.__promise__ = this._callMapper('get', [id, getOpts]).then(function (result) {
+        model.isBusy = false;
+        try {
+          _this4.load(result);
+        } catch (e) {
+          console.error(e);throw e;
+        }
+      }, function (errors) {
+        model.isBusy = false;
+        model._loadErrors(errors);
+        return Promise.reject(errors);
+      });
+    }
+
+    return model;
+  };
+
+  // Public: Clears all models from the id map. This will subsequently cause the model layer to go
+  // to the mapper for any model that had previously been loaded.
+  this.clearIdMap = function () {
+    _id_map2.default.clear();return this;
+  };
+
+  // Internal: Invokes the given method on the receiver's mapper, ensuring that it returns a
+  // Thennable (Promise-like) object.
+  //
+  // method - The method to invoke on the mapper.
+  // args   - An array of arguments to pass to the mapper method.
+  //
+  // Returns the promise returned by the mapper.
+  // Throws `Error` when the mapper is not defined.
+  // Throws `Error` when the mapper does not implement the given method.
+  // Throws `Error` when the mapper does not return a Thennable object.
+  this._callMapper = function (method, args) {
+    var _this5 = this;
+
+    var promise;
+
+    if (!this.mapper) {
+      throw new Error(this + "._callMapper: no mapper defined, assign one to `" + this + ".mapper`");
+    }
+
+    if (typeof this.mapper[method] !== 'function') {
+      throw new Error(this + "._callMapper: mapper does not implement `" + method + "`");
+    }
+
+    promise = this.mapper[method].apply(this.mapper, args);
+
+    if (!promise || typeof promise.then !== 'function') {
+      throw new Error(this + "._callMapper: mapper's `" + method + "` method did not return a Promise");
+    }
+
+    promise.catch(function (error) {
+      console.warn(_this5 + "#_callMapper(" + method + "): promise rejection:", error);
+      return Promise.reject(error);
+    });
+
+    return promise;
+  };
+
+  // Internal: Holds the association descriptors created by `.hasOne` and `.hasMany`.
+  this.prototype.associations = {};
+
+  // Internal: Holds the validators registered by `.validate`.
+  this.prototype.validators = {};
+
+  // Internal: Initializes the model by setting up some internal properties.
+  this.prototype.init = function (props) {
+    this.sourceState = NEW;
+    this.isBusy = false;
+    this.__promise__ = Promise.resolve();
+    this._clearChanges();
+
+    Model.__super__.init.call(this, props);
+  };
+
+  this.prop('id', {
+    get: function get() {
+      return this.__id;
+    },
+    set: function set(id) {
+      if (this.__id) {
+        throw new Error(this.constructor + "#id=: overwriting a model's identity is not allowed: " + this);
+      }
+
+      this.__id = id;
+
+      _id_map2.default.insert(this);
+    }
+  });
+
+  this.prop('sourceState');
+
+  this.prop('isNew', {
+    on: ['sourceState'],
+    get: function get(sourceState) {
+      return sourceState === NEW;
+    }
+  });
+
+  this.prop('isEmpty', {
+    on: ['sourceState'],
+    get: function get(sourceState) {
+      return sourceState === EMPTY;
+    }
+  });
+
+  this.prop('isLoaded', {
+    on: ['sourceState'],
+    get: function get(sourceState) {
+      return sourceState === LOADED;
+    }
+  });
+
+  this.prop('isDeleted', {
+    on: ['sourceState'],
+    get: function get(sourceState) {
+      return sourceState === DELETED;
+    }
+  });
+
+  this.prop('isBusy');
+
+  // Public: Returns an object of changes made to properties on the receiver. For simple properties
+  // and `hasOne` associations, the original value is stored. For `hasMany` associations, the added
+  // and removed models are stored.
+  this.prop('ownChanges', {
+    get: function get() {
+      return this.__ownChanges = this.__ownChanges || {};
+    }
+  });
+
+  // Public: Returns a boolean indicating whether the model has any property changes or any
+  // owned `hasMany` associations that have been mutated.
+  this.prop('hasOwnChanges', {
+    on: ['ownChanges'],
+    get: function get(ownChanges) {
+      return Object.keys(ownChanges).length > 0;
+    }
+  });
+
+  // Public: Returns an object of changes made to properties on the receiver as well as for changes
+  // made to owned associated models. The keys for owned associated model changes are prefixed with
+  // the association name. The keys for changes on models within an owned hasMany association are
+  // prefixed with the association name and index in the array.
+  //
+  // Examples
+  //
+  //   person.changes;
+  //   // {'firstName': 'Bob', 'address.street': 'maple', 'pets.1.name': 'Spike'}
+  this.prop('changes', {
+    on: ['ownChanges'],
+    pure: false,
+    get: function get() {
+      var changes = Object.assign({}, this.ownChanges);
+
+      util.detectRecursion(this, function () {
+        var _this6 = this;
+
+        var _loop3 = function _loop3(name) {
+          if (!_this6.associations[name].owner) {
+            return "continue";
+          }
+
+          if (_this6.associations[name].type === 'hasOne' && _this6[name]) {
+            var cs = _this6[name].changes;
+            for (var k in cs) {
+              changes[name + "." + k] = cs[k];
+            }
+          } else if (_this6.associations[name].type === 'hasMany') {
+            _this6[name].forEach(function (item, i) {
+              var cs = item.changes;
+              for (var _k in cs) {
+                changes[name + "." + i + "." + _k] = cs[_k];
+              }
+            });
+          }
+        };
+
+        for (var name in this.associations) {
+          var _ret4 = _loop3(name);
+
+          if (_ret4 === "continue") continue;
+        }
+      }.bind(this));
+
+      return changes;
+    }
+  });
+
+  // Public: Returns a boolean indicating whether the model has any changes or if any of its owned
+  // associated models have changes.
+  this.prop('hasChanges', {
+    on: ['changes'],
+    get: function get(changes) {
+      return !!Object.keys(changes).length;
+    }
+  });
+
+  // Public: Object containing any validation errors on the model. The keys of the object are the
+  // properties that have errors and the values are an array of error messages.
+  this.prop('ownErrors', {
+    get: function get() {
+      return this.__ownErrors = this.__ownErrors || {};
+    }
+  });
+
+  // Public: Returns a boolean indicating whether the model has any validation errors on its own
+  // properties. Marking the model for destruction by setting the `_destroy` attribute will cause
+  // this property to return `false` regardless of whether there are validation errors.
+  this.prop('hasOwnErrors', {
+    on: ['ownErrors', '_destroy'],
+    get: function get(ownErrors, _destroy) {
+      return !_destroy && Object.keys(ownErrors).length > 0;
+    }
+  });
+
+  // Public: Returns an object of validation errors that exist on the receiver as well as any
+  // validation errors on owned associated models not marked for destruction. The keys used for
+  // errors on owned associated models are similar to those returned by the `#changes` prop.
+  this.prop('errors', {
+    on: ['ownErrors'],
+    pure: false,
+    get: function get() {
+      var errors = Object.assign({}, this.ownErrors);
+
+      util.detectRecursion(this, function () {
+        var _this7 = this;
+
+        var _loop4 = function _loop4(name) {
+          if (!_this7.associations[name].owner) {
+            return "continue";
+          }
+
+          if (_this7.associations[name].type === 'hasOne' && _this7[name] && !_this7[name]._destroy) {
+            var es = _this7[name].errors;
+            for (var k in es) {
+              errors[name + "." + k] = es[k];
+            }
+          } else if (_this7.associations[name].type === 'hasMany') {
+            _this7[name].forEach(function (item, i) {
+              if (item._destroy) return;
+              var es = item.errors;
+              for (var _k2 in es) {
+                errors[name + "." + i + "." + _k2] = es[_k2];
+              }
+            });
+          }
+        };
+
+        for (var name in this.associations) {
+          var _ret5 = _loop4(name);
+
+          if (_ret5 === "continue") continue;
+        }
+      }.bind(this));
+
+      return errors;
+    }
+  });
+
+  // Public: Returns a boolean indicating whether the model has any validattion errors or if any of
+  // its owned associated models have validation errors.
+  this.prop('hasErrors', {
+    on: ['errors'],
+    get: function get(errors) {
+      return !!Object.keys(errors).length;
+    }
+  });
+
+  // Public: Used to mark a model for future destruction by the server. Owned associated models that
+  // are marked for destruction will not be validated or affect the `hasErrors` property.
+  this.attr('_destroy', 'boolean');
+
+  // Public: Returns an object containing the raw values of all the receiver's attributes. Special
+  // care is taken with the `_destroy` attribute, its only included if its been set.
+  this.prototype.attrs = function () {
+    var attrs = {};
+
+    for (var k in this.__props__) {
+      if (this.__props__[k].attr) {
+        attrs[k] = this.__props__[k].converter.serialize(this[k]);
+      }
+    }
+
+    if (typeof this.id !== 'undefined') {
+      attrs.id = this.id;
+    }
+    if (attrs._destroy === undefined) {
+      delete attrs._destroy;
+    }
+
+    return attrs;
+  };
+
+  // Public: Refreshes the model by getting it from the data mapper.
+  //
+  // opts - An object to forward along to the mapper (default: `{}`).
+  //
+  // Returns the receiver.
+  // Throws `Error` if the receiver is not LOADED or is BUSY.
+  this.prototype.get = function () {
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    if (!this.isLoaded && !this.isEmpty || this.isBusy) {
+      throw new Error(this.constructor + "#get: can't get a model in the " + this.stateString() + " state: " + this);
+    }
+
+    return this.constructor.get(this.id, Object.assign({}, opts, { refresh: true }));
+  };
+
+  // Public: Saves the model by invoking either the `create` or `update` method on the model's data
+  // mapper. The `create` method is invoked if the model is in the `NEW` state and `create`
+  // otherwise.
+  //
+  // opts - An object to forward on to the mapper (default: `{}`).
+  //
+  // Returns the receiver.
+  // Throws `Error` if the receiver is not NEW or LOADED or is currently busy.
+  this.prototype.save = function () {
+    var _this8 = this;
+
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    if (!this.isNew && !this.isLoaded || this.isBusy) {
+      throw new Error(this.constructor + "#save: can't save a model in the " + this.stateString() + " state: " + this);
+    }
+
+    this.isBusy = true;
+
+    this.__promise__ = this.constructor._callMapper(this.isNew ? 'create' : 'update', [this, opts]).then(function (attrs) {
+      _this8.isBusy = false;
+      try {
+        _this8.load(attrs);
+      } catch (e) {
+        console.error(e);throw e;
+      }
+    }, function (errors) {
+      _this8.isBusy = false;
+      _this8._loadErrors(errors);
+      return Promise.reject(errors);
+    });
+
+    return this;
+  };
+
+  // Public: Deletes the model by passing it to the data mapper's `delete` method.
+  //
+  // opts - An object to forward on to the mapper (default: `{}`).
+  //
+  // Returns the receiver.
+  // Throws `Error` if the model is currently busy.
+  this.prototype.delete = function () {
+    var _this9 = this;
+
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    if (this.isDeleted) {
+      return this;
+    }
+
+    if (this.isBusy) {
+      throw new Error(this.constructor + "#delete: can't delete a model in the " + this.stateString() + " state: " + this);
+    }
+
+    if (this.isNew) {
+      mapperDeleteSuccess.call(this);
+    } else {
+      this.isBusy = true;
+
+      this.__promise__ = this.constructor._callMapper('delete', [this, opts]).then(function () {
+        mapperDeleteSuccess.call(_this9);
+      }, function (errors) {
+        _this9.isBusy = false;
+        _this9._loadErrors(errors);
+        return Promise.reject(errors);
+      });
+    }
+
+    return this;
+  };
+
+  // Public: Registers fulfillment and rejection handlers on the latest promise object returned by
+  // the model's mapper. If the model has yet to interact with the mapper, then the `onFulfilled`
+  // handler is invoked immediately.
+  //
+  // When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
+  // `onFulfilled` handler is called with the error message from the mapper.
+  //
+  // onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
+  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
+  //
+  // Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
+  this.prototype.then = function (onFulfilled, onRejected) {
+    return this.__promise__.then(onFulfilled, onRejected);
+  };
+
+  // Public: Registers a rejection handler on the latest promise object returned by the model's
+  // mapper.
+  //
+  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
+  //
+  // Returns a new `Promise` that is resolved to the return value of the callback if it is called.
+  this.prototype.catch = function (onRejected) {
+    return this.__promise__.catch(onRejected);
+  };
+
+  // Public: Loads the given attributes into the model. This method simply ensure's that the
+  // receiver has its `id` set and then delegates to `Model.load`.
+  //
+  // If the given attributes have an `id` that already exists in the identity map, then this method
+  // will actually load the attributes onto the existing model instead of the receiver. This
+  // situation may occur when you have a create or update situation on the backend.
+  //
+  // Returns the receiver.
+  this.prototype.load = function (attrs) {
+    var id = attrs.id;
+
+    if (id == null && this.id == null) {
+      throw new Error(this.constructor + "#load: an `id` attribute is required");
+    }
+
+    if (id != null && this.id != null && id !== this.id) {
+      throw new Error(this.constructor + "#load: received attributes with id `" + id + "` but model already has id `" + this.id + "`");
+    }
+
+    if (this.id == null) {
+      if (!_id_map2.default.get(this.constructor, id)) {
+        this.id = id;
+      } else {
+        console.warn(this.constructor + "#load: loading attributes that contain an id (" + id + ") that already exists in the identity map, the receiver will not be updated");
+      }
+    }
+
+    attrs.id = id || this.id;
+
+    this.constructor.load(attrs);
+
+    return this;
+  };
+
+  // Public: Returns a string representation of the model's current state.
+  this.prototype.stateString = function () {
+    var a = [this.sourceState.toUpperCase()];
+    if (this.isBusy) {
+      a.push('BUSY');
+    }
+    return a.join('-');
+  };
+
+  // Public: Returns the previous for the given attribute or association name. If no change has been
+  // made then `undefined` is returned.
+  //
+  // name - A string containing the name of an attribute or association.
+  this.prototype.previousValueFor = function (name) {
+    var _this10 = this;
+
+    var change = this.ownChanges[name];
+
+    if (change && this.associations[name] && this.associations[name].type === 'hasMany') {
+      var _ret6 = function () {
+        var previous = _this10[name].slice();
+        var removed = change.removed.slice();
+        var added = change.added.slice();
+
+        removed.reverse().forEach(function (m) {
+          previous.push(m);
+        });
+        added.forEach(function (m) {
+          previous.splice(previous.indexOf(m), 1);
+        });
+
+        return {
+          v: previous
+        };
+      }();
+
+      if ((typeof _ret6 === "undefined" ? "undefined" : _typeof(_ret6)) === "object") return _ret6.v;
+    } else {
+      return change;
+    }
+  };
+
+  // Public: Undoes all property and owned assocation changes made to this model since it was last
+  // loaded.
+  //
+  // opts - An object containing zero or more of the following keys:
+  //   except - Either a string or an array of strings of attributes or owned association names to skip over when
+  //            undoing changes.
+  //   only -   Either a string or an array of strings of attributes or owned association names that limit the undoing of changes
+  //            to only the provided names.
+  //
+  // Returns the receiver.
+  this.prototype.undoChanges = function () {
+    var _this11 = this;
+
+    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    var associations = this.associations;
+
+    var shouldUndo = function shouldUndo(name) {
+      if (!opts) return true;
+
+      if (opts.except === name) {
+        return false;
+      }
+      if (Array.isArray(opts.except) && opts.except.indexOf(name) >= 0) {
+        return false;
+      }
+
+      if (Array.isArray(opts.only)) {
+        if (opts.only.indexOf(name) === -1) {
+          return false;
+        }
+      } else if (opts.only && opts.only !== name) {
+        return false;
+      }
+
+      return true;
+    };
+
+    var _loop5 = function _loop5(prop) {
+      if (!shouldUndo(prop)) {
+        return "continue";
+      }
+
+      if (associations[prop] && associations[prop].type === 'hasMany') {
+        var removed = _this11.ownChanges[prop].removed.slice();
+        var added = _this11.ownChanges[prop].added.slice();
+
+        removed.reverse().forEach(function (m) {
+          _this11[prop].push(m);
+        });
+        added.forEach(function (m) {
+          _this11[prop].splice(_this11[prop].indexOf(m), 1);
+        });
+      } else {
+        _this11[prop] = _this11.ownChanges[prop];
+      }
+    };
+
+    for (var prop in this.ownChanges) {
+      var _ret7 = _loop5(prop);
+
+      if (_ret7 === "continue") continue;
+    }
+
+    util.detectRecursion(this, function () {
+      for (var name in associations) {
+        var _desc2 = associations[name];
+
+        if (!_desc2.owner) {
+          continue;
+        }
+        if (!shouldUndo(name)) {
+          continue;
+        }
+
+        if (_desc2.type === 'hasOne') {
+          this[name] && this[name].undoChanges();
+        } else if (_desc2.type === 'hasMany') {
+          this[name].forEach(function (m) {
+            return m.undoChanges();
+          });
+        }
+      }
+    }.bind(this));
+
+    this.validate();
+
+    return this;
+  };
+
+  // Public: Add a validation error for the given property name and type. Adding an error will cause
+  // the model to enter an invalid state.
+  //
+  // name    - The name of the attribute or property that has a validation error.
+  // message - A string containing the error message.
+  //
+  // Returns the receiver.
+  this.prototype.addError = function (name, message) {
+    this.ownErrors[name] = this.ownErrors[name] || [];
+
+    if (this.ownErrors[name].indexOf(message) === -1) {
+      this.ownErrors[name].push(message);
+      this.didChange('ownErrors');
+    }
+
+    return this;
+  };
+
+  // Public: Runs registered validators for the given attribute. This will clear any existing
+  // validation errors for the given attribute. The registered validators can be reduced by
+  // providing an optional context.
+  //
+  // name - The name of the attribute to run validations for.
+  // ctx  - The context in which to run validations on the given attribute. (optional)
+  //
+  // Returns `true` if no validation errors are found on the given attribute and `false` otherwise.
+  this.prototype.validateAttr = function (name, ctx) {
+    this._clearErrors(name);
+    if (!this.validators[name]) {
+      return true;
+    }
+
+    var validators = this.validators[name].filter(function (v) {
+      return !v.opts.on || v.opts.on === ctx;
+    });
+
+    for (var i = 0, n = validators.length; i < n; i++) {
+      var validator = validators[i].validator;
+
+      if (typeof validator === 'function') {
+        validator.call(this);
+      } else if (typeof validator === 'string' && validator in this) {
+        this[validator]();
+      } else {
+        throw new Error(this.constructor + "#validateAttr: don't know how to execute validator: `" + validator + "`");
+      }
+    }
+
+    return !(name in this.ownErrors);
+  };
+
+  // Public: Runs all registered validators for all properties and also validates owned
+  // associations. Validations with no `on:` option will run no matter the context. Validations with
+  // some `on:` option will only run in the specified context.
+  //
+  // ctx - The context in which to run validations
+  //
+  // Returns `true` if no validation errors are found and `false` otherwise.
+  this.prototype.validate = function (ctx) {
+    var associations = this.associations,
+        failed = false;
+
+    this._clearErrors();
+
+    for (var name in this.validators) {
+      if (!this.validateAttr(name, ctx)) {
+        failed = true;
+      }
+    }
+
+    util.detectRecursion(this, function () {
+      for (var _name2 in associations) {
+        var _desc3 = associations[_name2];
+
+        if (!_desc3.owner) {
+          continue;
+        }
+
+        if (_desc3.type === 'hasOne') {
+          if (this[_name2] && !this[_name2]._destroy) {
+            if (!this[_name2].validate(ctx)) {
+              failed = true;
+            }
+          }
+        } else if (_desc3.type === 'hasMany') {
+          this[_name2].forEach(function (m) {
+            if (!m._destroy && !m.validate(ctx)) {
+              failed = true;
+            }
+          });
+        }
+      }
+    }.bind(this));
+
+    return !failed;
+  };
+
+  // Public: Returns a string representation of the model.
+  this.prototype.toString = function () {
+    var attrs = this.attrs();
+
+    for (var name in this.associations) {
+      if (this.associations[name].type === 'hasOne') {
+        if (this[name] && this[name].id) {
+          attrs[name] = this[name].id;
+        }
+      } else if (this.associations[name].type === 'hasMany') {
+        var ids = this[name].map(function (x) {
+          return x.id;
+        }).compact();
+        if (ids.length) {
+          attrs[name] = ids;
+        }
+      }
+    }
+
+    return "#<" + this.constructor + " (" + this.stateString() + "):" + this.objectId + " " + JSON.stringify(attrs) + ">";
+  };
+
+  // Internal: Load error message(s) received from the mapper. When passed an object, the keys of
+  // the object are assumed to be attribute names and the values the error message for that
+  // attribute. When given a string, an error is added to the `base` attribute.
+  //
+  // errors - Either an object mapping attribute names to their error messages or a string.
+  //
+  // Returns the receiver.
+  this.prototype._loadErrors = function (errors) {
+    var _this12 = this;
+
+    if ((typeof errors === "undefined" ? "undefined" : _typeof(errors)) === 'object') {
+      var _loop6 = function _loop6(k) {
+        if (Array.isArray(errors[k])) {
+          errors[k].forEach(function (error) {
+            this.addError(k, error);
+          }, _this12);
+        } else {
+          _this12.addError(k, String(errors[k]));
+        }
+      };
+
+      for (var k in errors) {
+        _loop6(k);
+      }
+    } else {
+      this.addError('base', String(errors));
+    }
+
+    return this;
+  };
+
+  // Internal: Clears validation errors from the `errors` hash. If a name is given, only the errors
+  // for the property of that name are cleared, otherwise all errors are cleared.
+  this.prototype._clearErrors = function (name) {
+    if (name) {
+      if (name in this.ownErrors) {
+        delete this.ownErrors[name];
+        this.didChange('ownErrors');
+      }
+    } else if (Object.keys(this.ownErrors).length) {
+      this.__ownErrors = {};
+      this.didChange('ownErrors');
+    }
+    return this;
+  };
+
+  // Internal: Called by an inverse association when a model was removed from the inverse side.
+  // Updates the local side of the association.
+  //
+  // name  - The local side name of the association that was modified.
+  // model - The model that was removed from the inverse side.
+  //
+  // Returns nothing.
+  this.prototype._inverseRemoved = function (name, model) {
+    var desc = this.associations[name];
+
+    if (!desc) {
+      throw new Error(this.constructor + "#inverseRemoved: unknown association `" + name + "`");
+    }
+
+    if (desc.type === 'hasOne') {
+      hasOneSet.call(this, desc, undefined, false);
+      this.didChange(desc.name);
+    } else if (desc.type === 'hasMany') {
+      this[desc.name]._inverseRemove(model);
+    }
+  };
+
+  // Internal: Called by an inverse association when a model was added on the inverse side. Updates
+  // the local side of the association.
+  //
+  // name  - The local side name of the association that was modified.
+  // model - The model that was added on the inverse side.
+  //
+  // Returns nothing.
+  this.prototype._inverseAdded = function (name, model) {
+    var desc = this.associations[name];
+
+    if (!desc) {
+      throw new Error(this.constructor + "#inverseAdded: unknown association `" + name + "`");
+    }
+
+    if (desc.type === 'hasOne') {
+      hasOneSet.call(this, desc, model, false);
+      this.didChange(desc.name);
+    } else if (desc.type === 'hasMany') {
+      this[desc.name]._inverseAdd(model);
+    }
+  };
+
+  // Internal: Overrides `Transis.Object#_setProp` in order to perform change tracking.
+  this.prototype._setProp = function (name, value) {
+    var oldValue = Model.__super__._setProp.call(this, name, value);
+
+    if (!this.__props__[name].attr && !this.associations[name]) {
+      return;
+    }
+    if (this.associations[name] && !this.associations[name].owner) {
+      return;
+    }
+
+    if (!(name in this.ownChanges)) {
+      if (!util.eq(this[name], oldValue)) {
+        this._setChange(name, oldValue);
+      }
+    } else if (util.eq(this[name], this.ownChanges[name])) {
+      this._clearChange(name);
+    }
+  };
+
+  // Internal: Sets the old value for the changed property of the given name.
+  this.prototype._setChange = function (name, oldValue) {
+    if (loads.length) {
+      return;
+    }
+    this.ownChanges[name] = oldValue;
+    this.didChange('ownChanges');
+  };
+
+  // Internal: Clears the change record for the property of the given name.
+  this.prototype._clearChange = function (name) {
+    if (name in this.ownChanges) {
+      delete this.ownChanges[name];
+      this.didChange('ownChanges');
+    }
+  };
+
+  // Internal: Clears all change records.
+  this.prototype._clearChanges = function () {
+    if (Object.keys(this.ownChanges).length) {
+      this.__ownChanges = {};
+      this.didChange('ownChanges');
+    }
+  };
+});
+
+Model.NEW = NEW;
+Model.EMPTY = EMPTY;
+Model.LOADED = LOADED;
+Model.DELETED = DELETED;
+
+Object.assign(Model, _validations2.default.static);
+Object.assign(Model.prototype, _validations2.default.instance);
+
+exports.default = Model;
+module.exports = exports["default"];
+
+
+/***/ }),
+/* 385 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StateMixin = exports.PropsMixin = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+var _object = __webpack_require__(65);
+
+var _object2 = _interopRequireDefault(_object);
+
+var _array = __webpack_require__(64);
+
+var _array2 = _interopRequireDefault(_array);
+
+var _util = __webpack_require__(39);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var nextId = 1;
+var updateLog = {};
+var updateQueue = {};
+
+function componentCmp(a, b) {
+  if (a._transisId < b._transisId) {
+    return -1;
+  } else if (a._transisId > b._transisId) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+function preFlush() {
+  updateLog = {};
+  _object2.default.delay(postFlush);
+}
+
+function postFlush() {
+  var components = [];
+
+  for (var id in updateQueue) {
+    components.push(updateQueue[id]);
+    delete updateQueue[id];
+  }
+
+  // Sort the components by their assigned _transisId. Since components get mounted from the top
+  // down, this should ensure that parent components are force updated before any descendent
+  // components that also need an update. This avoids the case where we force update a component
+  // and then force update one of its ancestors, which may unnecessarily render the component
+  // again.
+  components.sort(componentCmp).forEach(function (component) {
+    if (!updateLog[component._transisId] && component.isMounted()) {
+      component.forceUpdate();
+    }
+  });
+
+  _object2.default.delayPreFlush(preFlush);
+}
+
+function queueUpdate(component) {
+  updateQueue[component._transisId] = component;
+}
+
+function logUpdate(component) {
+  updateLog[component._transisId] = true;
+}
+
+_object2.default.delayPreFlush(preFlush);
+
+var PropsMixin = exports.PropsMixin = function PropsMixin(props) {
+  return {
+    componentWillMount: function componentWillMount() {
+      var _this = this;
+
+      this._transisId = this._transisId || nextId++;
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        queueUpdate(_this);
+      };
+
+      var _loop = function _loop(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].on(prop, this._transisQueueUpdate);
+          }
+        }, _this);
+      };
+
+      for (var k in props) {
+        _loop(k);
+      }
+    },
+
+    componentDidMount: function componentDidMount() {
+      logUpdate(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      logUpdate(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this2 = this;
+
+      var _loop2 = function _loop2(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].off(prop, this._transisQueueUpdate);
+          }
+        }, _this2);
+      };
+
+      for (var k in props) {
+        _loop2(k);
+      }
+    },
+
+    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+      var _this3 = this;
+
+      var _loop3 = function _loop3(k) {
+        props[k].forEach(function (prop) {
+          if (nextProps[k] !== this.props[k]) {
+            if (this.props[k]) {
+              this.props[k].off(prop, this._transisQueueUpdate);
+            }
+            if (nextProps[k]) {
+              nextProps[k].on(prop, this._transisQueueUpdate);
+            }
+          }
+        }, _this3);
+      };
+
+      for (var k in props) {
+        _loop3(k);
+      }
+    }
+  };
+};
+
+var StateMixin = exports.StateMixin = function StateMixin(object, props) {
+  if ((typeof props === "undefined" ? "undefined" : _typeof(props)) !== 'object') {
+    props = _array2.default.from(arguments).slice(1).reduce(function (acc, prop) {
+      acc[prop] = [];
+      return acc;
+    }, {});
+  }
+
+  return {
+    getInitialState: function getInitialState() {
+      var state = {};
+      for (var k in props) {
+        state[k] = object[k];
+      }
+      return state;
+    },
+
+    componentWillMount: function componentWillMount() {
+      var _this4 = this;
+
+      this._transisId = this._transisId || nextId++;
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        queueUpdate(_this4);
+      };
+
+      this._transisSyncState = function () {
+        var state = {};
+
+        var _loop4 = function _loop4(k) {
+          if (_this4.state[k] !== object[k]) {
+            if (_this4.state[k] && typeof _this4.state[k].off === 'function') {
+              props[k].forEach(function (path) {
+                _this4.state[k].off(path, _this4._transisQueueUpdate);
+              });
+            }
+
+            if (object[k] && typeof object[k].on === 'function') {
+              props[k].forEach(function (path) {
+                object[k].on(path, _this4._transisQueueUpdate);
+              });
+            }
+
+            state[k] = object[k];
+          }
+        };
+
+        for (var k in props) {
+          _loop4(k);
+        }
+
+        if (Object.keys(state).length) {
+          _this4.setState(state);
+        }
+      };
+
+      var _loop5 = function _loop5(k) {
+        if (object[k] && typeof object[k].on === 'function') {
+          props[k].forEach(function (path) {
+            object[k].on(path, _this4._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop5(k);
+      }
+
+      object.on('*', this._transisSyncState);
+    },
+
+    componentDidMount: function componentDidMount() {
+      logUpdate(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      logUpdate(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this5 = this;
+
+      var _loop6 = function _loop6(k) {
+        if (_this5.state[k] && typeof _this5.state[k].off === 'function') {
+          props[k].forEach(function (path) {
+            _this5.state[k].off(path, _this5._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop6(k);
+      }
+
+      object.off('*', this._transisSyncState);
+    }
+  };
+};
+
+
+/***/ }),
 /* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(37);
-
-
-/***/ }),
-/* 387 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.DateTimeAttr = exports.DateAttr = exports.BooleanAttr = exports.NumberAttr = exports.IntegerAttr = exports.StringAttr = exports.IdentityAttr = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _parsers = __webpack_require__(103);
-
-var parsers = _interopRequireWildcard(_parsers);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var IdentityAttr = exports.IdentityAttr = {
-  coerce: function coerce(v) {
-    return v;
-  },
-  serialize: function serialize(v) {
-    return v;
-  }
-};
-
-var StringAttr = exports.StringAttr = function () {
-  function StringAttr() {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    _classCallCheck(this, StringAttr);
-
-    this.opts = Object.assign({ trim: true }, opts);
-  }
-
-  _createClass(StringAttr, [{
-    key: 'coerce',
-    value: function coerce(v) {
-      v = v != null ? String(v) : v;
-      if (typeof v === 'string' && this.opts.trim) {
-        v = v.trim();
-      }
-      return v;
-    }
-  }, {
-    key: 'serialize',
-    value: function serialize(s) {
-      return s;
-    }
-  }]);
-
-  return StringAttr;
-}();
-
-var IntegerAttr = exports.IntegerAttr = {
-  coerce: function coerce(v) {
-    if (typeof v === 'number') {
-      return Math.round(v);
-    } else if (typeof v === 'string') {
-      var parsed = parsers.parseNumber(v);
-      return parsed ? Math.round(parsed) : parsed;
-    } else if (v === undefined) {
-      return undefined;
-    } else {
-      return null;
-    }
-  },
-  serialize: function serialize(n) {
-    return n;
-  }
-};
-
-var NumberAttr = exports.NumberAttr = {
-  coerce: function coerce(v) {
-    if (typeof v === 'number') {
-      return v;
-    } else if (typeof v === 'string') {
-      return parsers.parseNumber(v);
-    } else if (v === undefined) {
-      return undefined;
-    } else {
-      return null;
-    }
-  },
-  serialize: function serialize(n) {
-    return n;
-  }
-};
-
-var BooleanAttr = exports.BooleanAttr = {
-  coerce: function coerce(v) {
-    return v === undefined ? v : !!v;
-  },
-  serialize: function serialize(b) {
-    return b;
-  }
-};
-
-var DateAttr = exports.DateAttr = {
-  coerce: function coerce(v) {
-    if (v == null || v instanceof Date) {
-      return v;
-    }
-    if (typeof v === 'number') {
-      return new Date(v);
-    }
-
-    if (typeof v !== 'string') {
-      throw new Error('Transis.DateAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
-    }
-
-    return parsers.parseDate(v);
-  },
-  serialize: function serialize(date) {
-    return date instanceof Date ? date.toJSON().replace(/T.*$/, '') : date;
-  }
-};
-
-var DateTimeAttr = exports.DateTimeAttr = {
-  coerce: function coerce(v) {
-    if (v == null || v instanceof Date) {
-      return v;
-    }
-    if (typeof v === 'number') {
-      return new Date(v);
-    }
-
-    if (typeof v !== 'string') {
-      throw new Error('Transis.DateTimeAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
-    }
-
-    return parsers.parseDateTime(v);
-  },
-  serialize: function serialize(date) {
-    return date instanceof Date ? date.toJSON() : date;
-  }
-};
-
-
-/***/ }),
-/* 388 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _object = __webpack_require__(66);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(65);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _model = __webpack_require__(389);
-
-var _model2 = _interopRequireDefault(_model);
-
-var _id_map = __webpack_require__(170);
-
-var _id_map2 = _interopRequireDefault(_id_map);
-
-var _react = __webpack_require__(390);
-
-var react = _interopRequireWildcard(_react);
-
-var _util = __webpack_require__(39);
-
-var util = _interopRequireWildcard(_util);
-
-var _parsers = __webpack_require__(103);
-
-var parsers = _interopRequireWildcard(_parsers);
-
-var _pluralize = __webpack_require__(140);
-
-var _pluralize2 = _interopRequireDefault(_pluralize);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Public: Resets Transis by clearing the ID map and clearing out the pending change queue. This
-// should only ever be used in specs.
-function reset() {
-  _id_map2.default.clear();
-  _object2.default.clearChangeQueue();
-}
-
-exports.default = Object.assign({
-  Object: _object2.default,
-  Array: _array2.default,
-  A: _array2.default.of,
-  Model: _model2.default,
-  pluralize: _pluralize2.default,
-  ReactPropsMixin: react.PropsMixin,
-  ReactStateMixin: react.StateMixin,
-  reset: reset
-}, util, parsers);
-module.exports = exports["default"];
-
-
-/***/ }),
-/* 389 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _pluralize = __webpack_require__(140);
-
-var _pluralize2 = _interopRequireDefault(_pluralize);
-
-var _id_map = __webpack_require__(170);
-
-var _id_map2 = _interopRequireDefault(_id_map);
-
-var _object = __webpack_require__(66);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(65);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _validations = __webpack_require__(391);
-
-var _validations2 = _interopRequireDefault(_validations);
-
-var _attrs = __webpack_require__(387);
-
-var attrs = _interopRequireWildcard(_attrs);
-
-var _util = __webpack_require__(39);
-
-var util = _interopRequireWildcard(_util);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var registeredAttrs = {},
-    subclasses = {},
-    loads = [];
-
-var NEW = 'new';
-var EMPTY = 'empty';
-var LOADED = 'loaded';
-var DELETED = 'deleted';
-
-// Internal: Returns the `Transis.Model` subclass with the given name.
-//
-// name  - A string representing the name of a `Transis.Model` subclass.
-// raise - A boolean indicating whether an exception should be raised if the name can't be
-//         resolved (default: `true`).
-//
-// Returns the resolved subclass constructor function or `undefined` if a class with the given
-//   name is not known.
-// Throws `Error` if the `raise` argument is `true` and the name cannot not be resolved.
-function resolve(name) {
-  var raise = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
-
-  var klass = typeof name === 'function' ? name : subclasses[name];
-
-  if (!klass && raise) {
-    throw new Error("Transis.Model.resolve: could not resolve subclass: `" + name + "`");
-  }
-
-  return klass;
-};
-
-// Internal: Checks to make sure the given object is of the type specified in the given
-// association descriptor.
-//
-// Returns nothing.
-// Throws `Error` if the given object isn't of the type specified in the association descriptor.
-function checkAssociatedType(desc, o) {
-  var klass = resolve(desc.klass);
-
-  if (o && !(o instanceof klass)) {
-    throw new Error(desc.debugName + ": expected an object of type `" + desc.klass + "` but received `" + o + "` instead");
-  }
-}
-
-// Internal: The overridden `_splice` method used on `hasMany` arrays. This method syncs changes to
-// the array to the inverse side of the association and maintains a list of changes made.
-function hasManySplice(i, n, added) {
-  var owner = this.__owner__,
-      desc = this.__desc__,
-      inverse = desc.inverse,
-      name = desc.name,
-      removed,
-      changes,
-      i;
-
-  added.forEach(function (o) {
-    return checkAssociatedType(desc, o);
-  });
-
-  removed = _array2.default.prototype._splice.call(this, i, n, added);
-
-  if (inverse && !this.__handlingInverse__) {
-    removed.forEach(function (model) {
-      model._inverseRemoved(inverse, owner);
-    }, this);
-    added.forEach(function (model) {
-      model._inverseAdded(inverse, owner);
-    }, this);
-  }
-
-  if (desc.owner && !loads.length) {
-    changes = owner.ownChanges[name] = owner.ownChanges[name] || { added: [], removed: [] };
-
-    removed.forEach(function (m) {
-      if ((i = changes.added.indexOf(m)) !== -1) {
-        changes.added.splice(i, 1);
-      } else if (changes.removed.indexOf(m) === -1) {
-        changes.removed.push(m);
-      }
-    });
-
-    added.forEach(function (m) {
-      if ((i = changes.removed.indexOf(m)) !== -1) {
-        changes.removed.splice(i, 1);
-      } else if (changes.added.indexOf(m) === -1) {
-        changes.added.push(m);
-      }
-    });
-
-    if (!changes.added.length && !changes.removed.length) {
-      owner._clearChange(name);
-    } else {
-      owner._setChange(name, changes);
-    }
-  }
-
-  return removed;
-}
-
-// Internal: Called when a model is added to the inverse side of a `hasMany` association in order to
-// sync the change to the `hasMany` side.
-function hasManyInverseAdd(model) {
-  this.__handlingInverse__ = true;
-  this.push(model);
-  this.__handlingInverse__ = false;
-}
-
-// Internal: Called when a model is removed from the inverse side of a `hasMany` association in
-// order to sync the change to the `hasMany` side.
-function hasManyInverseRemove(model) {
-  var i = this.indexOf(model);
-
-  if (i >= 0) {
-    this.__handlingInverse__ = true;
-    this.splice(i, 1);
-    this.__handlingInverse__ = false;
-  }
-}
-
-// Internal: Builds an array that manages a `hasMany` association. A hasMany array is a
-// `Transis.Array` that overrides the `_splice` method in order to handle syncing the inverse side
-// of the association.
-function hasManyArray(owner, desc) {
-  var a = _array2.default.of();
-  a.proxy(owner, desc.name);
-  a.__owner__ = owner;
-  a.__desc__ = desc;
-  a._splice = hasManySplice;
-  a._inverseAdd = hasManyInverseAdd;
-  a._inverseRemove = hasManyInverseRemove;
-  return a;
-}
-
-// Internal: Provides the implementation of the query array's `query` method.
-function queryArrayQuery() {
-  var _this = this;
-
-  var queryOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-  var opts = Object.assign({}, this.baseOpts, queryOpts);
-
-  if (this.isPaged) {
-    opts.page = opts.page || 1;
-  }
-
-  if (this.isBusy) {
-    if (util.eq(opts, this.currentOpts)) {
-      return this;
-    }
-
-    if (!this.__queued__) {
-      this.__promise__ = this.__promise__.then(function () {
-        _this.query(_this.__queued__);
-        _this.__queued__ = undefined;
-        return _this.__promise__;
-      });
-    }
-
-    this.__queued__ = opts;
-  } else {
-    this.isBusy = true;
-    this.currentOpts = opts;
-    this.__promise__ = this.__modelClass__._callMapper('query', [opts]).then(function (result) {
-      var results = Array.isArray(result) ? result : result.results;
-      var meta = Array.isArray(result) ? {} : result.meta;
-
-      _this.isBusy = false;
-      _this.meta = meta;
-      _this.error = undefined;
-
-      if (!results) {
-        throw new Error(_this + "#query: mapper failed to return any results");
-      }
-
-      if (_this.isPaged && typeof meta.totalCount !== 'number') {
-        throw new Error(_this + "#query: mapper failed to return total count for paged query");
-      }
-
-      try {
-        var models = _this.__modelClass__.loadAll(results);
-
-        if (_this.isPaged) {
-          _this.length = meta.totalCount;
-          _this.splice.apply(_this, [(opts.page - 1) * _this.baseOpts.pageSize, models.length].concat(models));
-        } else {
-          _this.replace(models);
-        }
-      } catch (e) {
-        console.error(e);throw e;
-      }
-    }, function (e) {
-      _this.isBusy = false;
-      _this.error = e;
-      return Promise.reject(e);
-    });
-  }
-
-  return this;
-}
-
-// Internal: Provides the implementation of the query array's `then` method.
-function queryArrayThen(f1, f2) {
-  return this.__promise__.then(f1, f2);
-}
-
-// Internal: Provides the implementation of the query array's `catch` method.
-function queryArrayCatch(f) {
-  return this.__promise__.catch(f);
-}
-
-// Internal: Provides the implementation of the query array's `at` method.
-function queryArrayAt(i) {
-  var r = _array2.default.prototype.at.apply(this, arguments);
-  var pageSize = this.baseOpts && this.baseOpts.pageSize;
-
-  if (arguments.length === 1 && !r && pageSize) {
-    this.query({ page: Math.floor(i / pageSize) + 1 });
-  }
-
-  return r;
-}
-
-// Internal: Sets the given object on a `hasOne` property.
-//
-// desc - An association descriptor.
-// v    - The value to set.
-// sync - Set to true to notify the inverse side of the association so that it can update itself.
-//
-// Returns nothing.
-// Throws `Error` if the given object isn't of the type specified in the association descriptor.
-function hasOneSet(desc, v, sync) {
-  var name = desc.name,
-      k = "__" + name,
-      prev = this[k],
-      inv = desc.inverse;
-
-  checkAssociatedType(desc, v);
-
-  this[k] = v;
-
-  if (sync && inv && prev) {
-    prev._inverseRemoved(inv, this);
-  }
-  if (sync && inv && v) {
-    v._inverseAdded(inv, this);
-  }
-
-  if (prev) {
-    prev._deregisterProxy(this, name);
-  }
-  if (v) {
-    v._registerProxy(this, name);
-  }
-}
-
-// Internal: Callback for a successful model deletion. Updates the model's state, removes it from
-// the identity map, and removes removes it from any associations its currently participating in.
-function mapperDeleteSuccess() {
-  var _this2 = this;
-
-  _id_map2.default.delete(this);
-  this.isBusy = false;
-  this.sourceState = DELETED;
-  this._clearErrors();
-
-  var _loop = function _loop(name) {
-    var desc = _this2.associations[name];
-    if (!desc.inverse) {
-      return "continue";
-    }
-    if (desc.type === 'hasOne') {
-      var m = void 0;
-      if (m = _this2[name]) {
-        m._inverseRemoved(desc.inverse, _this2);
-      }
-    } else if (desc.type === 'hasMany') {
-      _this2[name].slice(0).forEach(function (m) {
-        m._inverseRemoved(desc.inverse, _this2);
-      });
-    }
-  };
-
-  for (var name in this.associations) {
-    var _ret = _loop(name);
-
-    if (_ret === "continue") continue;
-  }
-}
-
-var Model = _object2.default.extend(function () {
-  this.displayName = 'Transis.Model';
-
-  // Public: Creates a subclass of `Transis.Model`. This method overrides the `Transis.Object.extend`
-  // method in order to force `Model` subclasses to be named.
-  this.extend = function (name, f) {
-    if (typeof name !== 'string') {
-      throw new Error(this + ".extend: a name is required");
-    }
-
-    var subclass = _object2.default.extend.call(this);
-    subclass.displayName = name;
-    subclasses[name] = subclass;
-
-    if (typeof f === 'function') {
-      f.call(subclass);
-    }
-
-    if (this.displayName !== 'Transis.Model') {
-      this.subclasses = this.subclasses || [];
-      this.subclasses.push(name);
-    }
-
-    return subclass;
-  };
-
-  this.resolveSubclass = function (name) {
-    if (!this.subclasses || this.subclasses.indexOf(name) < 0) {
-      throw new Error(this + ".resolveSubclass: could not find subclass " + name);
-    }
-
-    return resolve(name);
-  };
-
-  // Public: Returns an empty instance of the model class. An empty instance contains only an id
-  // and must be retrieved from the mapper before any of its attributes will be available. Since the
-  // model's data mapper will likely need to perform an async action to retrieve data, this method
-  // is used to construct an object that is suitable for returning from `Model.get` immediately.
-  // Once the data mapper has finished loading the actual model data, the empty model will have its
-  // attributes filled in.
-  //
-  // id - The id of the model.
-  //
-  // Returns a new instance of the class.
-  this.empty = function (id) {
-    var model = new this({ id: id });
-    model.sourceState = EMPTY;
-    return model;
-  };
-
-  // Public: Registers a new attribute type available to be used on `Model` subclasses.
-  //
-  // name      - A string representing the name of the attribute type.
-  // converter - A converter object or constructor function. Converter objects must implement two
-  //             methods: `coerce` and `serialize`. The `coerce` method should take the given value
-  //             and do its best to convert it to attribute's actual type. The `serialize` method
-  //             should take the coerced value and return something suitable for JSON serialization.
-  //             If a constructor function is given here, it will be instantiated once for each
-  //             declared attribute of this type and will be passed the options object given to the
-  //             `.attr` method.
-  //
-  // Returns the receiver.
-  this.registerAttr = function (name, converter) {
-    if (registeredAttrs[name]) {
-      throw new Error(this + ".registerAttr: an attribute with the name `" + name + "` has already been defined");
-    }
-
-    registeredAttrs[name] = converter;
-
-    return this;
-  };
-
-  this.registerAttr('identity', attrs.IdentityAttr);
-  this.registerAttr('string', attrs.StringAttr);
-  this.registerAttr('integer', attrs.IntegerAttr);
-  this.registerAttr('number', attrs.NumberAttr);
-  this.registerAttr('boolean', attrs.BooleanAttr);
-  this.registerAttr('date', attrs.DateAttr);
-  this.registerAttr('datetime', attrs.DateTimeAttr);
-
-  // Public: Defines an attribute on the model class. Attributes are typed properties that can
-  // parse/coerce raw values (say from a JSON object) into objects of the property type. Calling
-  // this method will define a property on the class's `prototype` so that it is available to all
-  // instances.
-  //
-  // Attribute values are automatically coerced to their proper type when set. The original value is
-  // available in the property named "<name>BeforeCoercion".
-  //
-  // name - A string representing the name of the attribute.
-  // type - A string representing the type of the attribute (this must have been previously
-  //        registered with `Model.registerAttr`).
-  // opts - An object containing properties to pass to the attribute's converter object (default:
-  //        `{}`).
-  //
-  // Returns the receiver.
-  this.attr = function (name, type) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var converter = registeredAttrs[type];
-
-    if (!converter) {
-      throw new Error(this + ".attr: unknown attribute type: `" + type + "`");
-    }
-
-    if (typeof converter === 'function') {
-      converter = new converter(opts);
-    }
-
-    this.prop(name, {
-      attr: true,
-      converter: converter,
-      get: function get() {
-        return this["__" + name];
-      },
-      set: function set(v) {
-        this["__" + name] = converter.coerce(v);
-        this[name + "BeforeCoercion"] = v;
-      },
-      default: 'default' in opts ? opts.default : undefined
-    });
-
-    return this;
-  };
-
-  // Public: Defines a `hasOne` association on the receiver class. This method will generate a
-  // property with the given name that can be used to get or set the associated model.
-  //
-  // name  - A string representing the name of the association.
-  // klass - Either the constructor function of the associated model or a string containing the name
-  //         of the associated constructor function. Passing a string here is useful for the case
-  //         where you are defining an association where the associated constructor function has yet
-  //         to be defined.
-  // opts  - An object containing zero or more of the following keys (default: `{}`):
-  //   inverse - Used for establishing two way associations, this is the name of the property on the
-  //             associated object that points back to the receiver class.
-  //
-  // Returns the receiver.
-  this.hasOne = function (name, klass) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var desc;
-
-    if (!this.prototype.hasOwnProperty('associations')) {
-      this.prototype.associations = Object.create(this.prototype.associations);
-    }
-
-    this.prototype.associations[name] = desc = Object.assign({}, opts, {
-      type: 'hasOne', name: name, klass: klass, debugName: this.toString() + "#" + name
-    });
-
-    if (desc.owner) {
-      if (!this.prototype.hasOwnProperty('__deps__')) {
-        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
-      }
-
-      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
-      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
-    }
-
-    this.prop(name, {
-      get: function get() {
-        return this["__" + name];
-      },
-      set: function set(v) {
-        hasOneSet.call(this, desc, v, true);
-      }
-    });
-
-    return this;
-  };
-
-  // Public: Defines a `hasMany` association on the receiver class. This method will generate a
-  // property with the given name that can be used to get or set an array of associated model
-  // objects. It will also generate methods that can be used to manipulate the array. A `hasMany`
-  // association with the name `widgets` would generate the following methods:
-  //
-  // addWidgets    - Adds one or more `Widget` models to the association array.
-  // removeWidgets - Removes one ore more `Widget` models from the association array.
-  // clearWidgets  - Empties the association array.
-  //
-  // Its important to use these generated methods to manipulate the array instead of manipulating it
-  // directly since they take care of syncing changes to the inverse side of the association when
-  // the association is two way.
-  //
-  // name  - A string representing the name of the association.
-  // klass - Either the constructor function of the associated model or a string containing the name
-  //         of the associated constructor function. Passing a string here is useful for the case
-  //         where you are defining an association where the associated constructor function has yet
-  //         to be defined.
-  // opts  - (see hasOne description)
-  //
-  // Returns the receiver.
-  this.hasMany = function (name, klass) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var k = "__" + name,
-        desc;
-
-    if (!this.prototype.hasOwnProperty('associations')) {
-      this.prototype.associations = Object.create(this.prototype.associations);
-    }
-
-    this.prototype.associations[name] = desc = Object.assign({}, opts, {
-      type: 'hasMany', name: name, klass: klass, singular: (0, _pluralize2.default)(name, 1), debugName: this.toString() + "#" + name
-    });
-
-    if (desc.owner) {
-      if (!this.prototype.hasOwnProperty('__deps__')) {
-        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
-      }
-
-      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
-      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
-    }
-
-    this.prop(name, {
-      get: function get() {
-        if (this[k]) {
-          return this[k];
-        }
-        desc.klass = resolve(desc.klass);
-        return this[k] = hasManyArray(this, desc);
-      },
-      set: function set(a) {
-        this[k].replace(a);
-      }
-    });
-  };
-
-  // Public: Add a validator for the given attribute. The validator function or method should use
-  // the `Model#addError` method to record a validation error when one is detected.
-  //
-  // name - The name of the property to validate.
-  // f    - A validator function or the name of an instance method.
-  // opts - An `on:` option can be provided to specify the context in which to validate.
-  //
-  // Returns the receiver.
-  this.validate = function (name, f) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    if (!this.prototype.hasOwnProperty('validators')) {
-      this.prototype.validators = Object.create(this.prototype.validators);
-    }
-
-    (this.prototype.validators[name] = this.prototype.validators[name] || []).push({ validator: f, opts: opts });
-
-    return this;
-  };
-
-  // Public: Loads the given model attributes into the identity map. This method should be called by
-  // your data mapper(s) when new data is successfully retrieved.
-  //
-  // attrs - An object containing the attributes for a single model. If the attributes contain
-  //         references to defined associations, those associated objects will be loaded as well.
-  //
-  // Returns the loaded model instance.
-  // Throws `Error` if the given attributes do not contain an `id` attribute.
-  this.load = function (attrs) {
-    var id = attrs.id,
-        associations = this.prototype.associations,
-        associated = {},
-        model,
-        LoadKlass;
-
-    if (id == null) {
-      throw new Error(this + ".load: an `id` attribute is required");
-    }
-
-    loads.push(true);
-
-    attrs = Object.assign({}, attrs);
-    if (typeof this.getSubclass === 'function') {
-      LoadKlass = this.resolveSubclass(this.getSubclass(attrs));
-    } else {
-      LoadKlass = this;
-    }
-
-    model = _id_map2.default.get(LoadKlass, id) || new LoadKlass();
-
-    delete attrs.id;
-
-    // extract associated attributes
-    for (var name in associations) {
-      var _desc = associations[name];
-
-      if (name in attrs) {
-        associated[name] = attrs[name];
-        delete attrs[name];
-      } else if (_desc.type === 'hasOne' && name + "Id" in attrs) {
-        associated[name] = attrs[name + "Id"];
-        delete attrs[name + "Id"];
-      } else if (_desc.type === 'hasOne' && name + "_id" in attrs) {
-        associated[name] = attrs[name + "_id"];
-        delete attrs[name + "_id"];
-      } else if (_desc.type === 'hasMany' && _desc.singular + "Ids" in attrs) {
-        associated[name] = attrs[_desc.singular + "Ids"];
-        delete attrs[_desc.singular + "Ids"];
-      } else if (_desc.type === 'hasMany' && _desc.singular + "_ids" in attrs) {
-        associated[name] = attrs[_desc.singular + "_ids"];
-        delete attrs[_desc.singular + "_ids"];
-      }
-    }
-
-    // set non-association attributes
-    model.set(attrs);
-
-    // set id if necessary
-    if (model.id === undefined) {
-      model.id = id;
-    }
-
-    // load and set each association
-
-    var _loop2 = function _loop2(_name) {
-      var klass = resolve(associations[_name].klass);
-      var data = associated[_name];
-
-      // clear association
-      if (!data) {
-        model[_name] = null;
-        return "continue";
-      }
-
-      if (associations[_name].type === 'hasOne') {
-        var other = (typeof data === "undefined" ? "undefined" : _typeof(data)) === 'object' ? klass.load(data) : klass.local(data);
-        model[_name] = other;
-      } else if (associations[_name].type === 'hasMany') {
-        (function () {
-          var others = [];
-          data.forEach(function (o) {
-            others.push((typeof o === "undefined" ? "undefined" : _typeof(o)) === 'object' ? klass.load(o) : klass.local(o));
-          });
-          model[_name] = others;
-        })();
-      }
-    };
-
-    for (var _name in associated) {
-      var _ret2 = _loop2(_name);
-
-      if (_ret2 === "continue") continue;
-    }
-
-    model.sourceState = LOADED;
-    model._clearChanges();
-    model._clearErrors();
-
-    loads.pop();
-
-    return model;
-  };
-
-  // Public: Loads an array of attribute objects.
-  //
-  // objects - An array containing attribute hashes.
-  //
-  // Returns an array of loaded model instances.
-  this.loadAll = function (objects) {
-    var _this3 = this;
-
-    return objects.map(function (object) {
-      return _this3.load(object);
-    });
-  };
-
-  // Public: Creates a new query array but does not invoke its `query` method. This is useful for
-  // cases where you want to initialize an empty query, but not yet run it.
-  //
-  // The array returned by this method is decorated with the following additional properties:
-  //
-  //   modelClass  - The `Transis.Model` subclass that `buildQuery` was invoked on.
-  //   baseOpts    - The options passed to this method. These options will be sent with every query.
-  //   currentOpts - The most recent options passed to the mapper.
-  //   isBusy      - Boolean property indicating whether a query is in progress.
-  //   isPaged     - Indicates whether the query array pages its results.
-  //   error       - An error message set on the array when the mapper fails to fulfill its promise.
-  //   meta        - Metadata provided by the mapper. May be used for paging results.
-  //
-  // And with these additional methods:
-  //
-  //   query: Execute a query by invoking the `query` method on the modelClass's mapper. This will
-  //   put the array into a busy state (indicated by the `isBusy` property) until the mapper has
-  //   fulfilled its promise. When the promise is successfully resolved, the returned data is loaded
-  //   via `Transis.Model.loadAll` and the materialized models are replaced into the array. When the
-  //   promise is rejected, the error message returned by the mapper is made available on the `error`
-  //   property.
-  //
-  //   If the this method is called while the array is currently busy, then the call to the mapper
-  //   is queued until the current query completes.
-  //
-  //   Passing the `pageSize` option to `buildQuery` turns the query into a paged query. Paged
-  //   queries load a page of results at a time instead of simply replacing their contents on each
-  //   call to `#query`. In order for this to work the mapper must resolve its promise with an
-  //   object that contains a `results` key pointing to an array of records and a `meta` key that
-  //   points to an object containing a `totalCount` key. The length of the query array will be set
-  //   to the value of `totalCount` and the results will be spliced into the array at the offset
-  //   indicated by the `page` option. Any models from pages loaded previously will remain in the
-  //   array.
-  //
-  //   When an item is accessed via the `#at` method from a page that has yet to be fetched, the
-  //   query array will automatically invoke the mapper to fetch that page. This effectively gives
-  //   you a sparse array that will automatically lazily load its contents when then are needed.
-  //   This behavior works very well with a virtualized list component.
-  //
-  //   Here is an example of the object expected from the mapper:
-  //
-  //   {
-  //     meta: {totalCount: 321},
-  //     results: [{id: 1}, {id: 2}, {id: 3}]
-  //   }
-  //
-  //
-  //   opts - An object to pass along to the mapper (default: `{}`).
-  //
-  //   Returns the receiver.
-  //
-  //   then: Registers fulfillment and rejection handlers on the latest promise object returned by
-  //   the modelClass's mapper. If the `query` method has yet to be called, then the `onFulfilled`
-  //   handler is invoked immediately.
-  //
-  //   When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
-  //   `onFulfilled` handler is called with the error message from the mapper.
-  //
-  //   onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
-  //   onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  //   Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
-  //
-  //   catch: Registers a rejection handler on the latest promise object returned by the
-  //   modelClass's mapper.
-  //
-  //   onRejected - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  //   Returns a new `Promise` that is resolved to the return value of the callback if it is called.
-  //
-  // baseOpts - An object to pass along to the mapper method when the query is executed with the
-  //            `#query` method. Any options passed to the `#query` method will be merged in with
-  //            the options given here (default: `{}`). The `pageSize` option in particular is
-  //            special as it makes the resulting query array a paged query. See the discussion
-  //            above.
-  //
-  // Returns a new `Transis.Array` decorated with the properties and methods described above.
-  this.buildQuery = function () {
-    var baseOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    var a = _array2.default.of();
-
-    a.__modelClass__ = this;
-    a.__promise__ = Promise.resolve();
-
-    a.props({
-      modelClass: { get: function get() {
-          return this.__modelClass__;
-        } },
-      baseOpts: {},
-      currentOpts: {},
-      isBusy: { default: false },
-      isPaged: { on: ['baseOpts'], get: function get(baseOpts) {
-          return typeof baseOpts.pageSize === 'number';
-        } },
-      error: {},
-      meta: {}
-    });
-
-    a.baseOpts = baseOpts;
-    a.query = queryArrayQuery;
-    a.then = queryArrayThen;
-    a.catch = queryArrayCatch;
-    a.at = queryArrayAt;
-
-    return a;
-  };
-
-  // Public: Creates a new `Transis.QueryArray` and invokes its `query` method with the given
-  // options.
-  //
-  // opts - An options object to pass to the `Transis.QueryArray#query` method (default: `{}`).
-  //
-  // Returns a new `Transis.QueryArray`.
-  this.query = function () {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-    return this.buildQuery().query(opts);
-  };
-
-  // Public: Retrieves a model from the identity map or creates a new empty model instance. If you
-  // want to get the model from the mapper, then use the `Model.get` method.
-  //
-  // id - The id of the model to get.
-  //
-  // Returns an instance of the receiver.
-  this.local = function (id) {
-    return _id_map2.default.get(this, id) || this.empty(id);
-  };
-
-  // Public: Gets a model instance, either from the identity map or from the mapper. If the model
-  // has already been loaded into the identity map, then it is simply returned, otherwise the data
-  // mapper's `get` method will be invoked and an empty model will be returned.
-  //
-  // id   - The id of the model to get.
-  // opts - An object containing zero or more of the following keys (default: `{}`):
-  //   refresh - When true, the mapper's get method will be called regardless of whether the model
-  //             exists in the identity map.
-  //
-  // Returns an instance of the receiver.
-  this.get = function (id) {
-    var _this4 = this;
-
-    var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-    var model = this.local(id),
-        getOpts = Object.assign({}, opts);
-    delete getOpts.refresh;
-
-    if (model.isEmpty || opts.refresh) {
-      model.isBusy = true;
-      model.__promise__ = this._callMapper('get', [id, getOpts]).then(function (result) {
-        model.isBusy = false;
-        try {
-          _this4.load(result);
-        } catch (e) {
-          console.error(e);throw e;
-        }
-      }, function (errors) {
-        model.isBusy = false;
-        model._loadErrors(errors);
-        return Promise.reject(errors);
-      });
-    }
-
-    return model;
-  };
-
-  // Public: Clears all models from the id map. This will subsequently cause the model layer to go
-  // to the mapper for any model that had previously been loaded.
-  this.clearIdMap = function () {
-    _id_map2.default.clear();return this;
-  };
-
-  // Internal: Invokes the given method on the receiver's mapper, ensuring that it returns a
-  // Thennable (Promise-like) object.
-  //
-  // method - The method to invoke on the mapper.
-  // args   - An array of arguments to pass to the mapper method.
-  //
-  // Returns the promise returned by the mapper.
-  // Throws `Error` when the mapper is not defined.
-  // Throws `Error` when the mapper does not implement the given method.
-  // Throws `Error` when the mapper does not return a Thennable object.
-  this._callMapper = function (method, args) {
-    var _this5 = this;
-
-    var promise;
-
-    if (!this.mapper) {
-      throw new Error(this + "._callMapper: no mapper defined, assign one to `" + this + ".mapper`");
-    }
-
-    if (typeof this.mapper[method] !== 'function') {
-      throw new Error(this + "._callMapper: mapper does not implement `" + method + "`");
-    }
-
-    promise = this.mapper[method].apply(this.mapper, args);
-
-    if (!promise || typeof promise.then !== 'function') {
-      throw new Error(this + "._callMapper: mapper's `" + method + "` method did not return a Promise");
-    }
-
-    promise.catch(function (error) {
-      console.warn(_this5 + "#_callMapper(" + method + "): promise rejection:", error);
-      return Promise.reject(error);
-    });
-
-    return promise;
-  };
-
-  // Internal: Holds the association descriptors created by `.hasOne` and `.hasMany`.
-  this.prototype.associations = {};
-
-  // Internal: Holds the validators registered by `.validate`.
-  this.prototype.validators = {};
-
-  // Internal: Initializes the model by setting up some internal properties.
-  this.prototype.init = function (props) {
-    this.sourceState = NEW;
-    this.isBusy = false;
-    this.__promise__ = Promise.resolve();
-    this._clearChanges();
-
-    Model.__super__.init.call(this, props);
-  };
-
-  this.prop('id', {
-    get: function get() {
-      return this.__id;
-    },
-    set: function set(id) {
-      if (this.__id) {
-        throw new Error(this.constructor + "#id=: overwriting a model's identity is not allowed: " + this);
-      }
-
-      this.__id = id;
-
-      _id_map2.default.insert(this);
-    }
-  });
-
-  this.prop('sourceState');
-
-  this.prop('isNew', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === NEW;
-    }
-  });
-
-  this.prop('isEmpty', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === EMPTY;
-    }
-  });
-
-  this.prop('isLoaded', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === LOADED;
-    }
-  });
-
-  this.prop('isDeleted', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === DELETED;
-    }
-  });
-
-  this.prop('isBusy');
-
-  // Public: Returns an object of changes made to properties on the receiver. For simple properties
-  // and `hasOne` associations, the original value is stored. For `hasMany` associations, the added
-  // and removed models are stored.
-  this.prop('ownChanges', {
-    get: function get() {
-      return this.__ownChanges = this.__ownChanges || {};
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any property changes or any
-  // owned `hasMany` associations that have been mutated.
-  this.prop('hasOwnChanges', {
-    on: ['ownChanges'],
-    get: function get(ownChanges) {
-      return Object.keys(ownChanges).length > 0;
-    }
-  });
-
-  // Public: Returns an object of changes made to properties on the receiver as well as for changes
-  // made to owned associated models. The keys for owned associated model changes are prefixed with
-  // the association name. The keys for changes on models within an owned hasMany association are
-  // prefixed with the association name and index in the array.
-  //
-  // Examples
-  //
-  //   person.changes;
-  //   // {'firstName': 'Bob', 'address.street': 'maple', 'pets.1.name': 'Spike'}
-  this.prop('changes', {
-    on: ['ownChanges'],
-    pure: false,
-    get: function get() {
-      var changes = Object.assign({}, this.ownChanges);
-
-      util.detectRecursion(this, function () {
-        var _this6 = this;
-
-        var _loop3 = function _loop3(name) {
-          if (!_this6.associations[name].owner) {
-            return "continue";
-          }
-
-          if (_this6.associations[name].type === 'hasOne' && _this6[name]) {
-            var cs = _this6[name].changes;
-            for (var k in cs) {
-              changes[name + "." + k] = cs[k];
-            }
-          } else if (_this6.associations[name].type === 'hasMany') {
-            _this6[name].forEach(function (item, i) {
-              var cs = item.changes;
-              for (var _k in cs) {
-                changes[name + "." + i + "." + _k] = cs[_k];
-              }
-            });
-          }
-        };
-
-        for (var name in this.associations) {
-          var _ret4 = _loop3(name);
-
-          if (_ret4 === "continue") continue;
-        }
-      }.bind(this));
-
-      return changes;
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any changes or if any of its owned
-  // associated models have changes.
-  this.prop('hasChanges', {
-    on: ['changes'],
-    get: function get(changes) {
-      return !!Object.keys(changes).length;
-    }
-  });
-
-  // Public: Object containing any validation errors on the model. The keys of the object are the
-  // properties that have errors and the values are an array of error messages.
-  this.prop('ownErrors', {
-    get: function get() {
-      return this.__ownErrors = this.__ownErrors || {};
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any validation errors on its own
-  // properties. Marking the model for destruction by setting the `_destroy` attribute will cause
-  // this property to return `false` regardless of whether there are validation errors.
-  this.prop('hasOwnErrors', {
-    on: ['ownErrors', '_destroy'],
-    get: function get(ownErrors, _destroy) {
-      return !_destroy && Object.keys(ownErrors).length > 0;
-    }
-  });
-
-  // Public: Returns an object of validation errors that exist on the receiver as well as any
-  // validation errors on owned associated models not marked for destruction. The keys used for
-  // errors on owned associated models are similar to those returned by the `#changes` prop.
-  this.prop('errors', {
-    on: ['ownErrors'],
-    pure: false,
-    get: function get() {
-      var errors = Object.assign({}, this.ownErrors);
-
-      util.detectRecursion(this, function () {
-        var _this7 = this;
-
-        var _loop4 = function _loop4(name) {
-          if (!_this7.associations[name].owner) {
-            return "continue";
-          }
-
-          if (_this7.associations[name].type === 'hasOne' && _this7[name] && !_this7[name]._destroy) {
-            var es = _this7[name].errors;
-            for (var k in es) {
-              errors[name + "." + k] = es[k];
-            }
-          } else if (_this7.associations[name].type === 'hasMany') {
-            _this7[name].forEach(function (item, i) {
-              if (item._destroy) return;
-              var es = item.errors;
-              for (var _k2 in es) {
-                errors[name + "." + i + "." + _k2] = es[_k2];
-              }
-            });
-          }
-        };
-
-        for (var name in this.associations) {
-          var _ret5 = _loop4(name);
-
-          if (_ret5 === "continue") continue;
-        }
-      }.bind(this));
-
-      return errors;
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any validattion errors or if any of
-  // its owned associated models have validation errors.
-  this.prop('hasErrors', {
-    on: ['errors'],
-    get: function get(errors) {
-      return !!Object.keys(errors).length;
-    }
-  });
-
-  // Public: Used to mark a model for future destruction by the server. Owned associated models that
-  // are marked for destruction will not be validated or affect the `hasErrors` property.
-  this.attr('_destroy', 'boolean');
-
-  // Public: Returns an object containing the raw values of all the receiver's attributes. Special
-  // care is taken with the `_destroy` attribute, its only included if its been set.
-  this.prototype.attrs = function () {
-    var attrs = {};
-
-    for (var k in this.__props__) {
-      if (this.__props__[k].attr) {
-        attrs[k] = this.__props__[k].converter.serialize(this[k]);
-      }
-    }
-
-    if (typeof this.id !== 'undefined') {
-      attrs.id = this.id;
-    }
-    if (attrs._destroy === undefined) {
-      delete attrs._destroy;
-    }
-
-    return attrs;
-  };
-
-  // Public: Refreshes the model by getting it from the data mapper.
-  //
-  // opts - An object to forward along to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the receiver is not LOADED or is BUSY.
-  this.prototype.get = function () {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (!this.isLoaded && !this.isEmpty || this.isBusy) {
-      throw new Error(this.constructor + "#get: can't get a model in the " + this.stateString() + " state: " + this);
-    }
-
-    return this.constructor.get(this.id, Object.assign({}, opts, { refresh: true }));
-  };
-
-  // Public: Saves the model by invoking either the `create` or `update` method on the model's data
-  // mapper. The `create` method is invoked if the model is in the `NEW` state and `create`
-  // otherwise.
-  //
-  // opts - An object to forward on to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the receiver is not NEW or LOADED or is currently busy.
-  this.prototype.save = function () {
-    var _this8 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (!this.isNew && !this.isLoaded || this.isBusy) {
-      throw new Error(this.constructor + "#save: can't save a model in the " + this.stateString() + " state: " + this);
-    }
-
-    this.isBusy = true;
-
-    this.__promise__ = this.constructor._callMapper(this.isNew ? 'create' : 'update', [this, opts]).then(function (attrs) {
-      _this8.isBusy = false;
-      try {
-        _this8.load(attrs);
-      } catch (e) {
-        console.error(e);throw e;
-      }
-    }, function (errors) {
-      _this8.isBusy = false;
-      _this8._loadErrors(errors);
-      return Promise.reject(errors);
-    });
-
-    return this;
-  };
-
-  // Public: Deletes the model by passing it to the data mapper's `delete` method.
-  //
-  // opts - An object to forward on to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the model is currently busy.
-  this.prototype.delete = function () {
-    var _this9 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (this.isDeleted) {
-      return this;
-    }
-
-    if (this.isBusy) {
-      throw new Error(this.constructor + "#delete: can't delete a model in the " + this.stateString() + " state: " + this);
-    }
-
-    if (this.isNew) {
-      mapperDeleteSuccess.call(this);
-    } else {
-      this.isBusy = true;
-
-      this.__promise__ = this.constructor._callMapper('delete', [this, opts]).then(function () {
-        mapperDeleteSuccess.call(_this9);
-      }, function (errors) {
-        _this9.isBusy = false;
-        _this9._loadErrors(errors);
-        return Promise.reject(errors);
-      });
-    }
-
-    return this;
-  };
-
-  // Public: Registers fulfillment and rejection handlers on the latest promise object returned by
-  // the model's mapper. If the model has yet to interact with the mapper, then the `onFulfilled`
-  // handler is invoked immediately.
-  //
-  // When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
-  // `onFulfilled` handler is called with the error message from the mapper.
-  //
-  // onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
-  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  // Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
-  this.prototype.then = function (onFulfilled, onRejected) {
-    return this.__promise__.then(onFulfilled, onRejected);
-  };
-
-  // Public: Registers a rejection handler on the latest promise object returned by the model's
-  // mapper.
-  //
-  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  // Returns a new `Promise` that is resolved to the return value of the callback if it is called.
-  this.prototype.catch = function (onRejected) {
-    return this.__promise__.catch(onRejected);
-  };
-
-  // Public: Loads the given attributes into the model. This method simply ensure's that the
-  // receiver has its `id` set and then delegates to `Model.load`.
-  //
-  // If the given attributes have an `id` that already exists in the identity map, then this method
-  // will actually load the attributes onto the existing model instead of the receiver. This
-  // situation may occur when you have a create or update situation on the backend.
-  //
-  // Returns the receiver.
-  this.prototype.load = function (attrs) {
-    var id = attrs.id;
-
-    if (id == null && this.id == null) {
-      throw new Error(this.constructor + "#load: an `id` attribute is required");
-    }
-
-    if (id != null && this.id != null && id !== this.id) {
-      throw new Error(this.constructor + "#load: received attributes with id `" + id + "` but model already has id `" + this.id + "`");
-    }
-
-    if (this.id == null) {
-      if (!_id_map2.default.get(this.constructor, id)) {
-        this.id = id;
-      } else {
-        console.warn(this.constructor + "#load: loading attributes that contain an id (" + id + ") that already exists in the identity map, the receiver will not be updated");
-      }
-    }
-
-    attrs.id = id || this.id;
-
-    this.constructor.load(attrs);
-
-    return this;
-  };
-
-  // Public: Returns a string representation of the model's current state.
-  this.prototype.stateString = function () {
-    var a = [this.sourceState.toUpperCase()];
-    if (this.isBusy) {
-      a.push('BUSY');
-    }
-    return a.join('-');
-  };
-
-  // Public: Returns the previous for the given attribute or association name. If no change has been
-  // made then `undefined` is returned.
-  //
-  // name - A string containing the name of an attribute or association.
-  this.prototype.previousValueFor = function (name) {
-    var _this10 = this;
-
-    var change = this.ownChanges[name];
-
-    if (change && this.associations[name] && this.associations[name].type === 'hasMany') {
-      var _ret6 = function () {
-        var previous = _this10[name].slice();
-        var removed = change.removed.slice();
-        var added = change.added.slice();
-
-        removed.reverse().forEach(function (m) {
-          previous.push(m);
-        });
-        added.forEach(function (m) {
-          previous.splice(previous.indexOf(m), 1);
-        });
-
-        return {
-          v: previous
-        };
-      }();
-
-      if ((typeof _ret6 === "undefined" ? "undefined" : _typeof(_ret6)) === "object") return _ret6.v;
-    } else {
-      return change;
-    }
-  };
-
-  // Public: Undoes all property and owned assocation changes made to this model since it was last
-  // loaded.
-  //
-  // opts - An object containing zero or more of the following keys:
-  //   except - Either a string or an array of strings of attributes or owned association names to skip over when
-  //            undoing changes.
-  //   only -   Either a string or an array of strings of attributes or owned association names that limit the undoing of changes
-  //            to only the provided names.
-  //
-  // Returns the receiver.
-  this.prototype.undoChanges = function () {
-    var _this11 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    var associations = this.associations;
-
-    var shouldUndo = function shouldUndo(name) {
-      if (!opts) return true;
-
-      if (opts.except === name) {
-        return false;
-      }
-      if (Array.isArray(opts.except) && opts.except.indexOf(name) >= 0) {
-        return false;
-      }
-
-      if (Array.isArray(opts.only)) {
-        if (opts.only.indexOf(name) === -1) {
-          return false;
-        }
-      } else if (opts.only && opts.only !== name) {
-        return false;
-      }
-
-      return true;
-    };
-
-    var _loop5 = function _loop5(prop) {
-      if (!shouldUndo(prop)) {
-        return "continue";
-      }
-
-      if (associations[prop] && associations[prop].type === 'hasMany') {
-        var removed = _this11.ownChanges[prop].removed.slice();
-        var added = _this11.ownChanges[prop].added.slice();
-
-        removed.reverse().forEach(function (m) {
-          _this11[prop].push(m);
-        });
-        added.forEach(function (m) {
-          _this11[prop].splice(_this11[prop].indexOf(m), 1);
-        });
-      } else {
-        _this11[prop] = _this11.ownChanges[prop];
-      }
-    };
-
-    for (var prop in this.ownChanges) {
-      var _ret7 = _loop5(prop);
-
-      if (_ret7 === "continue") continue;
-    }
-
-    util.detectRecursion(this, function () {
-      for (var name in associations) {
-        var _desc2 = associations[name];
-
-        if (!_desc2.owner) {
-          continue;
-        }
-        if (!shouldUndo(name)) {
-          continue;
-        }
-
-        if (_desc2.type === 'hasOne') {
-          this[name] && this[name].undoChanges();
-        } else if (_desc2.type === 'hasMany') {
-          this[name].forEach(function (m) {
-            return m.undoChanges();
-          });
-        }
-      }
-    }.bind(this));
-
-    this.validate();
-
-    return this;
-  };
-
-  // Public: Add a validation error for the given property name and type. Adding an error will cause
-  // the model to enter an invalid state.
-  //
-  // name    - The name of the attribute or property that has a validation error.
-  // message - A string containing the error message.
-  //
-  // Returns the receiver.
-  this.prototype.addError = function (name, message) {
-    this.ownErrors[name] = this.ownErrors[name] || [];
-
-    if (this.ownErrors[name].indexOf(message) === -1) {
-      this.ownErrors[name].push(message);
-      this.didChange('ownErrors');
-    }
-
-    return this;
-  };
-
-  // Public: Runs registered validators for the given attribute. This will clear any existing
-  // validation errors for the given attribute. The registered validators can be reduced by
-  // providing an optional context.
-  //
-  // name - The name of the attribute to run validations for.
-  // ctx  - The context in which to run validations on the given attribute. (optional)
-  //
-  // Returns `true` if no validation errors are found on the given attribute and `false` otherwise.
-  this.prototype.validateAttr = function (name, ctx) {
-    this._clearErrors(name);
-    if (!this.validators[name]) {
-      return true;
-    }
-
-    var validators = this.validators[name].filter(function (v) {
-      return !v.opts.on || v.opts.on === ctx;
-    });
-
-    for (var i = 0, n = validators.length; i < n; i++) {
-      var validator = validators[i].validator;
-
-      if (typeof validator === 'function') {
-        validator.call(this);
-      } else if (typeof validator === 'string' && validator in this) {
-        this[validator]();
-      } else {
-        throw new Error(this.constructor + "#validateAttr: don't know how to execute validator: `" + validator + "`");
-      }
-    }
-
-    return !(name in this.ownErrors);
-  };
-
-  // Public: Runs all registered validators for all properties and also validates owned
-  // associations. Validations with no `on:` option will run no matter the context. Validations with
-  // some `on:` option will only run in the specified context.
-  //
-  // ctx - The context in which to run validations
-  //
-  // Returns `true` if no validation errors are found and `false` otherwise.
-  this.prototype.validate = function (ctx) {
-    var associations = this.associations,
-        failed = false;
-
-    this._clearErrors();
-
-    for (var name in this.validators) {
-      if (!this.validateAttr(name, ctx)) {
-        failed = true;
-      }
-    }
-
-    util.detectRecursion(this, function () {
-      for (var _name2 in associations) {
-        var _desc3 = associations[_name2];
-
-        if (!_desc3.owner) {
-          continue;
-        }
-
-        if (_desc3.type === 'hasOne') {
-          if (this[_name2] && !this[_name2]._destroy) {
-            if (!this[_name2].validate(ctx)) {
-              failed = true;
-            }
-          }
-        } else if (_desc3.type === 'hasMany') {
-          this[_name2].forEach(function (m) {
-            if (!m._destroy && !m.validate(ctx)) {
-              failed = true;
-            }
-          });
-        }
-      }
-    }.bind(this));
-
-    return !failed;
-  };
-
-  // Public: Returns a string representation of the model.
-  this.prototype.toString = function () {
-    var attrs = this.attrs();
-
-    for (var name in this.associations) {
-      if (this.associations[name].type === 'hasOne') {
-        if (this[name] && this[name].id) {
-          attrs[name] = this[name].id;
-        }
-      } else if (this.associations[name].type === 'hasMany') {
-        var ids = this[name].map(function (x) {
-          return x.id;
-        }).compact();
-        if (ids.length) {
-          attrs[name] = ids;
-        }
-      }
-    }
-
-    return "#<" + this.constructor + " (" + this.stateString() + "):" + this.objectId + " " + JSON.stringify(attrs) + ">";
-  };
-
-  // Internal: Load error message(s) received from the mapper. When passed an object, the keys of
-  // the object are assumed to be attribute names and the values the error message for that
-  // attribute. When given a string, an error is added to the `base` attribute.
-  //
-  // errors - Either an object mapping attribute names to their error messages or a string.
-  //
-  // Returns the receiver.
-  this.prototype._loadErrors = function (errors) {
-    var _this12 = this;
-
-    if ((typeof errors === "undefined" ? "undefined" : _typeof(errors)) === 'object') {
-      var _loop6 = function _loop6(k) {
-        if (Array.isArray(errors[k])) {
-          errors[k].forEach(function (error) {
-            this.addError(k, error);
-          }, _this12);
-        } else {
-          _this12.addError(k, String(errors[k]));
-        }
-      };
-
-      for (var k in errors) {
-        _loop6(k);
-      }
-    } else {
-      this.addError('base', String(errors));
-    }
-
-    return this;
-  };
-
-  // Internal: Clears validation errors from the `errors` hash. If a name is given, only the errors
-  // for the property of that name are cleared, otherwise all errors are cleared.
-  this.prototype._clearErrors = function (name) {
-    if (name) {
-      if (name in this.ownErrors) {
-        delete this.ownErrors[name];
-        this.didChange('ownErrors');
-      }
-    } else if (Object.keys(this.ownErrors).length) {
-      this.__ownErrors = {};
-      this.didChange('ownErrors');
-    }
-    return this;
-  };
-
-  // Internal: Called by an inverse association when a model was removed from the inverse side.
-  // Updates the local side of the association.
-  //
-  // name  - The local side name of the association that was modified.
-  // model - The model that was removed from the inverse side.
-  //
-  // Returns nothing.
-  this.prototype._inverseRemoved = function (name, model) {
-    var desc = this.associations[name];
-
-    if (!desc) {
-      throw new Error(this.constructor + "#inverseRemoved: unknown association `" + name + "`");
-    }
-
-    if (desc.type === 'hasOne') {
-      hasOneSet.call(this, desc, undefined, false);
-      this.didChange(desc.name);
-    } else if (desc.type === 'hasMany') {
-      this[desc.name]._inverseRemove(model);
-    }
-  };
-
-  // Internal: Called by an inverse association when a model was added on the inverse side. Updates
-  // the local side of the association.
-  //
-  // name  - The local side name of the association that was modified.
-  // model - The model that was added on the inverse side.
-  //
-  // Returns nothing.
-  this.prototype._inverseAdded = function (name, model) {
-    var desc = this.associations[name];
-
-    if (!desc) {
-      throw new Error(this.constructor + "#inverseAdded: unknown association `" + name + "`");
-    }
-
-    if (desc.type === 'hasOne') {
-      hasOneSet.call(this, desc, model, false);
-      this.didChange(desc.name);
-    } else if (desc.type === 'hasMany') {
-      this[desc.name]._inverseAdd(model);
-    }
-  };
-
-  // Internal: Overrides `Transis.Object#_setProp` in order to perform change tracking.
-  this.prototype._setProp = function (name, value) {
-    var oldValue = Model.__super__._setProp.call(this, name, value);
-
-    if (!this.__props__[name].attr && !this.associations[name]) {
-      return;
-    }
-    if (this.associations[name] && !this.associations[name].owner) {
-      return;
-    }
-
-    if (!(name in this.ownChanges)) {
-      if (!util.eq(this[name], oldValue)) {
-        this._setChange(name, oldValue);
-      }
-    } else if (util.eq(this[name], this.ownChanges[name])) {
-      this._clearChange(name);
-    }
-  };
-
-  // Internal: Sets the old value for the changed property of the given name.
-  this.prototype._setChange = function (name, oldValue) {
-    if (loads.length) {
-      return;
-    }
-    this.ownChanges[name] = oldValue;
-    this.didChange('ownChanges');
-  };
-
-  // Internal: Clears the change record for the property of the given name.
-  this.prototype._clearChange = function (name) {
-    if (name in this.ownChanges) {
-      delete this.ownChanges[name];
-      this.didChange('ownChanges');
-    }
-  };
-
-  // Internal: Clears all change records.
-  this.prototype._clearChanges = function () {
-    if (Object.keys(this.ownChanges).length) {
-      this.__ownChanges = {};
-      this.didChange('ownChanges');
-    }
-  };
-});
-
-Model.NEW = NEW;
-Model.EMPTY = EMPTY;
-Model.LOADED = LOADED;
-Model.DELETED = DELETED;
-
-Object.assign(Model, _validations2.default.static);
-Object.assign(Model.prototype, _validations2.default.instance);
-
-exports.default = Model;
-module.exports = exports["default"];
-
-
-/***/ }),
-/* 390 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.StateMixin = exports.PropsMixin = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _object = __webpack_require__(66);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(65);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _util = __webpack_require__(39);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var nextId = 1;
-var updateLog = {};
-var updateQueue = {};
-
-function componentCmp(a, b) {
-  if (a._transisId < b._transisId) {
-    return -1;
-  } else if (a._transisId > b._transisId) {
-    return 1;
-  } else {
-    return 0;
-  }
-}
-
-function preFlush() {
-  updateLog = {};
-  _object2.default.delay(postFlush);
-}
-
-function postFlush() {
-  var components = [];
-
-  for (var id in updateQueue) {
-    components.push(updateQueue[id]);
-    delete updateQueue[id];
-  }
-
-  // Sort the components by their assigned _transisId. Since components get mounted from the top
-  // down, this should ensure that parent components are force updated before any descendent
-  // components that also need an update. This avoids the case where we force update a component
-  // and then force update one of its ancestors, which may unnecessarily render the component
-  // again.
-  components.sort(componentCmp).forEach(function (component) {
-    if (!updateLog[component._transisId] && component.isMounted()) {
-      component.forceUpdate();
-    }
-  });
-
-  _object2.default.delayPreFlush(preFlush);
-}
-
-function queueUpdate(component) {
-  updateQueue[component._transisId] = component;
-}
-
-function logUpdate(component) {
-  updateLog[component._transisId] = true;
-}
-
-_object2.default.delayPreFlush(preFlush);
-
-var PropsMixin = exports.PropsMixin = function PropsMixin(props) {
-  return {
-    componentWillMount: function componentWillMount() {
-      var _this = this;
-
-      this._transisId = this._transisId || nextId++;
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this);
-      };
-
-      var _loop = function _loop(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].on(prop, this._transisQueueUpdate);
-          }
-        }, _this);
-      };
-
-      for (var k in props) {
-        _loop(k);
-      }
-    },
-
-    componentDidMount: function componentDidMount() {
-      logUpdate(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this2 = this;
-
-      var _loop2 = function _loop2(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].off(prop, this._transisQueueUpdate);
-          }
-        }, _this2);
-      };
-
-      for (var k in props) {
-        _loop2(k);
-      }
-    },
-
-    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-      var _this3 = this;
-
-      var _loop3 = function _loop3(k) {
-        props[k].forEach(function (prop) {
-          if (nextProps[k] !== this.props[k]) {
-            if (this.props[k]) {
-              this.props[k].off(prop, this._transisQueueUpdate);
-            }
-            if (nextProps[k]) {
-              nextProps[k].on(prop, this._transisQueueUpdate);
-            }
-          }
-        }, _this3);
-      };
-
-      for (var k in props) {
-        _loop3(k);
-      }
-    }
-  };
-};
-
-var StateMixin = exports.StateMixin = function StateMixin(object, props) {
-  if ((typeof props === "undefined" ? "undefined" : _typeof(props)) !== 'object') {
-    props = _array2.default.from(arguments).slice(1).reduce(function (acc, prop) {
-      acc[prop] = [];
-      return acc;
-    }, {});
-  }
-
-  return {
-    getInitialState: function getInitialState() {
-      var state = {};
-      for (var k in props) {
-        state[k] = object[k];
-      }
-      return state;
-    },
-
-    componentWillMount: function componentWillMount() {
-      var _this4 = this;
-
-      this._transisId = this._transisId || nextId++;
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this4);
-      };
-
-      this._transisSyncState = function () {
-        var state = {};
-
-        var _loop4 = function _loop4(k) {
-          if (_this4.state[k] !== object[k]) {
-            if (_this4.state[k] && typeof _this4.state[k].off === 'function') {
-              props[k].forEach(function (path) {
-                _this4.state[k].off(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            if (object[k] && typeof object[k].on === 'function') {
-              props[k].forEach(function (path) {
-                object[k].on(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            state[k] = object[k];
-          }
-        };
-
-        for (var k in props) {
-          _loop4(k);
-        }
-
-        if (Object.keys(state).length) {
-          _this4.setState(state);
-        }
-      };
-
-      var _loop5 = function _loop5(k) {
-        if (object[k] && typeof object[k].on === 'function') {
-          props[k].forEach(function (path) {
-            object[k].on(path, _this4._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop5(k);
-      }
-
-      object.on('*', this._transisSyncState);
-    },
-
-    componentDidMount: function componentDidMount() {
-      logUpdate(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this5 = this;
-
-      var _loop6 = function _loop6(k) {
-        if (_this5.state[k] && typeof _this5.state[k].off === 'function') {
-          props[k].forEach(function (path) {
-            _this5.state[k].off(path, _this5._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop6(k);
-      }
-
-      object.off('*', this._transisSyncState);
-    }
-  };
-};
-
-
-/***/ }),
-/* 391 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _array = __webpack_require__(65);
+var _array = __webpack_require__(64);
 
 var _array2 = _interopRequireDefault(_array);
 
@@ -52226,2296 +50544,7 @@ var _util = __webpack_require__(39);
 
 var util = _interopRequireWildcard(_util);
 
-var _parsers = __webpack_require__(103);
-
-var parsers = _interopRequireWildcard(_parsers);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function isBlank(v) {
-  return v == null || util.type(v) === 'string' && v.match(/^\s*$/) || util.type(v) === 'array' && v.length === 0 || v instanceof _array2.default && v.length === 0;
-}
-
-var Validations = {
-  static: {
-    // Public: Adds a validator to the model that checks the given attributes for presence.
-    //
-    // ...names - One or more attribute names.
-    // opts     - An optional object containing zero or more of the following options:
-    //   if - A function that determines whether presence is required. If this returns false, then the
-    //        presence validator will not run.
-    //
-    // Returns the receiver.
-    validatesPresence: function validatesPresence() {
-      var names = Array.from(arguments),
-          opts = util.type(names[names.length - 1]) === 'object' ? names.pop() : {};
-
-      names.forEach(function (name) {
-        this.validate(name, function () {
-          this.validatePresence(name, opts);
-        });
-      }, this);
-
-      return this;
-    },
-
-    // Public: Adds a validator to the model that checks to make sure the given attributes are valid
-    // numbers.
-    //
-    // ...names - One or more attribute names.
-    // opts     - An optional object containing zero or more of the following options:
-    //   nonnegative - Ensure that the number is not negative.
-    //   maximum     - Ensure that the number is not greater than this value.
-    //   minimum     - Ensure that the number is not less than this value.
-    //
-    // Returns the receiver.
-    validatesNumber: function validatesNumber() {
-      var names = Array.from(arguments),
-          opts = util.type(names[names.length - 1]) === 'object' ? names.pop() : {};
-
-      names.forEach(function (name) {
-        this.validate(name, function () {
-          this.validateNumber(name, opts);
-        });
-      }, this);
-
-      return this;
-    },
-
-    // Public: Adds a validator to the model that checks to make sure the given attributes are valid
-    // dates.
-    //
-    // ...names - One or more attribute names.
-    //
-    // Returns the receiver.
-    validatesDate: function validatesDate() {
-      Array.from(arguments).forEach(function (name) {
-        this.validate(name, function () {
-          this.validateDate(name);
-        });
-      }, this);
-    },
-
-    // Public: Adds a validator to the model that checks to make sure the given attributes are valid
-    // emails.
-    //
-    // ...names - One or more attribute names.
-    //
-    // Returns the receiver.
-    validatesEmail: function validatesEmail() {
-      Array.from(arguments).forEach(function (name) {
-        this.validate(name, function () {
-          this.validateEmail(name);
-        });
-      }, this);
-
-      return this;
-    },
-
-    // Public: Adds a validator to the model that checks to make sure the given attributes are valid
-    // phone numbers.
-    //
-    // ...names - One or more attribute names.
-    //
-    // Returns the receiver.
-    validatesPhone: function validatesPhone() {
-      Array.from(arguments).forEach(function (name) {
-        this.validate(name, function () {
-          this.validatePhone(name);
-        });
-      }, this);
-
-      return this;
-    },
-
-    // Public: Adds a validator to the model that checks to make sure the given attributes are valid
-    // durations.
-    //
-    // ...names - One or more attribute names.
-    //
-    // Returns the receiver.
-    validatesDuration: function validatesDuration() {
-      Array.from(arguments).forEach(function (name) {
-        this.validate(name, function () {
-          this.validateDuration(name);
-        });
-      }, this);
-
-      return this;
-    }
-  },
-
-  instance: {
-    validatePresence: function validatePresence(name) {
-      var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-      if (opts.if && !opts.if.call(this)) {
-        return;
-      }
-      var v = this[name + "BeforeCoercion"] != null ? this[name + "BeforeCoercion"] : this[name];
-      if (isBlank(v)) {
-        this.addError(name, 'must be present');
-      }
-    },
-
-    validateNumber: function validateNumber(name) {
-      var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-      if (util.type(this[name]) === 'number') {
-        if (opts.nonnegative && this[name] < 0) {
-          this.addError(name, 'must not be negative');
-        }
-
-        if (opts.maximum && this[name] > opts.maximum) {
-          this.addError(name, 'may not be greater than ' + opts.maximum);
-        }
-
-        if (opts.minimum && this[name] < opts.minimum) {
-          this.addError(name, 'may not be less than ' + opts.minimum);
-        }
-      } else if (!isBlank(this[name + "BeforeCoercion"])) {
-        this.addError(name, 'is not a number');
-      }
-    },
-
-    validateDate: function validateDate(name) {
-      var v = this[name + "BeforeCoercion"];
-
-      if (!isBlank(v) && !(v instanceof Date) && !parsers.parseDate(v)) {
-        this.addError(name, 'is not a date');
-      }
-    },
-
-    validateEmail: function validateEmail(name) {
-      var v = this[name + "BeforeCoercion"];
-
-      if (!isBlank(v) && !parsers.parseEmail(v)) {
-        this.addError(name, 'is not an email');
-      }
-    },
-
-    validatePhone: function validatePhone(name) {
-      var v = this[name + "BeforeCoercion"];
-
-      if (!isBlank(v) && !parsers.parsePhone(v)) {
-        this.addError(name, 'is not a phone number');
-      }
-    },
-
-    validateDuration: function validateDuration(name) {
-      var v = this[name + "BeforeCoercion"];
-
-      if (!isBlank(v) && !parsers.parseDuration(v)) {
-        this.addError(name, 'is not a duration');
-      }
-    }
-  }
-};
-
-exports.default = Validations;
-module.exports = exports["default"];
-
-
-/***/ }),
-/* 392 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.DateTimeAttr = exports.DateAttr = exports.BooleanAttr = exports.NumberAttr = exports.IntegerAttr = exports.StringAttr = exports.IdentityAttr = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _parsers = __webpack_require__(104);
-
-var parsers = _interopRequireWildcard(_parsers);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var IdentityAttr = exports.IdentityAttr = {
-  coerce: function coerce(v) {
-    return v;
-  },
-  serialize: function serialize(v) {
-    return v;
-  }
-};
-
-var StringAttr = exports.StringAttr = function () {
-  function StringAttr() {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    _classCallCheck(this, StringAttr);
-
-    this.opts = Object.assign({ trim: true }, opts);
-  }
-
-  _createClass(StringAttr, [{
-    key: 'coerce',
-    value: function coerce(v) {
-      v = v != null ? String(v) : v;
-      if (typeof v === 'string' && this.opts.trim) {
-        v = v.trim();
-      }
-      return v;
-    }
-  }, {
-    key: 'serialize',
-    value: function serialize(s) {
-      return s;
-    }
-  }]);
-
-  return StringAttr;
-}();
-
-var IntegerAttr = exports.IntegerAttr = {
-  coerce: function coerce(v) {
-    if (typeof v === 'number') {
-      return Math.round(v);
-    } else if (typeof v === 'string') {
-      var parsed = parsers.parseNumber(v);
-      return parsed ? Math.round(parsed) : parsed;
-    } else if (v === undefined) {
-      return undefined;
-    } else {
-      return null;
-    }
-  },
-  serialize: function serialize(n) {
-    return n;
-  }
-};
-
-var NumberAttr = exports.NumberAttr = {
-  coerce: function coerce(v) {
-    if (typeof v === 'number') {
-      return v;
-    } else if (typeof v === 'string') {
-      return parsers.parseNumber(v);
-    } else if (v === undefined) {
-      return undefined;
-    } else {
-      return null;
-    }
-  },
-  serialize: function serialize(n) {
-    return n;
-  }
-};
-
-var BooleanAttr = exports.BooleanAttr = {
-  coerce: function coerce(v) {
-    return v === undefined ? v : !!v;
-  },
-  serialize: function serialize(b) {
-    return b;
-  }
-};
-
-var DateAttr = exports.DateAttr = {
-  coerce: function coerce(v) {
-    if (v == null || v instanceof Date) {
-      return v;
-    }
-    if (typeof v === 'number') {
-      return new Date(v);
-    }
-
-    if (typeof v !== 'string') {
-      throw new Error('Transis.DateAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
-    }
-
-    return parsers.parseDate(v);
-  },
-  serialize: function serialize(date) {
-    return date instanceof Date ? date.toJSON().replace(/T.*$/, '') : date;
-  }
-};
-
-var DateTimeAttr = exports.DateTimeAttr = {
-  coerce: function coerce(v) {
-    if (v == null || v instanceof Date) {
-      return v;
-    }
-    if (typeof v === 'number') {
-      return new Date(v);
-    }
-
-    if (typeof v !== 'string') {
-      throw new Error('Transis.DateTimeAttr#coerce: don\'t know how to coerce `' + v + '` to a Date');
-    }
-
-    return parsers.parseDateTime(v);
-  },
-  serialize: function serialize(date) {
-    return date instanceof Date ? date.toJSON() : date;
-  }
-};
-
-
-/***/ }),
-/* 393 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _pluralize = __webpack_require__(172);
-
-var _pluralize2 = _interopRequireDefault(_pluralize);
-
-var _id_map = __webpack_require__(173);
-
-var _id_map2 = _interopRequireDefault(_id_map);
-
-var _object = __webpack_require__(68);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(67);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _validations = __webpack_require__(395);
-
-var _validations2 = _interopRequireDefault(_validations);
-
-var _attrs = __webpack_require__(392);
-
-var attrs = _interopRequireWildcard(_attrs);
-
-var _util = __webpack_require__(40);
-
-var util = _interopRequireWildcard(_util);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var registeredAttrs = {},
-    subclasses = {},
-    loads = [];
-
-var NEW = 'new';
-var EMPTY = 'empty';
-var LOADED = 'loaded';
-var DELETED = 'deleted';
-
-// Internal: Returns the `Transis.Model` subclass with the given name.
-//
-// name  - A string representing the name of a `Transis.Model` subclass.
-// raise - A boolean indicating whether an exception should be raised if the name can't be
-//         resolved (default: `true`).
-//
-// Returns the resolved subclass constructor function or `undefined` if a class with the given
-//   name is not known.
-// Throws `Error` if the `raise` argument is `true` and the name cannot not be resolved.
-function resolve(name) {
-  var raise = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
-
-  var klass = typeof name === 'function' ? name : subclasses[name];
-
-  if (!klass && raise) {
-    throw new Error("Transis.Model.resolve: could not resolve subclass: `" + name + "`");
-  }
-
-  return klass;
-};
-
-// Internal: Checks to make sure the given object is of the type specified in the given
-// association descriptor.
-//
-// Returns nothing.
-// Throws `Error` if the given object isn't of the type specified in the association descriptor.
-function checkAssociatedType(desc, o) {
-  var klass = resolve(desc.klass);
-
-  if (o && !(o instanceof klass)) {
-    throw new Error(desc.debugName + ": expected an object of type `" + desc.klass + "` but received `" + o + "` instead");
-  }
-}
-
-// Internal: The overridden `_splice` method used on `hasMany` arrays. This method syncs changes to
-// the array to the inverse side of the association and maintains a list of changes made.
-function hasManySplice(i, n, added) {
-  var owner = this.__owner__,
-      desc = this.__desc__,
-      inverse = desc.inverse,
-      name = desc.name,
-      removed,
-      changes,
-      i;
-
-  added.forEach(function (o) {
-    return checkAssociatedType(desc, o);
-  });
-
-  removed = _array2.default.prototype._splice.call(this, i, n, added);
-
-  if (inverse && !this.__handlingInverse__) {
-    removed.forEach(function (model) {
-      model._inverseRemoved(inverse, owner);
-    }, this);
-    added.forEach(function (model) {
-      model._inverseAdded(inverse, owner);
-    }, this);
-  }
-
-  if (desc.owner && !loads.length) {
-    changes = owner.ownChanges[name] = owner.ownChanges[name] || { added: [], removed: [] };
-
-    removed.forEach(function (m) {
-      if ((i = changes.added.indexOf(m)) !== -1) {
-        changes.added.splice(i, 1);
-      } else if (changes.removed.indexOf(m) === -1) {
-        changes.removed.push(m);
-      }
-    });
-
-    added.forEach(function (m) {
-      if ((i = changes.removed.indexOf(m)) !== -1) {
-        changes.removed.splice(i, 1);
-      } else if (changes.added.indexOf(m) === -1) {
-        changes.added.push(m);
-      }
-    });
-
-    if (!changes.added.length && !changes.removed.length) {
-      owner._clearChange(name);
-    } else {
-      owner._setChange(name, changes);
-    }
-  }
-
-  return removed;
-}
-
-// Internal: Called when a model is added to the inverse side of a `hasMany` association in order to
-// sync the change to the `hasMany` side.
-function hasManyInverseAdd(model) {
-  this.__handlingInverse__ = true;
-  this.push(model);
-  this.__handlingInverse__ = false;
-}
-
-// Internal: Called when a model is removed from the inverse side of a `hasMany` association in
-// order to sync the change to the `hasMany` side.
-function hasManyInverseRemove(model) {
-  var i = this.indexOf(model);
-
-  if (i >= 0) {
-    this.__handlingInverse__ = true;
-    this.splice(i, 1);
-    this.__handlingInverse__ = false;
-  }
-}
-
-// Internal: Builds an array that manages a `hasMany` association. A hasMany array is a
-// `Transis.Array` that overrides the `_splice` method in order to handle syncing the inverse side
-// of the association.
-function hasManyArray(owner, desc) {
-  var a = _array2.default.of();
-  a.proxy(owner, desc.name);
-  a.__owner__ = owner;
-  a.__desc__ = desc;
-  a._splice = hasManySplice;
-  a._inverseAdd = hasManyInverseAdd;
-  a._inverseRemove = hasManyInverseRemove;
-  return a;
-}
-
-// Internal: Provides the implementation of the query array's `query` method.
-function queryArrayQuery() {
-  var _this = this;
-
-  var queryOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-  var opts = Object.assign({}, this.baseOpts, queryOpts);
-
-  if (this.isPaged) {
-    opts.page = opts.page || 1;
-  }
-
-  if (this.isBusy) {
-    if (util.eq(opts, this.currentOpts)) {
-      return this;
-    }
-
-    if (!this.__queued__) {
-      this.__promise__ = this.__promise__.then(function () {
-        _this.query(_this.__queued__);
-        _this.__queued__ = undefined;
-        return _this.__promise__;
-      });
-    }
-
-    this.__queued__ = opts;
-  } else {
-    this.isBusy = true;
-    this.currentOpts = opts;
-    this.__promise__ = this.__modelClass__._callMapper('query', [opts]).then(function (result) {
-      var results = Array.isArray(result) ? result : result.results;
-      var meta = Array.isArray(result) ? {} : result.meta;
-
-      _this.isBusy = false;
-      _this.meta = meta;
-      _this.error = undefined;
-
-      if (!results) {
-        throw new Error(_this + "#query: mapper failed to return any results");
-      }
-
-      if (_this.isPaged && typeof meta.totalCount !== 'number') {
-        throw new Error(_this + "#query: mapper failed to return total count for paged query");
-      }
-
-      try {
-        var models = _this.__modelClass__.loadAll(results);
-
-        if (_this.isPaged) {
-          _this.length = meta.totalCount;
-          _this.splice.apply(_this, [(opts.page - 1) * _this.baseOpts.pageSize, models.length].concat(models));
-        } else {
-          _this.replace(models);
-        }
-      } catch (e) {
-        console.error(e);throw e;
-      }
-    }, function (e) {
-      _this.isBusy = false;
-      _this.error = e;
-      return Promise.reject(e);
-    });
-  }
-
-  return this;
-}
-
-// Internal: Provides the implementation of the query array's `then` method.
-function queryArrayThen(f1, f2) {
-  return this.__promise__.then(f1, f2);
-}
-
-// Internal: Provides the implementation of the query array's `catch` method.
-function queryArrayCatch(f) {
-  return this.__promise__.catch(f);
-}
-
-// Internal: Provides the implementation of the query array's `at` method.
-function queryArrayAt(i) {
-  var r = _array2.default.prototype.at.apply(this, arguments);
-  var pageSize = this.baseOpts && this.baseOpts.pageSize;
-
-  if (arguments.length === 1 && !r && pageSize) {
-    this.query({ page: Math.floor(i / pageSize) + 1 });
-  }
-
-  return r;
-}
-
-// Internal: Sets the given object on a `hasOne` property.
-//
-// desc - An association descriptor.
-// v    - The value to set.
-// sync - Set to true to notify the inverse side of the association so that it can update itself.
-//
-// Returns nothing.
-// Throws `Error` if the given object isn't of the type specified in the association descriptor.
-function hasOneSet(desc, v, sync) {
-  var name = desc.name,
-      k = "__" + name,
-      prev = this[k],
-      inv = desc.inverse;
-
-  checkAssociatedType(desc, v);
-
-  this[k] = v;
-
-  if (sync && inv && prev) {
-    prev._inverseRemoved(inv, this);
-  }
-  if (sync && inv && v) {
-    v._inverseAdded(inv, this);
-  }
-
-  if (prev) {
-    prev._deregisterProxy(this, name);
-  }
-  if (v) {
-    v._registerProxy(this, name);
-  }
-}
-
-// Internal: Callback for a successful model deletion. Updates the model's state, removes it from
-// the identity map, and removes removes it from any associations its currently participating in.
-function mapperDeleteSuccess() {
-  var _this2 = this;
-
-  _id_map2.default.delete(this);
-  this.isBusy = false;
-  this.sourceState = DELETED;
-  this._clearErrors();
-
-  var _loop = function _loop(name) {
-    var desc = _this2.associations[name];
-    if (!desc.inverse) {
-      return "continue";
-    }
-    if (desc.type === 'hasOne') {
-      var m = void 0;
-      if (m = _this2[name]) {
-        m._inverseRemoved(desc.inverse, _this2);
-      }
-    } else if (desc.type === 'hasMany') {
-      _this2[name].slice(0).forEach(function (m) {
-        m._inverseRemoved(desc.inverse, _this2);
-      });
-    }
-  };
-
-  for (var name in this.associations) {
-    var _ret = _loop(name);
-
-    if (_ret === "continue") continue;
-  }
-}
-
-var Model = _object2.default.extend(function () {
-  this.displayName = 'Transis.Model';
-
-  // Public: Creates a subclass of `Transis.Model`. This method overrides the `Transis.Object.extend`
-  // method in order to force `Model` subclasses to be named.
-  this.extend = function (name, f) {
-    if (typeof name !== 'string') {
-      throw new Error(this + ".extend: a name is required");
-    }
-
-    var subclass = _object2.default.extend.call(this);
-    subclass.displayName = name;
-    subclasses[name] = subclass;
-
-    if (typeof f === 'function') {
-      f.call(subclass);
-    }
-
-    if (this.displayName !== 'Transis.Model') {
-      this.subclasses = this.subclasses || [];
-      this.subclasses.push(name);
-    }
-
-    return subclass;
-  };
-
-  this.resolveSubclass = function (name) {
-    if (!this.subclasses || this.subclasses.indexOf(name) < 0) {
-      throw new Error(this + ".resolveSubclass: could not find subclass " + name);
-    }
-
-    return resolve(name);
-  };
-
-  // Public: Returns an empty instance of the model class. An empty instance contains only an id
-  // and must be retrieved from the mapper before any of its attributes will be available. Since the
-  // model's data mapper will likely need to perform an async action to retrieve data, this method
-  // is used to construct an object that is suitable for returning from `Model.get` immediately.
-  // Once the data mapper has finished loading the actual model data, the empty model will have its
-  // attributes filled in.
-  //
-  // id - The id of the model.
-  //
-  // Returns a new instance of the class.
-  this.empty = function (id) {
-    var model = new this({ id: id });
-    model.sourceState = EMPTY;
-    return model;
-  };
-
-  // Public: Registers a new attribute type available to be used on `Model` subclasses.
-  //
-  // name      - A string representing the name of the attribute type.
-  // converter - A converter object or constructor function. Converter objects must implement two
-  //             methods: `coerce` and `serialize`. The `coerce` method should take the given value
-  //             and do its best to convert it to attribute's actual type. The `serialize` method
-  //             should take the coerced value and return something suitable for JSON serialization.
-  //             If a constructor function is given here, it will be instantiated once for each
-  //             declared attribute of this type and will be passed the options object given to the
-  //             `.attr` method.
-  //
-  // Returns the receiver.
-  this.registerAttr = function (name, converter) {
-    if (registeredAttrs[name]) {
-      throw new Error(this + ".registerAttr: an attribute with the name `" + name + "` has already been defined");
-    }
-
-    registeredAttrs[name] = converter;
-
-    return this;
-  };
-
-  this.registerAttr('identity', attrs.IdentityAttr);
-  this.registerAttr('string', attrs.StringAttr);
-  this.registerAttr('integer', attrs.IntegerAttr);
-  this.registerAttr('number', attrs.NumberAttr);
-  this.registerAttr('boolean', attrs.BooleanAttr);
-  this.registerAttr('date', attrs.DateAttr);
-  this.registerAttr('datetime', attrs.DateTimeAttr);
-
-  // Public: Defines an attribute on the model class. Attributes are typed properties that can
-  // parse/coerce raw values (say from a JSON object) into objects of the property type. Calling
-  // this method will define a property on the class's `prototype` so that it is available to all
-  // instances.
-  //
-  // Attribute values are automatically coerced to their proper type when set. The original value is
-  // available in the property named "<name>BeforeCoercion".
-  //
-  // name - A string representing the name of the attribute.
-  // type - A string representing the type of the attribute (this must have been previously
-  //        registered with `Model.registerAttr`).
-  // opts - An object containing properties to pass to the attribute's converter object (default:
-  //        `{}`).
-  //
-  // Returns the receiver.
-  this.attr = function (name, type) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var converter = registeredAttrs[type];
-
-    if (!converter) {
-      throw new Error(this + ".attr: unknown attribute type: `" + type + "`");
-    }
-
-    if (typeof converter === 'function') {
-      converter = new converter(opts);
-    }
-
-    this.prop(name, {
-      attr: true,
-      converter: converter,
-      get: function get() {
-        return this["__" + name];
-      },
-      set: function set(v) {
-        this["__" + name] = converter.coerce(v);
-        this[name + "BeforeCoercion"] = v;
-      },
-      default: 'default' in opts ? opts.default : undefined
-    });
-
-    return this;
-  };
-
-  // Public: Defines a `hasOne` association on the receiver class. This method will generate a
-  // property with the given name that can be used to get or set the associated model.
-  //
-  // name  - A string representing the name of the association.
-  // klass - Either the constructor function of the associated model or a string containing the name
-  //         of the associated constructor function. Passing a string here is useful for the case
-  //         where you are defining an association where the associated constructor function has yet
-  //         to be defined.
-  // opts  - An object containing zero or more of the following keys (default: `{}`):
-  //   inverse - Used for establishing two way associations, this is the name of the property on the
-  //             associated object that points back to the receiver class.
-  //
-  // Returns the receiver.
-  this.hasOne = function (name, klass) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var desc;
-
-    if (!this.prototype.hasOwnProperty('associations')) {
-      this.prototype.associations = Object.create(this.prototype.associations);
-    }
-
-    this.prototype.associations[name] = desc = Object.assign({}, opts, {
-      type: 'hasOne', name: name, klass: klass, debugName: this.toString() + "#" + name
-    });
-
-    if (desc.owner) {
-      if (!this.prototype.hasOwnProperty('__deps__')) {
-        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
-      }
-
-      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
-      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
-    }
-
-    this.prop(name, {
-      get: function get() {
-        return this["__" + name];
-      },
-      set: function set(v) {
-        hasOneSet.call(this, desc, v, true);
-      }
-    });
-
-    return this;
-  };
-
-  // Public: Defines a `hasMany` association on the receiver class. This method will generate a
-  // property with the given name that can be used to get or set an array of associated model
-  // objects. It will also generate methods that can be used to manipulate the array. A `hasMany`
-  // association with the name `widgets` would generate the following methods:
-  //
-  // addWidgets    - Adds one or more `Widget` models to the association array.
-  // removeWidgets - Removes one ore more `Widget` models from the association array.
-  // clearWidgets  - Empties the association array.
-  //
-  // Its important to use these generated methods to manipulate the array instead of manipulating it
-  // directly since they take care of syncing changes to the inverse side of the association when
-  // the association is two way.
-  //
-  // name  - A string representing the name of the association.
-  // klass - Either the constructor function of the associated model or a string containing the name
-  //         of the associated constructor function. Passing a string here is useful for the case
-  //         where you are defining an association where the associated constructor function has yet
-  //         to be defined.
-  // opts  - (see hasOne description)
-  //
-  // Returns the receiver.
-  this.hasMany = function (name, klass) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    var k = "__" + name,
-        desc;
-
-    if (!this.prototype.hasOwnProperty('associations')) {
-      this.prototype.associations = Object.create(this.prototype.associations);
-    }
-
-    this.prototype.associations[name] = desc = Object.assign({}, opts, {
-      type: 'hasMany', name: name, klass: klass, singular: (0, _pluralize2.default)(name, 1), debugName: this.toString() + "#" + name
-    });
-
-    if (desc.owner) {
-      if (!this.prototype.hasOwnProperty('__deps__')) {
-        this.prototype.__deps__ = Object.create(this.prototype.__deps__);
-      }
-
-      (this.prototype.__deps__[name + ".errors"] = this.prototype.__deps__[name + ".errors"] || []).push('errors');
-      (this.prototype.__deps__[name + ".changes"] = this.prototype.__deps__[name + ".changes"] || []).push('changes');
-    }
-
-    this.prop(name, {
-      get: function get() {
-        if (this[k]) {
-          return this[k];
-        }
-        desc.klass = resolve(desc.klass);
-        return this[k] = hasManyArray(this, desc);
-      },
-      set: function set(a) {
-        this[k].replace(a);
-      }
-    });
-  };
-
-  // Public: Add a validator for the given attribute. The validator function or method should use
-  // the `Model#addError` method to record a validation error when one is detected.
-  //
-  // name - The name of the property to validate.
-  // f    - A validator function or the name of an instance method.
-  // opts - An `on:` option can be provided to specify the context in which to validate.
-  //
-  // Returns the receiver.
-  this.validate = function (name, f) {
-    var opts = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-    if (!this.prototype.hasOwnProperty('validators')) {
-      this.prototype.validators = Object.create(this.prototype.validators);
-    }
-
-    (this.prototype.validators[name] = this.prototype.validators[name] || []).push({ validator: f, opts: opts });
-
-    return this;
-  };
-
-  // Public: Loads the given model attributes into the identity map. This method should be called by
-  // your data mapper(s) when new data is successfully retrieved.
-  //
-  // attrs - An object containing the attributes for a single model. If the attributes contain
-  //         references to defined associations, those associated objects will be loaded as well.
-  //
-  // Returns the loaded model instance.
-  // Throws `Error` if the given attributes do not contain an `id` attribute.
-  this.load = function (attrs) {
-    var id = attrs.id,
-        associations = this.prototype.associations,
-        associated = {},
-        model,
-        LoadKlass;
-
-    if (id == null) {
-      throw new Error(this + ".load: an `id` attribute is required");
-    }
-
-    loads.push(true);
-
-    attrs = Object.assign({}, attrs);
-    if (typeof this.getSubclass === 'function') {
-      LoadKlass = this.resolveSubclass(this.getSubclass(attrs));
-    } else {
-      LoadKlass = this;
-    }
-
-    model = _id_map2.default.get(LoadKlass, id) || new LoadKlass();
-
-    delete attrs.id;
-
-    // extract associated attributes
-    for (var name in associations) {
-      var _desc = associations[name];
-
-      if (name in attrs) {
-        associated[name] = attrs[name];
-        delete attrs[name];
-      } else if (_desc.type === 'hasOne' && name + "Id" in attrs) {
-        associated[name] = attrs[name + "Id"];
-        delete attrs[name + "Id"];
-      } else if (_desc.type === 'hasOne' && name + "_id" in attrs) {
-        associated[name] = attrs[name + "_id"];
-        delete attrs[name + "_id"];
-      } else if (_desc.type === 'hasMany' && _desc.singular + "Ids" in attrs) {
-        associated[name] = attrs[_desc.singular + "Ids"];
-        delete attrs[_desc.singular + "Ids"];
-      } else if (_desc.type === 'hasMany' && _desc.singular + "_ids" in attrs) {
-        associated[name] = attrs[_desc.singular + "_ids"];
-        delete attrs[_desc.singular + "_ids"];
-      }
-    }
-
-    // set non-association attributes
-    model.set(attrs);
-
-    // set id if necessary
-    if (model.id === undefined) {
-      model.id = id;
-    }
-
-    // load and set each association
-
-    var _loop2 = function _loop2(_name) {
-      var klass = resolve(associations[_name].klass);
-      var data = associated[_name];
-
-      // clear association
-      if (!data) {
-        model[_name] = null;
-        return "continue";
-      }
-
-      if (associations[_name].type === 'hasOne') {
-        var other = (typeof data === "undefined" ? "undefined" : _typeof(data)) === 'object' ? klass.load(data) : klass.local(data);
-        model[_name] = other;
-      } else if (associations[_name].type === 'hasMany') {
-        (function () {
-          var others = [];
-          data.forEach(function (o) {
-            others.push((typeof o === "undefined" ? "undefined" : _typeof(o)) === 'object' ? klass.load(o) : klass.local(o));
-          });
-          model[_name] = others;
-        })();
-      }
-    };
-
-    for (var _name in associated) {
-      var _ret2 = _loop2(_name);
-
-      if (_ret2 === "continue") continue;
-    }
-
-    model.sourceState = LOADED;
-    model._clearChanges();
-    model._clearErrors();
-
-    loads.pop();
-
-    return model;
-  };
-
-  // Public: Loads an array of attribute objects.
-  //
-  // objects - An array containing attribute hashes.
-  //
-  // Returns an array of loaded model instances.
-  this.loadAll = function (objects) {
-    var _this3 = this;
-
-    return objects.map(function (object) {
-      return _this3.load(object);
-    });
-  };
-
-  // Public: Creates a new query array but does not invoke its `query` method. This is useful for
-  // cases where you want to initialize an empty query, but not yet run it.
-  //
-  // The array returned by this method is decorated with the following additional properties:
-  //
-  //   modelClass  - The `Transis.Model` subclass that `buildQuery` was invoked on.
-  //   baseOpts    - The options passed to this method. These options will be sent with every query.
-  //   currentOpts - The most recent options passed to the mapper.
-  //   isBusy      - Boolean property indicating whether a query is in progress.
-  //   isPaged     - Indicates whether the query array pages its results.
-  //   error       - An error message set on the array when the mapper fails to fulfill its promise.
-  //   meta        - Metadata provided by the mapper. May be used for paging results.
-  //
-  // And with these additional methods:
-  //
-  //   query: Execute a query by invoking the `query` method on the modelClass's mapper. This will
-  //   put the array into a busy state (indicated by the `isBusy` property) until the mapper has
-  //   fulfilled its promise. When the promise is successfully resolved, the returned data is loaded
-  //   via `Transis.Model.loadAll` and the materialized models are replaced into the array. When the
-  //   promise is rejected, the error message returned by the mapper is made available on the `error`
-  //   property.
-  //
-  //   If the this method is called while the array is currently busy, then the call to the mapper
-  //   is queued until the current query completes.
-  //
-  //   Passing the `pageSize` option to `buildQuery` turns the query into a paged query. Paged
-  //   queries load a page of results at a time instead of simply replacing their contents on each
-  //   call to `#query`. In order for this to work the mapper must resolve its promise with an
-  //   object that contains a `results` key pointing to an array of records and a `meta` key that
-  //   points to an object containing a `totalCount` key. The length of the query array will be set
-  //   to the value of `totalCount` and the results will be spliced into the array at the offset
-  //   indicated by the `page` option. Any models from pages loaded previously will remain in the
-  //   array.
-  //
-  //   When an item is accessed via the `#at` method from a page that has yet to be fetched, the
-  //   query array will automatically invoke the mapper to fetch that page. This effectively gives
-  //   you a sparse array that will automatically lazily load its contents when then are needed.
-  //   This behavior works very well with a virtualized list component.
-  //
-  //   Here is an example of the object expected from the mapper:
-  //
-  //   {
-  //     meta: {totalCount: 321},
-  //     results: [{id: 1}, {id: 2}, {id: 3}]
-  //   }
-  //
-  //
-  //   opts - An object to pass along to the mapper (default: `{}`).
-  //
-  //   Returns the receiver.
-  //
-  //   then: Registers fulfillment and rejection handlers on the latest promise object returned by
-  //   the modelClass's mapper. If the `query` method has yet to be called, then the `onFulfilled`
-  //   handler is invoked immediately.
-  //
-  //   When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
-  //   `onFulfilled` handler is called with the error message from the mapper.
-  //
-  //   onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
-  //   onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  //   Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
-  //
-  //   catch: Registers a rejection handler on the latest promise object returned by the
-  //   modelClass's mapper.
-  //
-  //   onRejected - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  //   Returns a new `Promise` that is resolved to the return value of the callback if it is called.
-  //
-  // baseOpts - An object to pass along to the mapper method when the query is executed with the
-  //            `#query` method. Any options passed to the `#query` method will be merged in with
-  //            the options given here (default: `{}`). The `pageSize` option in particular is
-  //            special as it makes the resulting query array a paged query. See the discussion
-  //            above.
-  //
-  // Returns a new `Transis.Array` decorated with the properties and methods described above.
-  this.buildQuery = function () {
-    var baseOpts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    var a = _array2.default.of();
-
-    a.__modelClass__ = this;
-    a.__promise__ = Promise.resolve();
-
-    a.props({
-      modelClass: { get: function get() {
-          return this.__modelClass__;
-        } },
-      baseOpts: {},
-      currentOpts: {},
-      isBusy: { default: false },
-      isPaged: { on: ['baseOpts'], get: function get(baseOpts) {
-          return typeof baseOpts.pageSize === 'number';
-        } },
-      error: {},
-      meta: {}
-    });
-
-    a.baseOpts = baseOpts;
-    a.query = queryArrayQuery;
-    a.then = queryArrayThen;
-    a.catch = queryArrayCatch;
-    a.at = queryArrayAt;
-
-    return a;
-  };
-
-  // Public: Creates a new `Transis.QueryArray` and invokes its `query` method with the given
-  // options.
-  //
-  // opts - An options object to pass to the `Transis.QueryArray#query` method (default: `{}`).
-  //
-  // Returns a new `Transis.QueryArray`.
-  this.query = function () {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-    return this.buildQuery().query(opts);
-  };
-
-  // Public: Retrieves a model from the identity map or creates a new empty model instance. If you
-  // want to get the model from the mapper, then use the `Model.get` method.
-  //
-  // id - The id of the model to get.
-  //
-  // Returns an instance of the receiver.
-  this.local = function (id) {
-    return _id_map2.default.get(this, id) || this.empty(id);
-  };
-
-  // Public: Gets a model instance, either from the identity map or from the mapper. If the model
-  // has already been loaded into the identity map, then it is simply returned, otherwise the data
-  // mapper's `get` method will be invoked and an empty model will be returned.
-  //
-  // id   - The id of the model to get.
-  // opts - An object containing zero or more of the following keys (default: `{}`):
-  //   refresh - When true, the mapper's get method will be called regardless of whether the model
-  //             exists in the identity map.
-  //
-  // Returns an instance of the receiver.
-  this.get = function (id) {
-    var _this4 = this;
-
-    var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-    var model = this.local(id),
-        getOpts = Object.assign({}, opts);
-    delete getOpts.refresh;
-
-    if (model.isEmpty || opts.refresh) {
-      model.isBusy = true;
-      model.__promise__ = this._callMapper('get', [id, getOpts]).then(function (result) {
-        model.isBusy = false;
-        try {
-          _this4.load(result);
-        } catch (e) {
-          console.error(e);throw e;
-        }
-      }, function (errors) {
-        model.isBusy = false;
-        model._loadErrors(errors);
-        return Promise.reject(errors);
-      });
-    }
-
-    return model;
-  };
-
-  // Public: Clears all models from the id map. This will subsequently cause the model layer to go
-  // to the mapper for any model that had previously been loaded.
-  this.clearIdMap = function () {
-    _id_map2.default.clear();return this;
-  };
-
-  // Internal: Invokes the given method on the receiver's mapper, ensuring that it returns a
-  // Thennable (Promise-like) object.
-  //
-  // method - The method to invoke on the mapper.
-  // args   - An array of arguments to pass to the mapper method.
-  //
-  // Returns the promise returned by the mapper.
-  // Throws `Error` when the mapper is not defined.
-  // Throws `Error` when the mapper does not implement the given method.
-  // Throws `Error` when the mapper does not return a Thennable object.
-  this._callMapper = function (method, args) {
-    var _this5 = this;
-
-    var promise;
-
-    if (!this.mapper) {
-      throw new Error(this + "._callMapper: no mapper defined, assign one to `" + this + ".mapper`");
-    }
-
-    if (typeof this.mapper[method] !== 'function') {
-      throw new Error(this + "._callMapper: mapper does not implement `" + method + "`");
-    }
-
-    promise = this.mapper[method].apply(this.mapper, args);
-
-    if (!promise || typeof promise.then !== 'function') {
-      throw new Error(this + "._callMapper: mapper's `" + method + "` method did not return a Promise");
-    }
-
-    promise.catch(function (error) {
-      console.warn(_this5 + "#_callMapper(" + method + "): promise rejection:", error);
-      return Promise.reject(error);
-    });
-
-    return promise;
-  };
-
-  // Internal: Holds the association descriptors created by `.hasOne` and `.hasMany`.
-  this.prototype.associations = {};
-
-  // Internal: Holds the validators registered by `.validate`.
-  this.prototype.validators = {};
-
-  // Internal: Initializes the model by setting up some internal properties.
-  this.prototype.init = function (props) {
-    this.sourceState = NEW;
-    this.isBusy = false;
-    this.__promise__ = Promise.resolve();
-    this._clearChanges();
-
-    Model.__super__.init.call(this, props);
-  };
-
-  this.prop('id', {
-    get: function get() {
-      return this.__id;
-    },
-    set: function set(id) {
-      if (this.__id) {
-        throw new Error(this.constructor + "#id=: overwriting a model's identity is not allowed: " + this);
-      }
-
-      this.__id = id;
-
-      _id_map2.default.insert(this);
-    }
-  });
-
-  this.prop('sourceState');
-
-  this.prop('isNew', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === NEW;
-    }
-  });
-
-  this.prop('isEmpty', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === EMPTY;
-    }
-  });
-
-  this.prop('isLoaded', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === LOADED;
-    }
-  });
-
-  this.prop('isDeleted', {
-    on: ['sourceState'],
-    get: function get(sourceState) {
-      return sourceState === DELETED;
-    }
-  });
-
-  this.prop('isBusy');
-
-  // Public: Returns an object of changes made to properties on the receiver. For simple properties
-  // and `hasOne` associations, the original value is stored. For `hasMany` associations, the added
-  // and removed models are stored.
-  this.prop('ownChanges', {
-    get: function get() {
-      return this.__ownChanges = this.__ownChanges || {};
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any property changes or any
-  // owned `hasMany` associations that have been mutated.
-  this.prop('hasOwnChanges', {
-    on: ['ownChanges'],
-    get: function get(ownChanges) {
-      return Object.keys(ownChanges).length > 0;
-    }
-  });
-
-  // Public: Returns an object of changes made to properties on the receiver as well as for changes
-  // made to owned associated models. The keys for owned associated model changes are prefixed with
-  // the association name. The keys for changes on models within an owned hasMany association are
-  // prefixed with the association name and index in the array.
-  //
-  // Examples
-  //
-  //   person.changes;
-  //   // {'firstName': 'Bob', 'address.street': 'maple', 'pets.1.name': 'Spike'}
-  this.prop('changes', {
-    on: ['ownChanges'],
-    pure: false,
-    get: function get() {
-      var changes = Object.assign({}, this.ownChanges);
-
-      util.detectRecursion(this, function () {
-        var _this6 = this;
-
-        var _loop3 = function _loop3(name) {
-          if (!_this6.associations[name].owner) {
-            return "continue";
-          }
-
-          if (_this6.associations[name].type === 'hasOne' && _this6[name]) {
-            var cs = _this6[name].changes;
-            for (var k in cs) {
-              changes[name + "." + k] = cs[k];
-            }
-          } else if (_this6.associations[name].type === 'hasMany') {
-            _this6[name].forEach(function (item, i) {
-              var cs = item.changes;
-              for (var _k in cs) {
-                changes[name + "." + i + "." + _k] = cs[_k];
-              }
-            });
-          }
-        };
-
-        for (var name in this.associations) {
-          var _ret4 = _loop3(name);
-
-          if (_ret4 === "continue") continue;
-        }
-      }.bind(this));
-
-      return changes;
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any changes or if any of its owned
-  // associated models have changes.
-  this.prop('hasChanges', {
-    on: ['changes'],
-    get: function get(changes) {
-      return !!Object.keys(changes).length;
-    }
-  });
-
-  // Public: Object containing any validation errors on the model. The keys of the object are the
-  // properties that have errors and the values are an array of error messages.
-  this.prop('ownErrors', {
-    get: function get() {
-      return this.__ownErrors = this.__ownErrors || {};
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any validation errors on its own
-  // properties. Marking the model for destruction by setting the `_destroy` attribute will cause
-  // this property to return `false` regardless of whether there are validation errors.
-  this.prop('hasOwnErrors', {
-    on: ['ownErrors', '_destroy'],
-    get: function get(ownErrors, _destroy) {
-      return !_destroy && Object.keys(ownErrors).length > 0;
-    }
-  });
-
-  // Public: Returns an object of validation errors that exist on the receiver as well as any
-  // validation errors on owned associated models not marked for destruction. The keys used for
-  // errors on owned associated models are similar to those returned by the `#changes` prop.
-  this.prop('errors', {
-    on: ['ownErrors'],
-    pure: false,
-    get: function get() {
-      var errors = Object.assign({}, this.ownErrors);
-
-      util.detectRecursion(this, function () {
-        var _this7 = this;
-
-        var _loop4 = function _loop4(name) {
-          if (!_this7.associations[name].owner) {
-            return "continue";
-          }
-
-          if (_this7.associations[name].type === 'hasOne' && _this7[name] && !_this7[name]._destroy) {
-            var es = _this7[name].errors;
-            for (var k in es) {
-              errors[name + "." + k] = es[k];
-            }
-          } else if (_this7.associations[name].type === 'hasMany') {
-            _this7[name].forEach(function (item, i) {
-              if (item._destroy) return;
-              var es = item.errors;
-              for (var _k2 in es) {
-                errors[name + "." + i + "." + _k2] = es[_k2];
-              }
-            });
-          }
-        };
-
-        for (var name in this.associations) {
-          var _ret5 = _loop4(name);
-
-          if (_ret5 === "continue") continue;
-        }
-      }.bind(this));
-
-      return errors;
-    }
-  });
-
-  // Public: Returns a boolean indicating whether the model has any validattion errors or if any of
-  // its owned associated models have validation errors.
-  this.prop('hasErrors', {
-    on: ['errors'],
-    get: function get(errors) {
-      return !!Object.keys(errors).length;
-    }
-  });
-
-  // Public: Used to mark a model for future destruction by the server. Owned associated models that
-  // are marked for destruction will not be validated or affect the `hasErrors` property.
-  this.attr('_destroy', 'boolean');
-
-  // Public: Returns an object containing the raw values of all the receiver's attributes. Special
-  // care is taken with the `_destroy` attribute, its only included if its been set.
-  this.prototype.attrs = function () {
-    var attrs = {};
-
-    for (var k in this.__props__) {
-      if (this.__props__[k].attr) {
-        attrs[k] = this.__props__[k].converter.serialize(this[k]);
-      }
-    }
-
-    if (typeof this.id !== 'undefined') {
-      attrs.id = this.id;
-    }
-    if (attrs._destroy === undefined) {
-      delete attrs._destroy;
-    }
-
-    return attrs;
-  };
-
-  // Public: Refreshes the model by getting it from the data mapper.
-  //
-  // opts - An object to forward along to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the receiver is not LOADED or is BUSY.
-  this.prototype.get = function () {
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (!this.isLoaded && !this.isEmpty || this.isBusy) {
-      throw new Error(this.constructor + "#get: can't get a model in the " + this.stateString() + " state: " + this);
-    }
-
-    return this.constructor.get(this.id, Object.assign({}, opts, { refresh: true }));
-  };
-
-  // Public: Saves the model by invoking either the `create` or `update` method on the model's data
-  // mapper. The `create` method is invoked if the model is in the `NEW` state and `create`
-  // otherwise.
-  //
-  // opts - An object to forward on to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the receiver is not NEW or LOADED or is currently busy.
-  this.prototype.save = function () {
-    var _this8 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (!this.isNew && !this.isLoaded || this.isBusy) {
-      throw new Error(this.constructor + "#save: can't save a model in the " + this.stateString() + " state: " + this);
-    }
-
-    this.isBusy = true;
-
-    this.__promise__ = this.constructor._callMapper(this.isNew ? 'create' : 'update', [this, opts]).then(function (attrs) {
-      _this8.isBusy = false;
-      try {
-        _this8.load(attrs);
-      } catch (e) {
-        console.error(e);throw e;
-      }
-    }, function (errors) {
-      _this8.isBusy = false;
-      _this8._loadErrors(errors);
-      return Promise.reject(errors);
-    });
-
-    return this;
-  };
-
-  // Public: Deletes the model by passing it to the data mapper's `delete` method.
-  //
-  // opts - An object to forward on to the mapper (default: `{}`).
-  //
-  // Returns the receiver.
-  // Throws `Error` if the model is currently busy.
-  this.prototype.delete = function () {
-    var _this9 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    if (this.isDeleted) {
-      return this;
-    }
-
-    if (this.isBusy) {
-      throw new Error(this.constructor + "#delete: can't delete a model in the " + this.stateString() + " state: " + this);
-    }
-
-    if (this.isNew) {
-      mapperDeleteSuccess.call(this);
-    } else {
-      this.isBusy = true;
-
-      this.__promise__ = this.constructor._callMapper('delete', [this, opts]).then(function () {
-        mapperDeleteSuccess.call(_this9);
-      }, function (errors) {
-        _this9.isBusy = false;
-        _this9._loadErrors(errors);
-        return Promise.reject(errors);
-      });
-    }
-
-    return this;
-  };
-
-  // Public: Registers fulfillment and rejection handlers on the latest promise object returned by
-  // the model's mapper. If the model has yet to interact with the mapper, then the `onFulfilled`
-  // handler is invoked immediately.
-  //
-  // When resolved, the `onFulfilled` handler is called with no arguments. When rejected, the
-  // `onFulfilled` handler is called with the error message from the mapper.
-  //
-  // onFulfilled - A function to be invoked when the latest promise from the mapper is resolved.
-  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  // Returns a new `Promise` that will be resolved with the return value of `onFulfilled`.
-  this.prototype.then = function (onFulfilled, onRejected) {
-    return this.__promise__.then(onFulfilled, onRejected);
-  };
-
-  // Public: Registers a rejection handler on the latest promise object returned by the model's
-  // mapper.
-  //
-  // onRejected  - A function to be invoked when the latest promise from the mapper is rejected.
-  //
-  // Returns a new `Promise` that is resolved to the return value of the callback if it is called.
-  this.prototype.catch = function (onRejected) {
-    return this.__promise__.catch(onRejected);
-  };
-
-  // Public: Loads the given attributes into the model. This method simply ensure's that the
-  // receiver has its `id` set and then delegates to `Model.load`.
-  //
-  // If the given attributes have an `id` that already exists in the identity map, then this method
-  // will actually load the attributes onto the existing model instead of the receiver. This
-  // situation may occur when you have a create or update situation on the backend.
-  //
-  // Returns the receiver.
-  this.prototype.load = function (attrs) {
-    var id = attrs.id;
-
-    if (id == null && this.id == null) {
-      throw new Error(this.constructor + "#load: an `id` attribute is required");
-    }
-
-    if (id != null && this.id != null && id !== this.id) {
-      throw new Error(this.constructor + "#load: received attributes with id `" + id + "` but model already has id `" + this.id + "`");
-    }
-
-    if (this.id == null) {
-      if (!_id_map2.default.get(this.constructor, id)) {
-        this.id = id;
-      } else {
-        console.warn(this.constructor + "#load: loading attributes that contain an id (" + id + ") that already exists in the identity map, the receiver will not be updated");
-      }
-    }
-
-    attrs.id = id || this.id;
-
-    this.constructor.load(attrs);
-
-    return this;
-  };
-
-  // Public: Returns a string representation of the model's current state.
-  this.prototype.stateString = function () {
-    var a = [this.sourceState.toUpperCase()];
-    if (this.isBusy) {
-      a.push('BUSY');
-    }
-    return a.join('-');
-  };
-
-  // Public: Returns the previous for the given attribute or association name. If no change has been
-  // made then `undefined` is returned.
-  //
-  // name - A string containing the name of an attribute or association.
-  this.prototype.previousValueFor = function (name) {
-    var _this10 = this;
-
-    var change = this.ownChanges[name];
-
-    if (change && this.associations[name] && this.associations[name].type === 'hasMany') {
-      var _ret6 = function () {
-        var previous = _this10[name].slice();
-        var removed = change.removed.slice();
-        var added = change.added.slice();
-
-        removed.reverse().forEach(function (m) {
-          previous.push(m);
-        });
-        added.forEach(function (m) {
-          previous.splice(previous.indexOf(m), 1);
-        });
-
-        return {
-          v: previous
-        };
-      }();
-
-      if ((typeof _ret6 === "undefined" ? "undefined" : _typeof(_ret6)) === "object") return _ret6.v;
-    } else {
-      return change;
-    }
-  };
-
-  // Public: Undoes all property and owned assocation changes made to this model since it was last
-  // loaded.
-  //
-  // opts - An object containing zero or more of the following keys:
-  //   except - Either a string or an array of strings of attributes or owned association names to skip over when
-  //            undoing changes.
-  //   only -   Either a string or an array of strings of attributes or owned association names that limit the undoing of changes
-  //            to only the provided names.
-  //
-  // Returns the receiver.
-  this.prototype.undoChanges = function () {
-    var _this11 = this;
-
-    var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-    var associations = this.associations;
-
-    var shouldUndo = function shouldUndo(name) {
-      if (!opts) return true;
-
-      if (opts.except === name) {
-        return false;
-      }
-      if (Array.isArray(opts.except) && opts.except.indexOf(name) >= 0) {
-        return false;
-      }
-
-      if (Array.isArray(opts.only)) {
-        if (opts.only.indexOf(name) === -1) {
-          return false;
-        }
-      } else if (opts.only && opts.only !== name) {
-        return false;
-      }
-
-      return true;
-    };
-
-    var _loop5 = function _loop5(prop) {
-      if (!shouldUndo(prop)) {
-        return "continue";
-      }
-
-      if (associations[prop] && associations[prop].type === 'hasMany') {
-        var removed = _this11.ownChanges[prop].removed.slice();
-        var added = _this11.ownChanges[prop].added.slice();
-
-        removed.reverse().forEach(function (m) {
-          _this11[prop].push(m);
-        });
-        added.forEach(function (m) {
-          _this11[prop].splice(_this11[prop].indexOf(m), 1);
-        });
-      } else {
-        _this11[prop] = _this11.ownChanges[prop];
-      }
-    };
-
-    for (var prop in this.ownChanges) {
-      var _ret7 = _loop5(prop);
-
-      if (_ret7 === "continue") continue;
-    }
-
-    util.detectRecursion(this, function () {
-      for (var name in associations) {
-        var _desc2 = associations[name];
-
-        if (!_desc2.owner) {
-          continue;
-        }
-        if (!shouldUndo(name)) {
-          continue;
-        }
-
-        if (_desc2.type === 'hasOne') {
-          this[name] && this[name].undoChanges();
-        } else if (_desc2.type === 'hasMany') {
-          this[name].forEach(function (m) {
-            return m.undoChanges();
-          });
-        }
-      }
-    }.bind(this));
-
-    this.validate();
-
-    return this;
-  };
-
-  // Public: Add a validation error for the given property name and type. Adding an error will cause
-  // the model to enter an invalid state.
-  //
-  // name    - The name of the attribute or property that has a validation error.
-  // message - A string containing the error message.
-  //
-  // Returns the receiver.
-  this.prototype.addError = function (name, message) {
-    this.ownErrors[name] = this.ownErrors[name] || [];
-
-    if (this.ownErrors[name].indexOf(message) === -1) {
-      this.ownErrors[name].push(message);
-      this.didChange('ownErrors');
-    }
-
-    return this;
-  };
-
-  // Public: Runs registered validators for the given attribute. This will clear any existing
-  // validation errors for the given attribute. The registered validators can be reduced by
-  // providing an optional context.
-  //
-  // name - The name of the attribute to run validations for.
-  // ctx  - The context in which to run validations on the given attribute. (optional)
-  //
-  // Returns `true` if no validation errors are found on the given attribute and `false` otherwise.
-  this.prototype.validateAttr = function (name, ctx) {
-    this._clearErrors(name);
-    if (!this.validators[name]) {
-      return true;
-    }
-
-    var validators = this.validators[name].filter(function (v) {
-      return !v.opts.on || v.opts.on === ctx;
-    });
-
-    for (var i = 0, n = validators.length; i < n; i++) {
-      var validator = validators[i].validator;
-
-      if (typeof validator === 'function') {
-        validator.call(this);
-      } else if (typeof validator === 'string' && validator in this) {
-        this[validator]();
-      } else {
-        throw new Error(this.constructor + "#validateAttr: don't know how to execute validator: `" + validator + "`");
-      }
-    }
-
-    return !(name in this.ownErrors);
-  };
-
-  // Public: Runs all registered validators for all properties and also validates owned
-  // associations. Validations with no `on:` option will run no matter the context. Validations with
-  // some `on:` option will only run in the specified context.
-  //
-  // ctx - The context in which to run validations
-  //
-  // Returns `true` if no validation errors are found and `false` otherwise.
-  this.prototype.validate = function (ctx) {
-    var associations = this.associations,
-        failed = false;
-
-    this._clearErrors();
-
-    for (var name in this.validators) {
-      if (!this.validateAttr(name, ctx)) {
-        failed = true;
-      }
-    }
-
-    util.detectRecursion(this, function () {
-      for (var _name2 in associations) {
-        var _desc3 = associations[_name2];
-
-        if (!_desc3.owner) {
-          continue;
-        }
-
-        if (_desc3.type === 'hasOne') {
-          if (this[_name2] && !this[_name2]._destroy) {
-            if (!this[_name2].validate(ctx)) {
-              failed = true;
-            }
-          }
-        } else if (_desc3.type === 'hasMany') {
-          this[_name2].forEach(function (m) {
-            if (!m._destroy && !m.validate(ctx)) {
-              failed = true;
-            }
-          });
-        }
-      }
-    }.bind(this));
-
-    return !failed;
-  };
-
-  // Public: Returns a string representation of the model.
-  this.prototype.toString = function () {
-    var attrs = this.attrs();
-
-    for (var name in this.associations) {
-      if (this.associations[name].type === 'hasOne') {
-        if (this[name] && this[name].id) {
-          attrs[name] = this[name].id;
-        }
-      } else if (this.associations[name].type === 'hasMany') {
-        var ids = this[name].map(function (x) {
-          return x.id;
-        }).compact();
-        if (ids.length) {
-          attrs[name] = ids;
-        }
-      }
-    }
-
-    return "#<" + this.constructor + " (" + this.stateString() + "):" + this.objectId + " " + JSON.stringify(attrs) + ">";
-  };
-
-  // Internal: Load error message(s) received from the mapper. When passed an object, the keys of
-  // the object are assumed to be attribute names and the values the error message for that
-  // attribute. When given a string, an error is added to the `base` attribute.
-  //
-  // errors - Either an object mapping attribute names to their error messages or a string.
-  //
-  // Returns the receiver.
-  this.prototype._loadErrors = function (errors) {
-    var _this12 = this;
-
-    if ((typeof errors === "undefined" ? "undefined" : _typeof(errors)) === 'object') {
-      var _loop6 = function _loop6(k) {
-        if (Array.isArray(errors[k])) {
-          errors[k].forEach(function (error) {
-            this.addError(k, error);
-          }, _this12);
-        } else {
-          _this12.addError(k, String(errors[k]));
-        }
-      };
-
-      for (var k in errors) {
-        _loop6(k);
-      }
-    } else {
-      this.addError('base', String(errors));
-    }
-
-    return this;
-  };
-
-  // Internal: Clears validation errors from the `errors` hash. If a name is given, only the errors
-  // for the property of that name are cleared, otherwise all errors are cleared.
-  this.prototype._clearErrors = function (name) {
-    if (name) {
-      if (name in this.ownErrors) {
-        delete this.ownErrors[name];
-        this.didChange('ownErrors');
-      }
-    } else if (Object.keys(this.ownErrors).length) {
-      this.__ownErrors = {};
-      this.didChange('ownErrors');
-    }
-    return this;
-  };
-
-  // Internal: Called by an inverse association when a model was removed from the inverse side.
-  // Updates the local side of the association.
-  //
-  // name  - The local side name of the association that was modified.
-  // model - The model that was removed from the inverse side.
-  //
-  // Returns nothing.
-  this.prototype._inverseRemoved = function (name, model) {
-    var desc = this.associations[name];
-
-    if (!desc) {
-      throw new Error(this.constructor + "#inverseRemoved: unknown association `" + name + "`");
-    }
-
-    if (desc.type === 'hasOne') {
-      hasOneSet.call(this, desc, undefined, false);
-      this.didChange(desc.name);
-    } else if (desc.type === 'hasMany') {
-      this[desc.name]._inverseRemove(model);
-    }
-  };
-
-  // Internal: Called by an inverse association when a model was added on the inverse side. Updates
-  // the local side of the association.
-  //
-  // name  - The local side name of the association that was modified.
-  // model - The model that was added on the inverse side.
-  //
-  // Returns nothing.
-  this.prototype._inverseAdded = function (name, model) {
-    var desc = this.associations[name];
-
-    if (!desc) {
-      throw new Error(this.constructor + "#inverseAdded: unknown association `" + name + "`");
-    }
-
-    if (desc.type === 'hasOne') {
-      hasOneSet.call(this, desc, model, false);
-      this.didChange(desc.name);
-    } else if (desc.type === 'hasMany') {
-      this[desc.name]._inverseAdd(model);
-    }
-  };
-
-  // Internal: Overrides `Transis.Object#_setProp` in order to perform change tracking.
-  this.prototype._setProp = function (name, value) {
-    var oldValue = Model.__super__._setProp.call(this, name, value);
-
-    if (!this.__props__[name].attr && !this.associations[name]) {
-      return;
-    }
-    if (this.associations[name] && !this.associations[name].owner) {
-      return;
-    }
-
-    if (!(name in this.ownChanges)) {
-      if (!util.eq(this[name], oldValue)) {
-        this._setChange(name, oldValue);
-      }
-    } else if (util.eq(this[name], this.ownChanges[name])) {
-      this._clearChange(name);
-    }
-  };
-
-  // Internal: Sets the old value for the changed property of the given name.
-  this.prototype._setChange = function (name, oldValue) {
-    if (loads.length) {
-      return;
-    }
-    this.ownChanges[name] = oldValue;
-    this.didChange('ownChanges');
-  };
-
-  // Internal: Clears the change record for the property of the given name.
-  this.prototype._clearChange = function (name) {
-    if (name in this.ownChanges) {
-      delete this.ownChanges[name];
-      this.didChange('ownChanges');
-    }
-  };
-
-  // Internal: Clears all change records.
-  this.prototype._clearChanges = function () {
-    if (Object.keys(this.ownChanges).length) {
-      this.__ownChanges = {};
-      this.didChange('ownChanges');
-    }
-  };
-});
-
-Model.NEW = NEW;
-Model.EMPTY = EMPTY;
-Model.LOADED = LOADED;
-Model.DELETED = DELETED;
-
-Object.assign(Model, _validations2.default.static);
-Object.assign(Model.prototype, _validations2.default.instance);
-
-exports.default = Model;
-module.exports = exports["default"];
-
-
-/***/ }),
-/* 394 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.StateMixin = exports.PropsMixin = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _object = __webpack_require__(68);
-
-var _object2 = _interopRequireDefault(_object);
-
-var _array = __webpack_require__(67);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _util = __webpack_require__(40);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var nextId = 1;
-var updateLog = {};
-var updateQueue = {};
-
-function componentCmp(a, b) {
-  if (a._transisId < b._transisId) {
-    return -1;
-  } else if (a._transisId > b._transisId) {
-    return 1;
-  } else {
-    return 0;
-  }
-}
-
-function preFlush() {
-  updateLog = {};
-  _object2.default.delay(postFlush);
-}
-
-function postFlush() {
-  var components = [];
-
-  for (var id in updateQueue) {
-    components.push(updateQueue[id]);
-    delete updateQueue[id];
-  }
-
-  // Sort the components by their assigned _transisId. Since components get mounted from the top
-  // down, this should ensure that parent components are force updated before any descendent
-  // components that also need an update. This avoids the case where we force update a component
-  // and then force update one of its ancestors, which may unnecessarily render the component
-  // again.
-  components.sort(componentCmp).forEach(function (component) {
-    if (!updateLog[component._transisId] && component.isMounted()) {
-      component.forceUpdate();
-    }
-  });
-
-  _object2.default.delayPreFlush(preFlush);
-}
-
-function queueUpdate(component) {
-  updateQueue[component._transisId] = component;
-}
-
-function logUpdate(component) {
-  updateLog[component._transisId] = true;
-}
-
-_object2.default.delayPreFlush(preFlush);
-
-var PropsMixin = exports.PropsMixin = function PropsMixin(props) {
-  return {
-    componentWillMount: function componentWillMount() {
-      var _this = this;
-
-      this._transisId = this._transisId || nextId++;
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this);
-      };
-
-      var _loop = function _loop(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].on(prop, this._transisQueueUpdate);
-          }
-        }, _this);
-      };
-
-      for (var k in props) {
-        _loop(k);
-      }
-    },
-
-    componentDidMount: function componentDidMount() {
-      logUpdate(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this2 = this;
-
-      var _loop2 = function _loop2(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].off(prop, this._transisQueueUpdate);
-          }
-        }, _this2);
-      };
-
-      for (var k in props) {
-        _loop2(k);
-      }
-    },
-
-    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-      var _this3 = this;
-
-      var _loop3 = function _loop3(k) {
-        props[k].forEach(function (prop) {
-          if (nextProps[k] !== this.props[k]) {
-            if (this.props[k]) {
-              this.props[k].off(prop, this._transisQueueUpdate);
-            }
-            if (nextProps[k]) {
-              nextProps[k].on(prop, this._transisQueueUpdate);
-            }
-          }
-        }, _this3);
-      };
-
-      for (var k in props) {
-        _loop3(k);
-      }
-    }
-  };
-};
-
-var StateMixin = exports.StateMixin = function StateMixin(object, props) {
-  if ((typeof props === "undefined" ? "undefined" : _typeof(props)) !== 'object') {
-    props = _array2.default.from(arguments).slice(1).reduce(function (acc, prop) {
-      acc[prop] = [];
-      return acc;
-    }, {});
-  }
-
-  return {
-    getInitialState: function getInitialState() {
-      var state = {};
-      for (var k in props) {
-        state[k] = object[k];
-      }
-      return state;
-    },
-
-    componentWillMount: function componentWillMount() {
-      var _this4 = this;
-
-      this._transisId = this._transisId || nextId++;
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this4);
-      };
-
-      this._transisSyncState = function () {
-        var state = {};
-
-        var _loop4 = function _loop4(k) {
-          if (_this4.state[k] !== object[k]) {
-            if (_this4.state[k] && typeof _this4.state[k].off === 'function') {
-              props[k].forEach(function (path) {
-                _this4.state[k].off(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            if (object[k] && typeof object[k].on === 'function') {
-              props[k].forEach(function (path) {
-                object[k].on(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            state[k] = object[k];
-          }
-        };
-
-        for (var k in props) {
-          _loop4(k);
-        }
-
-        if (Object.keys(state).length) {
-          _this4.setState(state);
-        }
-      };
-
-      var _loop5 = function _loop5(k) {
-        if (object[k] && typeof object[k].on === 'function') {
-          props[k].forEach(function (path) {
-            object[k].on(path, _this4._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop5(k);
-      }
-
-      object.on('*', this._transisSyncState);
-    },
-
-    componentDidMount: function componentDidMount() {
-      logUpdate(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this5 = this;
-
-      var _loop6 = function _loop6(k) {
-        if (_this5.state[k] && typeof _this5.state[k].off === 'function') {
-          props[k].forEach(function (path) {
-            _this5.state[k].off(path, _this5._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop6(k);
-      }
-
-      object.off('*', this._transisSyncState);
-    }
-  };
-};
-
-
-/***/ }),
-/* 395 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _array = __webpack_require__(67);
-
-var _array2 = _interopRequireDefault(_array);
-
-var _util = __webpack_require__(40);
-
-var util = _interopRequireWildcard(_util);
-
-var _parsers = __webpack_require__(104);
+var _parsers = __webpack_require__(101);
 
 var parsers = _interopRequireWildcard(_parsers);
 
