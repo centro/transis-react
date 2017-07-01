@@ -1,11 +1,10 @@
-Q: Do we want to be backwards compiable with mixins?
+## Answered
+
+Q: Do we want to be backwards compiable with mixins? Yes.
 
 Q: syntax of usage?
 
-Q: seems like peerDependencies rn't installed when you run install transis-react, do you do that manually? or is there an easier way?
-
-# prefereed usage pattern
-
+#### prefereed usage pattern
 ```js
 import transisReact, { StateMixin, PropsMixin } from 'transis-react'
 
@@ -22,3 +21,45 @@ export default transisReact({
 }, MyComponent)
 ```
 
+## Abandoned
+Q: seems like peerDependencies rn't installed when you run install transis-react, do you do that manually? or is there an easier way?
+N/A
+
+
+
+## Needed
+Q: @Corey, what would you expect if prop mixins are set, but no props in the mixin were given?
+
+Q: @Corey, whats the current behavior for PropMixin and StateMixin conflict (containing the same keys)? What sort of priority takes place?
+
+Q: @Corey, what exactly does the TransisId do? walk me through.
+
+Q: @Corey, what exactly does delayPreFlush do?
+
+
+# TODOS:
+-[ ] tests
+-[ ] splitting out into modules
+
+-[ ] ProviderComponent, need to test all lifecycle behaviors on this
+
+```js
+  <Parent
+    mixState={{
+      global: appState,
+      state: { campaign: ['name'] }
+    }}
+    mixProps={{
+      props: { info: ["hidden"] }
+    }}
+    info={new TransisClass({ hidden: true })}
+  >
+    <div>
+      { this.state.campaign.name} is { this.props.info.hidden ? 'hidden' : 'revealing' }
+    </div>
+  </Parent>
+```
+
+# blockers
+-[?] two transis instance issue
+-[x] jest debugger

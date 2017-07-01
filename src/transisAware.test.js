@@ -1,5 +1,11 @@
 import transisAware, { updateQueue } from 'transisAware' // sometimes two instance of transis occurs
 
+// TODOS:
+// lifecycle
+// transisId ( need to share with Legacy )
+// state and prop mixin conflict
+// rerender times, use jasmine if necessary
+
 const Model = Transis.Object.extend(function() {
   this.prop('foo')
   this.prop('bar')

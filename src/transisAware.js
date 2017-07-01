@@ -147,11 +147,8 @@ const transisAware = (
     throw new Error("Cannot compose with-state component without global transis object, state: ", state)
   }
 
-  // TODO: convert prop into into an object of empty arrays
-  // e.g.
-  //    StateMixin({}, 'a', 'b', 'c')
-  //  ->
-  //    props {}= { a: [], b: [], c: [] }
+  // convert prop into into an object of empty arrays
+  // e.g. StateMixin({}, 'a', 'b', 'c') -> props {}= { a: [], b: [], c: [] }
   if (({}).toString.call(state).includes('Array')) { // is an array
     state = state.reduce((obj, stateName) => {
       obj[stateName] = []
