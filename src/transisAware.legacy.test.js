@@ -3,19 +3,10 @@ import {
   PropsMixinLegacy as PropsMixin
 } from 'transisAware' // sometimes two instance of transis occurs
 
-// TODO: check that this shares _transisId to the new generation mixin
-
-const Model = Transis.Object.extend(function() {
-  this.prop('foo')
-  this.prop('bar')
-  this.prop('baz')
-  this.prototype.reset = function() {
-    this.foo = 'foo 1';
-    this.bar = 'bar 1';
-    this.baz = 'baz 1';
-    Transis.Object.flush()
-  }
-})
+import {
+  Model, CoreComponent, TransisObjectFactory,
+  initial_state_expectation, state_change_sequence_expectation,
+} from './helper/testUtil'
 
 const CoreRender = ({ foo, bar, baz }) =>
   <div>
@@ -24,11 +15,10 @@ const CoreRender = ({ foo, bar, baz }) =>
     <div className="baz">{baz}</div>
   </div>
 
-describe('PropMixin', function() {
-  // with prop mixin
-  let component;
-  const model = new Model()
+let component;
+const model = new Model()
 
+describe('PropMixin', function() {
   const PropMixinComponent = React.createClass({
     mixins: [
       PropsMixin({ model: ['foo', 'bar'] })
@@ -57,13 +47,7 @@ describe('PropMixin', function() {
 })
 
 describe('StateMixin', () => {
-  const AppState = Transis.Object.extend(function() {
-    this.prop('model')
-    this.prop('a')
-    this.prop('b')
-  })
-  const appState = new AppState({ model: new Model })
-  // with state mixin
+  const appState = new (TransisObjectFactory('model'))({ model })
   const StateMixinComponent = React.createClass({
     mixins: [
       StateMixin(appState, { model: ['baz'] })
@@ -73,7 +57,6 @@ describe('StateMixin', () => {
       return <CoreRender {...{foo, bar, baz}} />
     }
   })
-  let component;
 
   beforeEach(() => {
     appState.model.reset()
@@ -81,42 +64,25 @@ describe('StateMixin', () => {
   })
   afterEach(() => component.unmount())
 
-  it('initially', () => {
-    expect(component.find('.foo').text()).toBe('foo 1')
-    expect(component.find('.bar').text()).toBe('bar 1')
-    expect(component.find('.baz').text()).toBe('baz 1')
-  })
+  it('initially', () => initial_state_expectation({ component }) )
 
   it('Changes w/ state mixins', () => {
-    appState.model.foo = 'foo 2'
-    Transis.Object.flush()
-    expect(component.find('.foo').text()).toBe('foo 1')
-
-    appState.model.bar = 'bar 2'
-    Transis.Object.flush()
-    expect(component.find('.bar').text()).toBe('bar 1')
-
-    appState.model.baz = 'baz 2'
-    Transis.Object.flush()
-    expect(component.find('.foo').text()).toBe('foo 2')
-    expect(component.find('.bar').text()).toBe('bar 2')
-    expect(component.find('.baz').text()).toBe('baz 2')
+    state_change_sequence_expectation({
+      model: appState.model,
+      component
+    })
   })
 
-  it('understand argument (globalVar, "a", "b") as (globalVar, { a: [], b: []}) ', () => {
+  describe('smart stateMixin parameters', () => {
     const SmartMixinComponent = React.createClass({
-      mixins: [
-        StateMixin(
-          new AppState({ a: 'Abc', b: 'Bcd', c: 'Cde' }),
-          'a', 'b'
-        )
-      ],
-      render() {
-        const { a, b, c } = this.state
-        return <div>{a}, {b}, {c}</div>
-      }
+      mixins: [ StateMixin(appState.model, 'foo', 'bar', 'baz') ],
+      render() { return <CoreComponent model={this.state}/> }
     })
-    let component = mount(<SmartMixinComponent />)
-    expect(component.text()).toBe('Abc, Bcd, ')
+
+    it('understand argument (globalVar, "a", "b") as (globalVar, { a: [], b: []}) ', () => {
+      initial_state_expectation({
+        component: mount(<SmartMixinComponent />)
+      })
+    })
   })
 })
