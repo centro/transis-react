@@ -3,7 +3,7 @@ import {
   Model, CoreComponent, TransisObjectFactory,
   // expectations
   initial_state_expectation, state_change_sequence_expectation,
-} from './helper/testUtil'
+} from './test_helper/testUtil'
 
 // TODOS:
 // lifecycle

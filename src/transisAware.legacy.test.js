@@ -6,7 +6,7 @@ import {
 import {
   Model, CoreComponent, TransisObjectFactory,
   initial_state_expectation, state_change_sequence_expectation,
-} from './helper/testUtil'
+} from './test_helper/testUtil'
 
 const CoreRender = ({ foo, bar, baz }) =>
   <div>

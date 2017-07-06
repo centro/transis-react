@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/transis-react.js",
   "scripts": {
-    "test": "jest",
+    "test": "find src | entr jest",
     "build": "webpack",
     "start": "webpack-dev-server",
     "testd": "node --debug-brk --inspect ./node_modules/.bin/jest -i"
@@ -51,11 +51,11 @@
     "collectCoverageFrom" : [
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
-      "!src/helper/testSetup.js"
+      "!src/test_helper/testSetup.js"
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(provider.)?(test|spec))\\.jsx?$",
     "coverageReporters": ["json", "lcov", "text"],
-    "setupFiles": ["./src/helper/testSetup"],
+    "setupFiles": ["./src/test_helper/testSetup"],
     "globals": {
       "React": true,
       "Transis": true,

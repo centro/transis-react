@@ -3,7 +3,7 @@ import { TransisProvider } from 'transisAware' // sometimes two instance of tran
 import {
   Model, CoreComponent, TransisObjectFactory,
   initial_state_expectation, state_change_sequence_expectation,
-} from './helper/testUtil'
+} from './test_helper/testUtil'
 
 let component;
 const model = new Model()
