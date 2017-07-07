@@ -69,3 +69,20 @@ describe('StateMixin', () => {
     })
   })
 })
+
+describe('Conflict State/Props Mixin', () => {
+  const child = new (TransisObjectFactory('name'))({ name: 'Congwen' })
+  const appState = new (TransisObjectFactory('name', 'child'))({ child }) //state
+  const PropsMixinComponent = transisAware({
+    global: appState,
+    state: ['child']
+  }, ({ child }) => {
+    return <div className="name">{child.name}</div>
+  })
+
+  it('conflicts with each other', () => {
+    expect(mount(
+      <PropsMixinComponent child={{ name: 'Jeter' }} />
+    ).text()).toBe('Congwen') // or Jeter, or Throw Error?
+  })
+})
