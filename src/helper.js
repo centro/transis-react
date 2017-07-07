@@ -2,24 +2,32 @@ import Transis from 'transis'
 import ReactDOM from 'react-dom'
 
 let nextId = 1;
-let updateLog = {};
-let updateQueue = {};
+const getId = () => nextId++;
+// @param {component}<ReactComponent> - component that needs _transisId
+const assignTransisIdTo = component => {
+  component._transisId = component._transisId || getId()
+}
 
-function componentComparison(a, b) {
+
+let updateLog = {}; // used to keep track of what's been updated
+let updateQueue = {}; // used as a register for components that needs update
+
+export const componentComparison = (a, b) => {
   if (a._transisId < b._transisId) { return -1; }
   else if (a._transisId > b._transisId) { return 1; }
   else { return 0; }
 }
 
-function preFlush() {
+// registers preFlush to be invoked before the next flush cycle
+const registerDelayPreFlush = () => Transis.Object.delayPreFlush(function preFlush() {
   updateLog = {};
-  Transis.Object.delay(postFlush);
-}
+  registerDelayPostFlush(); // registers postFlush to be invoked after next flush cycle
+})
 
-function postFlush() {
-  let components = [];
 
-  // console.warn('post flush triggered')
+const registerDelayPostFlush = () => Transis.Object.delay(function postFlush() {
+  let components = []; // registry for which components needs to be re-rendered
+
   for (let id in updateQueue) {
     components.push(updateQueue[id]);
     delete updateQueue[id];
@@ -42,32 +50,25 @@ function postFlush() {
     }
   });
 
-}
+  registerDelayPreFlush()
+})
 
-function queueUpdate(component) {
+const queueUpdate = component => {
   // console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
-function logUpdate(component) {
-  updateLog[component._transisId] = true;
-}
+const logUpdate = component => updateLog[component._transisId] = true
 
-function delayPreFlush() {
-  Transis.Object.delayPreFlush(preFlush);
-}
-
-delayPreFlush()
-
-export default {
-  get getId() {
-    return nextId++
-  },
-}
+// first register to kick off the cycle
+registerDelayPreFlush()
 
 export {
-  queueUpdate, updateQueue,
-  logUpdate, updateLog,
-  delayPreFlush,
-  preFlush,
+  assignTransisIdTo,
+
+  queueUpdate,
+  updateQueue,
+
+  logUpdate,
+  updateLog,
 }

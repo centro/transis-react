@@ -32,10 +32,6 @@ Q: @Corey, what would you expect if prop mixins are set, but no props in the mix
 
 Q: @Corey, whats would you expect when PropMixin and StateMixin conflict (containing the same keys)? What sort of priority takes place?
 
-Q: @Corey, what exactly does the TransisId do? walk me through.
-
-Q: @Corey, what exactly does delayPreFlush do?
-
 
 # TODOS:
 -[ ] tests

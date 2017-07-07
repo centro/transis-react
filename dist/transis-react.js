@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react-dom"), require("transis"));
+		module.exports = factory(require("react-dom"), require("transis"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "react-dom", "transis"], factory);
+		define(["react-dom", "transis", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));
+		exports["transis-react"] = factory(require("react-dom"), require("transis"), require("react"));
 	else
-		root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
+		root["transis-react"] = factory(root["react-dom"], root["transis"], root["react"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,11 +73,23 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86,23 +98,25 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.StateMixinLegacy = exports.TransisProvider = exports.PropsMixinLegacy = exports.updateQueue = undefined;
+exports.StateMixinLegacy = exports.TransisProvider = exports.PropsMixinLegacy = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(3);
+var _reactDom = __webpack_require__(0);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _transis = __webpack_require__(4);
+var _transis = __webpack_require__(1);
 
 var _transis2 = _interopRequireDefault(_transis);
+
+var _helper = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -119,67 +133,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // const Transis = mundo.Transis || MyTransis
 
 // copied from transis
-var nextId = 1;
-var updateLog = {};
-var updateQueue = exports.updateQueue = {};
-
-function componentComparison(a, b) {
-  if (a._transisId < b._transisId) {
-    return -1;
-  } else if (a._transisId > b._transisId) {
-    return 1;
-  } else {
-    return 0;
-  }
-}
-
-function preFlush() {
-  updateLog = {};
-  _transis2.default.Object.delay(postFlush);
-}
-
-function postFlush() {
-  var components = [];
-
-  // console.warn('post flush triggered')
-  for (var id in updateQueue) {
-    components.push(updateQueue[id]);
-    delete updateQueue[id];
-  }
-
-  // Sort the components by their assigned _transisId. Since components get mounted from the top
-  // down, this should ensure that parent components are force updated before any descendent
-  // components that also need an update. This avoids the case where we force update a component
-  // and then force update one of its ancestors, which may unnecessarily render the component
-  // again.
-  components.sort(componentComparison).forEach(function (component) {
-    try {
-      // TODO: figureout why this doesn't work with provider
-      var hasMounted = _reactDom2.default.findDOMNode(component);
-    } catch (e) {
-      console.warn('TransisAware attempted to update an unmounted component: ' + component);
-    }
-
-    if (!updateLog[component._transisId] && hasMounted) {
-      component.forceUpdate();
-    }
-  });
-
-  _transis2.default.Object.delayPreFlush(preFlush);
-}
-
-function queueUpdate(component) {
-  // console.warn('queueUpdate')
-  updateQueue[component._transisId] = component;
-}
-
-function logUpdate(component) {
-  updateLog[component._transisId] = true;
-}
-
-_transis2.default.Object.delayPreFlush(preFlush);
-
-// end of copied from transis
 
 
 // * Refactor Effort *
@@ -223,11 +176,11 @@ var componentWillMount = function componentWillMount(_ref) {
 
   if (state || props) {
     // setting transis id
-    this._transisId = this._transisId || nextId++;
+    (0, _helper.assignTransisIdTo)(this
 
     // setting main update function
-    var wrapQueueUpdate = function wrapQueueUpdate() {
-      queueUpdate(_this);
+    );var wrapQueueUpdate = function wrapQueueUpdate() {
+      (0, _helper.queueUpdate)(_this);
     }; // name this function
     this._transisQueueUpdate = this._transisQueueUpdate || wrapQueueUpdate;
   }
@@ -312,12 +265,12 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
       _this2.componentDidMount = function () {
         // this.debugMode && console.warn('component did mounted', this._transisId)
         _this2.haveMounted = true;
-        logUpdate(_this2);
+        (0, _helper.logUpdate)(_this2);
       };
 
       _this2.componentDidUpdate = function () {
         // this.debugMode && console.warn('component did update', this._transisId)
-        logUpdate(_this2);
+        (0, _helper.logUpdate)(_this2);
       };
 
       _this2.componentWillUnmount = function () {
@@ -389,9 +342,9 @@ var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(prop
     componentWillMount: function componentWillMount() {
       var _this3 = this;
 
-      this._transisId = this._transisId || nextId++;
+      (0, _helper.assignTransisIdTo)(this);
       this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this3);
+        (0, _helper.queueUpdate)(_this3);
       };
 
       var _loop2 = function _loop2(k) {
@@ -408,11 +361,11 @@ var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(prop
     },
 
     componentDidMount: function componentDidMount() {
-      logUpdate(this);
+      (0, _helper.logUpdate)(this);
     },
 
     componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
+      (0, _helper.logUpdate)(this);
     },
 
     componentWillUnmount: function componentWillUnmount() {
@@ -508,9 +461,9 @@ var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
     componentWillMount: function componentWillMount() {
       var _this6 = this;
 
-      this._transisId = this._transisId || nextId++;
+      (0, _helper.assignTransisIdTo)(this);
       this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        queueUpdate(_this6);
+        (0, _helper.queueUpdate)(_this6);
       };
 
       this._transisSyncState = function () {
@@ -566,11 +519,11 @@ var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
     },
 
     componentDidMount: function componentDidMount() {
-      logUpdate(this);
+      (0, _helper.logUpdate)(this);
     },
 
     componentDidUpdate: function componentDidUpdate() {
-      logUpdate(this);
+      (0, _helper.logUpdate)(this);
     },
 
     componentWillUnmount: function componentWillUnmount() {
@@ -594,7 +547,108 @@ var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
 };
 
 /***/ }),
-/* 1 */
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateLog = exports.logUpdate = exports.updateQueue = exports.queueUpdate = exports.assignTransisIdTo = exports.componentComparison = undefined;
+
+var _transis = __webpack_require__(1);
+
+var _transis2 = _interopRequireDefault(_transis);
+
+var _reactDom = __webpack_require__(0);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var nextId = 1;
+var getId = function getId() {
+  return nextId++;
+};
+// @param {component}<ReactComponent> - component that needs _transisId
+var assignTransisIdTo = function assignTransisIdTo(component) {
+  component._transisId = component._transisId || getId();
+};
+
+var updateLog = {}; // used to keep track of what's been updated
+var updateQueue = {}; // used as a register for components that needs update
+
+var componentComparison = exports.componentComparison = function componentComparison(a, b) {
+  if (a._transisId < b._transisId) {
+    return -1;
+  } else if (a._transisId > b._transisId) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
+// registers preFlush to be invoked before the next flush cycle
+var registerDelayPreFlush = function registerDelayPreFlush() {
+  return _transis2.default.Object.delayPreFlush(function preFlush() {
+    exports.updateLog = updateLog = {};
+    registerDelayPostFlush(); // registers postFlush to be invoked after next flush cycle
+  });
+};
+
+var registerDelayPostFlush = function registerDelayPostFlush() {
+  return _transis2.default.Object.delay(function postFlush() {
+    var components = []; // registry for which components needs to be re-rendered
+
+    for (var id in updateQueue) {
+      components.push(updateQueue[id]);
+      delete updateQueue[id];
+    }
+
+    // Sort the components by their assigned _transisId. Since components get mounted from the top
+    // down, this should ensure that parent components are force updated before any descendent
+    // components that also need an update. This avoids the case where we force update a component
+    // and then force update one of its ancestors, which may unnecessarily render the component
+    // again.
+    components.sort(componentComparison).forEach(function (component) {
+      try {
+        // TODO: figureout why this doesn't work with provider
+        var hasMounted = _reactDom2.default.findDOMNode(component);
+      } catch (e) {
+        console.warn('TransisAware attempted to update an unmounted component: ' + component);
+      }
+
+      if (!updateLog[component._transisId] && hasMounted) {
+        component.forceUpdate();
+      }
+    });
+
+    registerDelayPreFlush();
+  });
+};
+
+var queueUpdate = function queueUpdate(component) {
+  // console.warn('queueUpdate')
+  updateQueue[component._transisId] = component;
+};
+
+var logUpdate = function logUpdate(component) {
+  return updateLog[component._transisId] = true;
+};
+
+// first register to kick off the cycle
+registerDelayPreFlush();
+
+exports.assignTransisIdTo = assignTransisIdTo;
+exports.queueUpdate = queueUpdate;
+exports.updateQueue = updateQueue;
+exports.logUpdate = logUpdate;
+exports.updateLog = updateLog;
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -605,7 +659,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TransisProvider = exports.PropsMixin = exports.StateMixin = undefined;
 
-var _transisAware = __webpack_require__(0);
+var _transisAware = __webpack_require__(2);
 
 var _transisAware2 = _interopRequireDefault(_transisAware);
 
@@ -617,22 +671,10 @@ exports.PropsMixin = _transisAware.PropsMixinLegacy;
 exports.TransisProvider = _transisAware.TransisProvider;
 
 /***/ }),
-/* 2 */
+/* 5 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ })
 /******/ ]);
