@@ -1,4 +1,4 @@
-import { TransisProvider } from 'transisAware' // sometimes two instance of transis occurs
+import TransisProvider from './transisAware.provider' // sometimes two instance of transis occurs
 
 import {
   Model, CoreComponent, TransisObjectFactory,
@@ -56,7 +56,7 @@ describe('StateProvider', () => {
   })
 
   describe('smart stateProvider parameters', () => {
-    const DumbCore = props => <CoreComponent model={props} /> 
+    const DumbCore = props => <CoreComponent model={props} />
     const SmartProviderComponent = () =>
       <TransisProvider
         global={appState.model}

@@ -1,7 +1,7 @@
 import {
   StateMixinLegacy as StateMixin,
   PropsMixinLegacy as PropsMixin
-} from 'transisAware' // sometimes two instance of transis occurs
+} from 'transisAware.legacy' // sometimes two instance of transis occurs
 
 import {
   Model, CoreComponent, TransisObjectFactory,
