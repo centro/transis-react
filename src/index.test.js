@@ -1,4 +1,4 @@
-import transisAware, { StateMixin, PropsMixin, TransisProvider } from './index'
+import transisAware, { StateMixin, PropsMixin, TransisProvider, transisAwareStateInjection } from './index'
 
 test('export is working', () => {
   expect(typeof transisAware).toBe('function')
@@ -12,4 +12,7 @@ test('export is working', () => {
 
   expect(typeof PropsMixin).toBe('function')
   expect(PropsMixin.name).toBe('PropsMixinLegacy')
+
+  expect(typeof transisAwareStateInjection).toBe('function')
+  expect(transisAwareStateInjection.name).toBe('transisAwareStateInjection')
 })

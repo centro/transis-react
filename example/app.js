@@ -84,6 +84,7 @@ const Clock = transisAware(
 
 const { default: Legacy, Clock: ClockLegacy } = require('./app.legacy')
 const { default: Provider, Clock: ClockProvider } = require('./app.provider')
+const { default: StateInjection, Clock: ClockStateInjection } = require('./app.stateInjection')
 
 ReactDOM.render(
   <div>
@@ -99,11 +100,17 @@ ReactDOM.render(
       <legend> <h2>Legacy -- <ClockLegacy/> </h2></legend>
       <Legacy constant="Its a constant!"/>
     </fieldset>
-    <br/> <br/> <br/>
+    <br/> <br/>
 
     <fieldset>
       <legend><h2> Provider -- <ClockProvider/></h2></legend>
       <Provider constant="Its a constant!"/>
+    </fieldset>
+    <br/> <br/>
+
+    <fieldset>
+      <legend><h2> State Injection -- <ClockStateInjection/></h2></legend>
+      <StateInjection constant="Its a constant!"/>
     </fieldset>
     <br/> <br/>
 

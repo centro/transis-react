@@ -31,6 +31,10 @@ describe('PropMixin', function() {
     Transis.Object.flush()
     expect(component.find('.foo').text()).toBe('foo 2')
   })
+
+  // describe('lifecycle events')
+  // describe('changed model')
+  // describe('rerender times')
 })
 
 describe('StateMixin', () => {
@@ -48,6 +52,11 @@ describe('StateMixin', () => {
   afterEach(() => component.unmount())
 
   it('initially', () => initial_state_expectation({ component }) )
+  // it('test REMOVE', () => {
+  //   const appState1 = appState
+  //   debugger;
+  //   expect(1).toBe(2)
+  // })
 
   it('Changes w/ state mixins', () => {
     state_change_sequence_expectation({
@@ -68,6 +77,10 @@ describe('StateMixin', () => {
       })
     })
   })
+
+  // describe('lifecycle events')
+  // describe('changed model')
+  // describe('rerender times')
 })
 
 describe('Conflict State/Props Mixin', () => {

@@ -1,3 +1,4 @@
+import React from 'react'
 import transisAware from './transisAware'
 
 const TransisProvider = (props) => {
