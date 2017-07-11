@@ -707,6 +707,19 @@ var _helper = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// Note: not exactly sure when this is needed: work around for this multiple instance issue
+// let mundo; try { mundo = window } catch (e) { mundo = global }
+// const Transis = mundo.Transis || MyTransis
+
+// copied from transis
+
+
 // * Refactor Effort *
 // @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
 // @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
@@ -717,13 +730,6 @@ var bindState = function bindState(globalTransisObjectVar, attrsToWatch, callbac
     });
   }
 };
-
-// Note: not exactly sure when this is needed: work around for this multiple instance issue
-// let mundo; try { mundo = window } catch (e) { mundo = global }
-// const Transis = mundo.Transis || MyTransis
-
-// copied from transis
-
 
 var unbindState = function unbindState(stateVar, attrsToWatch, callback) {
   if (stateVar && typeof stateVar.off === 'function') {
@@ -804,6 +810,8 @@ var componentWillMountHelper = function componentWillMountHelper(_ref) {
 
 // main constructor
 var transisAwareStateInjection = function transisAwareStateInjection(_ref2, ComposedComponent) {
+  var _class, _temp, _initialiseProps;
+
   var globalTransisObject = _ref2.global,
       state = _ref2.state,
       props = _ref2.props;
@@ -833,77 +841,92 @@ var transisAwareStateInjection = function transisAwareStateInjection(_ref2, Comp
       componentDidUpdate = _ComposedComponent$pr5 === undefined ? function () {} : _ComposedComponent$pr5;
 
 
-  ComposedComponent.prototype.componentWillMount = function () {
-    var _this2 = this;
+  return _temp = _class = function (_ComposedComponent) {
+    _inherits(NewComponent, _ComposedComponent);
 
-    // initialize State
-    if (state) {
-      this.setState(Object.keys(state).reduce(function (result, key) {
-        result[key] = globalTransisObject[key];
-        return result;
-      }, {}));
-    }
-    if (props) {
-      this.componentWillReceiveProps = function (nextProps) {
-        var _loop = function _loop(k) {
-          props[k].forEach(function (prop) {
-            if (nextProps[k] !== _this2.props[k]) {
-              if (_this2.props[k]) {
-                _this2.props[k].off(prop, _this2._transisQueueUpdate);
+    function NewComponent() {
+      var _ref3;
+
+      _classCallCheck(this, NewComponent);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      // initialize State
+      var _this2 = _possibleConstructorReturn(this, (_ref3 = NewComponent.__proto__ || Object.getPrototypeOf(NewComponent)).call.apply(_ref3, [this].concat(args)));
+
+      _initialiseProps.call(_this2);
+
+      if (state) {
+        _this2.state = Object.keys(state).reduce(function (result, key) {
+          result[key] = globalTransisObject[key];
+          return result;
+        }, {});
+      }
+      if (props) {
+        _this2.componentWillReceiveProps = function (nextProps) {
+          var _loop = function _loop(k) {
+            props[k].forEach(function (prop) {
+              if (nextProps[k] !== _this2.props[k]) {
+                if (_this2.props[k]) {
+                  _this2.props[k].off(prop, _this2._transisQueueUpdate);
+                }
+                if (nextProps[k]) {
+                  nextProps[k].on(prop, _this2._transisQueueUpdate);
+                }
               }
-              if (nextProps[k]) {
-                nextProps[k].on(prop, _this2._transisQueueUpdate);
-              }
-            }
-          });
+            });
+          };
+
+          // console.warn('component will receive props', nextProps)
+          for (var k in props) {
+            _loop(k);
+          }
         };
+      }
+      return _this2;
+    }
 
-        // console.warn('component will receive props', nextProps)
-        for (var k in props) {
-          _loop(k);
+    return NewComponent;
+  }(ComposedComponent), _initialiseProps = function _initialiseProps() {
+    var _this3 = this;
+
+    this.componentWillMount = function () {
+      componentWillMount.apply(undefined, arguments);
+      // mixin component will mount
+      return componentWillMountHelper.call(_this3, {
+        globalTransisObject: globalTransisObject, state: state, props: props
+      });
+    };
+
+    this.componentDidMount = function () {
+      componentDidMount.apply(undefined, arguments);
+      _this3.haveMounted = true;
+      (0, _helper.logUpdate)(_this3);
+    };
+
+    this.componentDidUpdate = function () {
+      componentDidUpdate.apply(undefined, arguments);
+      (0, _helper.logUpdate)(_this3);
+    };
+
+    this.componentWillUnmount = function () {
+      componentWillUnmount.apply(undefined, arguments);
+      _this3.haveUnmounted = true;
+      if (state) {
+        for (var k in state) {
+          unbindState(_this3.state[k], state[k], _this3._transisQueueUpdate);
         }
-      };
-    }
-
-    componentWillMount(); // Method props given to the class.
-
-    // mixin component will mount
-    return componentWillMountHelper.call(this, {
-      globalTransisObject: globalTransisObject, state: state, props: props
-    });
-  };
-
-  ComposedComponent.prototype.componentDidMount = function () {
-    componentDidMount // Method props given to the class.
-
-    ();this.haveMounted = true;
-    (0, _helper.logUpdate)(this);
-  };
-
-  ComposedComponent.prototype.componentDidUpdate = function () {
-    componentDidUpdate.apply(undefined, arguments); // Method props given to the class.
-
-    (0, _helper.logUpdate)(this);
-  };
-
-  ComposedComponent.prototype.componentWillUnmount = function () {
-    componentWillUnmount.apply(undefined, arguments); // Method props given to the class.
-
-    this.haveUnmounted = true;
-    if (state) {
-      for (var k in state) {
-        unbindState(this.state[k], state[k], this._transisQueueUpdate);
+        globalTransisObject.off('*', _this3._transisSyncState);
       }
-      globalTransisObject.off('*', this._transisSyncState);
-    }
-    if (props) {
-      for (var _k2 in props) {
-        unbindProps(this.props[_k2], props[_k2], this._transisQueueUpdate);
+      if (props) {
+        for (var _k2 in props) {
+          unbindProps(_this3.props[_k2], props[_k2], _this3._transisQueueUpdate);
+        }
       }
-    }
-  };
-
-  return ComposedComponent;
+    };
+  }, _temp;
 };
 
 exports.default = transisAwareStateInjection;

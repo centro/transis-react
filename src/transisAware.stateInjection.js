@@ -118,73 +118,71 @@ const transisAwareStateInjection = (
     componentDidUpdate = () => {}
   } = ComposedComponent.prototype
 
-  ComposedComponent.prototype.componentWillMount = function() {
-    // initialize State
-    if (state) {
-      this.setState(Object.keys(state).reduce((result, key) => {
-        result[key] = globalTransisObject[key]
-        return result
-      }, {}))
-    }
-    if (props) {
-      this.componentWillReceiveProps = (nextProps) => {
-        // console.warn('component will receive props', nextProps)
-        for (let k in props) {
-          props[k].forEach(prop => {
-            if (nextProps[k] !== this.props[k]) {
-              if (this.props[k]) {
-                this.props[k].off(prop, this._transisQueueUpdate);
+  return class NewComponent extends ComposedComponent {
+    constructor(...args) {
+      super(...args)
+
+        // initialize State
+      if (state) {
+        this.state = Object.keys(state).reduce((result, key) => {
+          result[key] = globalTransisObject[key]
+          return result
+        }, {})
+      }
+      if (props) {
+        this.componentWillReceiveProps = (nextProps) => {
+          // console.warn('component will receive props', nextProps)
+          for (let k in props) {
+            props[k].forEach(prop => {
+              if (nextProps[k] !== this.props[k]) {
+                if (this.props[k]) {
+                  this.props[k].off(prop, this._transisQueueUpdate);
+                }
+                if (nextProps[k]) {
+                  nextProps[k].on(prop, this._transisQueueUpdate);
+                }
               }
-              if (nextProps[k]) {
-                nextProps[k].on(prop, this._transisQueueUpdate);
-              }
-            }
-          });
+            });
+          }
         }
       }
-
     }
 
-    componentWillMount(); // Method props given to the class.
+    componentWillMount = (...args) => {
+      componentWillMount(...args)
+      // mixin component will mount
+      return componentWillMountHelper.call(this, {
+        globalTransisObject, state, props
+      })
+    }
 
-    // mixin component will mount
-    return componentWillMountHelper.call(this, {
-      globalTransisObject, state, props
-    })
-  }
+    componentDidMount = (...args) => {
+      componentDidMount(...args)
+      this.haveMounted = true
+      logUpdate(this)
+    }
 
-  ComposedComponent.prototype.componentDidMount = function() {
-    componentDidMount() // Method props given to the class.
+    componentDidUpdate = (...args) => {
+      componentDidUpdate(...args)
+      logUpdate(this)
+    }
 
-    this.haveMounted = true
-    logUpdate(this)
-  }
-
-  ComposedComponent.prototype.componentDidUpdate = function(...args) {
-    componentDidUpdate(...args) // Method props given to the class.
-
-    logUpdate(this)
-  }
-
-
-  ComposedComponent.prototype.componentWillUnmount = function(...args) {
-    componentWillUnmount(...args) // Method props given to the class.
-
-    this.haveUnmounted = true
-    if (state) {
-      for (let k in state) {
-        unbindState(this.state[k], state[k], this._transisQueueUpdate)
+    componentWillUnmount = (...args) => {
+      componentWillUnmount(...args)
+      this.haveUnmounted = true
+      if (state) {
+        for (let k in state) {
+          unbindState(this.state[k], state[k], this._transisQueueUpdate)
+        }
+        globalTransisObject.off('*', this._transisSyncState);
       }
-      globalTransisObject.off('*', this._transisSyncState);
-    }
-    if (props) {
-      for (let k in props) {
-        unbindProps(this.props[k], props[k], this._transisQueueUpdate)
+      if (props) {
+        for (let k in props) {
+          unbindProps(this.props[k], props[k], this._transisQueueUpdate)
+        }
       }
     }
   }
-
-  return ComposedComponent;
 }
 
 export default transisAwareStateInjection
