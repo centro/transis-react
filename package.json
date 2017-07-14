@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/transis-react.js",
   "scripts": {
-    "test": "find src | entr jest --maxWorkers=4",
-    "testCov": "npm run test -- --coverage",
+    "test": "find src | entr jest",
+    "testCov": "npm run test -- --maxWorkers=4 --coverage",
     "build": "webpack",
     "start": "webpack-dev-server",
     "testd": "node --debug-brk --inspect ./node_modules/.bin/jest -i"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { transisAwareStateInjection } from '../src/index'
+const { transisAwareStateInjection } = window.transisAware
 
 // smart state mixin
 export const Clock = transisAwareStateInjection(

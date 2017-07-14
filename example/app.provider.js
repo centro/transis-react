@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import transisAware, { TransisProvider, StateMixin, PropsMixin } from '../src/index'
+const { TransisProvider } = window.transisAware
 
 // smart state mixin
 export const Clock = (props) => {
@@ -11,7 +11,7 @@ export const Clock = (props) => {
   </TransisProvider>
 }
 
-const ClockCore = props => <span>
+  const ClockCore = props => <span>
   {props.time && props.time.toLocaleTimeString()}
 </span>
 

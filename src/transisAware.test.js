@@ -1,4 +1,5 @@
 import transisAware from 'transisAware' // sometimes two instance of transis occurs
+
 import {
   Model, CoreComponent, TransisObjectFactory,
   // expectations
@@ -9,7 +10,7 @@ import {
 // lifecycle
 // transisId ( need to share with Legacy )
 // state and prop mixin conflict
-// rerender times, use jasmine if necessary
+// rerender times, use jasmine if necessary, check on rerender of child component and parent who both applied mixin
 
 let component;
 const model = new Model
@@ -32,7 +33,6 @@ describe('PropMixin', function() {
     expect(component.find('.foo').text()).toBe('foo 2')
   })
 
-  // describe('lifecycle events')
   // describe('changed model')
   // describe('rerender times')
 })
@@ -97,5 +97,80 @@ describe('Conflict State/Props Mixin', () => {
     expect(mount(
       <PropsMixinComponent child={{ name: 'Jeter' }} />
     ).text()).toBe('Congwen') // or Jeter, or Throw Error?
+  })
+})
+
+describe('Lifecycle Events', () => {
+  class AwareComponentCore extends React.Component {
+    // stubbed for mocking purpose, cannot be prebound
+    componentWillMount () {}
+    componentDidMount () {}
+    componentDidUpdate () {}
+    componentWillUnmount () {}
+    shouldComponentUpdate () {}
+    componentWillUpdate () {}
+    componentDidUpdate () {}
+    render() {
+      return <div>
+        <span className="injected">{ this.props.injected.name }</span>
+        <CoreComponent {...this.props} />
+      </div>
+    }
+  }
+
+  const inject1 = new (TransisObjectFactory('name'))({ name: 'injected 1' })
+  const inject2 = new (TransisObjectFactory('name'))({ name: 'injected 2' })
+  const appState = new (TransisObjectFactory('injected'))({ injected: inject1 })
+  const AwareComponent = transisAware({
+    props: { model: ['foo', 'bar']},
+    global: appState,
+    state: { injected: ['name'] }
+  }, AwareComponentCore)
+
+  // Spies
+  const componentWillMount = jest.spyOn(AwareComponentCore.prototype, 'componentWillMount')
+  const componentDidMount = jest.spyOn(AwareComponentCore.prototype, 'componentDidMount')
+  const componentWillUnmount = jest.spyOn(AwareComponentCore.prototype, 'componentWillUnmount')
+
+  const shouldComponentUpdate = jest.spyOn(AwareComponentCore.prototype, 'shouldComponentUpdate')
+  const componentWillUpdate = jest.spyOn(AwareComponentCore.prototype, 'componentWillUpdate')
+  const componentDidUpdate = jest.spyOn(AwareComponentCore.prototype, 'componentDidUpdate')
+
+  afterEach(() => {
+    jest.clearAllMocks()
+    jest.resetAllMocks()
+  })
+
+  it('mount', () => {
+    expect(componentWillMount).not.toHaveBeenCalled()
+    expect(componentDidMount).not.toHaveBeenCalled()
+    expect(componentWillUnmount).not.toHaveBeenCalled()
+
+    component = mount(<AwareComponent model={model}/>)
+    expect(componentWillMount).toHaveBeenCalled()
+    expect(componentDidMount).toHaveBeenCalled()
+    expect(component.find('.injected').text()).toBe('injected 1') // rendered
+    component.unmount()
+    expect(componentWillUnmount).toHaveBeenCalled()
+  })
+
+  it('update', () => {
+    component = mount(<AwareComponent model={model}/>)
+    expect(component.find('.injected').text()).toBe('injected 1') // rendered
+
+    expect(shouldComponentUpdate).not.toHaveBeenCalled()
+    expect(componentWillUpdate).not.toHaveBeenCalled()
+    expect(componentDidUpdate).not.toHaveBeenCalled()
+
+    appState.injected.name = 'john'
+    shouldComponentUpdate.mockReturnValue(true) // to speed things up
+
+    Transis.Object.flush()
+    expect(component.find('.injected').text()).toBe('john') // re-rendered
+    expect(shouldComponentUpdate).toHaveBeenCalled()
+
+    expect(componentWillUpdate).toHaveBeenCalled()
+    expect(componentDidUpdate).toHaveBeenCalled()
+    component.unmount()
   })
 })

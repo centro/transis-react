@@ -20,8 +20,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "style-loader": "^0.18.2",
-    "transis-react": "file:../",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "transis-react": "file:.."
   }
 }

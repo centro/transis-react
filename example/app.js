@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 import Transis from 'transis'
 
-import transisAware from '../src/index' // // TODO: not working, get it to work
+// import transisAware from '../src/index' // // TODO: not working, get it to work
+import transisAware from 'transis-react' // // TODO: not working, get it to work
+
+window.transisAware = transisAware // avoid importing in other components
 
 const fakeString = n => Array.from(Array(n || 10).keys()).map(n =>  String.fromCharCode(Math.floor(Math.random()*26) + 97)).join('')
 

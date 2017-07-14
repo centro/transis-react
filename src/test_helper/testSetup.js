@@ -22,6 +22,10 @@ copyProps(jsdom.window, global); // making the jsdom.window more global like
 global.window = jsdom.window;
 global.document = jsdom.window.document;
 global.navigator = { userAgent: 'node.js' };
+global.frames = [
+  { document: { write() {} } },
+  { document: { write() {} } }
+]
 // END OF BAD GLOBALS
 
 

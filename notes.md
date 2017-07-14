@@ -32,14 +32,14 @@ Q: @Corey, what would you expect if prop mixins are set, but no props in the mix
 nothing
 
 Q: @Corey, whats would you expect when PropMixin and StateMixin conflict (containing the same keys)? What sort of priority takes place?
+after discussion with alex, sounds like we want to throw an error
 
 
 # TODOS:
--[ ] tests
--[ ] splitting out into modules
--[ ] proptypes
+-[x] initial tests
+-[x] splitting out into modules
 
--[ ] ProviderComponent, need to test all lifecycle behaviors on this
+-[x] ProviderComponent, need to test all lifecycle behaviors on this
 
 ```js
   <Parent
@@ -57,6 +57,10 @@ Q: @Corey, whats would you expect when PropMixin and StateMixin conflict (contai
     </div>
   </Parent>
 ```
+-[ ] tag current version with all 4(transisAware, mixin, provider, stateInjection) working.
+-[ ] remove stateInjection and Provider pattern, focus on transisAware.
+-[ ] renaming the variables, transisAware -> transisReact, transisAwareLegacy -> TransisReactMixin
+
 
 # blockers
 -[?] two transis instance issue

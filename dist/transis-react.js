@@ -422,6 +422,9 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
 
 transisAware.Transis = _transis2.default; // for verifying Transis instances
 
+transisAware.updateLog = _helper.updateLog; // for debugging purposes
+transisAware.updateQueue = _helper.updateQueue;
+
 exports.default = transisAware;
 
 /***/ }),

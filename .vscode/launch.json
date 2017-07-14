@@ -6,27 +6,27 @@
 
   "version": "0.2.0",
   "configurations": [
+    // also working somewat, no debugger
+    // http://garethevans.com/2016/06/14/debugging-the-visual-studio-code-debugger/
     {
+      "name": "Debug Tests",
       "type": "node",
       "request": "launch",
-      "name": "Jest Tests",
       "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
-      "args": [
-        "-i"
+      "stopOnEntry": false,
+      "args": ["--runInBand"],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+          "--harmony"
       ],
-      "preLaunchTask": null,
-      "internalConsoleOptions": "openOnSessionStart",
-      "outFiles": [
-        "${workspaceRoot}/dist/**/*"
-      ]
-    },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach to Port",
-      "address": "localhost",
-      "port": 5858,
-      "outFiles": [ ]
+      "env": {
+          "NODE_ENV": "development"
+      },
+      "externalConsole": false,
+      "sourceMaps": true,
+      "outDir": null,
+      "port": 9070
     },
 
     // seemed to have worked, NOTE: winner!

@@ -186,4 +186,8 @@ const transisAware = (
 
 transisAware.Transis = Transis // for verifying Transis instances
 
+transisAware.updateLog = updateLog // for debugging purposes
+transisAware.updateQueue = updateQueue
+
+
 export default transisAware
