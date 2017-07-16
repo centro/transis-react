@@ -7,7 +7,7 @@ import {
 } from './test_helper/testUtil'
 
 // TODOS:
-// lifecycle
+// lifecycle [x]
 // transisId ( need to share with Legacy )
 // state and prop mixin conflict
 // rerender times, use jasmine if necessary, check on rerender of child component and parent who both applied mixin
@@ -32,15 +32,11 @@ describe('PropMixin', function() {
     Transis.Object.flush()
     expect(component.find('.foo').text()).toBe('foo 2')
   })
-
-  // describe('changed model')
-  // describe('rerender times')
 })
 
 describe('StateMixin', () => {
-  const appState = new (TransisObjectFactory('model'))({ model })
-  // with state mixin
-  const StateMixinComponent = transisAware({
+  const appState = new (TransisObjectFactory('model'))({ model }) // gloal state
+  const StateMixinComponent = transisAware({ // with state mixin
     global: appState,
     state: { model: ['baz'] }
   }, CoreComponent)
@@ -52,11 +48,6 @@ describe('StateMixin', () => {
   afterEach(() => component.unmount())
 
   it('initially', () => initial_state_expectation({ component }) )
-  // it('test REMOVE', () => {
-  //   const appState1 = appState
-  //   debugger;
-  //   expect(1).toBe(2)
-  // })
 
   it('Changes w/ state mixins', () => {
     state_change_sequence_expectation({
@@ -77,9 +68,6 @@ describe('StateMixin', () => {
       })
     })
   })
-
-  // describe('changed model')
-  // describe('rerender times')
 })
 
 describe('Conflict State/Props Mixin', () => {
@@ -99,17 +87,12 @@ describe('Conflict State/Props Mixin', () => {
   })
 })
 
-describe('Lifecycle Events', () => {
+describe('combining state and props tests', () => {
   // component setup 
   class AwareComponentCore extends React.Component {
     // stubbed for mocking purpose, cannot be prebound
-    componentWillMount () {}
-    componentDidMount () {}
-    componentDidUpdate () {}
-    componentWillUnmount () {}
-    shouldComponentUpdate () {}
-    componentWillUpdate () {}
-    componentDidUpdate () {}
+    componentWillMount () {} componentDidMount () {} componentDidUpdate () {} componentWillUnmount () {}
+    shouldComponentUpdate () {} componentWillUpdate () {} componentDidUpdate () {}
     render() {
       return <div>
         <span className="injected">{ this.props.injected.name }</span>
@@ -117,9 +100,9 @@ describe('Lifecycle Events', () => {
       </div>
     }
   }
-
-  const inject1 = new (TransisObjectFactory('name'))({ name: 'injected 1' })
-  const inject2 = new (TransisObjectFactory('name'))({ name: 'injected 2' })
+  const InjectedModel = TransisObjectFactory('name')
+  const inject1 = new InjectedModel({ name: 'injected 1' })
+  const inject2 = new InjectedModel({ name: 'injected 2' })
   const appState = new (TransisObjectFactory('injected'))({ injected: inject1 })
   const AwareComponent = transisAware({
     props: { model: ['foo', 'bar']},
@@ -127,51 +110,122 @@ describe('Lifecycle Events', () => {
     state: { injected: ['name'] }
   }, AwareComponentCore)
   // end of lifcycle test component setup
+  
+  const magicSpy = new Proxy(AwareComponentCore.prototype, { get: jest.spyOn })
+  
+  // TODO: missing lifecycle methods, such as willReceiveProps etc.
+  describe('Lifecycle Events', () => {
+    const { // Spies
+      componentWillMount, componentDidMount, componentWillUnmount, // props
+      shouldComponentUpdate, componentWillUpdate, componentDidUpdate, // states
+    } = magicSpy 
 
-  // Spies
-  const componentWillMount = jest.spyOn(AwareComponentCore.prototype, 'componentWillMount')
-  const componentDidMount = jest.spyOn(AwareComponentCore.prototype, 'componentDidMount')
-  const componentWillUnmount = jest.spyOn(AwareComponentCore.prototype, 'componentWillUnmount')
+    afterEach(jest.resetAllMocks)
+    afterAll(jest.clearAllMocks)
 
-  const shouldComponentUpdate = jest.spyOn(AwareComponentCore.prototype, 'shouldComponentUpdate')
-  const componentWillUpdate = jest.spyOn(AwareComponentCore.prototype, 'componentWillUpdate')
-  const componentDidUpdate = jest.spyOn(AwareComponentCore.prototype, 'componentDidUpdate')
+    it('mount as expected', () => {
+      expect(componentWillMount).not.toHaveBeenCalled()
+      expect(componentDidMount).not.toHaveBeenCalled()
+      expect(componentWillUnmount).not.toHaveBeenCalled()
 
-  afterEach(() => {
-    jest.clearAllMocks()
-    jest.resetAllMocks()
+      component = mount(<AwareComponent model={model}/>)
+      expect(componentWillMount).toHaveBeenCalled()
+      expect(componentDidMount).toHaveBeenCalled()
+      expect(component.find('.injected').text()).toBe('injected 1') // rendered
+      component.unmount()
+      expect(componentWillUnmount).toHaveBeenCalled()
+    })
+
+    it('state mixin update as expected', () => {
+      component = mount(<AwareComponent model={model}/>)
+      expect(component.find('.injected').text()).toBe('injected 1') // rendered
+
+      expect(shouldComponentUpdate).not.toHaveBeenCalled()
+      expect(componentWillUpdate).not.toHaveBeenCalled()
+      expect(componentDidUpdate).not.toHaveBeenCalled()
+
+      appState.injected.name = 'john'
+      shouldComponentUpdate.mockReturnValue(true) // to speed things up
+
+      Transis.Object.flush()
+      expect(component.find('.injected').text()).toBe('john') // re-rendered
+      expect(shouldComponentUpdate).toHaveBeenCalled()
+
+      expect(componentWillUpdate).toHaveBeenCalled()
+      expect(componentDidUpdate).toHaveBeenCalled()
+      component.unmount()
+    })
+    // TODO: next three
+    it('swapping out state')
+    it('props mixin update as expected')
+    it('swapping out props')
   })
 
-  it('mount', () => {
-    expect(componentWillMount).not.toHaveBeenCalled()
-    expect(componentDidMount).not.toHaveBeenCalled()
-    expect(componentWillUnmount).not.toHaveBeenCalled()
+  describe('parent renders halts child re-renders', () => {
+    // component setup 
+    let PropsMixinedComponentRenderCount = 0
+    let NoReRenderComponentRenderCount = 0
 
-    component = mount(<AwareComponent model={model}/>)
-    expect(componentWillMount).toHaveBeenCalled()
-    expect(componentDidMount).toHaveBeenCalled()
-    expect(component.find('.injected').text()).toBe('injected 1') // rendered
-    component.unmount()
-    expect(componentWillUnmount).toHaveBeenCalled()
-  })
+    const PropsMixinedComponent = transisAware({
+      props: { model: ['foo', 'bar']},
+    }, ({ model }) => {
+      PropsMixinedComponentRenderCount++
+      return <div className="foo">{model.foo}</div>
+    })
 
-  it('update', () => {
-    component = mount(<AwareComponent model={model}/>)
-    expect(component.find('.injected').text()).toBe('injected 1') // rendered
+    const NoReRenderComponent = transisAware({
+      global: appState,
+      state: { injected: ['name'] }
+    }, class NoReRenderComponentCore extends React.Component {
+      render() {
+        NoReRenderComponentRenderCount++
+        const { model, injected } = this.props
+        return <div>
+          <div className="injected">{injected.name}</div>
+          <PropsMixinedComponent model={model} />
+        </div>
+      }
+    })
 
-    expect(shouldComponentUpdate).not.toHaveBeenCalled()
-    expect(componentWillUpdate).not.toHaveBeenCalled()
-    expect(componentDidUpdate).not.toHaveBeenCalled()
+    beforeEach(() => {
+      PropsMixinedComponentRenderCount = 0
+      NoReRenderComponentRenderCount = 0
+      component = mount(<NoReRenderComponent model={model}/>)
+      // expect(component.find('.injected').text()).toBe('john')
+      // expect(component.find('.foo').text()).toBe('foo 1')
+    })
+     
+    it('initially each renders once', () => {
+      expect(PropsMixinedComponentRenderCount).toBe(1)
+      expect(NoReRenderComponentRenderCount).toBe(1)
+    })
+    
+    // TODO: investigate why each render is causing it to render twice
+    it('first queue child will re-render child twice', () => {
+      expect(PropsMixinedComponentRenderCount).toBe(1) // initially
+      model.foo = 'foo 2' 
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(3)
+      expect(NoReRenderComponentRenderCount).toBe(1)
 
-    appState.injected.name = 'john'
-    shouldComponentUpdate.mockReturnValue(true) // to speed things up
+      appState.injected.name = 'injected 1'
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(5)
+      expect(NoReRenderComponentRenderCount).toBe(3)
+    })
+    
+    // TODO: get rid of these have to be differenet name stuff by using
+    // undochanges
+    it('first queue parent will only re-render child once', () => {
+      model.foo = 'foo 3' 
+      expect(PropsMixinedComponentRenderCount).toBe(1)
+      expect(NoReRenderComponentRenderCount).toBe(1)
 
-    Transis.Object.flush()
-    expect(component.find('.injected').text()).toBe('john') // re-rendered
-    expect(shouldComponentUpdate).toHaveBeenCalled()
-
-    expect(componentWillUpdate).toHaveBeenCalled()
-    expect(componentDidUpdate).toHaveBeenCalled()
-    component.unmount()
+      appState.injected.name = 'injected 2'
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(3)
+      expect(NoReRenderComponentRenderCount).toBe(3)
+    })
   })
 })
+
