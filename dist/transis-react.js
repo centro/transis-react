@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react-dom"), require("transis"));
+		module.exports = factory(require("react-dom"), require("transis"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "react-dom", "transis"], factory);
+		define(["react-dom", "transis", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["transis-react"] = factory(require("react"), require("react-dom"), require("transis"));
+		exports["transis-react"] = factory(require("react-dom"), require("transis"), require("react"));
 	else
-		root["transis-react"] = factory(root["react"], root["react-dom"], root["transis"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
+		root["transis-react"] = factory(root["react-dom"], root["transis"], root["react"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -88,11 +88,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updateLog = exports.logUpdate = exports.updateQueue = exports.queueUpdate = exports.assignTransisIdTo = exports.componentComparison = undefined;
 
-var _transis = __webpack_require__(4);
+var _transis = __webpack_require__(2);
 
 var _transis2 = _interopRequireDefault(_transis);
 
-var _reactDom = __webpack_require__(3);
+var _reactDom = __webpack_require__(1);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -186,6 +186,216 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StateMixin = exports.PropsMixin = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; //  support
+
+
+var _helper = __webpack_require__(0);
+
+// Legacy Prop Mixin
+var PropsMixin = exports.PropsMixin = function PropsMixin(props) {
+  return {
+    componentWillMount: function componentWillMount() {
+      var _this = this;
+
+      (0, _helper.assignTransisIdTo)(this);
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        (0, _helper.queueUpdate)(_this);
+      };
+
+      var _loop = function _loop(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].on(prop, this._transisQueueUpdate);
+          }
+        }, _this);
+      };
+
+      for (var k in props) {
+        _loop(k);
+      }
+    },
+
+    componentDidMount: function componentDidMount() {
+      (0, _helper.logUpdate)(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      (0, _helper.logUpdate)(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this2 = this;
+
+      var _loop2 = function _loop2(k) {
+        props[k].forEach(function (prop) {
+          if (this.props[k]) {
+            this.props[k].off(prop, this._transisQueueUpdate);
+          }
+        }, _this2);
+      };
+
+      for (var k in props) {
+        _loop2(k);
+      }
+    },
+
+    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+      var _this3 = this;
+
+      var _loop3 = function _loop3(k) {
+        props[k].forEach(function (prop) {
+          if (nextProps[k] !== this.props[k]) {
+            if (this.props[k]) {
+              this.props[k].off(prop, this._transisQueueUpdate);
+            }
+            if (nextProps[k]) {
+              nextProps[k].on(prop, this._transisQueueUpdate);
+            }
+          }
+        }, _this3);
+      };
+
+      for (var k in props) {
+        _loop3(k);
+      }
+    }
+  };
+};
+
+//  State Mixin
+var StateMixin = exports.StateMixin = function StateMixin() {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  var object = args[0],
+      props = args[1];
+
+  if ((typeof props === 'undefined' ? 'undefined' : _typeof(props)) !== 'object') {
+    // convert prop into into an object of empty arrays
+    // e.g.
+    // StateMixin({}, 'a', 'b', 'c') -> props become { a: [], b: [], c: [] }
+    props = [].slice.call(args, 1).reduce(function (acc, prop) {
+      acc[prop] = [];
+      return acc;
+    }, {});
+  }
+
+  return {
+    getInitialState: function getInitialState() {
+      var state = {};
+      for (var k in props) {
+        state[k] = object[k];
+      }
+      return state;
+    },
+
+    componentWillMount: function componentWillMount() {
+      var _this4 = this;
+
+      (0, _helper.assignTransisIdTo)(this);
+      this._transisQueueUpdate = this._transisQueueUpdate || function () {
+        (0, _helper.queueUpdate)(_this4);
+      };
+
+      this._transisSyncState = function () {
+        var state = {};
+
+        // for appstate variables, loop
+
+        var _loop4 = function _loop4(k) {
+          if (_this4.state[k] !== object[k]) {
+            // if the var is changed
+            // if local state var exist and it can `off`?!, turn off the update watcher
+            if (_this4.state[k] && typeof _this4.state[k].off === 'function') {
+              props[k].forEach(function (path) {
+                _this4.state[k].off(path, _this4._transisQueueUpdate);
+              });
+            }
+
+            // if global state var exist and it can `on`?!, turn on update watcher
+            if (object[k] && typeof object[k].on === 'function') {
+              props[k].forEach(function (path) {
+                object[k].on(path, _this4._transisQueueUpdate);
+              });
+            }
+
+            state[k] = object[k]; // prepare to attach global var to local var
+          }
+        };
+
+        for (var k in props) {
+          _loop4(k);
+        }
+
+        if (Object.keys(state).length) {
+          _this4.setState(state);
+        } // update if there is a need
+      };
+
+      var _loop5 = function _loop5(k) {
+        // loop through states, on sync all states initially
+        if (object[k] && typeof object[k].on === 'function') {
+          // global object
+          props[k].forEach(function (path) {
+            object[k].on(path, _this4._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop5(k);
+      }
+
+      object.on('*', this._transisSyncState);
+    },
+
+    componentDidMount: function componentDidMount() {
+      (0, _helper.logUpdate)(this);
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      (0, _helper.logUpdate)(this);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+      var _this5 = this;
+
+      var _loop6 = function _loop6(k) {
+        if (_this5.state[k] && typeof _this5.state[k].off === 'function') {
+          props[k].forEach(function (path) {
+            _this5.state[k].off(path, _this5._transisQueueUpdate);
+          });
+        }
+      };
+
+      for (var k in props) {
+        _loop6(k);
+      }
+
+      object.off('*', this._transisSyncState);
+    }
+  };
+};
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -197,15 +407,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(3);
+var _reactDom = __webpack_require__(1);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _transis = __webpack_require__(4);
+var _transis = __webpack_require__(2);
 
 var _transis2 = _interopRequireDefault(_transis);
 
@@ -428,18 +638,6 @@ transisAware.updateQueue = _helper.updateQueue;
 exports.default = transisAware;
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -449,524 +647,25 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.StateMixinLegacy = exports.PropsMixinLegacy = undefined;
+exports.PropsMixin = exports.StateMixin = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // Legacy support
-
-
-var _helper = __webpack_require__(0);
-
-// Legacy Prop Mixin
-var PropsMixinLegacy = exports.PropsMixinLegacy = function PropsMixinLegacy(props) {
-  return {
-    componentWillMount: function componentWillMount() {
-      var _this = this;
-
-      (0, _helper.assignTransisIdTo)(this);
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        (0, _helper.queueUpdate)(_this);
-      };
-
-      var _loop = function _loop(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].on(prop, this._transisQueueUpdate);
-          }
-        }, _this);
-      };
-
-      for (var k in props) {
-        _loop(k);
-      }
-    },
-
-    componentDidMount: function componentDidMount() {
-      (0, _helper.logUpdate)(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      (0, _helper.logUpdate)(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this2 = this;
-
-      var _loop2 = function _loop2(k) {
-        props[k].forEach(function (prop) {
-          if (this.props[k]) {
-            this.props[k].off(prop, this._transisQueueUpdate);
-          }
-        }, _this2);
-      };
-
-      for (var k in props) {
-        _loop2(k);
-      }
-    },
-
-    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-      var _this3 = this;
-
-      var _loop3 = function _loop3(k) {
-        props[k].forEach(function (prop) {
-          if (nextProps[k] !== this.props[k]) {
-            if (this.props[k]) {
-              this.props[k].off(prop, this._transisQueueUpdate);
-            }
-            if (nextProps[k]) {
-              nextProps[k].on(prop, this._transisQueueUpdate);
-            }
-          }
-        }, _this3);
-      };
-
-      for (var k in props) {
-        _loop3(k);
-      }
-    }
-  };
-};
-
-// Legacy State Mixin
-var StateMixinLegacy = exports.StateMixinLegacy = function StateMixinLegacy() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  var object = args[0],
-      props = args[1];
-
-  if ((typeof props === 'undefined' ? 'undefined' : _typeof(props)) !== 'object') {
-    // convert prop into into an object of empty arrays
-    // e.g.
-    // StateMixin({}, 'a', 'b', 'c') -> props become { a: [], b: [], c: [] }
-    props = [].slice.call(args, 1).reduce(function (acc, prop) {
-      acc[prop] = [];
-      return acc;
-    }, {});
-  }
-
-  return {
-    getInitialState: function getInitialState() {
-      var state = {};
-      for (var k in props) {
-        state[k] = object[k];
-      }
-      return state;
-    },
-
-    componentWillMount: function componentWillMount() {
-      var _this4 = this;
-
-      (0, _helper.assignTransisIdTo)(this);
-      this._transisQueueUpdate = this._transisQueueUpdate || function () {
-        (0, _helper.queueUpdate)(_this4);
-      };
-
-      this._transisSyncState = function () {
-        var state = {};
-
-        // for appstate variables, loop
-
-        var _loop4 = function _loop4(k) {
-          if (_this4.state[k] !== object[k]) {
-            // if the var is changed
-            // if local state var exist and it can `off`?!, turn off the update watcher
-            if (_this4.state[k] && typeof _this4.state[k].off === 'function') {
-              props[k].forEach(function (path) {
-                _this4.state[k].off(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            // if global state var exist and it can `on`?!, turn on update watcher
-            if (object[k] && typeof object[k].on === 'function') {
-              props[k].forEach(function (path) {
-                object[k].on(path, _this4._transisQueueUpdate);
-              });
-            }
-
-            state[k] = object[k]; // prepare to attach global var to local var
-          }
-        };
-
-        for (var k in props) {
-          _loop4(k);
-        }
-
-        if (Object.keys(state).length) {
-          _this4.setState(state);
-        } // update if there is a need
-      };
-
-      var _loop5 = function _loop5(k) {
-        // loop through states, on sync all states initially
-        if (object[k] && typeof object[k].on === 'function') {
-          // global object
-          props[k].forEach(function (path) {
-            object[k].on(path, _this4._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop5(k);
-      }
-
-      object.on('*', this._transisSyncState);
-    },
-
-    componentDidMount: function componentDidMount() {
-      (0, _helper.logUpdate)(this);
-    },
-
-    componentDidUpdate: function componentDidUpdate() {
-      (0, _helper.logUpdate)(this);
-    },
-
-    componentWillUnmount: function componentWillUnmount() {
-      var _this5 = this;
-
-      var _loop6 = function _loop6(k) {
-        if (_this5.state[k] && typeof _this5.state[k].off === 'function') {
-          props[k].forEach(function (path) {
-            _this5.state[k].off(path, _this5._transisQueueUpdate);
-          });
-        }
-      };
-
-      for (var k in props) {
-        _loop6(k);
-      }
-
-      object.off('*', this._transisSyncState);
-    }
-  };
-};
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transisAware = __webpack_require__(2);
+var _transisAware = __webpack_require__(4);
 
 var _transisAware2 = _interopRequireDefault(_transisAware);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var TransisProvider = function TransisProvider(props) {
-  var global = props.global,
-      mixState = props.mixState,
-      mixProps = props.mixProps,
-      children = props.children,
-      otherProps = _objectWithoutProperties(props, ['global', 'mixState', 'mixProps', 'children']);
-
-  var HigherOrderProvider = (0, _transisAware2.default)({
-    global: global,
-    state: mixState,
-    props: mixProps
-  }, function (coreProps) {
-    // TODO: throw error here if conflict occurs, betweeen props and other props should be fine
-
-    return _react2.default.createElement(children.type, _extends({}, children.props, coreProps));
-    // return React.cloneElement(children, coreProps) // equivalent, preserves refs
-  });
-
-  return _react2.default.createElement(HigherOrderProvider, otherProps);
-};
-
-exports.default = TransisProvider;
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helper = __webpack_require__(0);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Note: not exactly sure when this is needed: work around for this multiple instance issue
-// let mundo; try { mundo = window } catch (e) { mundo = global }
-// const Transis = mundo.Transis || MyTransis
-
-// copied from transis
-
-
-// * Refactor Effort *
-// @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
-// @param {Array} attrsToWatch - props on the globalTransisObjectVar that the component should watch for
-var bindState = function bindState(globalTransisObjectVar, attrsToWatch, callback) {
-  if (globalTransisObjectVar && typeof globalTransisObjectVar.on === 'function') {
-    attrsToWatch.forEach(function (attrPath) {
-      return globalTransisObjectVar.on(attrPath, callback);
-    });
-  }
-};
-
-var unbindState = function unbindState(stateVar, attrsToWatch, callback) {
-  if (stateVar && typeof stateVar.off === 'function') {
-    attrsToWatch.forEach(function (attrPath) {
-      return stateVar.off(attrPath, callback);
-    });
-  }
-};
-
-var unbindProps = function unbindProps(propsVar, attrsToWatch, callback) {
-  attrsToWatch.forEach(function (attrPath) {
-    return propsVar && propsVar.off(attrPath, callback);
-  });
-};
-
-var bindProps = function bindProps(propsVar, attrsToWatch, callback) {
-  attrsToWatch.forEach(function (attrPath) {
-    return propsVar && propsVar.on(attrPath, callback);
-  });
-};
-
-// component will mount
-var componentWillMountHelper = function componentWillMountHelper(_ref) {
-  var _this = this;
-
-  var globalTransisObject = _ref.globalTransisObject,
-      state = _ref.state,
-      props = _ref.props;
-
-  if (state || props) {
-    // setting transis id
-    (0, _helper.assignTransisIdTo)(this
-
-    // setting main update function
-    );var wrapQueueUpdate = function wrapQueueUpdate() {
-      (0, _helper.queueUpdate)(_this);
-    }; // name this function
-    this._transisQueueUpdate = this._transisQueueUpdate || wrapQueueUpdate;
-  }
-  if (state) {
-    // core register sync method
-    this._transisSyncState = function () {
-      // console.warn('transis sync update triggered')
-
-      var stateToUpdate = {};
-      for (var k in state) {
-        if (_this.state[k] !== globalTransisObject[k]) {
-          // local state is out of date, off syncing it
-          unbindState(_this.state[k], state[k], _this._transisQueueUpdate
-
-          // globalTransisObject state needs to be attached, on syncing it
-          );bindState(globalTransisObject[k], state[k], _this._transisQueueUpdate);
-
-          stateToUpdate[k] = globalTransisObject[k];
-        }
-      } // end of for loop
-
-      if (Object.keys(stateToUpdate).length) {
-        _this.setState(stateToUpdate);
-      }
-    };
-
-    for (var k in state) {
-      // loop through states, on sync all states initially
-      bindState(globalTransisObject[k], state[k], this._transisQueueUpdate);
-    }
-
-    globalTransisObject.on('*', this._transisSyncState);
-  }
-
-  if (props) {
-    for (var _k in props) {
-      bindProps(this.props[_k], props[_k], this._transisQueueUpdate);
-    }
-  }
-}; // end of Component Will Mount Factory
-// * end Refactor Effort *
-
-// main constructor
-var transisAwareStateInjection = function transisAwareStateInjection(_ref2, ComposedComponent) {
-  var _class, _temp, _initialiseProps;
-
-  var globalTransisObject = _ref2.global,
-      state = _ref2.state,
-      props = _ref2.props;
-
-  if (!globalTransisObject && state) {
-    throw new Error("Cannot compose with-state component without global transis object, state: ", state);
-  }
-
-  // convert prop into into an object of empty arrays
-  // e.g. StateMixin({}, 'a', 'b', 'c') -> props {}= { a: [], b: [], c: [] }
-  if ({}.toString.call(state).includes('Array')) {
-    // is an array
-    state = state.reduce(function (obj, stateName) {
-      obj[stateName] = [];
-      return obj;
-    }, {});
-  }
-
-  var _ComposedComponent$pr = ComposedComponent.prototype,
-      _ComposedComponent$pr2 = _ComposedComponent$pr.componentWillMount,
-      componentWillMount = _ComposedComponent$pr2 === undefined ? function () {} : _ComposedComponent$pr2,
-      _ComposedComponent$pr3 = _ComposedComponent$pr.componentDidMount,
-      componentDidMount = _ComposedComponent$pr3 === undefined ? function () {} : _ComposedComponent$pr3,
-      _ComposedComponent$pr4 = _ComposedComponent$pr.componentWillUnmount,
-      componentWillUnmount = _ComposedComponent$pr4 === undefined ? function () {} : _ComposedComponent$pr4,
-      _ComposedComponent$pr5 = _ComposedComponent$pr.componentDidUpdate,
-      componentDidUpdate = _ComposedComponent$pr5 === undefined ? function () {} : _ComposedComponent$pr5;
-
-
-  return _temp = _class = function (_ComposedComponent) {
-    _inherits(NewComponent, _ComposedComponent);
-
-    function NewComponent() {
-      var _ref3;
-
-      _classCallCheck(this, NewComponent);
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      // initialize State
-      var _this2 = _possibleConstructorReturn(this, (_ref3 = NewComponent.__proto__ || Object.getPrototypeOf(NewComponent)).call.apply(_ref3, [this].concat(args)));
-
-      _initialiseProps.call(_this2);
-
-      if (state) {
-        _this2.state = Object.keys(state).reduce(function (result, key) {
-          result[key] = globalTransisObject[key];
-          return result;
-        }, {});
-      }
-      if (props) {
-        _this2.componentWillReceiveProps = function (nextProps) {
-          var _loop = function _loop(k) {
-            props[k].forEach(function (prop) {
-              if (nextProps[k] !== _this2.props[k]) {
-                if (_this2.props[k]) {
-                  _this2.props[k].off(prop, _this2._transisQueueUpdate);
-                }
-                if (nextProps[k]) {
-                  nextProps[k].on(prop, _this2._transisQueueUpdate);
-                }
-              }
-            });
-          };
-
-          // console.warn('component will receive props', nextProps)
-          for (var k in props) {
-            _loop(k);
-          }
-        };
-      }
-      return _this2;
-    }
-
-    return NewComponent;
-  }(ComposedComponent), _initialiseProps = function _initialiseProps() {
-    var _this3 = this;
-
-    this.componentWillMount = function () {
-      componentWillMount.apply(undefined, arguments);
-      // mixin component will mount
-      return componentWillMountHelper.call(_this3, {
-        globalTransisObject: globalTransisObject, state: state, props: props
-      });
-    };
-
-    this.componentDidMount = function () {
-      componentDidMount.apply(undefined, arguments);
-      _this3.haveMounted = true;
-      (0, _helper.logUpdate)(_this3);
-    };
-
-    this.componentDidUpdate = function () {
-      componentDidUpdate.apply(undefined, arguments);
-      (0, _helper.logUpdate)(_this3);
-    };
-
-    this.componentWillUnmount = function () {
-      componentWillUnmount.apply(undefined, arguments);
-      _this3.haveUnmounted = true;
-      if (state) {
-        for (var k in state) {
-          unbindState(_this3.state[k], state[k], _this3._transisQueueUpdate);
-        }
-        globalTransisObject.off('*', _this3._transisSyncState);
-      }
-      if (props) {
-        for (var _k2 in props) {
-          unbindProps(_this3.props[_k2], props[_k2], _this3._transisQueueUpdate);
-        }
-      }
-    };
-  }, _temp;
-};
-
-exports.default = transisAwareStateInjection;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.transisAwareStateInjection = exports.TransisProvider = exports.PropsMixin = exports.StateMixin = undefined;
-
-var _transisAware = __webpack_require__(2);
-
-var _transisAware2 = _interopRequireDefault(_transisAware);
-
-var _transisAware3 = __webpack_require__(6);
-
-var _transisAware4 = _interopRequireDefault(_transisAware3);
-
-var _transisAware5 = __webpack_require__(7);
-
-var _transisAware6 = _interopRequireDefault(_transisAware5);
-
-var _transisAware7 = __webpack_require__(5);
+var _TransisReactMixin = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _transisAware2.default;
-exports.StateMixin = _transisAware7.StateMixinLegacy;
-exports.PropsMixin = _transisAware7.PropsMixinLegacy;
-exports.TransisProvider = _transisAware4.default;
-exports.transisAwareStateInjection = _transisAware6.default;
+exports.StateMixin = _TransisReactMixin.StateMixin;
+exports.PropsMixin = _TransisReactMixin.PropsMixin;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
 
 /***/ })
 /******/ ]);

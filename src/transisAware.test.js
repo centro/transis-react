@@ -78,7 +78,6 @@ describe('StateMixin', () => {
     })
   })
 
-  // describe('lifecycle events')
   // describe('changed model')
   // describe('rerender times')
 })
@@ -101,6 +100,7 @@ describe('Conflict State/Props Mixin', () => {
 })
 
 describe('Lifecycle Events', () => {
+  // component setup 
   class AwareComponentCore extends React.Component {
     // stubbed for mocking purpose, cannot be prebound
     componentWillMount () {}
@@ -126,6 +126,7 @@ describe('Lifecycle Events', () => {
     global: appState,
     state: { injected: ['name'] }
   }, AwareComponentCore)
+  // end of lifcycle test component setup
 
   // Spies
   const componentWillMount = jest.spyOn(AwareComponentCore.prototype, 'componentWillMount')

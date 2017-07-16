@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-const { StateMixin, PropsMixin } = window.transisAware
+import { StateMixin, PropsMixin } from 'transis-react'
 
 const AuthorAge = React.createClass({
   mixins: [
