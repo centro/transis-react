@@ -1,4 +1,4 @@
-// Legacy support
+//  support
 import {
   assignTransisIdTo,
   updateLog,
@@ -8,7 +8,7 @@ import {
 } from './helper'
 
 // Legacy Prop Mixin
-export const PropsMixinLegacy = function(props) {
+export const PropsMixin = function(props) {
   return {
     componentWillMount: function() {
       assignTransisIdTo(this)
@@ -50,8 +50,8 @@ export const PropsMixinLegacy = function(props) {
   };
 };
 
-// Legacy State Mixin
-export const StateMixinLegacy = function(...args) {
+//  State Mixin
+export const StateMixin = function(...args) {
   let [object, props] = args
   if (typeof props !== 'object') {
     // convert prop into into an object of empty arrays
