@@ -86,3 +86,86 @@ describe('StateMixin', () => {
     })
   })
 })
+
+
+describe('combining state and props tests', () => {
+  // model setup 
+  const InjectedModel = TransisObjectFactory('name')
+  const inject1 = new InjectedModel({ name: 'injected 1' })
+  const inject2 = new InjectedModel({ name: 'injected 2' })
+  const appState = new (TransisObjectFactory('injected'))({ injected: inject1 })
+
+
+  describe('parent renders halts child re-renders', () => {
+    // component setup 
+    let PropsMixinedComponentRenderCount = 0
+    let NoReRenderComponentRenderCount = 0
+
+    const PropsMixinedComponent = React.createClass({
+      mixins: [
+        PropsMixin({ model: ['foo', 'bar'] })
+      ],
+      render() {
+        const { model } = this.props
+        PropsMixinedComponentRenderCount++
+          return <div className="foo">{model.foo}</div>
+      }
+    })
+
+    const NoReRenderComponent = React.createClass({
+      mixins: [
+        StateMixin( appState, { injected: ['name'] })
+      ],
+      render() {
+        NoReRenderComponentRenderCount++
+        const { injected } = this.state
+        const { model } = this.props
+        return <div>
+          <div className="injected">{injected.name}</div>
+          <PropsMixinedComponent model={model} />
+        </div>
+      }
+    })
+
+    beforeEach(() => {
+      PropsMixinedComponentRenderCount = 0
+      NoReRenderComponentRenderCount = 0
+      model.reset()
+      component = mount(<NoReRenderComponent model={model}/>)
+    })
+
+    afterEach(() => component.unmount())
+
+    it('initially each renders once', () => {
+      expect(PropsMixinedComponentRenderCount).toBe(1)
+      expect(NoReRenderComponentRenderCount).toBe(1)
+    })
+
+    // TODO: investigate why each render is causing it to render twice
+    it('first queue child will re-render child twice', () => {
+      expect(PropsMixinedComponentRenderCount).toBe(1) // initially
+      model.foo = 'foo 2' 
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(2)
+      expect(NoReRenderComponentRenderCount).toBe(1)
+
+      appState.injected.name = 'injected 2'
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(3)
+      expect(NoReRenderComponentRenderCount).toBe(2)
+    })
+
+    // TODO: get rid of these have to be differenet name stuff by using
+    // undochanges
+    it('first queue parent will only re-render child once', () => {
+      model.foo = 'foo 3' 
+      expect(PropsMixinedComponentRenderCount).toBe(1)
+      expect(NoReRenderComponentRenderCount).toBe(1)
+
+      appState.injected.name = 'injected 3'
+      Transis.Object.flush()
+      expect(PropsMixinedComponentRenderCount).toBe(2)
+      expect(NoReRenderComponentRenderCount).toBe(2)
+    })
+  })
+})

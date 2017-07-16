@@ -190,11 +190,11 @@ describe('combining state and props tests', () => {
     beforeEach(() => {
       PropsMixinedComponentRenderCount = 0
       NoReRenderComponentRenderCount = 0
+      model.reset()
       component = mount(<NoReRenderComponent model={model}/>)
-      // expect(component.find('.injected').text()).toBe('john')
-      // expect(component.find('.foo').text()).toBe('foo 1')
     })
-     
+    afterEach(() => component.unmount())
+
     it('initially each renders once', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1)
       expect(NoReRenderComponentRenderCount).toBe(1)
@@ -205,13 +205,13 @@ describe('combining state and props tests', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1) // initially
       model.foo = 'foo 2' 
       Transis.Object.flush()
-      expect(PropsMixinedComponentRenderCount).toBe(3)
+      expect(PropsMixinedComponentRenderCount).toBe(2)
       expect(NoReRenderComponentRenderCount).toBe(1)
 
-      appState.injected.name = 'injected 1'
+      appState.injected.name = 'injected 2'
       Transis.Object.flush()
-      expect(PropsMixinedComponentRenderCount).toBe(5)
-      expect(NoReRenderComponentRenderCount).toBe(3)
+      expect(PropsMixinedComponentRenderCount).toBe(3)
+      expect(NoReRenderComponentRenderCount).toBe(2)
     })
     
     // TODO: get rid of these have to be differenet name stuff by using
@@ -221,10 +221,10 @@ describe('combining state and props tests', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1)
       expect(NoReRenderComponentRenderCount).toBe(1)
 
-      appState.injected.name = 'injected 2'
+      appState.injected.name = 'injected 3'
       Transis.Object.flush()
-      expect(PropsMixinedComponentRenderCount).toBe(3)
-      expect(NoReRenderComponentRenderCount).toBe(3)
+      expect(PropsMixinedComponentRenderCount).toBe(2)
+      expect(NoReRenderComponentRenderCount).toBe(2)
     })
   })
 })
