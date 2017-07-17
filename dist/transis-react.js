@@ -525,7 +525,7 @@ var componentWillMount = function componentWillMount(_ref) {
 // * end Refactor Effort *
 
 // main constructor
-var transisAware = function transisAware(_ref2, ComposedComponent) {
+var transisReact = function transisReact(_ref2, ComposedComponent) {
   var globalTransisObject = _ref2.global,
       state = _ref2.state,
       props = _ref2.props;
@@ -634,12 +634,12 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
   return higherOrderComponent;
 };
 
-transisAware.Transis = _transis2.default; // for verifying Transis instances
+transisReact.Transis = _transis2.default; // for verifying Transis instances
 
-transisAware.updateLog = _helper.updateLog; // for debugging purposes
-transisAware.updateQueue = _helper.updateQueue;
+transisReact.updateLog = _helper.updateLog; // for debugging purposes
+transisReact.updateQueue = _helper.updateQueue;
 
-exports.default = transisAware;
+exports.default = transisReact;
 
 /***/ }),
 /* 5 */
@@ -653,15 +653,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PropsMixin = exports.StateMixin = undefined;
 
-var _transisAware = __webpack_require__(4);
+var _transisReact = __webpack_require__(4);
 
-var _transisAware2 = _interopRequireDefault(_transisAware);
+var _transisReact2 = _interopRequireDefault(_transisReact);
 
 var _TransisReactMixin = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _transisAware2.default;
+exports.default = _transisReact2.default;
 exports.StateMixin = _TransisReactMixin.StateMixin;
 exports.PropsMixin = _TransisReactMixin.PropsMixin;
 

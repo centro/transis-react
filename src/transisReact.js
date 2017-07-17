@@ -96,7 +96,7 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
 // * end Refactor Effort *
 
 // main constructor
-const transisAware = (
+const transisReact = (
   { global: globalTransisObject, state, props },
   ComposedComponent,
 ) => {
@@ -179,20 +179,20 @@ const transisAware = (
       }
     };
 
-    render = () => 
-      <ComposedComponent 
-        ref={core => this.core = core} 
-        {...this.props} 
-        {...this.state} 
+    render = () =>
+      <ComposedComponent
+        ref={core => this.core = core}
+        {...this.props}
+        {...this.state}
       />
   };
   return higherOrderComponent;
 }
 
-transisAware.Transis = Transis // for verifying Transis instances
+transisReact.Transis = Transis // for verifying Transis instances
 
-transisAware.updateLog = updateLog // for debugging purposes
-transisAware.updateQueue = updateQueue
+transisReact.updateLog = updateLog // for debugging purposes
+transisReact.updateQueue = updateQueue
 
 
-export default transisAware
+export default transisReact

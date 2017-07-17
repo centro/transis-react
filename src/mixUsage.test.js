@@ -1,4 +1,4 @@
-import transisAware from './transisAware'
+import transisReact from './transisReact'
 import { PropsMixin, StateMixin } from './TransisReactMixin'
 
 import {
@@ -14,21 +14,21 @@ describe('Mix Usage: ', () => {
     render: () => <p>mixin comp</p>
   })
 
-  const AwareComponent = transisAware(
-    { props: { model: ['name'] } }, 
+  const AwareComponent = transisReact(
+    { props: { model: ['name'] } },
     class AwareComponentCore extends React.Component {
       render() {
         const { model } = this.props
         return <div>
           {model.name}
           <MixinComponent ref={mix1 => this.mix1 = mix1} model={model}/>
-          <AwareComponent2 ref={aware2 => this.aware2 = aware2}/> 
+          <AwareComponent2 ref={aware2 => this.aware2 = aware2}/>
           <MixinComponent ref={mix2 => this.mix2 = mix2} model={model}/>
         </div>
       }
     }
   )
-  const AwareComponent2 = transisAware(
+  const AwareComponent2 = transisReact(
     { props: { name: [] }}, () => <p>aware comp 2</p>
   )
 

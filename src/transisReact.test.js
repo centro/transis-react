@@ -1,4 +1,4 @@
-import transisAware from 'transisAware' // sometimes two instance of transis occurs
+import transisReact from './transisReact' // sometimes two instance of transis occurs
 
 import {
   Model, CoreComponent, TransisObjectFactory,
@@ -15,7 +15,7 @@ import {
 let component;
 const model = new Model
 describe('PropMixin', function() {
-  const PropMixinComponent = transisAware({
+  const PropMixinComponent = transisReact({
     props: { model: ['foo', 'bar'] }
   }, CoreComponent)
 
@@ -36,7 +36,7 @@ describe('PropMixin', function() {
 
 describe('StateMixin', () => {
   const appState = new (TransisObjectFactory('model'))({ model }) // gloal state
-  const StateMixinComponent = transisAware({ // with state mixin
+  const StateMixinComponent = transisReact({ // with state mixin
     global: appState,
     state: { model: ['baz'] }
   }, CoreComponent)
@@ -57,7 +57,7 @@ describe('StateMixin', () => {
   })
 
   describe('smart stateMixin parameters', () => {
-    const SmartMixinComponent = transisAware({
+    const SmartMixinComponent = transisReact({
       global: appState.model,
       state: ['foo', 'bar', 'baz']
     }, props => <CoreComponent model={props}/>)
@@ -73,7 +73,7 @@ describe('StateMixin', () => {
 describe('Conflict State/Props Mixin', () => {
   const child = new (TransisObjectFactory('name'))({ name: 'Congwen' })
   const appState = new (TransisObjectFactory('name', 'child'))({ child }) //state
-  const PropsMixinComponent = transisAware({
+  const PropsMixinComponent = transisReact({
     global: appState,
     state: ['child']
   }, ({ child }) => {
@@ -88,7 +88,7 @@ describe('Conflict State/Props Mixin', () => {
 })
 
 describe('combining state and props tests', () => {
-  // component setup 
+  // component setup
   class AwareComponentCore extends React.Component {
     // stubbed for mocking purpose, cannot be prebound
     componentWillMount () {} componentDidMount () {} componentDidUpdate () {} componentWillUnmount () {}
@@ -105,22 +105,22 @@ describe('combining state and props tests', () => {
   const inject1 = new InjectedModel({ name: 'injected 1' })
   const inject2 = new InjectedModel({ name: 'injected 2' })
   const appState = new (TransisObjectFactory('injected'))({ injected: inject1 })
-  const AwareComponent = transisAware({
+  const AwareComponent = transisReact({
     props: { model: ['foo', 'bar']},
     global: appState,
     state: { injected: ['name'] }
   }, AwareComponentCore)
   // end of lifcycle test component setup
-  
+
   const magicSpy = new Proxy(AwareComponentCore.prototype, { get: jest.spyOn })
-  
+
   // TODO: missing lifecycle methods, such as willReceiveProps etc.
   describe('Lifecycle Events', () => {
     const { // Spies
       componentWillMount, componentDidMount, componentWillUnmount, // props
       componentWillReceiveProps,
       shouldComponentUpdate, componentWillUpdate, componentDidUpdate, // states
-    } = magicSpy 
+    } = magicSpy
 
     afterEach(jest.resetAllMocks)
     afterEach(() => component && component.unmount())
@@ -139,7 +139,7 @@ describe('combining state and props tests', () => {
       expect(componentWillUnmount).toHaveBeenCalled()
       expect(componentWillReceiveProps).not.toHaveBeenCalled() // no prop changes
     })
-  
+
     // state update and swaps
     it('state mixin update as expected', () => {
       component = mount(<AwareComponent />)
@@ -159,19 +159,19 @@ describe('combining state and props tests', () => {
       expect(componentDidUpdate).toHaveBeenCalled()
 
       // NOTE: state changes to trigger componentWillReceiveProps
-      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)
       expect(componentWillReceiveProps.mock.calls[0]).toEqual([
         { injected: inject1 }, {}
-      ]) 
+      ])
     })
-  
+
     it('swapping out state', () => {
       component = mount(<AwareComponent />)
       expect(shouldComponentUpdate).not.toHaveBeenCalled()
       expect(componentWillUpdate).not.toHaveBeenCalled()
       expect(componentDidUpdate).not.toHaveBeenCalled()
 
-      appState.injected = inject2 
+      appState.injected = inject2
       shouldComponentUpdate.mockReturnValue(true) // to speed things up
 
       Transis.Object.flush()
@@ -179,18 +179,18 @@ describe('combining state and props tests', () => {
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
       expect(component.find('.injected').text()).toBe('injected 2')
-      
+
       // NOTE: state changes trigger componentWillReceiveProps
-      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
-      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)
+      // empty is not from {...this.state} TODO: look into what this is
       expect(componentWillReceiveProps.mock.calls[0]).toEqual([
         { injected: inject2 }, {}
-      ]) 
+      ])
 
       // restore
-      appState.injected = inject1 
+      appState.injected = inject1
     })
-    
+
     // props update and swaps
     it('props mixin update as expected', () => {
       component = mount(<AwareComponent model={model}/>)
@@ -210,11 +210,11 @@ describe('combining state and props tests', () => {
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
 
-      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
-      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)
+      // empty is not from {...this.state} TODO: look into what this is
       expect(componentWillReceiveProps.mock.calls[0]).toEqual([
         { injected: inject1, model }, {}
-      ]) 
+      ])
     })
 
     it('swapping out props', () => {
@@ -223,14 +223,14 @@ describe('combining state and props tests', () => {
           this.state = { model }
         }
         render() {
-          return <div> <AwareComponent model={model}/> </div> 
+          return <div> <AwareComponent model={model}/> </div>
         }
       }
       component = mount(<WrapperComponent/>)
       expect(shouldComponentUpdate).not.toHaveBeenCalled()
       expect(componentWillUpdate).not.toHaveBeenCalled()
       expect(componentDidUpdate).not.toHaveBeenCalled()
-      
+
       shouldComponentUpdate.mockReturnValue(true) // to speed things up
       component.node.setState({
         model: new Model({ foo: 'foo 2' })
@@ -242,27 +242,27 @@ describe('combining state and props tests', () => {
       expect(componentDidUpdate).toHaveBeenCalled()
       expect(component.find('.foo').text()).toBe('foo 2')
 
-      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
-      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)
+      // empty is not from {...this.state} TODO: look into what this is
       expect(componentWillReceiveProps.mock.calls[0]).toEqual([
         { injected: inject1, model }, {}
-      ]) 
+      ])
     })
   })
 
   describe('parent renders halts child re-renders', () => {
-    // component setup 
+    // component setup
     let PropsMixinedComponentRenderCount = 0
     let NoReRenderComponentRenderCount = 0
 
-    const PropsMixinedComponent = transisAware({
+    const PropsMixinedComponent = transisReact({
       props: { model: ['foo', 'bar']},
     }, ({ model }) => {
       PropsMixinedComponentRenderCount++
       return <div className="foo">{model.foo}</div>
     })
 
-    const NoReRenderComponent = transisAware({
+    const NoReRenderComponent = transisReact({
       global: appState,
       state: { injected: ['name'] }
     }, class NoReRenderComponentCore extends React.Component {
@@ -288,10 +288,10 @@ describe('combining state and props tests', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1)
       expect(NoReRenderComponentRenderCount).toBe(1)
     })
-    
+
     it('first queue child will re-render child twice', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1) // initially
-      model.foo = 'foo 2' 
+      model.foo = 'foo 2'
       Transis.Object.flush()
       expect(PropsMixinedComponentRenderCount).toBe(2)
       expect(NoReRenderComponentRenderCount).toBe(1)
@@ -301,9 +301,9 @@ describe('combining state and props tests', () => {
       expect(PropsMixinedComponentRenderCount).toBe(3)
       expect(NoReRenderComponentRenderCount).toBe(2)
     })
-    
+
     it('first queue parent will only re-render child once', () => {
-      model.foo = 'foo 3' 
+      model.foo = 'foo 3'
       expect(PropsMixinedComponentRenderCount).toBe(1)
       expect(NoReRenderComponentRenderCount).toBe(1)
 

@@ -6,10 +6,10 @@ it('HelloWorld renders `Hello World`', () => {
   expect(shallow(<HelloWorld/>).find('h1').text()).toEqual('Hello World')
 })
 
-import transisAware from 'transisAware' // sometimes
+import transisReact from '../transisReact' // sometimes
 
 it('expect same instance of transis', () =>
-  expect(Transis).toEqual(transisAware.Transis)
+  expect(Transis).toEqual(transisReact.Transis)
 )
 
 it('W/O PropMixin WILL NOT update', () => {
@@ -28,7 +28,7 @@ describe('regular Component', () => {
     return <p>{name}, {model.name}</p>
   }
   class RegComp extends React.Component {
-    constructor() { 
+    constructor() {
       super()
       this.state = { name: 'comp 1' }
     }
@@ -45,10 +45,10 @@ describe('regular Component', () => {
   })
 
   it('should only render children once', () => {
-    expect(renderParent).toBe(1) 
+    expect(renderParent).toBe(1)
     expect(renderChild).toBe(1)
     component.node.setState({ name: 'comp 2' })
-    expect(renderParent).toBe(2) 
+    expect(renderParent).toBe(2)
     expect(renderChild).toBe(2)
   })
 })

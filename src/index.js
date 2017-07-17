@@ -1,11 +1,11 @@
-import transisAware from './transisAware'
+import transisReact from './transisReact'
 
 import {
   StateMixin,
   PropsMixin
 } from './TransisReactMixin'
 
-export default transisAware
+export default transisReact
 
 export {
   StateMixin,
