@@ -179,7 +179,12 @@ const transisAware = (
       }
     };
 
-    render = () => <ComposedComponent {...this.props} {...this.state} />
+    render = () => 
+      <ComposedComponent 
+        ref={core => this.core = core} 
+        {...this.props} 
+        {...this.state} 
+      />
   };
   return higherOrderComponent;
 }

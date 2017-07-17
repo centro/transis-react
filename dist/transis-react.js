@@ -591,7 +591,11 @@ var transisAware = function transisAware(_ref2, ComposedComponent) {
       };
 
       _this2.render = function () {
-        return _react2.default.createElement(ComposedComponent, _extends({}, _this2.props, _this2.state));
+        return _react2.default.createElement(ComposedComponent, _extends({
+          ref: function ref(core) {
+            return _this2.core = core;
+          }
+        }, _this2.props, _this2.state));
       };
 
       if (state) {

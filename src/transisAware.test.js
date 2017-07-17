@@ -135,7 +135,8 @@ describe('combining state and props tests', () => {
       component.unmount()
       expect(componentWillUnmount).toHaveBeenCalled()
     })
-
+  
+    // state update and swaps
     it('state mixin update as expected', () => {
       component = mount(<AwareComponent model={model}/>)
       expect(component.find('.injected').text()).toBe('injected 1') // rendered
@@ -155,9 +156,42 @@ describe('combining state and props tests', () => {
       expect(componentDidUpdate).toHaveBeenCalled()
       component.unmount()
     })
-    // TODO: next three
-    it('swapping out state')
-    it('props mixin update as expected')
+  
+    // TODO: swapping out doesn't seem to behave correctly
+    it('swapping out state', () => {
+      component = mount(<AwareComponent model={model}/>)
+      jest.resetAllMocks()
+      expect(componentWillMount).not.toHaveBeenCalled()
+      expect(componentDidMount).not.toHaveBeenCalled()
+      expect(componentWillUnmount).not.toHaveBeenCalled()
+
+      appState.model = new Model({ foo: 'xyz' }) 
+      Transis.Object.flush()
+      expect(component.find('.foo').text()).toBe('xyz')
+    })
+    
+    // props update and swaps
+    it('props mixin update as expected', () => {
+      component = mount(<AwareComponent model={model}/>)
+      expect(component.find('.foo').text()).toBe('foo 1') // rendered
+
+      expect(shouldComponentUpdate).not.toHaveBeenCalled()
+      expect(componentWillUpdate).not.toHaveBeenCalled()
+      expect(componentDidUpdate).not.toHaveBeenCalled()
+
+      model.foo = 'foo 2'
+      shouldComponentUpdate.mockReturnValue(true) // to speed things up
+
+      Transis.Object.flush()
+      expect(component.find('.foo').text()).toBe('foo 2') // re-rendered
+      expect(shouldComponentUpdate).toHaveBeenCalled()
+
+      expect(componentWillUpdate).toHaveBeenCalled()
+      expect(componentDidUpdate).toHaveBeenCalled()
+      component.unmount()
+    })
+
+    // TODO: determine how to swap out props
     it('swapping out props')
   })
 
@@ -200,7 +234,8 @@ describe('combining state and props tests', () => {
       expect(NoReRenderComponentRenderCount).toBe(1)
     })
     
-    // TODO: investigate why each render is causing it to render twice
+    // TODO: investigate why each render is causing it to render twice,
+    // seems to be from the lack of #unmount
     it('first queue child will re-render child twice', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1) // initially
       model.foo = 'foo 2' 
