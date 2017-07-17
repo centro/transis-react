@@ -21,13 +21,15 @@ export const Model = Transis.Object.extend(function() {
   }
 })
 
-export const CoreComponent = ({
-  model: { foo, bar, baz }
-}) => <div>
-  <div className="foo">{foo}</div>
-  <div className="bar">{bar}</div>
-  <div className="baz">{baz}</div>
-</div>
+export const CoreComponent = ({ model }) => {
+  if (!model) return null
+  const { foo, bar, baz } = model
+  return <div>
+    <div className="foo">{foo}</div>
+    <div className="bar">{bar}</div>
+    <div className="baz">{baz}</div>
+  </div>
+}
 
 export const initial_state_expectation = ({ component }) => {
   expect(component.find('.foo').text()).toBe('foo 1')

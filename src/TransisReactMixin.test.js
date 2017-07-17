@@ -95,7 +95,6 @@ describe('combining state and props tests', () => {
   const inject2 = new InjectedModel({ name: 'injected 2' })
   const appState = new (TransisObjectFactory('injected'))({ injected: inject1 })
 
-
   describe('parent renders halts child re-renders', () => {
     // component setup 
     let PropsMixinedComponentRenderCount = 0

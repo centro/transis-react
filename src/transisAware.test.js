@@ -121,9 +121,10 @@ describe('combining state and props tests', () => {
     } = magicSpy 
 
     afterEach(jest.resetAllMocks)
+    afterEach(() => component && component.unmount())
     afterAll(jest.clearAllMocks)
 
-    it('mount as expected', () => {
+    it('mounting events', () => {
       expect(componentWillMount).not.toHaveBeenCalled()
       expect(componentDidMount).not.toHaveBeenCalled()
       expect(componentWillUnmount).not.toHaveBeenCalled()
@@ -138,7 +139,7 @@ describe('combining state and props tests', () => {
   
     // state update and swaps
     it('state mixin update as expected', () => {
-      component = mount(<AwareComponent model={model}/>)
+      component = mount(<AwareComponent />)
       expect(component.find('.injected').text()).toBe('injected 1') // rendered
 
       expect(shouldComponentUpdate).not.toHaveBeenCalled()
@@ -151,23 +152,27 @@ describe('combining state and props tests', () => {
       Transis.Object.flush()
       expect(component.find('.injected').text()).toBe('john') // re-rendered
       expect(shouldComponentUpdate).toHaveBeenCalled()
-
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
-      component.unmount()
     })
   
-    // TODO: swapping out doesn't seem to behave correctly
     it('swapping out state', () => {
-      component = mount(<AwareComponent model={model}/>)
-      jest.resetAllMocks()
-      expect(componentWillMount).not.toHaveBeenCalled()
-      expect(componentDidMount).not.toHaveBeenCalled()
-      expect(componentWillUnmount).not.toHaveBeenCalled()
+      component = mount(<AwareComponent />)
+      expect(shouldComponentUpdate).not.toHaveBeenCalled()
+      expect(componentWillUpdate).not.toHaveBeenCalled()
+      expect(componentDidUpdate).not.toHaveBeenCalled()
 
-      appState.model = new Model({ foo: 'xyz' }) 
+      appState.injected = inject2 
+      shouldComponentUpdate.mockReturnValue(true) // to speed things up
+
       Transis.Object.flush()
-      expect(component.find('.foo').text()).toBe('xyz')
+      expect(shouldComponentUpdate).toHaveBeenCalled()
+      expect(componentWillUpdate).toHaveBeenCalled()
+      expect(componentDidUpdate).toHaveBeenCalled()
+      expect(component.find('.injected').text()).toBe('injected 2')
+
+      // restore
+      appState.injected = inject1 
     })
     
     // props update and swaps
@@ -188,11 +193,33 @@ describe('combining state and props tests', () => {
 
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
-      component.unmount()
     })
 
-    // TODO: determine how to swap out props
-    it('swapping out props')
+    it('swapping out props', () => {
+      class WrapperComponent extends React.Component {
+        constructor() {super()
+          this.state = { model }
+        }
+        render() {
+          return <div> <AwareComponent model={model}/> </div> 
+        }
+      }
+      component = mount(<WrapperComponent/>)
+      expect(shouldComponentUpdate).not.toHaveBeenCalled()
+      expect(componentWillUpdate).not.toHaveBeenCalled()
+      expect(componentDidUpdate).not.toHaveBeenCalled()
+      
+      shouldComponentUpdate.mockReturnValue(true) // to speed things up
+      component.node.setState({
+        model: new Model({ foo: 'foo 2' })
+      })
+
+      Transis.Object.flush() // not really needed, as we aren't making transis prop change
+      expect(shouldComponentUpdate).toHaveBeenCalled()
+      expect(componentWillUpdate).toHaveBeenCalled()
+      expect(componentDidUpdate).toHaveBeenCalled()
+      expect(component.find('.foo').text()).toBe('foo 2')
+    })
   })
 
   describe('parent renders halts child re-renders', () => {
