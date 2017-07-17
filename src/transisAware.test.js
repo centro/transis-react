@@ -92,6 +92,7 @@ describe('combining state and props tests', () => {
   class AwareComponentCore extends React.Component {
     // stubbed for mocking purpose, cannot be prebound
     componentWillMount () {} componentDidMount () {} componentDidUpdate () {} componentWillUnmount () {}
+    componentWillReceiveProps() {}
     shouldComponentUpdate () {} componentWillUpdate () {} componentDidUpdate () {}
     render() {
       return <div>
@@ -117,6 +118,7 @@ describe('combining state and props tests', () => {
   describe('Lifecycle Events', () => {
     const { // Spies
       componentWillMount, componentDidMount, componentWillUnmount, // props
+      componentWillReceiveProps,
       shouldComponentUpdate, componentWillUpdate, componentDidUpdate, // states
     } = magicSpy 
 
@@ -135,6 +137,7 @@ describe('combining state and props tests', () => {
       expect(component.find('.injected').text()).toBe('injected 1') // rendered
       component.unmount()
       expect(componentWillUnmount).toHaveBeenCalled()
+      expect(componentWillReceiveProps).not.toHaveBeenCalled() // no prop changes
     })
   
     // state update and swaps
@@ -154,6 +157,12 @@ describe('combining state and props tests', () => {
       expect(shouldComponentUpdate).toHaveBeenCalled()
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
+
+      // NOTE: state changes to trigger componentWillReceiveProps
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
+      expect(componentWillReceiveProps.mock.calls[0]).toEqual([
+        { injected: inject1 }, {}
+      ]) 
     })
   
     it('swapping out state', () => {
@@ -170,6 +179,13 @@ describe('combining state and props tests', () => {
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
       expect(component.find('.injected').text()).toBe('injected 2')
+      
+      // NOTE: state changes trigger componentWillReceiveProps
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
+      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls[0]).toEqual([
+        { injected: inject2 }, {}
+      ]) 
 
       // restore
       appState.injected = inject1 
@@ -193,6 +209,12 @@ describe('combining state and props tests', () => {
 
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
+
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
+      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls[0]).toEqual([
+        { injected: inject1, model }, {}
+      ]) 
     })
 
     it('swapping out props', () => {
@@ -219,6 +241,12 @@ describe('combining state and props tests', () => {
       expect(componentWillUpdate).toHaveBeenCalled()
       expect(componentDidUpdate).toHaveBeenCalled()
       expect(component.find('.foo').text()).toBe('foo 2')
+
+      expect(componentWillReceiveProps.mock.calls.length).toBe(1)       
+      // empty is not from {...this.state} TODO: look into what this is 
+      expect(componentWillReceiveProps.mock.calls[0]).toEqual([
+        { injected: inject1, model }, {}
+      ]) 
     })
   })
 
@@ -261,8 +289,6 @@ describe('combining state and props tests', () => {
       expect(NoReRenderComponentRenderCount).toBe(1)
     })
     
-    // TODO: investigate why each render is causing it to render twice,
-    // seems to be from the lack of #unmount
     it('first queue child will re-render child twice', () => {
       expect(PropsMixinedComponentRenderCount).toBe(1) // initially
       model.foo = 'foo 2' 
@@ -276,8 +302,6 @@ describe('combining state and props tests', () => {
       expect(NoReRenderComponentRenderCount).toBe(2)
     })
     
-    // TODO: get rid of these have to be differenet name stuff by using
-    // undochanges
     it('first queue parent will only re-render child once', () => {
       model.foo = 'foo 3' 
       expect(PropsMixinedComponentRenderCount).toBe(1)
