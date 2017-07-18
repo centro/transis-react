@@ -1,5 +1,4 @@
 import Transis from 'transis'
-import ReactDOM from 'react-dom'
 
 let nextId = 1;
 const getId = () => nextId++;
@@ -8,7 +7,6 @@ const getId = () => nextId++;
 const assignTransisIdTo = component => {
   component._transisId = component._transisId || getId()
 }
-
 
 let updateLog = {}; // used to keep track of what's been updated
 let updateQueue = {}; // used as a register for components that needs update
@@ -42,13 +40,7 @@ const registerDelayPostFlush = () =>
     // and then force update one of its ancestors, which may unnecessarily render the component
     // again.
     components.sort(componentComparison).forEach(function(component) {
-      try { // TODO: figureout why this doesn't work with provider
-        var hasMounted = ReactDOM.findDOMNode(component)
-      } catch(e) {
-        console.warn(`TransisAware attempted to update an unmounted component: ${component}`)
-      }
-
-      if (!updateLog[component._transisId] && hasMounted) {
+      if (!updateLog[component._transisId]) {
         component.forceUpdate();
       }
     });
@@ -61,6 +53,10 @@ const queueUpdate = component => {
   updateQueue[component._transisId] = component;
 }
 
+const unqueueUpdate = component => {
+  delete updateQueue[component._transisId]
+}
+
 const logUpdate = component => updateLog[component._transisId] = true
 
 // first register to kick off the cycle
@@ -70,6 +66,7 @@ export {
   assignTransisIdTo,
 
   queueUpdate,
+  unqueueUpdate,
   updateQueue,
 
   logUpdate,

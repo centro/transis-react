@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react-dom"), require("transis"), require("react"));
+		module.exports = factory(require("transis"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react-dom", "transis", "react"], factory);
+		define(["transis", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["transis-react"] = factory(require("react-dom"), require("transis"), require("react"));
+		exports["transis-react"] = factory(require("transis"), require("react"));
 	else
-		root["transis-react"] = factory(root["react-dom"], root["transis"], root["react"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_6__) {
+		root["transis-react"] = factory(root["transis"], root["react"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -86,15 +86,11 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateLog = exports.logUpdate = exports.updateQueue = exports.queueUpdate = exports.assignTransisIdTo = exports.componentComparison = undefined;
+exports.updateLog = exports.logUpdate = exports.updateQueue = exports.unqueueUpdate = exports.queueUpdate = exports.assignTransisIdTo = exports.componentComparison = undefined;
 
-var _transis = __webpack_require__(2);
+var _transis = __webpack_require__(1);
 
 var _transis2 = _interopRequireDefault(_transis);
-
-var _reactDom = __webpack_require__(1);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -144,14 +140,7 @@ var registerDelayPostFlush = function registerDelayPostFlush() {
     // and then force update one of its ancestors, which may unnecessarily render the component
     // again.
     components.sort(componentComparison).forEach(function (component) {
-      try {
-        // TODO: figureout why this doesn't work with provider
-        var hasMounted = _reactDom2.default.findDOMNode(component);
-      } catch (e) {
-        console.warn('TransisAware attempted to update an unmounted component: ' + component);
-      }
-
-      if (!updateLog[component._transisId] && hasMounted) {
+      if (!updateLog[component._transisId]) {
         component.forceUpdate();
       }
     });
@@ -165,6 +154,10 @@ var queueUpdate = function queueUpdate(component) {
   updateQueue[component._transisId] = component;
 };
 
+var unqueueUpdate = function unqueueUpdate(component) {
+  delete updateQueue[component._transisId];
+};
+
 var logUpdate = function logUpdate(component) {
   return updateLog[component._transisId] = true;
 };
@@ -174,6 +167,7 @@ registerDelayPreFlush();
 
 exports.assignTransisIdTo = assignTransisIdTo;
 exports.queueUpdate = queueUpdate;
+exports.unqueueUpdate = unqueueUpdate;
 exports.updateQueue = updateQueue;
 exports.logUpdate = logUpdate;
 exports.updateLog = updateLog;
@@ -186,12 +180,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -241,6 +229,8 @@ var PropsMixin = exports.PropsMixin = function PropsMixin(props) {
 
     componentWillUnmount: function componentWillUnmount() {
       var _this2 = this;
+
+      (0, _helper.unqueueUpdate)(this);
 
       var _loop2 = function _loop2(k) {
         props[k].forEach(function (prop) {
@@ -395,7 +385,7 @@ var StateMixin = exports.StateMixin = function StateMixin() {
 };
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -407,15 +397,20 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(6);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+// Note: not exactly sure when this is needed: work around for this multiple instance issue
+// let mundo; try { mundo = window } catch (e) { mundo = global }
+// const Transis = mundo.Transis || MyTransis
+
+// copied from transis
+
+
+var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(1);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _transis = __webpack_require__(2);
+var _transis = __webpack_require__(1);
 
 var _transis2 = _interopRequireDefault(_transis);
 
@@ -429,12 +424,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Note: not exactly sure when this is needed: work around for this multiple instance issue
-// let mundo; try { mundo = window } catch (e) { mundo = global }
-// const Transis = mundo.Transis || MyTransis
-
-// copied from transis
-
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // * Refactor Effort *
 // @param {TransisObject} globalTransisObjectVar - transis object attached to some globalTransisObject namespace
@@ -522,13 +512,58 @@ var componentWillMount = function componentWillMount(_ref) {
     }
   }
 }; // end of Component Will Mount Factory
-// * end Refactor Effort *
 
-// main constructor
-var transisReact = function transisReact(_ref2, ComposedComponent) {
-  var globalTransisObject = _ref2.global,
-      state = _ref2.state,
-      props = _ref2.props;
+// TODO: can you think a clever way to phrase this
+var remapStateToProps = function remapStateToProps(state, remap) {
+  debugger;
+  if (!remap) return state;
+  var newState = {};
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = Object.entries(state)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var _ref2 = _step.value;
+
+      var _ref3 = _slicedToArray(_ref2, 2);
+
+      var k = _ref3[0];
+      var v = _ref3[1];
+
+      newState[remap[k]] = v;
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return newState;
+};
+
+var ObjectValues = function ObjectValues(obj) {
+  return Object.entries(obj).reduce(function (acc, next) {
+    return [].concat(_toConsumableArray(acc), [next[1]]);
+  }, []
+  // * end Refactor Effort *
+
+  // main constructor
+  );
+};var transisReact = function transisReact(_ref4, ComposedComponent) {
+  var globalTransisObject = _ref4.global,
+      state = _ref4.state,
+      props = _ref4.props,
+      remap = _ref4.remap;
 
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state);
@@ -544,39 +579,47 @@ var transisReact = function transisReact(_ref2, ComposedComponent) {
     }, {});
   }
 
+  if (state && remap) {
+    var futurePropKeys = ObjectValues(remap);
+    var propKeys = Object.keys(state);
+    var intersect = futurePropKeys.filter(function (propKey) {
+      return propKeys.includes(propKey);
+    });
+
+    if (intersect.length) {
+      throw new Error('Cannot remap conflicting names "' + intersect.join(', ') + '"');
+    }
+    remap = _extends({}, propKeys.reduce(function (map, next) {
+      map[next] = next;
+      return map;
+    }, {}), remap);
+  }
+
   var higherOrderComponent = function (_React$Component) {
     _inherits(HigherOrderComponent, _React$Component);
 
     // allow both component will mount to get triggered
-    // debugMode = false
     function HigherOrderComponent(propArgs) {
       _classCallCheck(this, HigherOrderComponent);
-
-      // if (propArgs.debug) { this.debugMode = true }
 
       var _this2 = _possibleConstructorReturn(this, (HigherOrderComponent.__proto__ || Object.getPrototypeOf(HigherOrderComponent)).call(this, propArgs));
 
       _this2.componentWillMount = function () {
-        // this.debugMode && console.warn('component will mount', this._transisId)
         return componentWillMount.call(_this2, {
           globalTransisObject: globalTransisObject, state: state, props: props
         });
       };
 
       _this2.componentDidMount = function () {
-        // this.debugMode && console.warn('component did mounted', this._transisId)
-        _this2.haveMounted = true;
         (0, _helper.logUpdate)(_this2);
       };
 
       _this2.componentDidUpdate = function () {
-        // this.debugMode && console.warn('component did update', this._transisId)
         (0, _helper.logUpdate)(_this2);
       };
 
       _this2.componentWillUnmount = function () {
-        // this.debugMode && console.warn('component will unmount', this._transisId)
-        _this2.haveUnmounted = true;
+        (0, _helper.unqueueUpdate)(_this2);
         if (state) {
           for (var k in state) {
             unbindState(_this2.state[k], state[k], _this2._transisQueueUpdate);
@@ -595,7 +638,7 @@ var transisReact = function transisReact(_ref2, ComposedComponent) {
           ref: function ref(core) {
             return _this2.core = core;
           }
-        }, _this2.props, _this2.state));
+        }, _this2.props, remapStateToProps(_this2.state, remap)));
       };
 
       if (state) {
@@ -620,7 +663,6 @@ var transisReact = function transisReact(_ref2, ComposedComponent) {
             });
           };
 
-          // console.warn('component will receive props', nextProps)
           for (var k in props) {
             _loop(k);
           }
@@ -642,7 +684,7 @@ transisReact.updateQueue = _helper.updateQueue;
 exports.default = transisReact;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -653,11 +695,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PropsMixin = exports.StateMixin = undefined;
 
-var _transisReact = __webpack_require__(4);
+var _transisReact = __webpack_require__(3);
 
 var _transisReact2 = _interopRequireDefault(_transisReact);
 
-var _TransisReactMixin = __webpack_require__(3);
+var _TransisReactMixin = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -666,10 +708,10 @@ exports.StateMixin = _TransisReactMixin.StateMixin;
 exports.PropsMixin = _TransisReactMixin.PropsMixin;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ })
 /******/ ]);

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Transis from 'transis'
 
 // Note: not exactly sure when this is needed: work around for this multiple instance issue
@@ -9,10 +8,13 @@ import Transis from 'transis'
 // copied from transis
 import {
   assignTransisIdTo,
-  updateLog,
-  updateQueue,
-  logUpdate,
+
   queueUpdate,
+  unqueueUpdate,
+  updateQueue,
+
+  logUpdate,
+  updateLog,
 } from './helper'
 
 
@@ -93,11 +95,45 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
     }
   }
 } // end of Component Will Mount Factory
+
+// TODO: better way of writing this
+const remapStateToProps = ({ props, state, remap }) => {
+  let newState = {}
+  if (remap) {
+    for (let [k, v] of Object.entries(state)) {
+      newState[remap[k]] = v
+    }
+  }
+  else {
+    newState = state
+  }
+  
+  if (props && newState) {
+    const statePropsConflicts = findDuplicate([...Object.keys(newState), ...Object.keys(props)])
+    if (statePropsConflicts.length) {
+      throw new Error(`state variable names conflicted with props, please remap the following: "${statePropsConflicts.join(', ')}"`)
+    }
+  }
+  
+  return newState
+}
+
+const ObjectValues = obj =>
+  Object.entries(obj).reduce((acc, next) => [...acc, next[1]], [])
+
+const findDuplicate = list => {
+  const set = list.reduce((set, item) => { 
+    set[item] = set[item] || 0
+    set[item]++
+    return set
+  }, {})
+  return Object.entries(set).filter(v => v[1] > 1).map(v => v[0])
+}
 // * end Refactor Effort *
 
 // main constructor
 const transisReact = (
-  { global: globalTransisObject, state, props },
+  { global: globalTransisObject, state, props, remap },
   ComposedComponent,
 ) => {
   if (!globalTransisObject && state) {
@@ -113,13 +149,27 @@ const transisReact = (
     }, {})
   }
 
+  if (state && remap) {
+    const futurePropKeys = ObjectValues(remap)
+    const propKeys = Object.keys(state)
+    const intersect = futurePropKeys.filter(propKey => propKeys.includes(propKey))
+
+    if (intersect.length) {
+      throw new Error(`Cannot remap conflicting names "${intersect.join(', ')}"`)
+    }
+    remap = {
+      ...propKeys.reduce((map, next) => {
+        map[next] = next
+        return map
+      }, {}),
+      ...remap
+    }
+  }
+
   const higherOrderComponent = class HigherOrderComponent extends React.Component {
     // allow both component will mount to get triggered
-    // debugMode = false
     constructor(propArgs) {
       super(propArgs)
-      // if (propArgs.debug) { this.debugMode = true }
-
       if (state) {
         // initialize State
         this.state = Object.keys(state).reduce((result, key) => {
@@ -129,7 +179,6 @@ const transisReact = (
       }
       if (props) {
         this.componentWillReceiveProps = (nextProps) => {
-          // console.warn('component will receive props', nextProps)
           for (let k in props) {
             props[k].forEach(prop => {
               if (nextProps[k] !== this.props[k]) {
@@ -140,32 +189,27 @@ const transisReact = (
                   nextProps[k].on(prop, this._transisQueueUpdate);
                 }
               }
-            });
+            })
           }
         }
       }
     }
 
     componentWillMount = () => {
-      // this.debugMode && console.warn('component will mount', this._transisId)
       return componentWillMount.call(this, {
         globalTransisObject, state, props
       })
     }
 
     componentDidMount = () => {
-      // this.debugMode && console.warn('component did mounted', this._transisId)
-      this.haveMounted = true
       logUpdate(this)
     }
     componentDidUpdate = () => {
-      // this.debugMode && console.warn('component did update', this._transisId)
       logUpdate(this)
     }
 
     componentWillUnmount = () => {
-      // this.debugMode && console.warn('component will unmount', this._transisId)
-      this.haveUnmounted = true
+      unqueueUpdate(this)
       if (state) {
         for (let k in state) {
           unbindState(this.state[k], state[k], this._transisQueueUpdate)
@@ -179,12 +223,15 @@ const transisReact = (
       }
     };
 
-    render = () =>
-      <ComposedComponent
+    render = () => {
+      const stateParams = remapStateToProps({ props: this.props, state: this.state, remap })
+
+      return <ComposedComponent
         ref={core => this.core = core}
         {...this.props}
-        {...this.state}
+        {...stateParams}
       />
+    }
   };
   return higherOrderComponent;
 }

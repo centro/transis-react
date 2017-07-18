@@ -40,7 +40,6 @@
   },
   "peerDependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
     "transis": "^0.11.0"
   },
   "jest": {

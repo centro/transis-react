@@ -1,10 +1,13 @@
 //  support
 import {
   assignTransisIdTo,
-  updateLog,
-  updateQueue,
-  logUpdate,
+
   queueUpdate,
+  unqueueUpdate,
+  updateQueue,
+
+  logUpdate,
+  updateLog,
 } from './helper'
 
 // Legacy Prop Mixin
@@ -30,6 +33,7 @@ export const PropsMixin = function(props) {
     },
 
     componentWillUnmount: function() {
+      unqueueUpdate(this)
       for (let k in props) {
         props[k].forEach(function(prop) {
           if (this.props[k]) { this.props[k].off(prop, this._transisQueueUpdate); }

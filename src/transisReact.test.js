@@ -7,10 +7,7 @@ import {
 } from './test_helper/testUtil'
 
 // TODOS:
-// lifecycle [x]
-// transisId ( need to share with Legacy )
 // state and prop mixin conflict
-// rerender times, use jasmine if necessary, check on rerender of child component and parent who both applied mixin
 
 let component;
 const model = new Model
@@ -70,20 +67,80 @@ describe('StateMixin', () => {
   })
 })
 
-describe('Conflict State/Props Mixin', () => {
-  const child = new (TransisObjectFactory('name'))({ name: 'Congwen' })
-  const appState = new (TransisObjectFactory('name', 'child'))({ child }) //state
-  const PropsMixinComponent = transisReact({
-    global: appState,
-    state: ['child']
-  }, ({ child }) => {
-    return <div className="name">{child.name}</div>
+describe('variable name conflicts and the {remap} option', () => {
+  describe('remap to variable', () => {
+    const appState = new (TransisObjectFactory('mobel', 'name'))({
+      mobel: model, name: 'global'
+    })
+
+    const RemapComponent = transisReact({
+      global: appState,
+      state: { mobel: ['foo'], name: [] },
+      remap: { mobel: 'model' },
+    }, class _ extends React.Component {  // you can only use ref on <React.Component>
+      render = () => <div>
+        <CoreComponent model={this.props.model} />
+        {this.props.name}
+      </div>
+    })
+
+    it('remaps global var `mobel` to `model`', () => {
+      component = mount(<RemapComponent />)
+      expect(component.node.state).toEqual({
+        mobel: appState.mobel,
+        name: 'global'
+      })
+      expect(component.node.core.props).toEqual({
+        model: appState.mobel,
+        name: 'global'
+      })
+      expect(component.text()).toBe('foo 1bar 1baz 1global')
+    })
+
+    describe('conflict between remap and state', () => {
+      it('throws an error', () => {
+        expect(() =>
+          transisReact({
+            global: appState,
+            state: { mobel: ['foo'], name: [] },
+            remap: { mobel: 'name' },
+          }, () => <div>Conflict!</div>)
+        ).toThrowError('Cannot remap conflicting names "name"')
+      })
+    })
   })
 
-  it('conflicts with each other', () => {
-    expect(mount(
-      <PropsMixinComponent child={{ name: 'Jeter' }} />
-    ).text()).toBe('Congwen') // or Jeter, or Throw Error?
+  describe('Conflict State/Props Mixin', () => {
+    const child = new (TransisObjectFactory('name'))({ name: 'John' })
+    const appState = new (TransisObjectFactory('name', 'child'))({ child }) //state
+    const ConflictStatePropsComponent = transisReact({
+      global: appState,
+      state: ['child']
+    }, ({ child }) => <div className="name">{child.name}</div>)
+
+    const ConflictRemapPropsComponent = transisReact({
+      global: appState,
+      state: ['child'],
+      remap: { child: 'kid' }
+    }, ({ child }) => <div className="name">{child.name}</div>)
+
+    it('conflicts between states and props', () => {
+      expect(() => mount( 
+        <ConflictStatePropsComponent child={{ name: 'Jeter' }} />
+      )).toThrowError('state variable names conflicted with props, please remap the following: "child"')
+    })
+
+    it('conflicts between states and props', () => {
+      expect(() => mount( 
+        <ConflictRemapPropsComponent kid={{ name: 'Jeter' }} />
+      )).toThrowError('state variable names conflicted with props, please remap the following: "kid"')
+    })
+
+    it('conflict saved by remap', () => {
+      expect(() => 
+        mount( <ConflictRemapPropsComponent child={{ name: 'Jeter' }} />)
+      ).not.toThrowError()
+    })
   })
 })
 
