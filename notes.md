@@ -60,12 +60,12 @@ after discussion with alex, sounds like we want to throw an error
 -[x] tag current version with all 4(transisAware, mixin, provider, stateInjection) working.
 -[x] remove stateInjection and Provider pattern, focus on transisAware.
 -[x] renaming the variables, transisAware -> transisReact, transisAwareLegacy -> TransisReactMixin
--[ ] conflict state vs props.
+-[x] conflict state vs props.
 -[ ] separate advanced specs into topics
   * mix usage
   * lifecycle events
 -[ ] improve `README.md`
--[ ] align the way we detect `isMounted` with main.
+-[x] align the way we detect `isMounted` with main.
 
 
 # blockers

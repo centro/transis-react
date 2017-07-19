@@ -513,38 +513,51 @@ var componentWillMount = function componentWillMount(_ref) {
   }
 }; // end of Component Will Mount Factory
 
-// TODO: can you think a clever way to phrase this
-var remapStateToProps = function remapStateToProps(state, remap) {
-  debugger;
-  if (!remap) return state;
+// TODO: better way of writing this
+var remapStateToProps = function remapStateToProps(_ref2) {
+  var props = _ref2.props,
+      state = _ref2.state,
+      remap = _ref2.remap;
+
   var newState = {};
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+  if (remap) {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
 
-  try {
-    for (var _iterator = Object.entries(state)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var _ref2 = _step.value;
-
-      var _ref3 = _slicedToArray(_ref2, 2);
-
-      var k = _ref3[0];
-      var v = _ref3[1];
-
-      newState[remap[k]] = v;
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
     try {
-      if (!_iteratorNormalCompletion && _iterator.return) {
-        _iterator.return();
+      for (var _iterator = Object.entries(state)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var _ref3 = _step.value;
+
+        var _ref4 = _slicedToArray(_ref3, 2);
+
+        var k = _ref4[0];
+        var v = _ref4[1];
+
+        newState[remap[k]] = v;
       }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
     } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
       }
+    }
+  } else {
+    newState = state;
+  }
+
+  if (props && newState) {
+    var statePropsConflicts = findDuplicate([].concat(_toConsumableArray(Object.keys(newState)), _toConsumableArray(Object.keys(props))));
+    if (statePropsConflicts.length) {
+      throw new Error('state variable names conflicted with props, please remap the following: "' + statePropsConflicts.join(', ') + '"');
     }
   }
 
@@ -554,16 +567,29 @@ var remapStateToProps = function remapStateToProps(state, remap) {
 var ObjectValues = function ObjectValues(obj) {
   return Object.entries(obj).reduce(function (acc, next) {
     return [].concat(_toConsumableArray(acc), [next[1]]);
-  }, []
-  // * end Refactor Effort *
+  }, []);
+};
 
-  // main constructor
-  );
-};var transisReact = function transisReact(_ref4, ComposedComponent) {
-  var globalTransisObject = _ref4.global,
-      state = _ref4.state,
-      props = _ref4.props,
-      remap = _ref4.remap;
+var findDuplicate = function findDuplicate(list) {
+  var set = list.reduce(function (set, item) {
+    set[item] = set[item] || 0;
+    set[item]++;
+    return set;
+  }, {});
+  return Object.entries(set).filter(function (v) {
+    return v[1] > 1;
+  }).map(function (v) {
+    return v[0];
+  });
+};
+// * end Refactor Effort *
+
+// main constructor
+var transisReact = function transisReact(_ref5, ComposedComponent) {
+  var globalTransisObject = _ref5.global,
+      state = _ref5.state,
+      props = _ref5.props,
+      remap = _ref5.remap;
 
   if (!globalTransisObject && state) {
     throw new Error("Cannot compose with-state component without global transis object, state: ", state);
@@ -634,11 +660,13 @@ var ObjectValues = function ObjectValues(obj) {
       };
 
       _this2.render = function () {
+        var stateParams = remapStateToProps({ props: _this2.props, state: _this2.state, remap: remap });
+
         return _react2.default.createElement(ComposedComponent, _extends({
           ref: function ref(core) {
             return _this2.core = core;
           }
-        }, _this2.props, remapStateToProps(_this2.state, remap)));
+        }, _this2.props, stateParams));
       };
 
       if (state) {
