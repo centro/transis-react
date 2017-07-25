@@ -62,7 +62,6 @@ const componentWillMount = function({ globalTransisObject, state, props }) {
   if (state) {
     // core register sync method
     this._transisSyncState = () => {
-      // console.warn('transis sync update triggered')
 
       var stateToUpdate = {};
       for (let k in state) {

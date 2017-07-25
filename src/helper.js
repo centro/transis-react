@@ -49,7 +49,6 @@ const registerDelayPostFlush = () =>
   })
 
 const queueUpdate = component => {
-  // console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 }
 
