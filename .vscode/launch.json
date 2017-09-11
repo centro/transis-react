@@ -6,6 +6,7 @@
 
   "version": "0.2.0",
   "configurations": [
+
     // also working somewat, no debugger
     // http://garethevans.com/2016/06/14/debugging-the-visual-studio-code-debugger/
     {
@@ -42,6 +43,23 @@
         "jest-environment-node-debug"
       ],
       "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+
+    // NOT WORKING
+    {
+      "name": "Debug Jest Codeshift",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "jest",
+        "-i",
+        "--env",
+        "jest-environment-node-debug"
+      ],
+      "cwd": "${workspaceRoot}/codeshift",
       "protocol": "inspector",
       "console": "integratedTerminal"
     }
