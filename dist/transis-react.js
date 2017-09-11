@@ -150,7 +150,6 @@ var registerDelayPostFlush = function registerDelayPostFlush() {
 };
 
 var queueUpdate = function queueUpdate(component) {
-  // console.warn('queueUpdate')
   updateQueue[component._transisId] = component;
 };
 
@@ -478,7 +477,6 @@ var componentWillMount = function componentWillMount(_ref) {
   if (state) {
     // core register sync method
     this._transisSyncState = function () {
-      // console.warn('transis sync update triggered')
 
       var stateToUpdate = {};
       for (var k in state) {
