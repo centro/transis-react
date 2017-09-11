@@ -53,6 +53,7 @@
       "!**/node_modules/**",
       "!src/test_helper/testSetup.js"
     ],
+    "testPathIgnorePatterns": ["<rootDir>/codeshift/"],
     "testRegex": "(/__tests__/.*|(\\.|/)(stateInjection.)?(test|spec))\\.jsx?$",
     "coverageReporters": ["json", "lcov", "text"],
     "setupFiles": ["./src/test_helper/testSetup"],

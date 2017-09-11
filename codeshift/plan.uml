@@ -1,0 +1,9 @@
+@startuml
+:Hello world;
+:This is on defined on
+several **lines**;
+:more on this
+@enduml
+# there are approximately:
+50 StateMixin Usage
+100 PropsMixin Usage

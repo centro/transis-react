@@ -1,0 +1,12 @@
+{
+  "name": "codeshift_script_runner",
+  "scripts": {
+    "es6": "jscodeshift -t ./to_es6.js ./sample.js -d -p",
+    "test": "find . | entr jest  --testRegex='es6.test.js$'",
+    "test1": "jest  --testRegex='es6.test.js$'"
+  },
+  "devDependencies": {
+    "jscodeshift": "^0.3.32",
+    "react-codemod": "^4.0.0"
+  }
+}
