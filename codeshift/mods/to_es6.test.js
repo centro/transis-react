@@ -1,7 +1,11 @@
 jest.autoMockOff();
-import to_es6 from "./to_es6";
-import mixinDataExtract from "../submods/mixinDataExtract";
-import replaceStateWithProps from "../submods/replaceStateWithProps";
+// import to_es6 from "./to_es6";
+// import mixinDataExtract from "../submods/mixinDataExtract";
+// import replaceStateWithProps from "../submods/replaceStateWithProps";
+const to_es6 = require("./to_es6");
+const mixinDataExtract = require("../submods/mixinDataExtract");
+const replaceStateWithProps = require("../submods/replaceStateWithProps");
+
 const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
 
 const xdefineInlineTest = () => {}
@@ -58,7 +62,7 @@ describe("to_es6", () => {
     `);
   })
 
-  fdescribe('Step4: replaceStateWithProps', () => {
+  describe('Step4: replaceStateWithProps', () => {
     defineInlineTest(replaceStateWithProps, {}, `
        var stateMixin = {
           global: globalState,
@@ -118,7 +122,7 @@ describe("to_es6", () => {
           },
           class MyComp extends React.Component {
             render2() {
-              return <div>{ this.state.ignored } {this.props.bar} </div>
+              return <div>{ this.state.ignored } {this.props.bar} </div>;
             }
 
             render() {
@@ -133,8 +137,7 @@ describe("to_es6", () => {
             }
           }
         );
-      `
-    );
+      `);
   })
 
   // The complete transformer
@@ -187,7 +190,7 @@ describe("to_es6", () => {
 
 
   // change mixins
-  describe('with transis react mixins', () => {
+  xdescribe('with transis react mixins', () => {
     defineInlineTest(to_es6, {}, `
       import React from 'react'
       const MyComp = React.createClass({

@@ -37,7 +37,7 @@ var path = require("path");
 // var assert = require("assert");
 
 /* LOCAL DEPS */
-var classTransform = require(path.resolve(__dirname, "node_modules/react-codemod/transforms/class"));
+var classTransform = require(path.resolve(__dirname, "../node_modules/react-codemod/transforms/class"));
 
 const CREATE_COMPONENT_EXPRESSION = {
   callee: { object: { name: "React" }, property: { name: "createClass" } }
@@ -84,15 +84,21 @@ export default function to_es6(fileInfo, api) {
   );
 
   // Step 5: remove var declaration
-  let stateMixinDec = root
+  const step5Root = j(result)
+	let stateMixinDec = step5Root
     .find(j.VariableDeclaration)
     .filter(path =>
       path.node.declarations.map(d => d.id.name).includes("stateMixin")
     )
-    .at(0);
+    .remove();
 
-  stateMixinDec.remove();
-  // propsMixinDec.remove()
+  let propsMixinDec = step5Root
+    .find(j.VariableDeclaration)
+    .filter(path =>
+      path.node.declarations.map(d => d.id.name).includes("propsMixin")
+    )
+    .remove();
+  result = step5Root.toSource()
 
   return result;
 };

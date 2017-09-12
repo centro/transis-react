@@ -11,7 +11,7 @@
     "react-codemod": "^4.0.0"
   },
   "jest": {
-    "testRegex": "(legacy_mixin).*\\.test\\.js$",
+    "testRegex": ".*\\.test\\.js$",
     "modulePaths": [
       "<rootDir>"
     ]

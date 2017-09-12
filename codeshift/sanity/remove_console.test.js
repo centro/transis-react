@@ -2,7 +2,6 @@ jest.autoMockOff();
 const remove_console = require("./remove_console");
 const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
 
-
 describe("remove_console", () => {
   defineInlineTest(
     remove_console,
