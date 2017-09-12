@@ -3,7 +3,7 @@
   "scripts": {
     "es6": "jscodeshift -t ./to_es6.js ./sample.js -d -p",
     "test": "find . -maxdepth 2 | entr jest",
-    "test1": "jest"
+    "test1": "./node_modules/.bin/jest"
   },
   "devDependencies": {
     "jest": "^21.0.2",
