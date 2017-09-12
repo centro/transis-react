@@ -1,33 +1,13 @@
-const xdefineInlineTest = () => {}
 jest.autoMockOff();
+import to_es6 from "./to_es6";
+import mixinDataExtract from "../submods/mixinDataExtract";
+import replaceStateWithProps from "../submods/replaceStateWithProps";
+const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
+
+const xdefineInlineTest = () => {}
 
 // NOTE: problematic
 // const defineTest = require("jscodeshift/dist/testUtils").defineTest;
-const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
-
-
-const remove_console = require('./sanity/remove_console')
-
-xdescribe('remove_console', () => {
-  defineInlineTest(remove_console, {},
-    `
-      export const sum = (a, b) => {
-        console.log("calling sum with", arguments);
-        return a + b;
-      }
-    `,
-    `
-      export const sum = (a, b) => {
-        return a + b;
-      }
-    `
-  );
-});
-
-// const to_es6 = require('./to_es6').default
-import to_es6 from './to_es6'
-import mixinDataExtract from './mixinDataExtract'
-import replaceStateWithProps from './replaceStateWithProps'
 
 describe("to_es6", () => {
   // Part 1

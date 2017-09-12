@@ -28,22 +28,22 @@ jscodeshift -t codeshift/to_es6.js codeshift/sample.js -d -p
 5. Delete the metadata
 
 */
-import mixinDataExtract, { canFindStateMixin } from "./mixinDataExtract";
-import transisReactTransform from './transisReactTransform';
-import replaceStateWithProps from "./replaceStateWithProps";
+import mixinDataExtract, { canFindStateMixin } from "../submods/mixinDataExtract";
+import transisReactTransform from '../submods/transisReactTransform';
+import replaceStateWithProps from "../submods/replaceStateWithProps";
 var jscodeshift = require("jscodeshift");
 var fs = require("fs");
 var path = require("path");
 // var assert = require("assert");
 
 /* LOCAL DEPS */
-var classTransform = require(path.resolve(__dirname, "../node_modules/react-codemod/transforms/class"));
+var classTransform = require(path.resolve(__dirname, "node_modules/react-codemod/transforms/class"));
 
 const CREATE_COMPONENT_EXPRESSION = {
   callee: { object: { name: "React" }, property: { name: "createClass" } }
 }
 
-export default (fileInfo, api) => {
+export default function to_es6(fileInfo, api) {
   // console.warn(1, fileInfo);
   const j = api.jscodeshift;
   const root = j(fileInfo.source);
