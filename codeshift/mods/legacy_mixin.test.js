@@ -5,7 +5,7 @@ const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
 // https://astexplorer.net/#/gist/bd57934e0323d31b43cfa2d79663677e/b0c7b48da1712a7eae776e073069bb05b2bb6a43
 fdescribe("legacy_mixin", () => {
 
-  fdescribe('neither', () => {
+  describe('neither', () => {
     defineInlineTest(legacy_mixin, {}, `
       const MyComp = React.createClass({
         mixins: [

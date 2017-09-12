@@ -15,17 +15,18 @@ const findStateMixin = (root, j) => {
 
       return (
         usesMixin &&
-        prop.value.elements.some(mixin => {
-          if (!(mixin.callee && mixin.callee.type === 'MemberExpression')) { return false }
+        prop.value.elements.map(mixin => {
+          if (!(mixin.type === 'CallExpression' && mixin.callee.type === 'MemberExpression')) { return false }
+
           var { object, property } = mixin.callee;
           if ('ReactPropsMixin' === property.name ) {
-            usedMixins['PropsMixin'] = true;
+            usedMixins.PropsMixin = true;
           }
           if ('ReactStateMixin' === property.name) {
-            usedMixins['StateMixin'] = true;
+            usedMixins.StateMixin = true;
           }
           return object.name === 'Transis' && ['ReactPropsMixin', 'ReactStateMixin'].includes(property.name)
-        })
+        }).some(v => v)
       );
     });
     return usesReactMixins;
