@@ -3,7 +3,8 @@
   "scripts": {
     "es6": "jscodeshift -t ./to_es6.js ./sample.js -d -p",
     "test": "find . -maxdepth 2 | entr jest",
-    "test1": "./node_modules/.bin/jest"
+    "test1": "./node_modules/.bin/jest",
+    "live": "node_modules/.bin/jscodeshift --extensions=js,jsx -t ./mods/legacy_mixin.js ./dummy"
   },
   "devDependencies": {
     "jest": "^21.0.2",
