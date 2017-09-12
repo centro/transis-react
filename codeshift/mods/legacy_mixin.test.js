@@ -2,7 +2,7 @@ jest.autoMockOff();
 import legacy_mixin from "./legacy_mixin";
 const defineInlineTest = require("jscodeshift/dist/testUtils").defineInlineTest;
 
-// https://astexplorer.net/#/gist/bd57934e0323d31b43cfa2d79663677e/0ae3bcd06f18dfc7a172b7eae4d837ae169009cd
+// https://astexplorer.net/#/gist/bd57934e0323d31b43cfa2d79663677e/b0c7b48da1712a7eae776e073069bb05b2bb6a43
 describe("legacy_mixin", () => {
   describe("works", () => {
     defineInlineTest(legacy_mixin, {}, `
@@ -24,8 +24,8 @@ describe("legacy_mixin", () => {
         }
       })
     `, `
+      import { StateMixin, PropsMixin } from 'transis-react';
       import React from 'react'
-      import { StateMixin, PropsMixin } from 'transis-react'
       const MyComp = React.createClass({
         mixins: [
           StateMixin(global.appState, {
@@ -42,6 +42,8 @@ describe("legacy_mixin", () => {
           return <div>my comp{this.state.a}</div>
         }
       })
+
+      import { StateMixin, PropsMixin } from 'transis-react';
     `);
   });
 })

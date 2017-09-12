@@ -6,6 +6,7 @@
     "test1": "jest"
   },
   "devDependencies": {
+    "jest": "^21.0.2",
     "jscodeshift": "^0.3.32",
     "react-codemod": "^4.0.0"
   },
