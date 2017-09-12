@@ -3,24 +3,38 @@ const findStateMixin = (root, j) => {
     callee: { object: { name: "React" }, property: { name: "createClass" } }
   });
 
-  return comp.filter(path => {
+  const usedMixins = {
+    StateMixin: false,
+    PropsMixin: false,
+  }
+
+  const foundComponents = comp.filter(path => {
     const reactParams = path.node.arguments[0].properties;
     const usesReactMixins = reactParams.some(prop => {
       const usesMixin = prop.key.name === "mixins";
 
       return (
         usesMixin &&
-        prop.value.elements.map(mixin => {
+        prop.value.elements.some(mixin => {
+          if (!(mixin.callee && mixin.callee.type === 'MemberExpression')) { return false }
           var { object, property } = mixin.callee;
-          return (
-            object.name === "Transis" &&
-            ["ReactPropsMixin", "ReactStateMixin"].includes(property.name)
-          );
+          if ('ReactPropsMixin' === property.name ) {
+            usedMixins['PropsMixin'] = true;
+          }
+          if ('ReactStateMixin' === property.name) {
+            usedMixins['StateMixin'] = true;
+          }
+          return object.name === 'Transis' && ['ReactPropsMixin', 'ReactStateMixin'].includes(property.name)
         })
       );
     });
     return usesReactMixins;
   });
+
+  return {
+    usedMixins,
+    foundComponents
+  }
 };
 
 const PROPS_MIXIN_SIGNATURE = { object: { name: 'Transis' }, property: { name: 'ReactPropsMixin'}}
@@ -30,11 +44,13 @@ export default (file, api) => {
   const j = api.jscodeshift;
   const root = j(file.source)
 
-  const foundComponents = findStateMixin(root, j)
-  console.warn('foundComponents', foundComponents.length)
-  if (foundComponents.length) {
+  const { foundComponents, usedMixins } = findStateMixin(root, j)
+
+  const mixinString = Object.keys(usedMixins).filter(key => usedMixins[key]).join(', ')
+  if (!foundComponents.length) { return '' }
+  else {
     root.find(j.Declaration).at(0).get().insertBefore(
-      "import { StateMixin, PropsMixin } from 'transis-react';"
+      `import { ${mixinString} } from 'transis-react';`
     )
 
     foundComponents.map(p => {
