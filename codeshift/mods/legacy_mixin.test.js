@@ -63,6 +63,31 @@ fdescribe("legacy_mixin", () => {
     `);
   })
 
+  describe("destructured props mixin", () => {
+    defineInlineTest(legacy_mixin, {}, `
+      const { ReactPropsMixin } = Transis;
+      const MyComp = React.createClass({
+        mixins: [
+          ReactPropsMixin({
+            foo: ['bar', 'baz']
+          }),
+        ],
+        render() { }
+      })
+    `, `
+      import { PropsMixin } from 'transis-react';
+      const MyComp = React.createClass({
+        mixins: [
+          PropsMixin({
+            foo: ['bar', 'baz']
+          }),
+        ],
+        render() { }
+      })
+    `);
+  })
+
+
   describe("both", () => {
     defineInlineTest(legacy_mixin, {}, `
       import React from 'react'
