@@ -1,5 +1,7 @@
-# React binding for Transis
+# Transis on React - [![Build Status](https://travis-ci.org/congwenma/transis-react.svg?branch=master)](https://travis-ci.org/congwenma/transis-react)
+
 > Use Transis and React in ES6
+
 
 ## Example Usage Patterns
 
